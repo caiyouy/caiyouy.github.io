@@ -23,16 +23,16 @@
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
     <title>Yuan Caiyou&#39;s Pages</title>
     
-    <link rel="alternate" type="application/rss+xml" href="https://example.com/tags/index.xml" title="Yuan Caiyou's Pages" />
+    <link rel="alternate" type="application/rss+xml" href="https://caiyouy.github.io/tags/index.xml" title="Yuan Caiyou's Pages" />
     
-    <link rel="stylesheet" href="https://example.com/css/style.min.b94f642c6862b6ecba04fa0b80053dbd2070d7dcf4e8e7841d3b6ca78331cab4.css">
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="Tags" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://example.com/tags/" />
+<meta property="og:url" content="https://caiyouy.github.io/tags/" />
 
 <meta itemprop="name" content="Tags">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
@@ -57,7 +57,7 @@
       <div class="navbar-header">
         <div class="profile-block text-center">
           <a id="avatar" href="https://github.com/caiyouy" target="_blank">
-            <img class="img-circle img-rotate" src="https://example.com/logo.jpeg" width="200" height="200">
+            <img class="img-circle img-rotate" src="https://caiyouy.github.io/logo.jpeg" width="200" height="200">
           </a>
           <h2 id="name" class="hidden-xs hidden-sm">Yuan Caiyou</h2>
           <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
@@ -132,7 +132,7 @@
     <h3 class="widget-title">Board</h3>
     <div class="widget-body">
         <div id="board">
-            <div class="content"><p>enjoy~</p>
+            <div class="content"><p>Welcome to my pages~</p>
             </div>
         </div>
     </div>
@@ -146,10 +146,20 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://example.com/2020/12/sbp_example/" class="title">离散分部求和举例</a>
+                        <a href="https://caiyouy.github.io/adi_l2/" class="title">一个ADI格式的$L_2$稳定性</a>
                     </p>
                     <p class="item-date">
-                        <time datetime="2020-12-06 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-12-06</time>
+                        <time datetime="2020-11-18 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/poisson_linf/" class="title">课本结论2.6证明</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-11-05 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-05</time>
                     </p>
                 </div>
             </li>
@@ -168,7 +178,7 @@
             <p class="text-muted hidden-xs">Total 0 tags</p>
             <nav role="navigation" id="nav-main" class="okayNav">
                 <ul>
-                    <li><a href="https://example.com/tags">All</a></li>
+                    <li><a href="https://caiyouy.github.io/tags">All</a></li>
                 </ul>
             </nav>
         </header>
@@ -190,30 +200,19 @@
   </div>
 </footer>
 
-
-
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
-
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-        x.parentElement.classList += 'has-jax'})
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: true, //disables context menu
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+            displayMath: [['$$','$$'], ["\\[","\\]"]],
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes: false
+           }
     });
-
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
@@ -249,8 +248,8 @@
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://example.com/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
-<script src="https://example.com/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+<script src="https://caiyouy.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://caiyouy.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
 
 <script>
     (function (window) {
@@ -262,13 +261,13 @@
                 TAGS: 'Tags',
                 UNTITLED: '(Untitled)',
             },
-            ROOT_URL: 'https:\/\/example.com\/',
-            CONTENT_URL: 'https:\/\/example.com\/\/searchindex.json ',
+            ROOT_URL: 'https:\/\/caiyouy.github.io\/',
+            CONTENT_URL: 'https:\/\/caiyouy.github.io\/\/searchindex.json ',
         };
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://example.com/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({
