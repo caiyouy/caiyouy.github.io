@@ -5,10 +5,19 @@
     <link>https://caiyouy.github.io/posts/</link>
     <description>Recent content in Posts on Yuan Caiyou&#39;s Pages</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 18 Nov 2020 15:55:59 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 08 Dec 2020 15:55:59 +0800</lastBuildDate>
     
         <atom:link href="https://caiyouy.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MUSCL格式的性质</title>
+      <link>https://caiyouy.github.io/muscl/</link>
+      <pubDate>Tue, 08 Dec 2020 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/muscl/</guid>
+      <description>讨论广义MUSCL格式 $$U_{j}^{n+1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n +\frac{h}{2}S_j^n, U_{j+1}^n - \frac{h}{2}S_{j+1}^n)-\hat{f}(U_{j-1}^n +\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j+1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right), $$ $$ \mathrm{minmod}(a, b) = \left\{ \begin{aligned} &amp;amp;a, \quad</description>
+    </item>
     
     <item>
       <title>About</title>
