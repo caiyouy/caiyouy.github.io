@@ -39,7 +39,7 @@
 <meta itemprop="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right), $$ $$ \mathrm{minmod}(a, b) = \left\{ \begin{aligned} &amp;a, \quad">
 <meta itemprop="datePublished" content="2020-12-08T15:55:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-12-08T15:55:59&#43;08:00" />
-<meta itemprop="wordCount" content="1429">
+<meta itemprop="wordCount" content="1419">
 
 
 
@@ -393,8 +393,10 @@ $$</p>
 </tr>
 </tbody>
 </table>
-<p>注： 虽然在上表中的大多数情形下，截断误差是$O(\tau + h)$的.
-但是，如果$h$足够小，根据$u_{xx}$的连续性，可以期望在大多数$j$的取值下，$u_{xx}$在$(x_{j-2}, x_{j+1})$上恒正或恒负. 如果进一步的，$u_{x}$在$(x_{j-2}, x_{j+1})$无零点，这对应于上表中截断误差为$O(\tau + h^2)$的情形.但是在极值点附近，即$u_{x}$在$(x_{j-2}, x_{j+1})$存在零点时，格式截断误差只有$O(\tau + h)$.</p>
+<p>注： 虽然在上表中的多数情形下，截断误差是$O(\tau + h)$的.
+但是如果$u_{xx}$以及$u_x$在$(x_{j-2}, x_{j+1})$上无零点时，这就对应于上表中截断误差为$O(\tau + h^2)$的情形.
+这种情形在实际计算中经常遇到，特别是当$h$较小时.
+但是当$u_{xx}$在$(x_{j-2}, x_{j+1})$上无零点，但$u_{x}$在$(x_{j-2}, x_{j+1})$存在零点时，即在极值点附近，格式截断误差只有$O(\tau + h)$.</p>
 <h2 id="讨论tvd性质">讨论TVD性质</h2>
 <p>考虑使用如下结论，推导格式TVD的充分条件.</p>
 <blockquote>
