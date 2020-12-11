@@ -20,7 +20,7 @@
     <meta http-equiv="window-target" content="_top" />
     
     
-    <meta name="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right), $$ $$ \mathrm{minmod}(a, b) = \left\{ \begin{aligned} &amp;amp;a, \quad" />
+    <meta name="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m" />
     <meta name="generator" content="Hugo 0.68.3 with theme pure" />
     <title>MUSCL格式的性质 - Yuan Caiyou&#39;s Pages</title>
     
@@ -30,22 +30,22 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="MUSCL格式的性质" />
-<meta property="og:description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right), $$ $$ \mathrm{minmod}(a, b) = \left\{ \begin{aligned} &amp;a, \quad" />
+<meta property="og:description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://caiyouy.github.io/muscl/" />
 <meta property="article:published_time" content="2020-12-08T15:55:59+08:00" />
 <meta property="article:modified_time" content="2020-12-08T15:55:59+08:00" />
 <meta itemprop="name" content="MUSCL格式的性质">
-<meta itemprop="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right), $$ $$ \mathrm{minmod}(a, b) = \left\{ \begin{aligned} &amp;a, \quad">
+<meta itemprop="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m">
 <meta itemprop="datePublished" content="2020-12-08T15:55:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-12-08T15:55:59&#43;08:00" />
-<meta itemprop="wordCount" content="1498">
+<meta itemprop="wordCount" content="1516">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MUSCL格式的性质"/>
-<meta name="twitter:description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right), $$ $$ \mathrm{minmod}(a, b) = \left\{ \begin{aligned} &amp;a, \quad"/>
+<meta name="twitter:description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m"/>
 
     <!--[if lte IE 9]>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -164,7 +164,7 @@
             <li>
                 <div class="item-inner">
                     <p class="item-title">
-                        <a href="https://caiyouy.github.io/adi_l2/" class="title">一个ADI格式的$L_2$稳定性</a>
+                        <a href="https://caiyouy.github.io/adi_l2/" class="title">一个ADI格式的L2稳定性</a>
                     </p>
                     <p class="item-date">
                         <time datetime="2020-11-18 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-18</time>
@@ -231,9 +231,10 @@
 $$U_{j}^{n+1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n +\frac{h}{2}S_j^n, U_{j+1}^n - \frac{h}{2}S_{j+1}^n)-\hat{f}(U_{j-1}^n +\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$
 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$,
 $$
-S_j^n = \mathrm{minmod}\left(\frac{U_{j+1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right),
-$$</p>
-<p>$$
+S_j^n = \mathrm{minmod}\left(\frac{U_{j+1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right).
+$$
+这里，二元函数minmod的定义为,
+$$
 \mathrm{minmod}(a, b) =
 \left\{
 \begin{aligned}
