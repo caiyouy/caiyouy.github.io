@@ -9,9 +9,9 @@ categories: ["NMPDE2020",]
 > $$U_{j}^{n+1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n +\frac{h}{2}S_j^n, U_{j+1}^n - \frac{h}{2}S_{j+1}^n)-\hat{f}(U_{j-1}^n +\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$
 > 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$,
 > $$
-> S_j^n = \mathrm{minmod}\left(\frac{U_{j+1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right),
+> S_j^n = \mathrm{minmod}\left(\frac{U_{j+1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right).
 > $$
-> 
+> 这里，二元函数minmod的定义为,
 > $$
 > \mathrm{minmod}(a, b) =
 > \left\\{
