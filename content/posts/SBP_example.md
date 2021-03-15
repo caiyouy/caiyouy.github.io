@@ -2,6 +2,7 @@
 title: "离散分部求和举例"
 date: 2020-10-13T15:55:59+08:00
 draft: false
+categories: ["NMPDE2020",]
 ---
 
 定义离散算子,

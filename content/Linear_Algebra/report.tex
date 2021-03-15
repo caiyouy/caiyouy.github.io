@@ -1,0 +1,135 @@
+\documentclass{article}
+
+%%%% Chinese
+% fontset = none 可以为后续自定义字体
+\usepackage[UTF8, fontset=windows, scheme=plain]{ctex}
+% % 设置英文字体
+% \setmainfont[BoldFont={Ubuntu Bold}, ItalicFont={Ubuntu Italic}]{Ubuntu}
+% \setmainfont{Microsoft YaHei}
+% \setsansfont{Comic Sans MS}
+% \setmonofont{Courier New}
+% % 设置中文字体
+% \setCJKmainfont[Mapping = fullwidth-stop]{SimSun} %选项将。映射为.
+% \setCJKmainfont{SimSun}
+% \setCJKmonofont{Source Code Pro}
+% \setCJKsansfont{YouYuan}
+
+\usepackage{bm}
+%%%%% AMS package
+\usepackage{amsmath, amssymb, amsthm}
+
+\newtheorem{theorem}{Theorem} % 定义定理环境等
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem*{remark}{Remark}
+
+% \numberwithin{equation}{section} % 公式分节标号
+
+%%%%% Paper size
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,bottom=2.5cm,top=2.5cm}
+
+%%%%% Text
+\usepackage{ulem} % underlining
+\usepackage{enumitem} % customizing lists
+\usepackage{titling} % 标题调整
+\pretitle{           % 标题左对齐
+  \begin{flushleft}
+}
+\posttitle{
+  \end{flushleft}
+}
+\preauthor{
+  \begin{flushleft}
+}
+\postauthor{
+  \end{flushleft}
+}
+\predate{
+  \begin{flushleft}
+}
+\postdate{
+  \end{flushleft}
+  \noindent\vrule height 1.0pt width \textwidth
+  \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
+}
+\usepackage{color}
+
+%%%%% Ref
+\usepackage[
+  giveninits=true,       % 作者姓名首单词缩写, 并大写
+  date = year,           % 日期只是年份
+  % bibstyle = mystyle,  % 参考文献样式(文章最后的文献条目)
+]{biblatex}
+\renewbibmacro{in:}{} % 去掉文章前面的in
+\DeclareFieldFormat[article,incollection,unpublished]{title}{#1} % No quotes for article titles
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}} % Theses like book titles
+\DeclareFieldFormat{journaltitle}{#1\isdot}
+\DeclareFieldFormat{pages}{#1} % 去掉页码前面的pp
+% 使用shortjournal代替journaltitle
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite]{ % Notice the overwrite: replace one field with another
+      \step[fieldsource=shortjournal,fieldtarget=journaltitle]
+    }
+  }
+}
+\renewcommand*{\bibpagespunct}{\addspace} % This tells biblatex to only put a space right before the pages, no other punctuation.
+\renewcommand*{\newunitpunct}{\addcomma\space}
+\addbibresource{report.bib}
+\usepackage[colorlinks,
+            linkcolor=red,
+            anchorcolor=red,
+            citecolor=blue
+            ]{hyperref}
+
+%%%% Graphic
+\usepackage{graphics} %color
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calligraphy} % tikz 花括号
+
+
+%%%%% Table
+\usepackage{tabularx} %table column fix width
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\usepackage{booktabs} % three lines table
+\usepackage{multirow} % multi row; multi column self-contained
+
+%%%%% Figure
+\usepackage{graphicx}  % minipage
+\usepackage{subfig}    % subfig
+
+%%%%% Code and other
+% \usepackage[numbered,framed]{matlab-prettifier} %matlab
+% \lstset{
+%   style              = Matlab-editor,
+%   basicstyle         = \mlttfamily,
+%   escapechar         = ",
+%   mlshowsectionrules = true,
+% }
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\algsetup{
+  indent=3em,
+  linenosize=\small,
+  linenodelimiter=.
+}
+
+%%%%%%% New command
+\newcommand{\bw}[0]{\mathbf{w}}
+\newcommand{\bv}[0]{\mathbf{v}}
+
+\title{{\huge \bfseries
+线性代数A 习题课讲义01
+       }}
+\author{Caiyou Yuan}
+\date{\today}
+
+\begin{document}
+\maketitle
+\input{sec/01.tex}
+
+\end{document}
