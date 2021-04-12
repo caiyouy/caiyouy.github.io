@@ -28,6 +28,8 @@
 %%%%% Paper size
 \usepackage{geometry}
 \geometry{a4paper,left=2cm,right=2cm,bottom=2.5cm,top=2.5cm}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.3}
 
 %%%%% Text
 \usepackage{ulem} % underlining
@@ -119,17 +121,16 @@
 }
 
 %%%%%%% New command
-\newcommand{\bw}[0]{\mathbf{w}}
-\newcommand{\bv}[0]{\mathbf{v}}
+\newcommand{\rank}[0]{\mathrm{rank}}
 
 \title{{\huge \bfseries
-线性代数A 习题课讲义01
+线性代数A 习题课讲义02
        }}
 \author{Caiyou Yuan}
 \date{\today}
 
 \begin{document}
 \maketitle
-\input{sec/01.tex}
+\input{sec/02.tex}
 
 \end{document}
