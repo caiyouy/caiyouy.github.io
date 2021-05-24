@@ -9,29 +9,42 @@
 % \setsansfont{Comic Sans MS}
 % \setmonofont{Courier New}
 % % 设置中文字体
-% \setCJKmainfont[Mapping = fullwidth-stop]{SimSun} %选项将。映射为.
+% etCJKmainfont[Mapping = fullwidth-stop]{SimSun} %选项将。映射为.
 % \setCJKmainfont{SimSun}
 % \setCJKmonofont{Source Code Pro}
 % \setCJKsansfont{YouYuan}
 
-\usepackage{bm}
-%%%%% AMS package
+%%% 习题课讲义排版
+\usepackage{xparse}
+\newtoks\patchtoks    % helper token register
+\def\longpatch#1%     % worker macro
+  {\let\myoldmac#1%
+   \long\def#1##1{\patchtoks={##1}\myoldmac{\the\patchtoks}}}
+\longpatch{\phantom}
+\NewDocumentEnvironment{solution}{ +b}{%
+  \ifsolution
+      \textbf{解答}\quad #1
+  \else
+      \phantom{\parbox{\textwidth}{#1}}
+  \fi
+  }{\par}
+\newif\ifsolution
+% \solutiontrue %添加此句将输出答案，否则输出答案所需的空白
+
+%%%%% MATH
 \usepackage{amsmath, amssymb, amsthm}
-
-\newtheorem{theorem}{Theorem} % 定义定理环境等
-\newtheorem{lemma}{Lemma}
-\newtheorem{definition}{Definition}
-\newtheorem*{remark}{Remark}
-
+% \newtheorem{theorem}{Theorem} % 定义定理环境等
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{definition}{Definition}
+% \newtheorem*{remark}{Remark}
 % \numberwithin{equation}{section} % 公式分节标号
 
 %%%%% Paper size
 \usepackage{geometry}
 \geometry{a4paper,left=2cm,right=2cm,bottom=2.5cm,top=2.5cm}
-\usepackage{setspace}
-\renewcommand{\baselinestretch}{1.3}
 
 %%%%% Text
+\usepackage{bm}
 \usepackage{ulem} % underlining
 \usepackage{enumitem} % customizing lists
 \usepackage{titling} % 标题调整
@@ -56,6 +69,8 @@
   \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
 }
 \usepackage{color}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.3}
 
 %%%%% Ref
 \usepackage[
@@ -90,7 +105,6 @@
 \usepackage{tikz}
 \usetikzlibrary{decorations.pathreplacing,calligraphy} % tikz 花括号
 
-
 %%%%% Table
 \usepackage{tabularx} %table column fix width
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
@@ -121,9 +135,9 @@
 }
 
 %%%%%%% New command
-\newcommand{\rank}[0]{\mathrm{rank}}
+\newcommand{\rank}[0]{\mathrm{rank}\,}
 \newcommand{\Ker}[0]{\mathrm{Ker}\,}
-\newcommand{\Img}[0]{\mathrm{Im}}
+\newcommand{\Img}[0]{\mathrm{Im}\,}
 
 \title{{\huge \bfseries
 线性代数A 习题课讲义06

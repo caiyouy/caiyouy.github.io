@@ -61,22 +61,43 @@ $$m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-
 \item[(1)] 令$V_i = \{\alpha \in V |\,\exists r > 0,
 (\lambda_i I - A)^r \alpha = 0\}, i = 1,2,\cdots,s.$
 说明$V_i$是A不变的，且$V = V_1 \oplus V_2 \oplus \cdots \oplus V_s$ 
-\vspace{3cm}
+\begin{solution}
+说明$V_i = W_i$
+\end{solution}
 % \item[(2)] 若当$i \ne j$时，$\lambda_i \ne \lambda_j$,
 % 证明$A$的Jordan标准型恰好由$s$个Jordan块组成当且仅当$\dim V_{\lambda_j} = 1, j = 1,\cdots,s.$
 \item[(2)] 
 \begin{itemize}
     \item[a.] 证明: A的Jordan标准型中主对角元为$\lambda_i$的Jordan块的个数为
-    $\dim V - \rank (A - \lambda_j I)$.
-    其中$J_t(\lambda_j)$的个数为$\rank (A-\lambda_j I)^{t+1} +
-    \rank (A-\lambda_j I)^{t-1} - \rank (A-\lambda_j I)^t$.
-    \vspace{3cm}
-    \item[b.] 证明:A可对角化，当且仅当$$ \rank (\lambda_iI -A)^2 = 
-    \rank (\lambda_iI - A),\ i=1,\cdots,s. $$ 
-    \vspace{3cm}
+    $N_j = \dim V - \rank (A - \lambda_j I)$.
+    其中$J_t(\lambda_j)$的个数为$N_j(t) = \rank (A-\lambda_j I)^{t+1} +
+    \rank (A-\lambda_j I)^{t-1} - 2\rank (A-\lambda_j I)^t$.
+
+    \begin{solution}
+        前面已说明$N_j = \dim \Ker (A|W_j - \lambda_j I)$以及
+        $N_j(t) = \rank (A|W_j-\lambda_j I)^{t+1} +
+        \rank (A|W_j-\lambda_j I)^{t-1} - 2\rank (A|W_j-\lambda_j I)^t$,
+        说明对于$i=1,2,\cdots, l_j+1$,
+        $$\Ker (A-\lambda_j I)^i = \Ker(A|W_j - \lambda_j I)^i$$即可.
+    \end{solution}
+
+    \item[b.] 证明:A可对角化，当且仅当$$ \rank (A - \lambda_iI)^2 = 
+    \rank (A - \lambda_iI),\ i=1,\cdots,s. $$ 
+    \begin{solution}
+    \begin{itemize}
+        \item [(a)]
+        $\rank(\lambda_iI - A) = \rank(\lambda_i I - A)^2 =\cdots =\rank(\lambda_i - A)^{l_i}$
+        即特征空间$V_{\lambda_i}$等同于$W_i$,故 
+        $V = V_{\lambda_1} \oplus \cdots \oplus V_{\lambda_s}.$
+        \item [(b)] 说明$N_j = N_j(1)$, 即$\dim V - \rank(A-\lambda_j I) = 
+        \rank(A-\lambda_j I)^0 + \rank(A-\lambda_j I)^2 - 2\rank(A-\lambda_j I)$即可.
+    \end{itemize}
+    \end{solution}
 \end{itemize}
 
 \item[(3)]如果$\forall i,\ \lambda_i = 1,$ 证明$A$和$A^k\,(k\ge 1)$相似
+\begin{solution}
+\end{solution}
 \vspace{3cm}
 
 \item[(4)] 如果$l_1 + l_2 +\cdots l_s = \dim V$, 说明A的Jordan标准型中各个Jordan块主对角元互不相同. 
@@ -158,6 +179,12 @@ $$m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-
     \item [2. ] 计算矩阵平方根
     \begin{itemize}
         \item[(1)] 设$a$是域F中的非零元, 求$J_r(a)^2$的标准型.
+        \begin{solution}
+            由于
+            $J_r(a)^2 = (aI + J_r(0))^2
+                      = a^2 I + 2aJ_r(0) + J_r(0)^2$,
+            $\rank J_r(a)^2 = r-1$, 所以$\rank J_r(a)^2 \sim J_r(a^2)$.
+        \end{solution}
         \vspace{3cm}
         \item[(2)] 任意的可逆复矩阵都有平方根.
         \vspace{3cm}
