@@ -1,0 +1,90 @@
+\section{具有度量的线性空间}
+\subsection{双线性函数}
+\begin{itemize}
+    \item 双线性函数, 及其在基下的度量矩阵, 不同基下的度量矩阵是合同的
+    \item 非退化的双线性函数 $\Longleftrightarrow$ 度量矩阵非奇异
+    \item 对称/反对称的双线性函数, 及其标准形式
+    \begin{itemize}
+        \item[1.] 特征不为2的域上,对称矩阵可以合同于对角矩阵
+        \item[2.] 特征不为2的域上,反对称矩阵合同于
+        \begin{equation}
+        \begin{pmatrix}
+        0&1\\
+        -1&0\\
+        &&\ddots\\
+        &&&0&1\\
+        &&&-1&0\\
+        &&&&&0\\
+        &&&&&&\ddots\\
+        &&&&&&&0\\
+        \end{pmatrix}
+        \label{equ:matrix_asym}
+        \end{equation}
+        \item[3.] 特征为2的域$F$上, 因为$\forall a\in F, -a=a$, 
+        所以对称矩阵和反对称矩阵相同.
+        \begin{itemize}
+            \item 若$\exists \alpha \in F^n$,使得$\alpha^T A \alpha \ne 0$,
+                  则$A$可以合同于一个对角矩阵;
+            \item 若$\forall \alpha \in F^n$,使得$\alpha^T A \alpha = 0$,
+                  则$A$可以合同于矩阵\ref{equ:matrix_asym}.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsection{对称双线性函数和二次型的关系}
+设$V$是域$F$上的线性空间, 映射$q: V\rightarrow F$定义为$V$上的二次函数,
+如果存在$V$上的对称双线性函数$f$, 使得
+$\forall \alpha \in V,q(\alpha) = f(\alpha, \alpha)$.
+若$\mathrm{char}\,F \ne 2$,
+则二次函数和对称双线性函数一一对应.
+注意到,
+\begin{equation}
+\nonumber
+f(\alpha, \beta) = 
+\frac{1}{2}[q(\alpha+\beta) - q(\alpha) - q(\beta)].
+\end{equation}
+
+\subsection{双线性函数空间}
+$V$上的所有双线性函数, 关于函数的加法和数乘,构成域$F$上的线性空间, 
+记为$T_2(V)$.
+易见$T_2(V) \cong M_n(F)$.
+
+\paragraph{例题}
+取$V^*$中的对偶基为$\{f_i\}_{i=1}^n$，
+证明$f_i \otimes f_j$是$T_2(V)$的一组基,
+其中$(f \otimes g) \in T_2(V)$, 
+定义为$(f \otimes g)(\alpha, \beta) = f(\alpha)g(\beta)$.
+
+
+\subsection{例题}
+设f是域F上n维线性空间V上的一个双线性函数,
+\begin{itemize}
+    \item[1.] 
+    \begin{itemize}
+        \item [(a)] 映射$L_f: \alpha \rightarrow \alpha_L$是$V$到$V^*$的线性映射;
+
+        \begin{solution}
+        $a_L(\beta) = f(\alpha, \beta)$ 
+        \end{solution}
+
+        \item [(b)] f是非退化的当且仅当$L_f$是线性空间$V$到$V^*$的一个同构映射.
+        
+        \begin{solution}
+            \begin{equation}
+            \nonumber
+            \begin{aligned}
+                \text{f非退化} &\Longleftrightarrow \text{rad}_L V = 0\\
+                              &\Longleftrightarrow \Ker L_f = 0\\
+                              &\Longleftrightarrow L_f \text{是双射}\\
+            \end{aligned}
+            \end{equation}
+        \end{solution}
+
+    \end{itemize}
+    \item[2.] 若f非退化
+    \begin{itemize}
+        \item [(a)] 任给$V$上的一个双线性函数$g$，存在$V$上唯一的一个线性变换
+        $G$,是的 $$g(\alpha, \beta) = f(G(\alpha), \beta), \forall \alpha,\beta \in V$$
+        \item [(b)] 令$\sigma: g\rightarrow G$, 则$\sigma$是$T_2(V)$到$Hom(V,V)$的一个同构映射.
+    \end{itemize} 
+\end{itemize}
