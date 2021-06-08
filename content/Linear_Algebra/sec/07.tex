@@ -1,7 +1,8 @@
 \section{具有度量的线性空间}
 \subsection{双线性函数}
 \begin{itemize}
-    \item 双线性函数, 及其在基下的度量矩阵, 不同基下的度量矩阵是合同的
+    \item 双线性函数, 及其在基下的度量矩阵: 不同基下的度量矩阵是合同的,
+    以及合同的矩阵可以看作是同一双线性函数在不同基下的度量矩阵;
     \item 非退化的双线性函数 $\Longleftrightarrow$ 度量矩阵非奇异
     \item 对称/反对称的双线性函数, 及其标准形式
     \begin{itemize}
@@ -36,8 +37,7 @@
 如果存在$V$上的对称双线性函数$f$, 使得
 $\forall \alpha \in V,q(\alpha) = f(\alpha, \alpha)$.
 若$\mathrm{char}\,F \ne 2$,
-则二次函数和对称双线性函数一一对应.
-注意到,
+则二次函数和对称双线性函数一一对应, 因为注意到,
 \begin{equation}
 \nonumber
 f(\alpha, \beta) = 
@@ -47,7 +47,7 @@ f(\alpha, \beta) =
 \subsection{双线性函数空间}
 $V$上的所有双线性函数, 关于函数的加法和数乘,构成域$F$上的线性空间, 
 记为$T_2(V)$.
-易见$T_2(V) \cong M_n(F)$.
+易见$T_2(V) \cong M_n(F) \cong Hom(V,V)$.
 
 \paragraph{例题}
 取$V^*$中的对偶基为$\{f_i\}_{i=1}^n$，
@@ -57,7 +57,7 @@ $V$上的所有双线性函数, 关于函数的加法和数乘,构成域$F$上�
 
 
 \subsection{例题}
-设f是域F上n维线性空间V上的一个双线性函数,
+设$f$是域F上n维线性空间V上的一个双线性函数,
 \begin{itemize}
     \item[1.] 
     \begin{itemize}
@@ -81,10 +81,178 @@ $V$上的所有双线性函数, 关于函数的加法和数乘,构成域$F$上�
         \end{solution}
 
     \end{itemize}
-    \item[2.] 若f非退化
+    \item[2.] 若$f$非退化
     \begin{itemize}
         \item [(a)] 任给$V$上的一个双线性函数$g$，存在$V$上唯一的一个线性变换
-        $G$,是的 $$g(\alpha, \beta) = f(G(\alpha), \beta), \forall \alpha,\beta \in V$$
+        $G$,使得$$g(\alpha, \beta) = f(G\alpha, \beta),\, \forall \alpha,\beta \in V$$
+
+        \begin{solution}
+            即证$\alpha_L = (G\alpha)_L$，由于$L_f$是$V$到$V^*$的一个同构映射,
+            则存在$\hat \alpha \in V, L_f(\hat \alpha) = \alpha_L$,
+            定义$G: \alpha \rightarrow \hat \alpha$. 证明$G$线性且唯一.
+        \end{solution}
+
         \item [(b)] 令$\sigma: g\rightarrow G$, 则$\sigma$是$T_2(V)$到$Hom(V,V)$的一个同构映射.
+        
+        \begin{solution}
+            证明$\sigma$是线性映射，且单射.
+        \end{solution}
     \end{itemize} 
+\end{itemize}
+
+\section{实内积空间}
+实线性空间 + 正定的对称双线性函数 = 实内积空间，
+有限维的实内积空间即欧氏空间.
+
+\subsection{实内积空间的度量}
+定义$|\alpha| = \sqrt{(\alpha, \alpha)}$，
+有柯西不等式
+$$|(\alpha,\beta)| \le |\alpha| |\beta|, \forall \alpha, \beta.$$
+定义$d(\alpha, \beta) = |\alpha - \beta|$,
+证明$d$是一个距离，即满足对称性，正定性和三角不等式.
+
+\begin{solution}
+    使用柯西不等式证明$|\alpha + \beta| \le |\alpha| + |\beta|$，
+    令$\alpha = a - b, \beta = b - c$即可。
+\end{solution}
+
+\subsection{实内积空间的同构}
+同构映射$\sigma$, 不仅作为线性空间的同构映射，还要求保持内积, 即
+$(\sigma \alpha, \sigma \beta) = (\alpha, \beta)$.
+两个欧氏空间同构的充要条件是维数相同.
+
+\subsection{例题}
+在$R[x]_{n+1}$中定义内积
+$$(f,g) = \int^{1}_{-1}f(x)g(x) \mathrm{d}x.$$
+令
+$$P_0(x) = 1, P_k(x) = \frac{1}{2^k k!} \frac{d^k}{dx^k} ((x^2-1)^k), k = 1,2,\cdots,n.$$
+证明,这是$R[x]_{n+1}$的一个正交基.
+
+\begin{solution}
+    证明$P_k$和$x^i(0\le i < k)$正交即可, 不断使用分部求和.
+\end{solution}
+
+\section{正交变换}
+实内积空间$V$到自身的满射$A$,满足
+$$(A\alpha, A\beta) = (\alpha, \beta), \forall \alpha, \beta$$
+则称$A$是$V$上的正交变换.
+可以证明
+\begin{enumerate}
+\item $A$是线性的;
+
+\begin{solution}
+    计算$|A(\alpha + \beta) - (A\alpha + A\beta)|^2$
+\end{solution}
+\item $A$是单的, 从而$A$是可逆的.
+\item $A$是$V$到自身的一个同构映射.
+\end{enumerate}
+
+\subsection{例题}
+\begin{itemize}
+    \item[1.] 证明，实内积空间V到自身的满射A是正交变换当且仅当A是保持向量长度不变的线性变换。
+    \item[2.] 设$V$是n维欧氏空间，$\eta$是$V$中一单位向量，设P是$V$在$<\eta>$
+    上的正交投影，令$A=I-2P$, 称$A$为关于$<\eta>^{\perp}$的镜面反射. 证明这是第二类正交变换. 
+    \item[3.] 
+    \begin{itemize}
+        \item [(a)] 设A是2维欧氏空间V上的第二类正交变化, 证明A是关于某一条直线的镜面反射
+        \item [(b)] 设A是2维欧氏空间V上的第一类正交变换, 证明A能表示为两个镜面反射的乘积
+        \item [(c)] 证明$n$维欧氏空间V上的任一正交变换都可以表示成至多$n$个镜面反射的乘积
+        
+        \begin{solution}
+            (a,b)考虑正交基$\alpha_1, \alpha_2$和$A \alpha_1, A \alpha_2$,
+            先用镜面反射$B_1$将$\alpha_1$映射为$A\alpha_1$, 说明$A\alpha_2 = \pm B_1\alpha_2$.
+            
+            (c) 同理考虑$\alpha_1, \alpha_2,\cdots, \alpha_n$和
+            $A\alpha_1, A\alpha_2,\cdots, A\alpha_n$. 假设$\alpha_1 \ne A\alpha_1$,
+            取$B_1 \alpha_1 = A\alpha_1$, 考虑$B_1 \alpha_2 \cdots, B_1\alpha_n$
+            和$A \alpha_2 \cdots, A\alpha_n$, 这两组都是$A \alpha_1$的正交补空间的基.
+            则$C: B_1\alpha_i \rightarrow A\alpha_i, i=2,\cdots, n$
+            是$n-1$维空间的正交变换, 根据归纳假设可以至多表示为$B_2,\cdots, B_n$个镜面反射的乘积.
+            将$B_2,\cdots, B_n$延拓为$V$上的镜面反射,即证.
+        \end{solution}
+    \end{itemize}
+    
+    % \item[2.] 设A是n维欧氏空间V上的一个线性变换，证明$A$是镜面反射当且仅当A在V的任意一个标准正交基
+    % 下的矩阵形如$I-2\alpha \alpha^T$， 其中$\alpha$是一单位向量.
+
+    \item[4.] (正交变换的矩阵表示) A是实内积空间$V$上的正交变换.
+    \begin{itemize}
+        \item [(a)] 假设A有特征值，证明特征值为1或-1.
+        
+        \begin{solution}
+            正交变换保长度
+        \end{solution}
+        \item [(b)] 证明A属于不同特征值的特征向量互相正交.
+        
+        \begin{solution}
+            不妨设$\alpha_1 = 1, \alpha_2 = -1$,
+            $$(\alpha_1, \alpha_2) = (A\alpha_1, AA^{-1}\alpha_2) = (\alpha_1, A^{-1}\alpha_2) = \lambda_2^{-1} (\alpha_1, \alpha_2)$$
+            故$2(\alpha_1, \alpha_2) = 0$.
+        \end{solution}
+        \item [(c)] 若$W$是A的一个有限维不变子空间，则$W^{\perp}$也是A的不变子空间.
+        
+        \begin{solution}
+            A可逆，$A|W$单，所以可逆，所以W也是$A^{-1}$的不变子空间.
+            任意的$\alpha \in W, \beta \in W^{\perp}$,
+            $$(A\beta, \alpha) = (A\beta, AA^{-1}\alpha) = (\beta, A^{-1}\alpha) = 0,$$
+            所以$A\beta \in W^{\perp}$.
+        \end{solution}
+        \item [(d)] 若$\dim V = 2$, 若A是第一类的，那么V中存在一组正交基，使得
+        A在此基下的矩阵为
+        \begin{equation}
+        \nonumber
+        \begin{pmatrix}
+            \cos \theta& -\sin \theta\\
+            \sin \theta&  \cos \theta 
+        \end{pmatrix},
+        0 \le \theta \le \pi,
+        \end{equation}
+        如果A是第二类的，那么存在一组正交基，A在此基下的矩阵为
+        \begin{equation}
+        \nonumber
+        \begin{pmatrix}
+            1& 0\\
+            0&-1 
+        \end{pmatrix}.
+        \end{equation}
+
+        \begin{solution}
+            A在标准正交基下的矩阵为正交矩阵, 
+            二阶正交矩阵只有两种类型:
+            \begin{equation}
+            \nonumber
+            \begin{pmatrix}
+                \cos \theta& -\sin \theta\\
+                \sin \theta&  \cos \theta 
+            \end{pmatrix},\quad
+            \begin{pmatrix}
+                \cos \theta&  \sin \theta\\
+                \sin \theta& -\cos \theta 
+            \end{pmatrix},
+            0 \le \theta < 2\pi,
+            \end{equation}
+        \end{solution}
+        \item [(e)] 证明V中存在一个标准正交基，使得此基下A的矩阵为分块对角：
+        \begin{equation}
+        \nonumber
+        \mathrm{diag}
+        \left\{
+            \lambda_1, \cdots, \lambda_r,
+            \begin{pmatrix}
+            \cos \theta_1& -\sin \theta_1\\
+            \sin \theta_1&  \cos \theta_1
+            \end{pmatrix},
+            \cdots,
+            \begin{pmatrix}
+            \cos \theta_m& -\sin \theta_m\\
+            \sin \theta_m&  \cos \theta_m
+            \end{pmatrix}
+        \right\}
+        \end{equation}
+        其中$\lambda_i = 1$或$-1$, $0 < \theta_i < \pi$.
+        
+        \begin{solution}
+            对维数进行数学归纳
+        \end{solution}
+    \end{itemize}
 \end{itemize}
