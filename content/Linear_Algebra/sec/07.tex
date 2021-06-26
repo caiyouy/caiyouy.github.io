@@ -97,6 +97,41 @@ $V$上的所有双线性函数, 关于函数的加法和数乘,构成域$F$上�
         \begin{solution}
             证明$\sigma$是线性映射，且单射.
         \end{solution}
+
+        \item [(c)] 证明V中存在一个基使得$f,g$在此基下的度量矩阵都是对角矩阵的充分必要条件是$G$可以对角化.
+        
+        \begin{solution}
+            充分性：设G的特征空间为$V_i$, 则$V = V_1 \oplus V_2 \oplus \cdots \oplus V_s$,
+            $f|V_{i}$是$V_i$上的对称双线性函数, 则存在$V_i$上的一组基使得$f|V_i$
+            的度量矩阵是对角的, 易见$g$在这组基下也是对角的. 而对于$i\ne j$, $0 \ne \alpha_i \in V_i, 0 \ne \alpha_j \in V_j$,
+            则
+            $$g(\alpha_i, \alpha_j) = f(G\alpha_i, \alpha_j) = \lambda_i f(\alpha_i, \alpha_j)$$
+            $$g(\alpha_j, \alpha_i) = \lambda_j f(\alpha_j, \alpha_i) $$
+            故$f(\alpha_i, \alpha_j) = 0, g(\alpha_i, \alpha_j) = 0$.
+
+            必要性：设在基$\alpha_1, \cdots, \alpha_n$下$f,g$的度量矩阵都是对角的,
+            即$\forall j \ne i, g(\alpha_i, \alpha_j) = 0, f(\alpha_i, \alpha_j) = 0$,
+            考虑$G \alpha_i$, 由于$f(G\alpha_i, \alpha_j) = 0$, 
+            将$G \alpha_i$按照基$\alpha_i$以及$\alpha_1, \alpha_2,
+            \cdots \alpha_{i-1}, \alpha_{i+1}, \cdots, \alpha_n$
+            的一组正交基$\hat \alpha_1,
+            \cdots \hat \alpha_{i-1}, \hat \alpha_{i+1}, \cdots, 
+            \hat \alpha_n$展开，
+            由于$f(\hat \alpha_j, \hat \alpha_j) > 0$, 故$G\alpha_i \in <\alpha_i>.$
+            故在这组基下$G$对角化.
+        \end{solution}
+
+        \item [(d)] 设$A,B$都是特征不为2的域F上的n级对称矩阵，且$A$是可逆的，
+        证明$A,B$可以同时合同对角化的充分必要条件是$A^{-1}B$可以对角化.
+        
+        \begin{solution}
+            给定空间$V$的一组基，$f,g$的度量矩阵为$A,B$, 故$f$非退化.
+            设$\alpha, \beta \in V$在此基下的坐标为$x,y$,
+            $f(\alpha, \beta) = x^T A y, g(\alpha, \beta) = x^T By$.
+            在这组基下，线性变换$G$的矩阵为$\hat G$.
+            $$x^T B y = (Gx)^T A y$$
+            故$G^TA = B$, $G = A^{-1}B$, 使用上一题结论即可.
+        \end{solution}
     \end{itemize} 
 \end{itemize}
 
