@@ -1,0 +1,60 @@
+\paragraph{命题7.6.2(矩阵理论苏育才等)} 设n阶方阵$A$的最小多项式为
+$$m(\lambda) = (\lambda-\lambda_1)^{k_1}(\lambda-\lambda_2)^{k_2}\cdots(\lambda-\lambda_s)^{k_s},$$
+则
+$$g(\lambda)=\sum_{i=1}^s m_i(\lambda)
+\left(a_{i0} + a_{i1}(\lambda-\lambda_i) 
++a_{i2}(\lambda-\lambda_i)^2 +\cdots a_{ik_i}(\lambda-\lambda_i)^{k_i-1}\right)$$
+满足如下Hermite插值条件
+$$g^{(j)}(\lambda_i) = f^{(j)}(\lambda_i),\quad i=1,\cdots,s,\,j=0,\cdots,k_i-1,$$
+其中
+$$m_i(\lambda) = m(\lambda)/(\lambda-\lambda_i)^{k_i},$$
+$$a_{ij} = \frac{1}{j!}\left(\frac{f(\lambda)}{m_i(\lambda)} \right)^{(j)}
+\bigg|_{\lambda=\lambda_i}.$$
+
+\paragraph{证明}
+只需验证插值条件即可. 注意到, 当$j \le k_i-1$时,
+$$g^{(j)}(\lambda)\bigg|_{\lambda=\lambda_i} = 
+\left[
+m_i(\lambda)
+\left(a_{i0} + a_{i1}(\lambda-\lambda_i) 
++a_{i2}(\lambda-\lambda_i)^2 +\cdots a_{ik_i}(\lambda-\lambda_i)^{k_i-1}\right)
+\right]^{(j)}\bigg|_{\lambda=\lambda_i}
+$$
+只需验证上式等于$f^{(j)}(\lambda_i)$即可.
+
+对$j$进行数学归纳.当$j=0$时，易见成立.
+当$j=1$时,
+\begin{equation}
+\nonumber
+\begin{aligned}
+g^{(1)}(\lambda_i) &=
+m_i(\lambda_i)^{(1)}a_{i0}+
+m_i(\lambda_i)a_{i1}\\
+&=
+\left(m_i(\lambda)^{(1)}\frac{f(\lambda)}{m_i(\lambda)}+
+m_i(\lambda)
+\left(
+	\frac{f(\lambda)}{m_i(\lambda)}\right)^{(1)}
+\right) \Bigg|_{\lambda = \lambda_i}\\
+&=f(\lambda_i)^{(1)}.
+\end{aligned}
+\end{equation}
+
+假设$j<k$时成立, 其中$k\le k_i-1$.当$j=k$时
+\begin{equation}
+\nonumber
+\begin{aligned}
+g^{(j)}(\lambda_i) &=
+\sum_{p=0}^{j}C_{j}^p
+m_i(\lambda_i)^{(p)}(j-p)!a_{i(j-p)}\\
+&=
+\left(
+\sum_{p=0}^{j}C_{j}^p
+m_i(\lambda)^{(p)}
+\left(\frac{f(\lambda)}{m_i(\lambda)} \right)^{(j-p)}
+\right) \Bigg|_{\lambda = \lambda_i}\\
+&=f(\lambda_i)^{(j)}.
+\end{aligned}
+\end{equation}
+证毕.
+
