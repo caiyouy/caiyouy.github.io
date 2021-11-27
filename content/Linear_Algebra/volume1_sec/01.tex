@@ -1,0 +1,217 @@
+\section{线性方程组}
+\begin{itemize}
+    \item 矩阵的初等行变换
+    \item 阶梯形矩阵，简化阶梯形矩阵
+    \item Guass-Jordan算法, 无解/有唯一解/有无数解
+    \item 数域, $Q,R,C$
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+    \item[1.] 证明任意一个矩阵都可以经过一系列初等行变换化为(简化)阶梯形矩阵
+    \vspace{2.5cm}
+
+    \item[2.] 解如下线性方程组
+    \begin{equation}
+    \nonumber
+        \left\{
+        \begin{aligned}
+            &x_1 + x_2 + \cdots + x_n = 1\\
+            &x_2 + x_3 + \cdots + x_{n+1} = 2\\
+            &x_3 + x_4 + \cdots + x_{n+2} = 3\\
+            &\vdots\\
+            &x_{n+1}+x_{n+2}+ \cdots + x_{2n} = n+1\\
+        \end{aligned}
+        \right.
+    \end{equation} 
+    \vspace{2.5cm}
+
+    \item[3.] 解如下线性方程组
+    \begin{equation}
+    \nonumber
+        \left\{
+        \begin{aligned}
+            &x_1 +2x_2 +\cdots +(n-1)x_{n-1} +nx_{n} =b_1\\
+            &nx_1 +x_2 +\cdots +(n-2)x_{n-1} +(n-1)x_{n} =b_2\\
+            &(n-1)x_1 +nx_2 +\cdots +(n-3)x_{n-1} +(n-2)x_{n} =b_3\\
+            &\vdots\\
+            &2x_1 +3x_2 +\cdots +nx_{n-1} +x_{n} =b_n\\
+        \end{aligned}
+        \right.
+    \end{equation} 
+    其中$b_1,\cdots b_n$为给定常数
+    \vspace{2.5cm}
+\end{itemize}
+
+\section{行列式}
+\subsection{n元排列}
+\begin{itemize}
+    \item 逆序数
+    \item 奇/偶排列
+\end{itemize}
+
+\subsection*{例题}
+这里使用$\tau(a_1a_2\cdots a_k)$表示排列$a_1a_2\cdots a_k$的逆序数.
+\begin{itemize}
+    \item[1.] 设$1,2,\cdots,n$的n元排列
+    $a_1a_2\cdots a_k b_1b_2\cdots b_{n-k}$
+    有$$\tau(a_1a_2\cdots a_k) = \tau(b_1b_2\cdots b_{n-k}) = 0$$
+    那么$\tau(a_1a_2\cdots a_k b_1b_2\cdots b_{n-k})$是多少？
+    $n,k,a_1,\cdots,a_k, b_1, \cdots, b_{n-k}$
+    均已知.
+    \vspace{2.5cm}
+
+    \item[2.] 说明n(n>1)元排列中，奇偶排列各占一半
+    \vspace{1.5cm}
+
+    \item[3.]
+    \begin{itemize}
+        \item[(1)] 若$\tau(a_1a_2\cdots a_n) = r$, 那么
+        $\tau(a_na_{n-1}\cdots a_1)$ 是多少？
+        \vspace{1.5cm}
+        \item[(2)] 计算所有n元排列的逆序数之和
+        \vspace{1.5cm}
+    \end{itemize} 
+\end{itemize}
+
+\subsection{n阶行列式的定义}
+\begin{equation}
+\nonumber
+\begin{aligned}
+\det{A} &= \sum_{j_1 j_2\cdots j_n} (-1)^{\tau(j_1 j_2\cdots j_n)}a_{1j_1}a_{2j_2}\cdots a_{nj_n}\\
+        &= \sum_{i_1 i_2\cdots i_n} (-1)^{\tau(i_1 i_2\cdots i_n)}a_{i_11}a_{i_22}\cdots a_{i_nn}
+\end{aligned}
+\end{equation}
+
+\subsection*{例题}
+\begin{itemize}
+    \item[1.] 下列行列式是$x$的几次多项式,求出$x^4$项和$x^3$项的系数
+    \begin{equation}
+    \nonumber
+    \left|
+        \begin{array}{rrrr}
+        5x &x &1 &x\\
+        1  &x &1 &-x\\
+        3  &2 &x &1\\
+        3  &1 &1 &x\\
+        \end{array}
+    \right|
+    \end{equation} 
+    \vspace{2.5cm}
+
+    \item[2.] 计算下列行列式
+    \begin{equation}
+    \nonumber
+    \left|
+        \begin{array}{rrrrr}
+        a_1 &a_2 &a_3 &\cdots &a_n\\
+        b_2 &1   &0   &\cdots &0\\
+        b_3 &0   &1   &\cdots &0\\
+        \vdots &\vdots   &\vdots   & &\vdots\\
+        b_n &0   &0   &\cdots &1\\
+        \end{array}
+    \right|
+    \end{equation}
+    \vspace{2.5cm}
+\end{itemize}
+
+\subsection{行列式的性质}
+\subsection*{例题}
+\begin{itemize}
+    \item 计算下列行列式
+    \begin{equation}
+    \nonumber
+    \left|
+        \begin{array}{ccccc}
+        x_1-a_1 &x_2     &x_3     &\cdots & x_n\\
+        x_1     &x_2-a_2 &x_3     &\cdots & x_n\\
+        x_1     &x_2     &x_3-a_3 &\cdots & x_n\\
+        \vdots  &\vdots  &\vdots  &       & \vdots\\
+        x_1     &x_2     &x_3     &\cdots & x_n-a_n\\
+        \end{array}
+    \right|
+    \end{equation} 
+    其中$a_i \ne 0, i = 1,\cdots,n.$
+    
+    \begin{solution}
+    (方法一)第一行的-1倍加到2到n行,化为箭形矩阵行列式;
+    (方法二)非对角元素补上减去0，每列拆分为两列, $2^n$个行列式中经有n个非零;
+    (方法三)和方法二类似，但只对第一列拆分, 找到n阶结果和n-1阶结果的关系
+    \end{solution}
+    \vspace{2cm}
+\end{itemize}
+
+\subsection{行列式按一行(列)展开}
+\begin{itemize}
+    \item 代数余子式, 行列式按行展开
+    \item Vandermonde行列式 
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+    \item[1.] 计算下列行列式
+    \begin{itemize}
+        \item[(1)]
+        \begin{equation}
+        \nonumber
+        \left|
+            \begin{array}{cccccccc}
+            2a      &a^2     &0       &0      &\cdots & 0 &0 &0\\
+            1       &2a      &a^2     &0      &\cdots & 0 &0 &0\\
+            0       &1       &2a      &a^2    &\cdots & 0 &0 &0\\
+            \vdots  &\vdots  &\vdots  &\vdots &       & \vdots & \vdots &\vdots\\
+            0       &0       &0       &0      &\cdots & 1 &2a &a^2\\
+            0       &0       &0       &0      &\cdots & 0 &1 &2a\\
+            \end{array}
+        \right|
+        \end{equation} 
+        \vspace{2cm}
+
+        \item[(2)]
+        \begin{equation}
+        \nonumber
+        \left|
+            \begin{array}{cccccccc}
+            a+b      &ab     &0       &0      &\cdots & 0 &0 &0\\
+            1       &a+b     &ab     &0      &\cdots & 0 &0 &0\\
+            0       &1       &a+b      &ab    &\cdots & 0 &0 &0\\
+            \vdots  &\vdots  &\vdots  &\vdots &       & \vdots & \vdots &\vdots\\
+            0       &0       &0       &0      &\cdots & 1 &a+b &ab\\
+            0       &0       &0       &0      &\cdots & 0 &1 &a+b\\
+            \end{array}
+        \right|
+        \end{equation} 
+        \vspace{2cm}
+
+        \item[(3)]
+        \begin{equation}
+        \nonumber
+        \left|
+            \begin{array}{cccccccc}
+            a       &b     &0       &0      &\cdots & 0 &0 &0\\
+            c       &a     &b     &0      &\cdots & 0 &0 &0\\
+            0       &c     &a      &b    &\cdots & 0 &0 &0\\
+            \vdots  &\vdots  &\vdots  &\vdots &       & \vdots & \vdots &\vdots\\
+            0       &0       &0       &0      &\cdots & c &a &b\\
+            0       &0       &0       &0      &\cdots & 0 &c &a\\
+            \end{array}
+        \right|
+        \end{equation} 
+        \vspace{2cm}
+    \end{itemize}
+
+    \item[2.] 计算如下行列式
+    \begin{equation}
+    \nonumber
+    \left|
+        \begin{array}{ccccc}
+        1       &1       &\cdots &1 & 1\\
+        x_1     &x_2     &\cdots &x_{n-1} & x_n\\
+        x_1^2   &x_2^2   &\cdots &x_{n-1}^2 & x_n^2\\
+        \vdots  &\vdots  &       &\vdots & \vdots\\
+        x_1^{n-2} &x_2^{n-2}     &\cdots &x_{n-1}^{n-2} & x_n^{n-2}\\
+        x_1^{n} &x_2^{n}     &\cdots &x_{n-1}^{n} & x_n^{n}\\
+        \end{array}
+    \right|
+    \end{equation} 
+\end{itemize}

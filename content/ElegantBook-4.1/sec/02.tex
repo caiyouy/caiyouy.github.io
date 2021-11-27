@@ -1,0 +1,323 @@
+\section{Cramer法则}
+\subsection*{例题}
+\begin{itemize}
+	\item[1.] 对于线性方程组
+	\begin{equation*}
+	\left\{
+	\begin{aligned}
+	&a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n}x_n = b_1\\
+	&a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n}x_n = b_2\\
+	&\vdots\\
+	&a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn}x_n = b_n\\
+	\end{aligned}
+	\right.
+	\end{equation*}
+	其中
+	\begin{equation*}
+	A = \begin{bmatrix}
+		a_{11} &a_{12} &\cdots & a_{1n}\\
+		a_{21} &a_{22} &\cdots & a_{2n}\\
+		\vdots & \vdots&       & \vdots\\
+		a_{n1} &a_{n2} &\cdots & a_{nn}\\
+	\end{bmatrix}
+	\quad
+	B_1 = 
+	\begin{bmatrix}
+		b_{1} &a_{12} &\cdots & a_{1n}\\
+		b_{2} &a_{22} &\cdots & a_{2n}\\
+		\vdots & \vdots&       & \vdots\\
+		b_{n} &a_{n2} &\cdots & a_{nn}\\
+	\end{bmatrix}
+	\quad
+	\dots
+	\quad
+	B_n = 
+	\begin{bmatrix}
+		a_{11} &a_{12} &\cdots & b_{1}\\
+		a_{21} &a_{22} &\cdots & b_{2}\\
+		\vdots & \vdots&       & \vdots\\
+		a_{n1} &a_{n2} &\cdots & b_{n}\\
+	\end{bmatrix}
+	\end{equation*}
+	证明:
+	\begin{enumerate}
+		\item[a.] 当$\det A \ne 0$时，方程组有唯一解；
+		\item[b.] 当$\det A \ne 0$时，方程组的唯一解为
+		$$x_i = \frac{\det B_i}{\det A}, \quad i= 1, 2, \cdots, n.$$
+	\end{enumerate}
+	\vspace{4cm}
+\end{itemize}
+
+\section{行列式按多行展开}
+\subsection*{例题}
+\begin{itemize}
+	\item[1.] 证明 $$(\det A)(\det B) = \det C$$
+	其中
+	\begin{equation*}
+	A = \begin{bmatrix}
+		a_{11}& a_{12}& \cdots &a_{1n}\\
+		a_{21}& a_{22}& \cdots &a_{2n}\\
+		\vdots& \vdots&        &\vdots\\
+		a_{n1}& a_{n2}& \cdots &a_{nn}\\
+	\end{bmatrix}
+	\quad
+	B = \begin{bmatrix}
+		b_{11}& b_{12}& \cdots &b_{1n}\\
+		b_{21}& b_{22}& \cdots &b_{2n}\\
+		\vdots& \vdots&        &\vdots\\
+		b_{n1}& b_{n2}& \cdots &b_{nn}\\
+	\end{bmatrix}
+	\quad
+	C = \begin{bmatrix}
+		c_{11}& c_{12}& \cdots &c_{1n}\\
+		c_{21}& c_{22}& \cdots &c_{2n}\\
+		\vdots& \vdots&        &\vdots\\
+		c_{n1}& c_{n2}& \cdots &c_{nn}\\
+	\end{bmatrix}
+	\quad
+	c_{ij} = \sum_{k=1}^n a_{ik}b_{kj}
+	\end{equation*}
+	提示，考虑如下$2n$阶矩阵
+	\begin{equation*}
+	\begin{bmatrix}
+		a_{11}& a_{12}& \cdots &a_{1n} &0 &0 &\cdots &0\\
+		a_{21}& a_{22}& \cdots &a_{2n} &0 &0 &\cdots &0\\
+		\vdots& \vdots&        &\vdots &\vdots &\vdots & &\vdots\\
+		a_{n1}& a_{n2}& \cdots &a_{nn} &0 &0 & \cdots &0\\
+		-1& 0& \cdots& 0&b_{11}& b_{12}& \cdots &b_{1n}\\
+		 0&-1& \cdots& 0&b_{21}& b_{22}& \cdots &b_{2n}\\
+		\vdots& \vdots& & \vdots&\vdots& \vdots&        &\vdots\\
+		 0& 0& \cdots& -1&b_{n1}& b_{n2}& \cdots &b_{nn}\\
+	\end{bmatrix}
+	\end{equation*}
+	\begin{solution}
+	通过初等行变换，将其变为
+	\begin{equation*}
+	\begin{bmatrix}
+	        0 &  0 & \cdots & 0 &c_{11} &c_{12} &\cdots &c_{1n}\\
+		    0 &  0 & \cdots & 0 &c_{21} &c_{22} &\cdots &c_{2n}\\
+		\vdots& \vdots&        &\vdots &\vdots &\vdots & &\vdots\\
+		    0 & 0& \cdots &0 &c_{n1} &c_{n2} & \cdots &c_{nn}\\
+		-1& 0& \cdots& 0&b_{11}& b_{12}& \cdots &b_{1n}\\
+		 0&-1& \cdots& 0&b_{21}& b_{22}& \cdots &b_{2n}\\
+		\vdots& \vdots& & \vdots&\vdots& \vdots&        &\vdots\\
+		 0& 0& \cdots& -1&b_{n1}& b_{n2}& \cdots &b_{nn}\\
+	\end{bmatrix}
+	\end{equation*}
+	\end{solution}
+	\vspace{4cm}
+\end{itemize}
+
+\chapter{n维向量空间}
+
+\section{$K^n$及其子空间}
+\begin{itemize}
+    \item $K^n$的定义(有限维线性空间的典例)
+	\item 子空间
+	\item 线性表出（求解线性方程组的另一个角度)
+\end{itemize}
+
+\section{线性相关/无关}
+\begin{itemize}
+	\item 原向量组线性相关/无关， 部分组如何？
+	\item 部分组线性相关/无关，该向量组如何？
+	\item 原向量组线性相关/无关，延伸组/缩短组如何?
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+	\item[1.] 设数域$K$上$m\times n$矩阵$H$的列向量组为$\alpha_1, \alpha_2, \cdots, \alpha_n$.
+	证明：$H$的任意$s$列($s\le \min\{m,n\}$)都线性无关当且仅当，$Hx=0$的任意非零解的非零分量大于$s$
+	\begin{solution}
+		必要性, 考虑其逆否命题；充分性，考虑其逆否命题.
+	\end{solution}
+	\vspace{2cm}
+\end{itemize}
+
+\section{极大线性无关组，向量组的秩}
+\begin{itemize}
+	\item 向量组的等价
+	\item 极大线性无关组: 向量组及其极大线性无关组等价
+	\item 向量组的秩: 向量组的极大线性无关组的向量数目相同
+	\item 如果向量组I可以由向量组II线性表出，则二者的秩有大小关系
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+	\item[1.] 设数域$K$上$s\times n$矩阵($s\le n$)
+	\begin{equation}
+	\nonumber
+	A = \begin{bmatrix}
+		a_{11} & a_{12} & \cdots & a_{1n}\\
+		a_{21} & a_{22} & \cdots & a_{2n}\\
+		\vdots & \vdots &        & \vdots\\
+		a_{s1} & a_{s2} & \cdots & a_{sn}\\
+	\end{bmatrix}
+	\end{equation}
+	满足
+	$$2 | a_{ii} | > \sum_{j=1}^n |a_{ij}|, \quad i=1,\dots, s$$
+	证明：$A$的行向量的组的秩等于$s$.
+	\begin{solution}
+	考虑$A$的前$s$行和列组成的子矩阵,严格对角占优,列秩为$s$,行列式不为零,所以行秩也为$s$.
+	或者直接利用矩阵的三秩合一
+	\end{solution}
+	\vspace{2cm}
+
+    \item[2.] 证明两个向量组等价的充要条件是：
+	          秩相等且其中一个向量组可以被另一个线性表出。 
+	\begin{solution}
+	必要性显然; 充分性,考虑这两个的极大线性无关组I和II，两个向量组数目均是$r$，
+	而且I可以被II线性表出, 只需要证明II也可以被I线性表出即可。任取II中的向量，
+	放到I中，此向量组$r+1$各元素，但是可以被II($r$个元素)线性表出，
+	所以$r+1$个元素线性相关，II中任意向量均可以被I线性表出
+	\end{solution}
+	\vspace{2cm}
+
+	\item[3.] 设向量组$\alpha_1, \alpha_2, \cdots, \alpha_s$ 的秩为$r$,
+	在其中任取$m$个向量$\alpha_{i_1}, \alpha_{i_2}, \cdots, \alpha_{i_m}$, 证明 
+	此向量组的秩$\ge r+m-s$.
+	\begin{solution}
+	原向量组$s$个向量分为两类：$r$个极大线性无关组中的元素，$s-r$个可以被线性表出的元素.
+	任意取的$m$个向量中，取在前面极大线性无关组中的，至少有$m-(s-r)$个，即有这么多向量线性无关.
+	\end{solution}
+	\vspace{2cm}
+
+	\item[4.] 设向量组$\alpha_1, \alpha_2, \cdots, \alpha_s$;
+	                 $\beta_1, \beta_2, \cdots, \beta_t$; 
+					 $\alpha_1, \alpha_2, \cdots, \alpha_s, \beta_1, \cdots, \beta_t$
+	的秩分别为$r_1, r_2, r_3$. 证明$$\max(r_1, r_2) \le r_3 \le r_1 + r_2$$
+	\begin{solution}
+	取各自的极大线性无关组放在一起
+	\end{solution}
+	\vspace{1.5cm}
+\end{itemize}
+
+\section{基,维数}
+\begin{itemize}
+	\item 基
+	\item 维数
+\end{itemize}
+
+\section{矩阵的秩}
+\begin{itemize}
+	\item 行秩等于列秩，即为矩阵的秩；如何说明？
+	\item 任意非零矩阵的秩等于其非零子式的最高阶数; 如何说明？
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+	\item[1.] 证明:
+	\begin{equation*}
+	\text{rank}
+	\begin{pmatrix}
+		A& C\\
+		0& B\\
+	\end{pmatrix}
+	\ge
+	\text{rank}(A)
+	+ \text{rank}(B).
+	\end{equation*}
+	\begin{solution}
+	\begin{enumerate}
+	\item [(a)] 从非零子式上考虑：
+	分别取A，B对应的最高阶非零子式对应的行列，构成一个新的非零子式;
+	\item [(b)] 从行空间上考虑：
+	分别取A，B行空间的极大线性无关组, 然后考虑对应延伸组，这两组线性无关.
+	\end{enumerate}
+	\end{solution}
+	\vspace{2cm}
+
+	\item[2.] 证明：如果$m\times n$矩阵$A$的秩为$r$, 则它的任意$s$行组成的子矩阵，秩不小于$r+s-m$.
+	\begin{solution}
+		从行空间的角度，或者非零子式
+	\end{solution}
+	\vspace{1cm}
+\end{itemize}
+
+\section{线性方程组有解的充要条件}
+\begin{itemize}
+	\item 系数矩阵和增广矩阵有相同的秩
+\end{itemize}
+
+\section{齐次/非齐次线性方程组的解}
+\begin{itemize}
+	\item 齐次/非齐次线性方程组的解集是一个子空间/陪集
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+	\item[1.] 用行列式给出三点$(x_i,y_i), i=1,2,3,$不在一条直线上的充要条件
+	\begin{solution}
+		考虑直线方程$Ax+By+C=0$, 联立无解; 考虑向量不共线;
+	\end{solution}
+	\vspace{2cm}
+
+	\item[2.] 给出通过不在一条直线上三点$(x_i,y_i), i=1,2,3,$
+	的圆的方程
+	\begin{solution}
+	考虑圆的表达式$x^2 + y^2 + Ax + By + C=0$, 
+	带入这三点,这是关于$A, B, C$的线性方程组, 求解后带回方程即可;
+	或者考虑$D(x^2 + y^2) + Ax + By + C=0$, $D \ne 0$,
+	\begin{equation*}
+	\begin{bmatrix}
+	x^2+y^2& x& y& 1\\	
+	x_1^2+y_1^2& x_1& y_1& 1\\	
+	x_2^2+y_2^2& x_2& y_2& 1\\	
+	x_3^2+y_3^2& x_3& y_3& 1\\	
+	\end{bmatrix}
+	\begin{bmatrix}
+		D\\
+		A\\
+		B\\
+		C\\
+	\end{bmatrix}
+	= \mathbf{0}
+	\end{equation*}
+	有非零解且$D\ne 0$.
+	\end{solution}
+	\vspace{2cm}
+
+	\item[3.] 证明: 通过有理数坐标的三点的圆，其圆心坐标也是有理数
+	\begin{solution}
+		数域封闭性, 求解线性方程组只在此数域中
+	\end{solution}
+	\vspace{2cm}
+
+	\item[4.] 求三个平面
+	$$a_i x + b_i y + c_i z + d_i = 0, \quad i=1,2,3$$
+	通过一条直线但是不合并为一个平面的充分必要条件.
+	\begin{solution}
+	对应非齐次线性方程组的解空间维数为1.
+	即系数/增广矩阵秩为2
+	\end{solution}
+	\vspace{2cm}
+
+	% \item[4.] 如果齐次线性方程组$a_{i1}x_1 + a_{i2}x_2 + \cdots + a_{in}x_n = 0, i=1,\dots,s$
+	% 的解全是$b_1 x_1 + \dots + b_n x_n = 0$的解, 证明$(b_1, b_2, \dots, b_n)$
+	% 可以由$(a_{11}, a_{12}, \dots, a_{1n}), \dots, (a_{s1}, a_{s2}, \dots, a_{sn})$
+	% 线性表出.
+	% \begin{solution}
+	% 考虑下面两个线性方程组的解空间的关联
+	% \begin{equation*}
+	% \left\{
+	% \begin{aligned}
+	% a_{11}x_1 + \cdots + a_{1n}x_n = 0\\
+	% a_{21}x_1 + \cdots + a_{2n}x_n = 0\\
+	% \vdots\\
+	% a_{s1}x_1 + \cdots + a_{sn}x_n = 0\\
+	% \end{aligned}
+	% \right.
+	% \qquad \qquad
+	% \left\{
+	% \begin{aligned}
+	% a_{11}x_1 + \cdots + a_{1n}x_n = 0\\
+	% a_{21}x_1 + \cdots + a_{2n}x_n = 0\\
+	% \vdots\\
+	% a_{s1}x_1 + \cdots + a_{sn}x_n = 0\\
+	% b_1 x_1 + \cdots + b_n x_n = 0
+	% \end{aligned}
+	% \right.
+	% \end{equation*}
+	% \end{solution}
+	% \vspace{2cm}
+\end{itemize}
