@@ -1,0 +1,61 @@
+\chapter{线性方程组}
+\begin{itemize}
+    \item 矩阵的初等行变换
+    \item 阶梯形矩阵，简化阶梯形矩阵
+    \item Guass-Jordan算法,无解/有唯一解/有无数解
+    \item 数域, $Q,R,C$
+\end{itemize}
+
+\subsection*{例题}
+\begin{itemize}
+    \item[1.] 证明任意一个矩阵都可以经过一系列初等行变换化为(简化)阶梯形矩阵.
+	\begin{solution}
+	对行数$s$进行数学归纳：$s=1$显然成立，假设$s=k$时成立, 而当$s=k+1$时,
+	\begin{enumerate}
+		\item 若$a_{11} \ne 0$, 使用初等行变换，将$a_{21}, \cdots, a_{k+1,1}$
+	化为0，对右下的子矩阵使用归纳假设即可；
+		\item 若$a_{11} = 0, \,a_{i1} \ne 0$, 交换1行和$i$行，即化为情况1;
+		\item 若第一列均为零，则对右下$k$行的子矩阵使用归纳假设即可;
+	\end{enumerate}
+	所以对于阶梯形，结论成立。而简化阶梯形只需在阶梯形基础上再做若干次初等行变换即可。
+	\end{solution}
+    \vspace{2cm}
+
+    \item[2.] 解如下线性方程组
+    \begin{equation}
+    \nonumber
+        \left\{
+        \begin{aligned}
+            &x_1 + x_2 + \cdots + x_n = 1\\
+            &x_2 + x_3 + \cdots + x_{n+1} = 2\\
+            &x_3 + x_4 + \cdots + x_{n+2} = 3\\
+            &\vdots\\
+            &x_{n+1}+x_{n+2}+ \cdots + x_{2n} = n+1\\
+        \end{aligned}
+        \right.
+    \end{equation} 
+	\begin{solution}
+	相邻两式相减;注意到$x_{n+2}, x_{n+3},\cdots,x_{2n}$是自由变量即可
+	\end{solution}
+    \vspace{2cm}
+
+    \item[3.] 解如下线性方程组
+    \begin{equation}
+    \nonumber
+        \left\{
+        \begin{aligned}
+            &x_1 +2x_2 +\cdots +(n-1)x_{n-1} +nx_{n} =b_1\\
+            &nx_1 +x_2 +\cdots +(n-2)x_{n-1} +(n-1)x_{n} =b_2\\
+            &(n-1)x_1 +nx_2 +\cdots +(n-3)x_{n-1} +(n-2)x_{n} =b_3\\
+            &\vdots\\
+            &2x_1 +3x_2 +\cdots +nx_{n-1} +x_{n} =b_n\\
+        \end{aligned}
+        \right.
+    \end{equation} 
+    其中$b_1,\cdots b_n$为给定常数
+	\begin{solution}
+	各式相加;相邻两项相减
+	\end{solution}
+    \vspace{2cm}
+\end{itemize}
+

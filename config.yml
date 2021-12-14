@@ -1,3 +1,4 @@
+publishDir: docs  # hugo result directory
 baseURL: https://caiyouy.github.io/
 theme: pure
 title: Yuan Caiyou's Pages

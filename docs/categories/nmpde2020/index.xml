@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NMPDE2020 on Yuan Caiyou&#39;s Pages</title>
+    <link>https://caiyouy.github.io/categories/nmpde2020/</link>
+    <description>Recent content in NMPDE2020 on Yuan Caiyou&#39;s Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 08 Dec 2020 15:55:59 +0800</lastBuildDate>
+    
+        <atom:link href="https://caiyouy.github.io/categories/nmpde2020/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>线性代数A 2021</title>
+      <link>https://caiyouy.github.io/linear_algebra_2021/</link>
+      <pubDate>Fri, 12 Mar 2021 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/linear_algebra_2021/</guid>
+      <description>线性代数A II (2021春夏) (2021.03.15) 讲义01 (2021.03.29) 讲义02 (2021.04.12) 讲义03 (2021.04.26) 讲义04 (2021.05.10) 讲义05 (2021.05.24) 讲义06 (2021.06.07) 讲义07 (2021.06.26) 一个问题 线性代数A I (2021秋冬) (2</description>
+    </item>
+    
+    <item>
+      <title>MUSCL格式的性质</title>
+      <link>https://caiyouy.github.io/muscl/</link>
+      <pubDate>Tue, 08 Dec 2020 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/muscl/</guid>
+      <description>讨论广义MUSCL格式 $$U_{j}^{n+1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n +\frac{h}{2}S_j^n, U_{j+1}^n - \frac{h}{2}S_{j+1}^n)-\hat{f}(U_{j-1}^n +\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j+1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://caiyouy.github.io/about/</link>
+      <pubDate>Mon, 07 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/about/</guid>
+      <description>This website is based on Hugo, an open source static site generator available under the Apache Licence 2.0..</description>
+    </item>
+    
+    <item>
+      <title>一个ADI格式的L2稳定性</title>
+      <link>https://caiyouy.github.io/adi_l2/</link>
+      <pubDate>Wed, 18 Nov 2020 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/adi_l2/</guid>
+      <description>课本中ADI格式(2.4.27)等价于如下单步格式 $$ \begin{aligned} &amp;amp; \left(1-\frac{1}{2}\mu_x\delta_x^2\right) \left(1-\frac{1}{2}\mu_y\delta_y^2\right) \left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m+1} =\\ &amp;amp; \left(1+\frac{1}{2}\mu_x\delta_x^2\right) \left(1+\frac{1}{2}\mu_y\delta_y^2\right) \left(1+\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m} -\frac{1}{4}\mu_x\mu_y\mu_z\delta_x^2\delta_y^2\delta_z^2U_{j,k,l}^{m} \end{aligned} $$ 使用Fourier方法，代入波形 $$U_{j,k,l}^{m} = \lambda_{s}^m \exp\left[i\pi \left(\frac{s_x j}{N_x} + \frac{s_y k}{N_y} + \frac{s_z l}{N_z} \right)\right], $$ 注</description>
+    </item>
+    
+    <item>
+      <title>课本结论2.6证明</title>
+      <link>https://caiyouy.github.io/poisson_linf/</link>
+      <pubDate>Thu, 05 Nov 2020 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/poisson_linf/</guid>
+      <description>设定义在 $(-1,1) \times \mathbb{R}_{+}$ 上的方程 $u_t = u_{xx}$ 的周期初边值问题的初值 $u^0$ 可以展开成Fourier级数 $u^0(x) = \displaystyle \sum_{k=-\infty}^{\infty}a_k e^{ik \pi x}$, 且有$\displaystyle \sum_{k=-\infty}^{\infty}|a_k|&amp;lt;\infty$, 又设 $U$ 是显式</description>
+    </item>
+    
+    <item>
+      <title>离散分部求和举例</title>
+      <link>https://caiyouy.github.io/sbp_example/</link>
+      <pubDate>Tue, 13 Oct 2020 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/sbp_example/</guid>
+      <description>定义离散算子, $$ \mathcal{L}_h^x u_{i,j} = \frac{2}{x_{i+1} - x_{i-1}} \left( \frac{u_{i+1,j} - u_{i,j}}{x_{i+1} - x_{i}} -\frac{u_{i,j} - u_{i-1,j}}{x_{i} - x_{i-1}} \right) $$ $$ \mathcal{L}_h^y u_{i,j} = \frac{2}{y_{j+1} - y_{j-1}} \left(\frac{u_{i,j+1} - u_{i,j}}{y_{j+1} - y_{j}} - \frac{u_{i,j} - u_{i,j-1}}{y_{j} - y_{j-1}} \right) $$ 定义离散内积$(\cdot, \cdot)_h$, $$(u, v)_h = \sum_{i=1}^{N-1}\sum_{j=1}^{N-1}u_{i,j}v_{i,j} \left(\frac{x_{i+1} - x_{i-1}}{2}\right) \left(\frac{y_{j+1}</description>
+    </item>
+    
+  </channel>
+</rss>
