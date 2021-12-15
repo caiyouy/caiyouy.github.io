@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+         - Yuan Caiyou&#39;s Pages
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序 变量的使用 函数的使用 从源代码到可执行程序 更为具体流程如下图所示， 预处理(Prep" />
+    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+    <title> - Yuan Caiyou&#39;s Pages</title>
+    
+    
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="" />
+<meta property="og:description" content="计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序 变量的使用 函数的使用 从源代码到可执行程序 更为具体流程如下图所示， 预处理(Prep" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://caiyouy.github.io/c_programming/03/3/" />
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序 变量的使用 函数的使用 从源代码到可执行程序 更为具体流程如下图所示， 预处理(Prep">
+
+<meta itemprop="wordCount" content="1251">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序 变量的使用 函数的使用 从源代码到可执行程序 更为具体流程如下图所示， 预处理(Prep"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/caiyouy" target="_blank">
+            <img class="img-circle img-rotate" src="https://caiyouy.github.io/logo.jpeg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Yuan Caiyou</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Welcome to my pages~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/linear_algebra_2021/" class="title">线性代数A 2021</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-12 15:55:59 &#43;0800 CST" itemprop="datePublished">2021-03-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/muscl/" class="title">MUSCL格式的性质</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-12-08 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-12-08</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/adi_l2/" class="title">一个ADI格式的L2稳定性</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-11-18 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/poisson_linf/" class="title">课本结论2.6证明</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-11-05 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-05</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/sbp_example/" class="title">离散分部求和举例</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-10-13 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-10-13</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/c_programming/03/3/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/c_programming/03/3/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="计算概论c语言习题课讲义03">计算概论（C语言）习题课讲义03</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>从源代码到可执行程序</p>
+</li>
+<li>
+<p>变量的使用</p>
+</li>
+<li>
+<p>函数的使用</p>
+</li>
+</ul>
+<h3 id="从源代码到可执行程序">从源代码到可执行程序</h3>
+<p>更为具体流程如下图所示，</p>
+<p><img src="./pic/01.png" alt="编译流程"></p>
+<ol>
+<li>
+<p>预处理(Preprocessing)
+使用预处理器<code>cpp</code> (也可使用<code>gcc -E</code>)，将所有的<code>#include</code>头文件以及宏定义替换成其真正的内容。预处理之后得到的仍然是文本文件，但文件体积会大很多。</p>
+</li>
+<li>
+<p>编译(Compilation)
+使用编译器<code>gcc</code> (或者<code>gcc -S</code>)，将经过预处理之后的文件转换成特定的汇编代码。</p>
+</li>
+<li>
+<p>汇编(Assemble)
+使用汇编器<code>as</code> (也可以使用<code>gcc -c</code>)，将上一步的汇编代码转换成机器码(machine code)，这一步产生的文件叫做目标文件，是二进制格式。</p>
+</li>
+<li>
+<p>链接(Linking)
+使用链接器<code>ld</code>，将多个目标文以及所需的库文件(.so等)链接成最终的可执行文件(executable file)。</p>
+</li>
+</ol>
+<h4 id="演示从源代码到程序">演示：从源代码到程序</h4>
+<blockquote>
+<p>名词解释：GCC</p>
+<p>the GNU Compiler Collection <a href="https://gcc.gnu.org/">Link</a></p>
+<p>The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,&hellip;). GCC was originally written as the compiler for the GNU operating system.</p>
+</blockquote>
+<h3 id="变量的使用">变量的使用</h3>
+<p>一个变量是一个固定大小的“仓库”，用于存储一定类型的数据。变量的定义是“申请仓库”的过程，变量的赋值或取值，是“使用仓库”的过程。值得注意的是，C语言对局部变量，并不“主动打扫仓库”。</p>
+<h4 id="演示-变量的未初始化">演示: 变量的未初始化</h4>
+<blockquote>
+<p>名词解释：局部变量和全局变量</p>
+<p>不严格地说，函数内部的变量被称为局部变量(Local Variable)，它的作用域仅限于函数内部，离开该函数后就是无效的，再使用就会报错。而在所有函数外部定义的变量称为全局变量(Global Variable)，它的作用域默认是整个程序</p>
+</blockquote>
+<h4 id="演示局部变量和变量的区别">演示：局部变量和变量的区别</h4>
+<h3 id="函数的使用">函数的使用</h3>
+<p>一个函数是一组共同完成某个任务的语句集合。</p>
+<h4 id="函数的定义">函数的定义</h4>
+<pre><code class="language-c">return_type function_name( parameter list )
+{
+   body of the function
+}
+</code></pre>
+<h4 id="函数的声明">函数的声明</h4>
+<h5 id="演示函数不声明的错误">演示：函数不声明的错误</h5>
+<pre><code class="language-c">return_type function_name( parameter list );
+</code></pre>
+<p>例如，在使用printf等库函数前必须包含对应头文件的原因，其实就是头文件中包含了对应函数的函数声明。</p>
+<h5 id="演示stdioh文件查看">演示：stdio.h文件查看</h5>
+<h4 id="函数的调用">函数的调用</h4>
+<p>当程序调用函数时，程序控制权会转移给被调用的函数。当函数的返回语句被执行时，或到达函数的结束括号时，会把程序控制权交还给主程序。</p>
+<h5 id="演示函数调用的流程控制">演示：函数调用的流程控制</h5>
+<h4 id="函数的参数传递">函数的参数传递</h4>
+<p>如果函数要使用参数，则必须声明接受参数值的变量。这些变量称为函数的形式参数。
+形式参数就像函数内的其他局部变量，在进入函数时被创建，退出函数时被销毁。</p>
+<table>
+<thead>
+<tr>
+<th>形参的传递方式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>值传递</td>
+<td>该方法把参数的实际值复制给函数的形式参数。在这种情况下，修改函数内的形式参数不会影响实际参数。</td>
+</tr>
+<tr>
+<td>指针传递</td>
+<td>通过指针传递方式，形参为指向实参地址的指针，当对形参的指向操作时，就相当于对实参本身进行的操作。</td>
+</tr>
+</tbody>
+</table>
+<p>默认情况下，C使用<em>值传递</em>来传递参数，这意味着函数内的代码不能改变用于调用函数的实际参数。</p>
+<h5 id="演示函数值传递验证">演示：函数值传递验证</h5>
+<h4 id="main函数">main函数</h4>
+<p>main函数地位特殊，它表示这个程序的执行起点和整个过程；关于main函数的定义，不同的书上可能有如下两个版本：</p>
+<pre><code class="language-c">int main()
+</code></pre>
+<pre><code class="language-c">int main(int argc, char *argv[])
+</code></pre>
+<p>第二种写法实际上指明了main函数均具有argc和argv这两个形式参数。</p>
+<h5 id="演示main函数形参的使用">演示：main函数形参的使用</h5>
+<p><a href="http://www.runoob.com/cprogramming/c-functions.html">参考链接</a></p>
+
+    </div>
+    <div class="article-footer">
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://caiyouy.github.io/c_programming/04/4/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://caiyouy.github.io/c_programming/02/2/"
+                    title=""><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat"
+                data-mobile-sites="weibo,qq"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/caiyouy" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://caiyouy.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://caiyouy.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/caiyouy.github.io\/',
+            CONTENT_URL: 'https:\/\/caiyouy.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+  </body>
+</html>

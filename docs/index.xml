@@ -64,5 +64,131 @@
       <description>定义离散算子, $$ \mathcal{L}_h^x u_{i,j} = \frac{2}{x_{i+1} - x_{i-1}} \left( \frac{u_{i+1,j} - u_{i,j}}{x_{i+1} - x_{i}} -\frac{u_{i,j} - u_{i-1,j}}{x_{i} - x_{i-1}} \right) $$ $$ \mathcal{L}_h^y u_{i,j} = \frac{2}{y_{j+1} - y_{j-1}} \left(\frac{u_{i,j+1} - u_{i,j}}{y_{j+1} - y_{j}} - \frac{u_{i,j} - u_{i,j-1}}{y_{j} - y_{j-1}} \right) $$ 定义离散内积$(\cdot, \cdot)_h$, $$(u, v)_h = \sum_{i=1}^{N-1}\sum_{j=1}^{N-1}u_{i,j}v_{i,j} \left(\frac{x_{i+1} - x_{i-1}}{2}\right) \left(\frac{y_{j+1}</description>
     </item>
     
+    <item>
+      <title>计算概论(C语言) 2019</title>
+      <link>https://caiyouy.github.io/c_programming_2019/</link>
+      <pubDate>Mon, 01 Jul 2019 15:55:59 +0800</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming_2019/</guid>
+      <description>计算概论(C语言) (2019春夏) (习题课01) 讲义 (习题课02) 讲义</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/01/1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/01/1/</guid>
+      <description>计算概论(C语言)习题课讲义01 内容概要 作业系统OpenJudge 编程环境CodeBlocks 图灵停机问题 作业系统：OpenJudge 网址：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/02/2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/02/2/</guid>
+      <description>计算概论(C语言)习题课讲义02 内容概要 数的存储 字符的存储 数的存储 两个事实： 计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/03/3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/03/3/</guid>
+      <description>计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序 变量的使用 函数的使用 从源代码到可执行程序 更为具体流程如下图所示， 预处理(Prep</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/04/4/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/04/4/</guid>
+      <description>计算概论（C语言）习题课讲义04 内容概要 判断语句 循环语句 循环算法举例 判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/05/5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/05/5/</guid>
+      <description>计算概论（C语言）习题课讲义05 内容概要 递归 循环 调试 递归 The process in which a function calls itself directly or indirectly is called recursion. 两个要素： １. 递归出口 ２. 递归公式 int fact(int n) { if (n == 0) // 递归</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/06/6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/06/6/</guid>
+      <description>计算概论（C语言）习题课讲义06 内容概要 习题讲解 前五章梳理 课堂练习 习题讲解 哥德巴赫猜想的验证 算法框架： int prime(int n); //判断输入n是否为素数 int goldbach(int n); /</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/07/7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/07/7/</guid>
+      <description>计算概论（C语言）习题课讲义07 内容概要 习题讲解 数组初步 课堂练习 习题讲解 输出一定范围勾股数 代码点评一: #include &amp;lt;stdio.h&amp;gt; void output(int min, int max) { int i,j,k; //简单粗暴,三重</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/08/8/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/08/8/</guid>
+      <description>计算概论（C语言）习题课讲义08 内容概要 习题讲解 数组进阶 课堂练习: 排序初步 习题讲解 输出所有字符数不超过10的行 代码点评一: 读入一行 =&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/09/9/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/09/9/</guid>
+      <description>计算概论（C语言）习题课讲义09 内容概要 习题讲解 字符串 课堂练习: 排序初步 习题讲解 字符串转浮点数 代码点评一: #include &amp;lt;stdio.h&amp;gt; double t(char a[],const int n) { double x=0; int m=n; if (a[0]==&#39;\0&#39;) return 0.; for(int</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/10/10/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/10/10/</guid>
+      <description>计算概论（C语言）习题课讲义10 内容概要 习题讲解 指针 课堂练习 习题讲解 字典序输出所有排列 代码点评一: #include &amp;lt;stdio.h&amp;gt; #define Nmax 100 void print(int A[], int n) { for(int i=0;i&amp;lt;n;i++) { printf(&amp;quot;%d&amp;quot;,A[i]); } printf(&amp;quot;\n&amp;quot;); } void swap(int A[],</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/11/11/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/11/11/</guid>
+      <description>计算概论（C语言）习题课讲义11 内容概要 机考题目讲解 文件操作 习题讲解 机考题目讲解 矩形面积 // 想法: 逐个情况判断 #include &amp;lt;stdio.h&amp;gt; int recArea(int ldx, int ldy, int rux, int ruy) { return (rux-ldx)*(ruy-ldy); } int</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/readme/</guid>
+      <description>计算概论（C语言）讲义及参考程序</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/test01/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/test01/test/</guid>
+      <description>计算概论期中题目备选 简答题 计算题 printf(&amp;quot;%d&amp;quot;,(int)(7.2/5)+3/2+010+0x1); 答案: 11 (考察类型转化，八进制以及十六进制)； int x=0; (x++)?(x=2):(x==3); printf(&amp;quot;%d&amp;quot;,x); 答案: 1 (考察++号前置后置的区别，条件运算符以及逻</description>
+    </item>
+    
   </channel>
 </rss>

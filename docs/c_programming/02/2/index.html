@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+         - Yuan Caiyou&#39;s Pages
+      </title>
+        <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    
+    <meta name="theme-color" content="#000000" />
+    
+    <meta http-equiv="window-target" content="_top" />
+    
+    
+    <meta name="description" content="计算概论(C语言)习题课讲义02 内容概要 数的存储 字符的存储 数的存储 两个事实： 计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。" />
+    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+    <title> - Yuan Caiyou&#39;s Pages</title>
+    
+    
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    
+    <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
+    <meta property="og:title" content="" />
+<meta property="og:description" content="计算概论(C语言)习题课讲义02 内容概要 数的存储 字符的存储 数的存储 两个事实： 计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://caiyouy.github.io/c_programming/02/2/" />
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="计算概论(C语言)习题课讲义02 内容概要 数的存储 字符的存储 数的存储 两个事实： 计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。">
+
+<meta itemprop="wordCount" content="1617">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="计算概论(C语言)习题课讲义02 内容概要 数的存储 字符的存储 数的存储 两个事实： 计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。"/>
+
+    <!--[if lte IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+      <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+      <![endif]-->
+  </head>
+
+  
+  
+
+  <body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage"><header class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <div class="slimContent">
+      <div class="navbar-header">
+        <div class="profile-block text-center">
+          <a id="avatar" href="https://github.com/caiyouy" target="_blank">
+            <img class="img-circle img-rotate" src="https://caiyouy.github.io/logo.jpeg" width="200" height="200">
+          </a>
+          <h2 id="name" class="hidden-xs hidden-sm">Yuan Caiyou</h2>
+          <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+          <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i>Beijing, China</small>
+        </div><div class="search" id="search-form-wrap">
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="Search" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i
+                        class="icon icon-search"></i></button>
+            </span>
+        </div>
+        <div class="ins-search">
+            <div class="ins-search-mask"></div>
+            <div class="ins-search-container">
+                <div class="ins-input-wrapper">
+                    <input type="text" class="ins-search-input" placeholder="Type something..."
+                        x-webkit-speech />
+                    <button type="button" class="close ins-close ins-selectable" data-dismiss="modal"
+                        aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="ins-section-wrapper">
+                    <div class="ins-section-container"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+        <ul class="nav navbar-nav main-nav">
+            <li class="menu-item menu-item-home">
+                <a href="/">
+                    <i class="icon icon-home-fill"></i>
+                  <span class="menu-title">Home</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-archives">
+                <a href="/posts/">
+                    <i class="icon icon-archives-fill"></i>
+                  <span class="menu-title">Archives</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-categories">
+                <a href="/categories/">
+                    <i class="icon icon-folder"></i>
+                  <span class="menu-title">Categories</span>
+                </a>
+            </li>
+            <li class="menu-item menu-item-about">
+                <a href="/about/">
+                    <i class="icon icon-cup-fill"></i>
+                  <span class="menu-title">About</span>
+                </a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">Board</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content"><p>Welcome to my pages~</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+      
+<div class="widget">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget-body">
+        <ul class="recent-post-list list-unstyled no-thumbnail">
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/linear_algebra_2021/" class="title">线性代数A 2021</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2021-03-12 15:55:59 &#43;0800 CST" itemprop="datePublished">2021-03-12</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/muscl/" class="title">MUSCL格式的性质</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-12-08 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-12-08</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/adi_l2/" class="title">一个ADI格式的L2稳定性</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-11-18 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-18</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/poisson_linf/" class="title">课本结论2.6证明</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-11-05 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-11-05</time>
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div class="item-inner">
+                    <p class="item-title">
+                        <a href="https://caiyouy.github.io/sbp_example/" class="title">离散分部求和举例</a>
+                    </p>
+                    <p class="item-date">
+                        <time datetime="2020-10-13 15:55:59 &#43;0800 CST" itemprop="datePublished">2020-10-13</time>
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+  </div>
+</aside>
+
+    
+    
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      <h1 itemprop="name">
+  <a
+    class="article-title"
+    href="/c_programming/02/2/"
+    ></a
+  >
+</h1>
+
+      <div class="article-meta">
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/c_programming/02/2/#comments"
+            class="article-comment-link">Comments</a></span>
+      </div>
+    </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <h1 id="计算概论c语言习题课讲义02">计算概论(C语言)习题课讲义02</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>数的存储</p>
+</li>
+<li>
+<p>字符的存储</p>
+</li>
+</ul>
+<h3 id="数的存储">数的存储</h3>
+<p>两个事实：</p>
+<ol>
+<li>
+<p>计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。</p>
+</li>
+<li>
+<p>计算机的存储空间是有限的；所以，计算机只能表示有限的数。</p>
+</li>
+</ol>
+<h4 id="整数的存储">整数的存储</h4>
+<blockquote>
+<p>不同电脑间的变量长度，有所差异。具体可以使用 <code>sizeof</code> 运算符测试。</p>
+</blockquote>
+<ul>
+<li>
+<p><code>short int</code> 类型的整数用四个字节的二进制表示</p>
+</li>
+<li>
+<p><code>int</code> 类型的整数用八个字节的二进制表示</p>
+</li>
+<li>
+<p><code>long int</code> 类型的整数用十六字节的二进制表示</p>
+</li>
+<li>
+<p>上述三种类型，未用 <code>unsigned</code> 关键词修饰，均表示带符号的整数。即类型的最高一位为符号位，用0表示正数，1表示负数。</p>
+</li>
+</ul>
+<p>所以，根据上述信息，请思考：</p>
+<ul>
+<li>
+<p><code>short int</code> 类型能够表示的最大整数为？ 再加一的话，结果如何？</p>
+</li>
+<li>
+<p><code>short int</code> 类型能够表示的最小整数为？ 再减一的话，结果如何？</p>
+</li>
+<li>
+<p>上述问题中的类型换成 <code>unsigned short int</code> 或者 <code>int</code> 呢？</p>
+</li>
+</ul>
+<h4 id="演示整数的上下溢出">演示：整数的上下溢出</h4>
+<h4 id="小数的存储">小数的存储</h4>
+<blockquote>
+<p>为什么小数，又被叫做浮点数呢？</p>
+<p>这是由于计算机内部在存储小数时，使用的是如下的二进制的科学计数法： <code>Number=A*2^B</code>。其中，A被称为尾数，指数B称为阶码。小数点的位置是“浮动”的，浮点数的名称由此而来。</p>
+</blockquote>
+<ul>
+<li>
+<p><code>float</code> 类型为单精度浮点数，长32位，尾数长度23,指数长度8，首位为符号位，指数偏移量127；</p>
+</li>
+<li>
+<p><code>double</code> 类型为双精度浮点数，长64位，尾数长度52,指数长度11，首位为符号位，指数偏移量1023；</p>
+</li>
+<li>
+<p>约定小数点左边隐含有一位，通常这位数是1，所以上述单精度尾数的实际长度为24(默认省略小数点左边的1则为23)，双精度尾数长度实际为53（默认省略小数点左边的1则问52）；</p>
+</li>
+</ul>
+<blockquote>
+<p>机器精度</p>
+<p>Wikipedia上机器精度Machine Epsilon是这样描述的：“Machine epsilon gives an upper bound on the relative error due to rounding in floating point arithmetic”。因为浮点数是离散的，所以实数的表示存在着误差。例如圆周率这样的无限不循环小数不可能精确地由某一个浮点数表示。</p>
+<p>我们需要一些具体的量去刻画这种误差，以估计结果的准确性。机器精度便是其中之一：它是所有相对误差的上限。相对误差是绝对误差与精确值的比值的绝对值。例如一个精确的实数x，所有单精度浮点数中与x距离最近的数为y，绝对误差为|y-x|，相对误差即|y−x|/|x|，而所有相对误差的上限便是单精度浮点数的机器精度。</p>
+<p>对单精度而言，是2的-23次方，约为1.1921e-07；对双精度而言，是2的-52次方，约为2.2204e-16。</p>
+<p>上述内容<a href="https://www.cnblogs.com/fireme/p/3572715.html">来自网络</a></p>
+</blockquote>
+<h4 id="演示验证机器精度的数值">演示：验证机器精度的数值</h4>
+<h4 id="将178125转化为单精度浮点数">将178.125转化为单精度浮点数</h4>
+<ol>
+<li>
+<p>小数点前整数转化为二进制10110010</p>
+</li>
+<li>
+<p>小数点后部分转化为二进制001</p>
+</li>
+<li>
+<p>176.0625转化为二进制10110010.001</p>
+</li>
+<li>
+<p>转化为指数形式1.0110010001*2^7</p>
+</li>
+<li>
+<p>结合偏移量确定阶数，7+127=134, 转化为二进制10000110</p>
+</li>
+<li>
+<p>确定符号位为0</p>
+</li>
+<li>
+<p>最终得到IEEE754标准下的178.125表示为 0 10000110 0110010001</p>
+</li>
+</ol>
+<p><img src="./pic/01.jpeg" alt="表示结果"></p>
+<blockquote>
+<p>上述内容来自 <a href="https://blog.csdn.net/earthchinagl/article/details/80874388">网络</a></p>
+<p>更多参考
+链接<a href="https://en.wikipedia.org/wiki/Machine_epsilon">1</a>；
+链接<a href="https://www.geeksforgeeks.org/ieee-standard-754-floating-point-numbers/">2</a>；</p>
+</blockquote>
+<h4 id="演示验证单精度浮点数的存储">演示：验证单精度浮点数的存储</h4>
+<h3 id="字符的存储">字符的存储</h3>
+<blockquote>
+<p>在计算机中，所有的数据在存储和运算时都要使用二进制数表示（因为计算机用高电平和低电平分别表示1和0），例如，像a、b、c、d这样的52个字母（包括大写）以及0、1等数字还有一些常用的符号（例如*、#、@等）在计算机中存储时也要使用二进制数来表示，而具体用哪些二进制数字表示哪个符号，当然每个人都可以约定自己的一套（这就叫编码），而大家如果要想互相通信而不造成混乱，那么大家就必须使用相同的编码规则，于是美国有关的标准化组织就出台了ASCII编码，统一规定了上述常用符号用哪些二进制数来表示。</p>
+<p>其中48～57为0到9十个阿拉伯数字,
+65～90为26个大写英文字母，97～122号为26个小写英文字母。</p>
+<p>来自<a href="https://baike.baidu.com/item/ASCII/309296?fr=aladdin">百度百科</a></p>
+</blockquote>
+<h4 id="演示验证ascii编码方式">演示：验证ASCII编码方式</h4>
+<blockquote>
+<p>C语言的另外一个特殊规定是把字符看成一种特别短的整数，允许程序中直接用
+字符的值（也就是字符的编码）参与算数运算。</p>
+<p>出自课本19页</p>
+</blockquote>
+<h4 id="特殊字符的输出">特殊字符的输出</h4>
+<p>如何使用<code>printf</code>函数输出例如双引号，换行符等特殊字符呢？</p>
+<ul>
+<li>
+<p>使用ASCII码</p>
+</li>
+<li>
+<p>使用转义字符</p>
+</li>
+</ul>
+
+    </div>
+    <div class="article-footer">
+    </div>
+  </article>
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <ul class="pager pull-left">
+            <li class="prev">
+                <a href="https://caiyouy.github.io/c_programming/03/3/" title=""><i
+                        class="icon icon-angle-left"
+                        aria-hidden="true"></i><span>&nbsp;&nbsp;Older</span></a>
+            </li>
+            <li class="next">
+                <a href="https://caiyouy.github.io/c_programming/01/1/"
+                    title=""><span>Newer&nbsp;&nbsp;</span><i
+                        class="icon icon-angle-right" aria-hidden="true"></i></a>
+            </li>
+            
+        </ul>
+        <div class="bar-right">
+            <div class="share-component" data-sites="weibo,qq,wechat"
+                data-mobile-sites="weibo,qq"></div>
+        </div>
+    </div>
+</nav>
+
+</main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+<ul class="social-links">
+    <li><a href="https://github.com/caiyouy" target="_blank" title="github" data-toggle=tooltip data-placement=top >
+            <i class="icon icon-github"></i></a></li>
+</ul>
+  <div class="copyright">
+    &copy;2020  -
+    2021
+    <div class="publishby">
+        Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
+    </div>
+  </div>
+</footer>
+
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/highlight.min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/python.min.js" defer></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/highlight.js/9.15.10/languages/javascript.min.js" defer></script><script>
+    hljs.configure({
+        tabReplace: '    ', 
+        classPrefix: ''     
+        
+    })
+    hljs.initHighlightingOnLoad();
+</script>
+<script src="https://caiyouy.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://caiyouy.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+
+<script>
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: 'Posts',
+                PAGES: 'Pages',
+                CATEGORIES: 'Categories',
+                TAGS: 'Tags',
+                UNTITLED: '(Untitled)',
+            },
+            ROOT_URL: 'https:\/\/caiyouy.github.io\/',
+            CONTENT_URL: 'https:\/\/caiyouy.github.io\/\/searchindex.json ',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
+</script>
+<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
+<script>
+    tocbot.init({
+        
+        tocSelector: '.js-toc',
+        
+        contentSelector: '.js-toc-content',
+        
+        headingSelector: 'h1, h2, h3',
+        
+        hasInnerContainers: true,
+    });
+</script>
+
+  </body>
+</html>

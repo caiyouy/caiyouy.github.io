@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NMPDE2020 on Yuan Caiyou&#39;s Pages</title>
+    <link>https://caiyouy.github.io/categories/nmpde2020/</link>
+    <description>Recent content in NMPDE2020 on Yuan Caiyou&#39;s Pages</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 08 Dec 2020 15:55:59 +0800</lastBuildDate>
+    
+        <atom:link href="https://caiyouy.github.io/categories/nmpde2020/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://caiyouy.github.io/c_programming/test02/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/test02/test/</guid>
+      <description>计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于</description>
+    </item>
+    
+  </channel>
+</rss>
