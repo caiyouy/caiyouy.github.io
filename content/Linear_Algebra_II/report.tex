@@ -34,12 +34,12 @@
 
 %%%%% MATH
 \usepackage{amsmath, amssymb, amsthm}
-% \usepackage{physics}
-% \newtheorem{theorem}{Theorem} % 定义定理环境等
-% \newtheorem{lemma}{Lemma}
-% \newtheorem{definition}{Definition}
-% \newtheorem*{remark}{Remark}
-% \numberwithin{equation}{section} % 公式分节标号
+\usepackage{physics}
+\newtheorem{theorem}{Theorem} % 定义定理环境等
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem*{remark}{Remark}
+\numberwithin{equation}{section} % 公式分节标号
 
 %%%%% Paper size
 \usepackage{geometry}
@@ -138,12 +138,12 @@
 
 %%%%%%% New command
 %\newcommand{\char}[0]{\mathrm{char}\,}
-\newcommand{\rank}[0]{\mathrm{rank}\,}
 \newcommand{\Ker}[0]{\mathrm{Ker}\,}
 \newcommand{\Img}[0]{\mathrm{Im}\,}
 
 \title{{\huge \bfseries
-线性代数A 讲义02
+主理想整环上的有限生成模
+% Modules over Principal Ideal Domains
        }}
 \author{Caiyou Yuan}
 \date{\today}
@@ -151,6 +151,6 @@
 \begin{document}
 \maketitle
 % include, new page
-\input{sec/02.tex}
+\input{sec/module.tex}
 
 \end{document}

@@ -1,0 +1,230 @@
+\section{出发点}
+当研究线性空间$V$上的线性映射时, 
+域$F$上的线性空间$V$, 也可以看成是多项式环$F[x]$(主理想整环)上的模.
+通过模的角度，可以自然推导出线性映射的有理/Jordan标准型.
+这里主要参考了Steven Roman的Advanced Linear Algebra.
+
+\section{预备知识}
+关于群/环/域的定义, 这里略去.
+
+\subsection{主理想整环}
+\begin{definition}
+	对于环$R$，非零元$r \in R$被称为零因子(zero divisor),
+	如果存在非零元$s \in R，st = 0$. 
+	带单位元的交换环R, 如果没有零因子, 则被称为整环.
+\end{definition}
+
+\begin{definition}
+	环R的子集I, 如果满足
+	\begin{itemize}
+		\item[1.] $a - b \in I, \quad \forall a,b \in I$
+		\item[2.] $ab \in I, ba \in I, \quad \forall a \in R, b \in I$
+	\end{itemize}
+	则被称为理想. 
+\end{definition}
+\begin{remark}
+	对于$a \in R$, $I = \{ra, r \in R\}$是理想.
+	这种由单个元素生成的理想，被称为主理想.
+\end{remark}
+
+\begin{definition}
+主理想整环，即是所有理想均为主理想的整环.
+\end{definition}
+\begin{remark}
+	域$F$上的多项式$F[x]$是一个主理想整环.
+\end{remark}
+
+\subsection{模}
+\begin{definition}
+R是一个有单位元的环, 集合$M$以及$M$上定义的两种运算,
+加法$(+)$和数乘$(\cdot)$, 如果满足
+\begin{itemize}
+	\item[1.] $(M, +)$ 是一个交换群
+	\item[2.] $1v = v, (rs)v = r(sv), \quad \forall r,s \in R, v \in M$
+	\item[3.] $(r+s)u = ru + su, r(u+v) = ru + rv, 
+	            \quad \forall r,s \in R, u,v \in M.$
+\end{itemize}
+则称$M$为一个R上的模, 简称R模.
+\end{definition}
+因为它和线性空间的定义仅仅区别在，这里$R$只是一个单位环, 而非域,
+所以,
+模可以大致理解为"环上的线性空间".
+
+\begin{remark}
+	当$R$是域时, M即为线性空间; 环R自身就是一个R模.
+\end{remark}
+
+和线性空间类似，同理可以引入例如子模，线性相关/无关, 基等概念.
+但因为模只是定义在环上，所以有一些和线性空间完全不同的情形.
+
+\paragraph{没有基的模}
+环$Z_n$是一个整数环$Z$上的模, 任意$v \in Z_n$, 都有$nv = 0$.
+所以$Z_n$中任意一个向量都是线性相关的, 所以也没有基.
+特殊的, 把有基的模称为自由模(free module).
+
+\paragraph{自由模但有不自由的子模}
+$Z\times Z$是$Z \times Z$上的模, 基是$(1,1)$.
+张成整个$Z\times Z$: $(n,m)=(n,m)(1,1)$;
+线性无关性：$(n,m)(1,1)=(0,0) \Rightarrow (n,m)=(0,0)$.
+但是子模$Z \times \{0\}$没有基，因为$(0,1)(n,0) = (0,0)$.
+
+\paragraph{自由模的基的元素个数可以任意}
+$V$是数域$F$上的线性空间，有可数多个元素的基$B = \{b_1, b_2, \cdots\}$.
+$R=L(V)$是一个非交换环, $R$自身是$R$上的一个模, 单位映射是$R$的一个基.
+对于任意的正整数$n$, 将$B$分成$n$个部分, 对于$s=0,1,\cdots,n-1,$ 
+$B_s = \{b_i \,|\, i \equiv s \,\mathrm{mod}\, n\}$.
+定义$\beta_s$,
+\begin{equation}
+\nonumber
+\beta_s(b_{kn+t}) = 
+\left\{
+\begin{array}[]{cc}
+	b_k& \text{if } t = s\\
+	0  & \text{if } t \ne s\\
+\end{array}
+\right.
+\end{equation}
+可以验证$C=\{\beta_0, \beta_1, \cdots, \beta_{n-1}\}$张成$L(V)$,
+且线性无关，即为$L(V)$的$n$个元素的基.
+
+\section{主要结果}
+主理想整环上的有限生成模的分解定理如下
+\begin{theorem}
+如果$R$是主理想整环, $M$是一个有限生成的$R$模，则$M$可以分解为有限多个循环模的直和，
+也就是
+\begin{equation}
+M \cong R^n \oplus R/\langle a_1 \rangle \oplus \cdots 
+\oplus R/\langle a_d \rangle
+\label{equ:decomp_0}
+\end{equation}
+其中$n\ge 0$, 非零不可逆元$a_1,a_2,\cdots, a_d \in R$满足$a_1|a_2|\cdots |a_d$,
+被称为不变因子.
+\end{theorem}
+
+\section{定理证明}
+\begin{definition}
+	假设R是一个交换环，M是一个R模，对于$M$中的元素$v$, 如果存在R中元素$r \ne 0$,
+	使得$rv = 0$, 则称$v$是挠元(torsion element). 
+	$M_{tor}$是M中所有挠元构成的集合，这是一个子模.
+	如果$M_{tor} = M$, 则称M为挠模，反正$M_{tor}=\{0\}$, 称$M$为无挠模.
+\end{definition}
+
+\begin{theorem}
+	$M$是一个有限生成的主理想整环$R$上的模, 则$M$可以分解为
+	\begin{equation}
+	M = M_{tor} \oplus M_{free}
+	\label{equ:decom_1}
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	可以说明$M/M_{tor}$有限生成，且无挠，进而可以说明是有基的.
+\end{proof}
+
+进一步的，考虑对$M_{tor}$的分解.
+定义$ann(v) = \{r\in R\,|\, rv = 0\}, 
+ann(M) = \{r\in R \,|\, rM = \{0\}\}$.
+对于有限生成的挠模$M_{tor}$, $ann(M) \ne 0$,
+且$ann(M)$是主理想整环R上的理想， 则可由单个元素张成，
+这被称为$M$的阶(order).
+
+\begin{theorem}
+	$M$是一个有限生成的主理想整环$R$上的挠模, $M$的阶$\mu$可以质因子分解为
+	$$\mu = p_1^{e_1}p_2^{e_2}\cdots p_n^{e_n}$$
+	则$M$可以分解为
+	\begin{equation}
+	M = M_{p_1} \oplus M_{p_2} \oplus \cdots \oplus M_{p_n}
+	\label{equ:decom_2}
+	\end{equation}
+	其中$M_{p_i} = \{v\in M\, |\, p_i^{e_i} v = 0\}$.
+\end{theorem}
+
+\begin{theorem}
+	$M$是一个有限生成的主理想整环$R$上的挠模, $M$的阶$\mu = p^e$,
+	则$M$可以分解为
+	\begin{equation}
+	M = C_1 \oplus C_2 \oplus \cdots \oplus C_k
+	\label{equ:decom_3}
+	\end{equation}
+	其中$C_i$为循环模，阶为$p^{e_i}$， 且$e = e_1 \ge e_2 \ge \cdots \ge e_k$.
+\end{theorem}
+
+综合分解式\eqref{equ:decom_1}, \eqref{equ:decom_2}, \eqref{equ:decom_3},
+则对于
+一个有限生成的主理想整环$R$上的模$M$,
+其初等因子版本的循环分解为
+\begin{equation}
+M = M_{free} 
+    \oplus (C_{1,1}\oplus \cdots C_{1,k_1})
+    \oplus (C_{2,1}\oplus \cdots C_{2,k_2})
+	\oplus \cdots
+    \oplus (C_{n,1}\oplus \cdots C_{n,k_n})
+\end{equation}
+其中$C_{i,j}$是循环模，阶为$p_i^{e_{i,j}}$, 被称为初等因子.
+记$D_j = C_{1,j} \oplus \cdots \oplus C_{n,j}$, 
+则$D_j$是循环子模，阶$q_j = \prod_{j} p_j^{e_{ij}}$,
+$M$不变因子版本的循环分解为
+\begin{equation}
+M = M_{free} 
+    \oplus D_1 
+    \oplus D_2 
+	\oplus \cdots
+    \oplus D_m
+\end{equation}
+其中$D_j$是循环模，阶为$q_j = \prod_{j} p_j^{e_{ij}}$, 被称为不变因子.
+注意到，对于秩为$n$的$R$模$M$, $M \cong R^n$,
+而对于$ann(M) = \langle a \rangle$的循环模$M$, $M \cong R/\langle a \rangle$,
+故有分解式\eqref{equ:decomp_0}成立.
+
+\section{应用}
+对于有限维线性空间$V$上的线性变换$T$, $V$可以看作
+是多项式环$F[x]$上的一个模, 其中数乘的定义为
+\begin{equation}
+\nonumber
+p(x)v = p(T)v, \quad v \in V
+\end{equation}
+不难验证, $V$是主理想整环$F[x]$上的有限生成无挠模.
+所以
+\begin{equation}
+\nonumber
+V = D_1 \oplus D_2 \oplus \cdots \oplus D_m
+\end{equation}
+假设
+$ann(D_1) = 
+\langle p_1\rangle$,
+$p_1 = a_0 + a_1 x + \cdot + a_{n-1} x^{n-1} + x^n$,
+且$D_1  = \langle v \rangle$.
+则若选择$D_1$的一组基为
+$$v, Tv, \cdots, T^{n-1}v,$$
+则$T$在此组基下的
+矩阵为
+\begin{equation}
+T(v, Tv, \cdots, T^{n-1}v)
+= (v, Tv, \cdots, T^{n-1}v)
+\begin{bmatrix}
+	0& 0& \cdots &0 & -a_0\\
+	1& 0& \cdots &0 & -a_1\\
+	0& 1& \cdots &0 & -a_2\\
+	\vdots& \vdots& &\vdots& -a_{n-2}\\
+	0& 0& \cdots& 1& -a_{n-1}\\
+\end{bmatrix}
+\end{equation}
+在$D_2, \cdots, D_m$中同样处理，即得到线性映射$T$的有理标准形.
+
+若$p_i^{e_ij} = (x-\lambda_i)^{e_{ij}}$, 
+则选择
+则若选择$D_1$的一组基为
+$$v, (T-\lambda_i I)v, \cdots, (T-\lambda I)^{e_{ij}-1}v,$$
+则$T$在此组基下的
+矩阵为
+\begin{equation}
+T(v, (T-\lambda_i I)v, \cdots, (T-\lambda I)^{e_{ij}-1}v)
+= (v, (T-\lambda_i I)v, \cdots, (T-\lambda I)^{e_{ij}-1}v)
+\begin{bmatrix}
+	\lambda_i& 0& \cdots &0 &0 \\
+	1& \lambda_i& \cdots &0 &0\\
+	0& 1& \cdots &0 & 0\\
+	\vdots& \vdots& &\vdots& 0\\
+	0& 0& \cdots& 1& \lambda_i\\
+\end{bmatrix}
+\end{equation}
+在$D_2, \cdots, D_m$中同样处理，即得到线性映射$T$的Jordan标准形.

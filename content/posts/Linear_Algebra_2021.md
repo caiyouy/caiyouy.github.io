@@ -22,6 +22,8 @@ draft: false
 
 (2021.06.26) [一个问题](../Linear_Algebra_II/finished/other.pdf)
 
+(2021.12.23) [模](../Linear_Algebra_II/finished/module.pdf)
+
 ## 线性代数A I (2021秋冬)
 
 (2021.12.14更新) 讲义[无提示版本](../Linear_Algebra_I/finish/1213.pdf),
