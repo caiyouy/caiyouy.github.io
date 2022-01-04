@@ -28,3 +28,5 @@ draft: false
 
 (2021.12.14更新) 讲义[无提示版本](../Linear_Algebra_I/finish/1213.pdf),
 [有提示版本](../Linear_Algebra_I/finish/1213_answer.pdf)
+
+(2022.01.04) [实对称矩阵半正定的充要条件](../Linear_Algebra_I/finish/semi_SPD.pdf)

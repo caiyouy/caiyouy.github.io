@@ -21,26 +21,25 @@
     
     
     <meta name="description" content="计算概论（C语言）习题课讲义10 内容概要 习题讲解 指针 课堂练习 习题讲解 字典序输出所有排列 代码点评一: #include &amp;lt;stdio.h&amp;gt; #define Nmax 100 void print(int A[], int n) { for(int i=0;i&amp;lt;n;i&#43;&#43;) { printf(&amp;quot;%d&amp;quot;,A[i]); } printf(&amp;quot;\n&amp;quot;); } void swap(int A[]," />
-    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
+    <meta name="generator" content="Hugo 0.89.3 with theme pure" />
     <title> - Yuan Caiyou&#39;s Pages</title>
     
     
-    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.c58e22f1aa6179cd5cb60b9e08421a2b9a9c9fe9352d095e051b51aae209e5c0.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="" />
 <meta property="og:description" content="计算概论（C语言）习题课讲义10 内容概要 习题讲解 指针 课堂练习 习题讲解 字典序输出所有排列 代码点评一: #include &lt;stdio.h&gt; #define Nmax 100 void print(int A[], int n) { for(int i=0;i&lt;n;i&#43;&#43;) { printf(&quot;%d&quot;,A[i]); } printf(&quot;\n&quot;); } void swap(int A[]," />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://caiyouy.github.io/c_programming/10/10/" />
+<meta property="og:url" content="https://caiyouy.github.io/c_programming/10/10/" /><meta property="article:section" content="C_Programming" />
+
+
 
 <meta itemprop="name" content="">
 <meta itemprop="description" content="计算概论（C语言）习题课讲义10 内容概要 习题讲解 指针 课堂练习 习题讲解 字典序输出所有排列 代码点评一: #include &lt;stdio.h&gt; #define Nmax 100 void print(int A[], int n) { for(int i=0;i&lt;n;i&#43;&#43;) { printf(&quot;%d&quot;,A[i]); } printf(&quot;\n&quot;); } void swap(int A[],">
 
-<meta itemprop="wordCount" content="1498">
-
-
-
+<meta itemprop="wordCount" content="1497">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="计算概论（C语言）习题课讲义10 内容概要 习题讲解 指针 课堂练习 习题讲解 字典序输出所有排列 代码点评一: #include &lt;stdio.h&gt; #define Nmax 100 void print(int A[], int n) { for(int i=0;i&lt;n;i&#43;&#43;) { printf(&quot;%d&quot;,A[i]); } printf(&quot;\n&quot;); } void swap(int A[],"/>
@@ -418,7 +417,7 @@ int *myFunction(int *a)
 
 }
 </code></pre>
-<p>指针做为函数的参数时, 地址的&quot;值传递&rdquo;,导致了所指向元素的实际改变. 典型的例子, 使用指针做为参数交换两个整数,确实会交换两个整数.</p>
+<p>指针做为函数的参数时, 地址的&quot;值传递&quot;,导致了所指向元素的实际改变. 典型的例子, 使用指针做为参数交换两个整数,确实会交换两个整数.</p>
 <p>指针做为函数的返回值时, <em>C语言不支持在调用函数时返回局部变量的地址，除非定义局部变量为static变量.</em> 这是为什么?? (考虑内存释放)</p>
 <p>使用指针做为函数返回值的典例: 动态分配内存函数.</p>
 <pre><code class="language-c">// 使用动态内存的一般做法
@@ -465,6 +464,7 @@ int main()
     <div class="article-footer">
     </div>
   </article>
+
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
@@ -494,40 +494,22 @@ int main()
 </ul>
   <div class="copyright">
     &copy;2020  -
-    2021
+    2022
     <div class="publishby">
         Theme by <a href="https://github.com/xiaoheiAh" target="_blank"> xiaoheiAh </a>base on<a href="https://github.com/xiaoheiAh/hugo-theme-pure" target="_blank"> pure</a>.
     </div>
   </div>
 </footer>
 
-<script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
-
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-        x.parentElement.classList += 'has-jax'})
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            showMathMenu: false, //disables context menu
+            tex2jax: {
+            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
+           }
     });
-
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-
-
-
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -544,8 +526,8 @@ int main()
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://caiyouy.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
-<script src="https://caiyouy.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
+<script src="https://caiyouy.github.io/js/application.min.a94ab19cb63a95c8d7fbd7b85cab3ddeea8c369bdf75b9cab6708787ead123af.js"></script>
+<script src="https://caiyouy.github.io/js/plugin.min.19c5bcb2fb0789ab4f2b7834e5ceb5e92635645605bab902c1024b25f1502364.js"></script>
 
 <script>
     (function (window) {
@@ -563,7 +545,7 @@ int main()
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
+<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.4a2d52de4bfff73e0c688404fe3d17c9a3ae12d9888e1e1ac9c690e4890de2ded50fe55f2b819c2ba55435a76f396f3ea6805765f0b0af5635cdf74ea459eab0.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({
