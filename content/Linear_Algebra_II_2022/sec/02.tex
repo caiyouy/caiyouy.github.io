@@ -1,3 +1,69 @@
+\paragraph{7.3}
+\begin{itemize}
+  \item 最大公因式: $K[x]$中任意两个多项式都有最大公因式，且可以表示为$f,g$的和式
+  \item 互素
+\end{itemize}
+\paragraph{例题}
+\begin{itemize}
+%   \item[1.] 设$f(x),g(x) \in K[x]$, $a,b,c,d\in K$而且$ad-bc\ne 0$.证明，
+%   $(af(x)+bg(x), cf(x)+dg(x)) = (f(x),g(x))$.
+%   \item[2.] 设$A\in M_n(K)$, $f(x),g(x)\in K[x]$, 证明, 如果$d(x) = (f(x), g(x))$, 那么
+%   $d(A)x=0$的解空间是$f(A)x=0$解空间和$g(A)x=0$解空间的交.
+    \item[1.] $f(x)=x^3+(1+t)x^2+2x+u,\, g(x)=x^3+tx+u$的最大公因式为二次，求$t,u$的值
+    \vspace{2cm}
+    
+    \item[2.] $f(x) = x^3-2x^2+2x-1, g(x)=x^4-x^3+2x^2-x+1$, 求$(f,g)$,并表示为$f,g$的和式
+    \vspace{2cm}
+
+    \item[3.] 在$K[x]$中， 如果$(f(x),g(x))=1$, 并且$\deg f >0, \deg g>0$, 那么在
+    $K[x]$中存在唯一的多项式$u(x), v(x)$, $\deg u< \deg g, \deg v<\deg f$,
+    s.t.
+    $$u(x)f(x) +v(x)g(x) = 1.$$
+    \vspace{2cm}
+
+    \item[4.] 在$K[x]$中， 如果$(f(x),g(x))=d(x)$, 那么在
+    $K[x]$中存在唯一的多项式$u(x)$和$v(x)$, $\deg u < \deg g - \deg d,\,
+    \deg v<\deg f - \deg d$,
+    s.t.
+    $$u(x)f(x) +v(x)g(x) = d(x).$$
+    \vspace{1cm}
+
+%   \item[5.] 在$K[x]$中的两个非零多项式$f(x)$和$g(x)$不互素的充分必要条件是,存在两个非零多项式
+%   $u(x),v(x)$, s.t. $u(x)f(x) = v(x)g(x)$且$deg\,u <deg\,g$, $deg\,v<deg\,f$.
+    \item[5.] 在$K[x]$中，$f_1(x),f_2(x),\cdots,f_s(x)$两两互素，证明对于任意的
+    $r_1(x),r_2(x),\cdots, r_s(x)\in K[x]$, 同余方程组
+    \begin{equation}
+    \nonumber
+    \left\{
+      \begin{aligned}
+      g(x) &\equiv r_1(x) \quad \mathrm{mod}\, f_1(x)\\
+      g(x) &\equiv r_2(x) \quad \mathrm{mod}\, f_2(x)\\
+      \vdots&\\
+      g(x) &\equiv r_s(x) \quad \mathrm{mod}\, f_s(x)\\
+      \end{aligned}
+    \right.
+    \end{equation}
+    在$K[x]$中有解，且若$c(x),d(x)$均为解，则$c(x) \equiv d(x),\,\,\mathrm{mod}\,f_1 f_2\cdots f_s$.
+    \vspace{2cm}
+\end{itemize}
+
+\paragraph{7.4}
+\begin{itemize}
+  \item 不可约多项式
+  \item 唯一因式分解定理；这里唯一性的意义是？
+\end{itemize}
+\paragraph{例题}
+\begin{itemize}
+%   \item[1.] 在$K[x]$中，设$(f,g_i)=1,i=1,2$. 证明$(fg_1,g_2)=(g_1,g_2)$.
+%   \item[2.] 在$K[x]$中, 证明对于任意的正整数$m$,有$(f^m(x), g^m(x)) = (f(x),g(x))^m$.
+%   \item[3.] 分别在复数域、实数域和有理数域上分解 $x^4+1$为不可约多项式的乘积 
+
+\item[1.] 证明，数域$K$上的一个次数大于零的多项式$f$与$K[x]$中某一
+不可约多项式的正整数次幂相伴的充分必要条件是，对于任意$g(x)\in K[x]$,
+必有$(f(x), g(x)) = 1,$或者存在一个整数数$m$, 使得$f(x)|g^m(x)$.
+\vspace{2cm}
+\end{itemize}
+
 \paragraph{7.5等}
 \begin{itemize}
     \item 重因式
@@ -6,279 +72,251 @@
     \item 有理数域上的不可约多项式可以是任意次数的
 \end{itemize}
 
-\paragraph{多项式理论的应用: $\lambda$-矩阵}
-即矩阵的每个元素都是多项式环$K[\lambda]$中元素；矩阵乘法，加法以及行列式等概念，和数字矩阵类似
-
-\paragraph{$\lambda$-矩阵的初等变换}
-\begin{itemize}
-  \item [(a)] 矩阵的两行/列互换位置
-  \item [(b)] 矩阵的某一行/列乘以非零常数c
-  \item [(c)] 矩阵的某一行/列加上另一行/列的$p(\lambda)$倍，其中$p(\lambda) \in K[\lambda]$.
-\end{itemize}
-如果$A(\lambda)$可以经过一系列行和列的初等变换化为$B(\lambda)$,
-则称$A(\lambda)$和$B(\lambda)$等价.
-
 \paragraph{例题}
 \begin{itemize}
-  \item[1.] 证明: 设$A(\lambda)$的左上角元素$a_{11}(\lambda) \ne 0$, 并且$A(\lambda)$中
-至少有一个元素不能被它除尽，那么一定可以找到和$A(\lambda)$等价的$B(\lambda)$,
-它的左上角元素也不为零，但是次数小于$a_{11}(\lambda)$的次数
-  \vspace{3cm}
-  \item[2.] 证明：任意一个非零的$s\times n$的$\lambda$-矩阵$A(\lambda)$都等价于如下形式的矩阵(被称为标准形式)
-\begin{equation}
-\nonumber
-\begin{pmatrix}
-  d_1(\lambda)&&&&&&\\
-  &d_2(\lambda)&&&&&\\
-  &&\ddots&&&&\\
-  &&&d_r(\lambda)&&&\\
-  &&&&0&&\\
-  &&&&&\ddots&\\
-  &&&&&&0\\
-\end{pmatrix}
-\end{equation}
-其中$r\ge 1$, $d_i(\lambda)$是首一的多项式(被称为不变因子),且
-$$d_i(\lambda)\,|\,d_{i+1}(\lambda)\quad i=1,2,\cdots, r-1.$$
-\vspace{4cm}
-\item[3.]用初等变换化$\lambda$-矩阵
-\begin{equation}
-\nonumber
-A(\lambda) =
-\begin{bmatrix}
-1-\lambda& 2\lambda-1& \lambda\\
-\lambda&   \lambda^2&  -\lambda\\
-1+\lambda^2& \lambda^3+\lambda-1& -\lambda^2\\
-\end{bmatrix}
-\end{equation}
-为标准型.
-\vspace{3cm}
-\end{itemize}
+\item[1.] 证明, $K[x]$中一个$n$次($n\ge 1$)多项式$f(x)$, 能被它的导数整除的充分必要条件是
+$f(x)$与一个一次因式的$n$次幂相伴.
+\vspace{2cm}
 
-\paragraph{$\lambda$-矩阵标准形式的唯一性}
-下面来借助行列式因子的概念来说明$\lambda$-矩阵标准形式的唯一性.
+\item[2.] 设$K$是一个数域，$R$是$K$的一个交换扩环，设$a\in R,$ 其中$J_a \ne {0},$
+$$ J_a = \{f(x) \in K[x] | f(a) = 0\}$$ 
+证明:
 \begin{itemize}
-  \item[1.] ($\lambda$-矩阵的秩)如果$A(\lambda)$中有一个$r\ge 1$级子式不为零，而所有的$r+1$级子式(如果有的话)全为零,
-则称$A(\lambda)$的秩为$r$. 零矩阵的秩记为0.
-  \item[2.] ($\lambda$-矩阵的行列式因子) 设$A(\lambda)$的秩为r，对于$1 \le k \le r$, $A(\lambda)$中全部$k$级子式的首一最大公因式
-$D_{k}(\lambda)$称为$A(\lambda)$的$k$阶行列式因子.
-\end{itemize}
+    \item [(1)] $J_a$中存在唯一的首项系数为$1$的多项式$m(x)$, 使得$J_a$的元素都是$m(x)$
+    的倍式.
+    \vspace{2cm}
 
-\paragraph{例题}
-\begin{itemize}
-  \item[1.] 等价的$\lambda$-矩阵具有相同的秩和相同的各阶行列式因子.
-  \vspace{2cm}
-  \item[2.] 证明$\lambda$-矩阵的不变因子和行列式因子有如下关系
-  $$
-  d_1(\lambda) = D_1(\lambda),\quad
-  d_2(\lambda) = \frac{D_2(\lambda)}{D_1(\lambda)},\quad
-  \dots, \quad d_r = \frac{D_r(\lambda)}{D_{r-1}(\lambda)}
-  $$ 
-  \vspace{3cm}
-  \item[3.] 说明$\lambda$-矩阵的标准形式是唯一的.
-  \vspace{2cm} 
-\end{itemize}
+    \item [(2)] 如果$R$是无零因子环， 则$m(x)$在$K[x]$中不可约.
+    \vspace{2cm}
 
-\paragraph{8.1}
-\begin{itemize}
-    \item 域
-    \item 域$F$上的线性空间的定义
-    \item 基
-    \item 维数
-    \item 过渡矩阵
-\end{itemize}
-
-\paragraph{例题}
-\begin{itemize}
-  \item[1.]
-  \begin{itemize}
-    \item [(a)] 把域$F$看成是$F$上的线性空间，求它的一个基和维数；
-    \item [(b)] 把复数域$C$看成是实数域$R$上的线性空间，求它的一个基和维数；
-  \end{itemize}
-\end{itemize}
-\vspace{1cm}
-
-\begin{itemize}
-  \item[2.]
-  \begin{itemize}
-    \item [(a)] 把实数域$R$看成是有理数域$Q$上的线性空间，证明:对于任意大于1的正整数，
-  $$1, \sqrt[n]{3}, \sqrt[n]{3^2}, \cdots, \sqrt[n]{3^{n-1}}$$
-  是线性无关的.\,(提示: 已知$g(x) = x^n-3$是Q上的不可约多项式)
-    \item [(b)] 证明: 实数域$R$作为有理数域$Q$上的线性空间是无穷维的.
-  \end{itemize}
-\end{itemize}
-\vspace{1.5cm}
-
-\begin{itemize}
-  \item[3.] 设$V$是域$F$上的n维线性空间，域$F$包含域$E$,\,$F$可看作域$E$
-  上的$m$维线性空间
-  \begin{itemize}
-    \item [(a)] 求证：V可以成为域$E$上的线性空间
-    \item [(b)] 证明: 求V作为域E上线性空间的维数
-  \end{itemize}
-\end{itemize}
-\vspace{1.5cm}
-
-\begin{itemize}
-  \item[4.] (Complexification of real vector space)
-  设$V$是数域R上的$n$维线性空间，设$V_C = \{(u,v), u,v\in V\}$,
-  定义$V_C$上的加法
-  $$(u_1,v_1) +(u_2, v_2) = (u_1+u_2, v_1+v_2)$$
-  以及C上的数乘
-  $$(a+bi)(u,v)=(au-bv, av+bu)$$
-  \begin{itemize}
-    \item [(a)] 求证：$V_C$是一个复线性空间
-    \item [(b)] 计算$V_C$的维数
-  \end{itemize}
-\end{itemize}
-\vspace{1cm}
-
-\begin{itemize}
-  \item[5.] (对偶空间)设$V$是数域K上的$n$维线性空间，
-  考虑复数域$C$上的线性空间$C^V$(从$V$到$R$的函数全体)中具有下述性质的函数组成的子集$W$:
-  $$f(\alpha+\beta)=f(\alpha) + f(\beta),\quad \forall \alpha, \beta \in V,$$
-  $$f(k\alpha)=kf(\alpha),\quad \forall \alpha \in V, k \in K.$$
-  \begin{itemize}
-    \item [(a)] 求证：$W$是一个复线性空间
-    \item [(b)] 求$W$的一个基和维数；设$f\in W$, 求$f$在这个基下的坐标
-  \end{itemize}
-\end{itemize}
-\vspace{1cm}
-
-\begin{itemize}
-  \item[6.] (零化多项式和最小多项式)
-  设A是数域K上的一个非零n阶矩阵，说明$K[A]$是$K$上的一个线性空间.
-  $K[A]$至多多少维？\footnote{Hamilton-Cayley定理告诉我们，K[A]至多n维.}
-\end{itemize}
-\vspace{1cm}
-
-\begin{itemize}
-  \item[7.] 设递推方程
-  $$u_n = au_{n-1} +bu_{n-2}, \quad n \ge 2,$$
-  其中$a,b$都是非零复数. 若N上的一个复值数列$u_n$满足上述递推关系，则称为上述递推方程的解.
-  一元多项式$f(x)=x^2 - ax -b$称为上述递推方程的特征多项式.
-  求证
-  \begin{itemize}
-    \item [(a)] 上述递推方程的解集$W$是一个复线性空间
-    \item [(b)] 设$\alpha$是一个非零复数，则$\alpha^n \in W$ 当且仅当$f(\alpha)=0$
-    \item [(c)] 设$\alpha$是一个非零复数，则$n\alpha^n \in W$ 当且仅当$f(\alpha)=0, f'(\alpha)=0$.
-    \item [(d)] 若$f(x)$有两不同的根$\alpha_1, \alpha_2$, 则任意$u_n \in W$, 可以表示为
-    $$ u_n = C_1 \alpha_1^n +C_2 \alpha_2^n$$
-    其中$C_1, C_2$是常数;
-    \item [(e)] 若$f(x)$有二重根$\alpha$, 则任意$u_n \in W$, 可以表示为
-    $$ u_n = C_1 \alpha^n +C_2 n\alpha^n$$
-    其中$C_1, C_2$是常数;
-  \end{itemize}
-\end{itemize}
-\vspace{6cm}
-
-
-\paragraph{8.2}
-\begin{itemize}
-    \item 子空间
-    \item 子空间的维数定理
-    $$\dim V_1 + \dim V_2 = \dim (V_1 + V_2) + \dim (V_1 \cap V_2)$$
-    \item 直和
-\end{itemize}
-
-\paragraph{例题}
-\begin{itemize}
-\item[1.] 设$V_1, V_2, V_3$都是域F上的有限维线性空间$V$的子空间
-\begin{itemize}
-    \item[(a)] 求证:
-    $$V_3 \cap V_1 + V_3 \cap V_2 \subset V_3 \cap (V_1 + V_2)$$ 
-    \item[(b)] 如果$V_3 \subset V_1 + V_2$,
-试问$(V_3\cap V_1) + (V_3\cap V_2) = V_3$是否总成立？如果再加上条件$V_1 \subset V_3$呢？
-    \item[(c)] 求证,
+    \item [(3)] 取$K=C, R=C[A]$, 其中
     \begin{equation}
+        \nonumber
+        A=\begin{bmatrix}
+            1& -1\\
+            1& 1\\
+        \end{bmatrix}
+    \end{equation}
+    求$J_A$中的$m(x)$, 并判断$C[A]$是无零因子环么？
+    \vspace{2cm}
+\end{itemize}
+
+\item[3.] 在复数域上求下述循环矩阵的全部特征值以及行列式
+\begin{equation}
     \nonumber
-    \begin{aligned}
-    \dim V_1 + \dim V_2 + \dim V_3 \ge
-    &\dim(V_1 + V_2 + V_3)\\
-    &+\dim(V_1 \cap V_2) +\dim(V_1 \cap V_3) +\dim(V_2 \cap V_3)\\
-    &-\dim(V_1 \cap V_2 \cap V_3)
-    \end{aligned}
-    \end{equation}  
-  \end{itemize}
-\end{itemize}
-\vspace{3cm}
-
-\begin{itemize}
-  \item[2.] 设$V_1, \cdots, V_s$都是域F上线性空间V的子空间,
-  证明$V_1 + V_2 + \cdots + V_s$是直和
-  \begin{itemize} 
-    \item[(a)] 当且仅当,
-    $$V_i \cap \left(\sum_{j\ne i} V_j \right) = 0, \quad i=1,2,\dots,s$$
-    \item[(b)] 当且仅当，$V$中有一向量$\alpha$可以唯一表示为
-    $$\alpha = \sum_{i=1}^s \alpha_i, \quad \alpha_i \in V_i$$
-    \item[(c)] 当且仅当,
-    $$\dim(V_1 + V_2 + \cdots + V_s) = \dim V_1 + \cdots \dim V_s$$ 
-  \end{itemize}
-\end{itemize}
-\vspace{3cm}
-
-\begin{itemize}
-  \item[3.] 设A是数域K上的一个n阶矩阵，$\lambda_1, \lambda_2, \cdots, \lambda_s$
-  是A的全部不同的特征值，用$V_{\lambda_i}$表示A的属于$\lambda_i$的特征子空间. 证明：
-  A可以对角化的充分必要条件是
-  $$K^n = V_{\lambda_1} \oplus V_{\lambda_2} \oplus \cdots \oplus V_{\lambda_s}$$
-\end{itemize}
-\vspace{1cm}
-
-\begin{itemize}
-  \item[4.] 在数域K上的线性空间$K^{M_n(K)}$中，如果$f$满足，
-  对于任意的$A=(\alpha_1, \alpha_2,\cdots, \alpha_n)$，任意的n维列向量$\alpha$, 以及任意$k\in K$, $j\in \{1,2,\cdots, n\}$,
-  有 
-  $$f(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j} + \alpha, \alpha_{j+1}, \cdots, \alpha_n)
-  = f(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n) + 
-    f(\alpha_1, \cdots, \alpha_{j-1}, \alpha, \alpha_{j+1}, \cdots, \alpha_n)$$
-  $$f(\alpha_1, \cdots, \alpha_{j-1}, k\alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n)
-  = kf(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n)
-  $$
-  那么称$f$是$M_n(K)$上的列线性函数. 同理如果$g(A^T)$是列线性函数，则称$g(A)$是行线性函数。
-  记所有的列/行线性函数组成的集合分别记为$V_1$和$V_2$.
-  \begin{itemize} 
-    \item[(a)] 证明： $V_1, V_2$都是$K^{M_n(K)}$的子空间
-    \item[(b)] 分别求$V_1, V_2$的一个基和维数
-    \item[(c)] 分别求$V_1 \cap V_2,\,V_1 + V_2$的一个基和维数 
-  \end{itemize}
-\end{itemize}
-\vspace{6cm}
-
-\paragraph{8.3}
-\begin{itemize}
-    \item 线性空间的同构
-    \item 有限维线性空间同构的充要条件
+    A=\begin{bmatrix}
+        a_1& a_2& a_3& \cdots& a_n\\
+        a_n& a_1& a_2& \cdots& a_{n-1}\\
+        \vdots& \vdots& \vdots& &\vdots\\
+        a_3& a_4& a_5& \cdots& a_{2}\\
+        a_2& a_3& a_4& \cdots& a_{1}\\
+    \end{bmatrix}
+\end{equation}
+\vspace{2cm}
 \end{itemize}
 
-\paragraph{例题}
-\begin{itemize}
-  \item[1.]令
-  \begin{equation}
-  \nonumber
-  H = \left\{
-    \begin{bmatrix}
-      z_1& z_2\\
-     -z_2& z_1\\
-    \end{bmatrix},
-    z_1, z_2 \in C
-      \right\}
-  \end{equation}
-  \begin{itemize}
-    \item[(a)] H对于矩阵的加法，以及实数和矩阵的乘法构成一个实线性空间
-    \item[(b)] 给出H的一个基和维数
-    \item[(c)] 证明: $H$与$R^4$同构，并写出$H$到$R^4$的一个同构映射  
-  \end{itemize}
-\end{itemize}
-\vspace{1cm}
 
-\begin{itemize}
-  \item[2.]设$A \in M_n(K)$, 令$AM_n(K) = \{AB, B\in M_n(K) \}$.
-  \begin{itemize}
-    \item[(a)] 证明$AM_n(K)$是数域$K$上线性空间$M_n(K)$的子空间
-    \item[(b)] 设A的列向量组$\alpha_1, \cdots, \alpha_n$的一个极大线性无关组为
-    $\alpha_{j_1}, \cdots, \alpha_{j_r}$,证明$AM_n(K)$和$M_{r\times n}(K)$同构，并
-    写出一个同构映射. 
-    \item[(c)] 证明: $\dim [AM_n(K)] = \rank(A)n$.
-  \end{itemize}
-\end{itemize}
-\vspace{1cm}
+% \paragraph{8.1}
+% \begin{itemize}
+%     \item 域
+%     \item 域$F$上的线性空间的定义
+%     \item 基
+%     \item 维数
+%     \item 过渡矩阵
+% \end{itemize}
+
+% \paragraph{例题}
+% \begin{itemize}
+%   \item[1.]
+%   \begin{itemize}
+%     \item [(a)] 把域$F$看成是$F$上的线性空间，求它的一个基和维数；
+%     \item [(b)] 把复数域$C$看成是实数域$R$上的线性空间，求它的一个基和维数；
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1cm}
+
+% \begin{itemize}
+%   \item[2.]
+%   \begin{itemize}
+%     \item [(a)] 把实数域$R$看成是有理数域$Q$上的线性空间，证明:对于任意大于1的正整数，
+%   $$1, \sqrt[n]{3}, \sqrt[n]{3^2}, \cdots, \sqrt[n]{3^{n-1}}$$
+%   是线性无关的.\,(提示: 已知$g(x) = x^n-3$是Q上的不可约多项式)
+%     \item [(b)] 证明: 实数域$R$作为有理数域$Q$上的线性空间是无穷维的.
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1.5cm}
+
+% \begin{itemize}
+%   \item[3.] 设$V$是域$F$上的n维线性空间，域$F$包含域$E$,\,$F$可看作域$E$
+%   上的$m$维线性空间
+%   \begin{itemize}
+%     \item [(a)] 求证：V可以成为域$E$上的线性空间
+%     \item [(b)] 证明: 求V作为域E上线性空间的维数
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1.5cm}
+
+% \begin{itemize}
+%   \item[4.] (Complexification of real vector space)
+%   设$V$是数域R上的$n$维线性空间，设$V_C = \{(u,v), u,v\in V\}$,
+%   定义$V_C$上的加法
+%   $$(u_1,v_1) +(u_2, v_2) = (u_1+u_2, v_1+v_2)$$
+%   以及C上的数乘
+%   $$(a+bi)(u,v)=(au-bv, av+bu)$$
+%   \begin{itemize}
+%     \item [(a)] 求证：$V_C$是一个复线性空间
+%     \item [(b)] 计算$V_C$的维数
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1cm}
+
+% \begin{itemize}
+%   \item[5.] (对偶空间)设$V$是数域K上的$n$维线性空间，
+%   考虑复数域$C$上的线性空间$C^V$(从$V$到$R$的函数全体)中具有下述性质的函数组成的子集$W$:
+%   $$f(\alpha+\beta)=f(\alpha) + f(\beta),\quad \forall \alpha, \beta \in V,$$
+%   $$f(k\alpha)=kf(\alpha),\quad \forall \alpha \in V, k \in K.$$
+%   \begin{itemize}
+%     \item [(a)] 求证：$W$是一个复线性空间
+%     \item [(b)] 求$W$的一个基和维数；设$f\in W$, 求$f$在这个基下的坐标
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1cm}
+
+% \begin{itemize}
+%   \item[6.] (零化多项式和最小多项式)
+%   设A是数域K上的一个非零n阶矩阵，说明$K[A]$是$K$上的一个线性空间.
+%   $K[A]$至多多少维？\footnote{Hamilton-Cayley定理告诉我们，K[A]至多n维.}
+% \end{itemize}
+% \vspace{1cm}
+
+% \begin{itemize}
+%   \item[7.] 设递推方程
+%   $$u_n = au_{n-1} +bu_{n-2}, \quad n \ge 2,$$
+%   其中$a,b$都是非零复数. 若N上的一个复值数列$u_n$满足上述递推关系，则称为上述递推方程的解.
+%   一元多项式$f(x)=x^2 - ax -b$称为上述递推方程的特征多项式.
+%   求证
+%   \begin{itemize}
+%     \item [(a)] 上述递推方程的解集$W$是一个复线性空间
+%     \item [(b)] 设$\alpha$是一个非零复数，则$\alpha^n \in W$ 当且仅当$f(\alpha)=0$
+%     \item [(c)] 设$\alpha$是一个非零复数，则$n\alpha^n \in W$ 当且仅当$f(\alpha)=0, f'(\alpha)=0$.
+%     \item [(d)] 若$f(x)$有两不同的根$\alpha_1, \alpha_2$, 则任意$u_n \in W$, 可以表示为
+%     $$ u_n = C_1 \alpha_1^n +C_2 \alpha_2^n$$
+%     其中$C_1, C_2$是常数;
+%     \item [(e)] 若$f(x)$有二重根$\alpha$, 则任意$u_n \in W$, 可以表示为
+%     $$ u_n = C_1 \alpha^n +C_2 n\alpha^n$$
+%     其中$C_1, C_2$是常数;
+%   \end{itemize}
+% \end{itemize}
+% \vspace{6cm}
+
+
+% \paragraph{8.2}
+% \begin{itemize}
+%     \item 子空间
+%     \item 子空间的维数定理
+%     $$\dim V_1 + \dim V_2 = \dim (V_1 + V_2) + \dim (V_1 \cap V_2)$$
+%     \item 直和
+% \end{itemize}
+
+% \paragraph{例题}
+% \begin{itemize}
+% \item[1.] 设$V_1, V_2, V_3$都是域F上的有限维线性空间$V$的子空间
+% \begin{itemize}
+%     \item[(a)] 求证:
+%     $$V_3 \cap V_1 + V_3 \cap V_2 \subset V_3 \cap (V_1 + V_2)$$ 
+%     \item[(b)] 如果$V_3 \subset V_1 + V_2$,
+% 试问$(V_3\cap V_1) + (V_3\cap V_2) = V_3$是否总成立？如果再加上条件$V_1 \subset V_3$呢？
+%     \item[(c)] 求证,
+%     \begin{equation}
+%     \nonumber
+%     \begin{aligned}
+%     \dim V_1 + \dim V_2 + \dim V_3 \ge
+%     &\dim(V_1 + V_2 + V_3)\\
+%     &+\dim(V_1 \cap V_2) +\dim(V_1 \cap V_3) +\dim(V_2 \cap V_3)\\
+%     &-\dim(V_1 \cap V_2 \cap V_3)
+%     \end{aligned}
+%     \end{equation}  
+%   \end{itemize}
+% \end{itemize}
+% \vspace{3cm}
+
+% \begin{itemize}
+%   \item[2.] 设$V_1, \cdots, V_s$都是域F上线性空间V的子空间,
+%   证明$V_1 + V_2 + \cdots + V_s$是直和
+%   \begin{itemize} 
+%     \item[(a)] 当且仅当,
+%     $$V_i \cap \left(\sum_{j\ne i} V_j \right) = 0, \quad i=1,2,\dots,s$$
+%     \item[(b)] 当且仅当，$V$中有一向量$\alpha$可以唯一表示为
+%     $$\alpha = \sum_{i=1}^s \alpha_i, \quad \alpha_i \in V_i$$
+%     \item[(c)] 当且仅当,
+%     $$\dim(V_1 + V_2 + \cdots + V_s) = \dim V_1 + \cdots \dim V_s$$ 
+%   \end{itemize}
+% \end{itemize}
+% \vspace{3cm}
+
+% \begin{itemize}
+%   \item[3.] 设A是数域K上的一个n阶矩阵，$\lambda_1, \lambda_2, \cdots, \lambda_s$
+%   是A的全部不同的特征值，用$V_{\lambda_i}$表示A的属于$\lambda_i$的特征子空间. 证明：
+%   A可以对角化的充分必要条件是
+%   $$K^n = V_{\lambda_1} \oplus V_{\lambda_2} \oplus \cdots \oplus V_{\lambda_s}$$
+% \end{itemize}
+% \vspace{1cm}
+
+% \begin{itemize}
+%   \item[4.] 在数域K上的线性空间$K^{M_n(K)}$中，如果$f$满足，
+%   对于任意的$A=(\alpha_1, \alpha_2,\cdots, \alpha_n)$，任意的n维列向量$\alpha$, 以及任意$k\in K$, $j\in \{1,2,\cdots, n\}$,
+%   有 
+%   $$f(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j} + \alpha, \alpha_{j+1}, \cdots, \alpha_n)
+%   = f(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n) + 
+%     f(\alpha_1, \cdots, \alpha_{j-1}, \alpha, \alpha_{j+1}, \cdots, \alpha_n)$$
+%   $$f(\alpha_1, \cdots, \alpha_{j-1}, k\alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n)
+%   = kf(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n)
+%   $$
+%   那么称$f$是$M_n(K)$上的列线性函数. 同理如果$g(A^T)$是列线性函数，则称$g(A)$是行线性函数。
+%   记所有的列/行线性函数组成的集合分别记为$V_1$和$V_2$.
+%   \begin{itemize} 
+%     \item[(a)] 证明： $V_1, V_2$都是$K^{M_n(K)}$的子空间
+%     \item[(b)] 分别求$V_1, V_2$的一个基和维数
+%     \item[(c)] 分别求$V_1 \cap V_2,\,V_1 + V_2$的一个基和维数 
+%   \end{itemize}
+% \end{itemize}
+% \vspace{6cm}
+
+% \paragraph{8.3}
+% \begin{itemize}
+%     \item 线性空间的同构
+%     \item 有限维线性空间同构的充要条件
+% \end{itemize}
+
+% \paragraph{例题}
+% \begin{itemize}
+%   \item[1.]令
+%   \begin{equation}
+%   \nonumber
+%   H = \left\{
+%     \begin{bmatrix}
+%       z_1& z_2\\
+%      -z_2& z_1\\
+%     \end{bmatrix},
+%     z_1, z_2 \in C
+%       \right\}
+%   \end{equation}
+%   \begin{itemize}
+%     \item[(a)] H对于矩阵的加法，以及实数和矩阵的乘法构成一个实线性空间
+%     \item[(b)] 给出H的一个基和维数
+%     \item[(c)] 证明: $H$与$R^4$同构，并写出$H$到$R^4$的一个同构映射  
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1cm}
+
+% \begin{itemize}
+%   \item[2.]设$A \in M_n(K)$, 令$AM_n(K) = \{AB, B\in M_n(K) \}$.
+%   \begin{itemize}
+%     \item[(a)] 证明$AM_n(K)$是数域$K$上线性空间$M_n(K)$的子空间
+%     \item[(b)] 设A的列向量组$\alpha_1, \cdots, \alpha_n$的一个极大线性无关组为
+%     $\alpha_{j_1}, \cdots, \alpha_{j_r}$,证明$AM_n(K)$和$M_{r\times n}(K)$同构，并
+%     写出一个同构映射. 
+%     \item[(c)] 证明: $\dim [AM_n(K)] = \rank(A)n$.
+%   \end{itemize}
+% \end{itemize}
+% \vspace{1cm}

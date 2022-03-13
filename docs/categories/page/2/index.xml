@@ -12,6 +12,15 @@
     
     <item>
       <title></title>
+      <link>https://caiyouy.github.io/c_programming/test01/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://caiyouy.github.io/c_programming/test01/test/</guid>
+      <description>计算概论期中题目备选 简答题 计算题 printf(&amp;quot;%d&amp;quot;,(int)(7.2/5)+3/2+010+0x1); 答案: 11 (考察类型转化，八进制以及十六进制)； int x=0; (x++)?(x=2):(x==3); printf(&amp;quot;%d&amp;quot;,x); 答案: 1 (考察++号前置后置的区别，条件运算符以及逻</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://caiyouy.github.io/c_programming/test02/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
