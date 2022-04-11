@@ -12,4 +12,4 @@ draft: false
 
 (2022.03.28) [讲义03](../Linear_Algebra_II_2022/finished/03.pdf); [提示](../Linear_Algebra_II_2022/finished_answer/03.pdf)
 
-(2022.04.11) [讲义04](../Linear_Algebra_II_2022/finished/04.pdf);
+(2022.04.11) [讲义04](../Linear_Algebra_II_2022/finished/04.pdf); [提示](../Linear_Algebra_II_2022/finished_answer/04.pdf)
