@@ -1,141 +1,185 @@
-\paragraph{通向Jordan标准型的两条路}
-\begin{itemize}
-    \item[(1)] $\lambda$矩阵
-        \begin{itemize}
-            \item[] 不变因子，行列式因子，初等因子
-        \end{itemize} 
-    \item[(2)] 不变子空间直和分解: 
-        \begin{itemize}
-            \item[] 最小多项式，特征多项式
-        \end{itemize}
-\end{itemize}
+\section{Jordan标准形}
+推导线性变换的Jordan标准形，可以通过空间分解的方法，也可以通过$\lambda$-矩阵的方法。
 
-\paragraph{两条路的一点关联}
-\begin{itemize}
-    \item Jordan标准型中Jordan块的最小多项式即是不变因子.
-    \item n级矩阵的最小多项式等于其最后一个不变因子$d_n(\lambda)$,
-          特征多项式等于最后一个行列式因子$D_n(\lambda)$.
-    % \item 数域$K$上的两矩阵相似当且仅当把它们看成复矩阵后相似.
-\end{itemize}
+\subsection{根子空间直和分解}
+\begin{theorem}
+	设$A$是域$F$上$n$维线性空间$V$上的线性变换，如果$A$的最小多项式$m(\lambda)$
+	在$F[\lambda]$中分解为一次因式的乘积：
+	\begin{equation}
+		m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-\lambda_s)^{l_s},
+		\label{equ:m}
+	\end{equation}
+	则$V$中存在一个基，$A$在此基下的矩阵为Jordan形. 
+	% 其主对角元为$A$的全部特征值,
+	% 主对角元为$\lambda_j$的Jordan块的总数
+	% $$N_j = n - \rank(A-\lambda_j I),$$
+	% 且其中每个Jordan块的级数不超过$l_j$, $t$级Jordan块$J_t(\lambda_j)$的个数
+	% $$N_j(t) = \rank(A-\lambda_j I)^{t+1} + \rank(A-\lambda_j I)^{t-1} - 2\rank(A-\lambda_j I)^{t}.$$
+\end{theorem}
+\begin{proof}
+	由空间分解$V = W_1 \oplus W_2 \oplus \cdots \oplus W_s$，
+	其中$W_j = \Ker (A-\lambda I)^{l_j}$, 考虑$B_j = (A-\lambda_j I)|_{W_j}$
+	是$W_j$上的幂零变换, 根据幂零变换的性质，以及$A|_{W_j} = B_j + \lambda_j I|_{W_j}$,
+	可得Jordan标准形. 详细证明见课本.
+\end{proof}
 
-\paragraph{关于有理标准形的推广}
-若最小多项式无法在$F[x]$上分解为一次因子的幂次乘积?
-\paragraph{不变子空间直和分解}
-$C_j = A|W_j$是$n_j$维线性空间$W_j$上的线性变换,其最小多项式为$p_j^{l_j}(\lambda)$,
-其中$p_j(\lambda)$是不可约多项式.
-\begin{itemize}
-    \item [(1)] 若存在$\alpha \in W_j$和正整数$t$,使得
-    $\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$线性无关，
-    且$C_j^t \alpha$可以由$\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$
-    线性表出， 则称$\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$
-    张成了由$\alpha$生成的$C_j$-循环子空间.
+\begin{remark}
+	$B_j$的幂零指数为？最小多项式为？
+\end{remark}
+\vspace{1.5cm}
 
-    $W_j$能分解为$\frac{1}{r} \dim \widehat{W}_j$个$C_j$-循环子空间的直和,
-    其中$r=\deg p(\lambda)$, $\widehat{W}_j = \ker p(C_j)$.
-    \vspace{1cm}
-    \item [(2)] 证明$W_j$中存在一个基，使得$C_j$在此基下的矩阵为
-    有理块组成的块对角矩阵, 每个有理块级数是$r$的倍数，且不超过$rl_j$,
-    有理块的总数为$\frac{1}{r}\left(n_j - \rank\, p_j(C_j)\right)$.
-    $rt$级有理块的个数$N(rt)$为，
-    $$N(rt) = \frac{1}{r} \left(
-        \rank\,p^{t-1}(C_j) + \rank\,p^{t+1}(C_j) 
-        - 2\rank\,p^{t}(C_j).
-    \right)$$
-    \vspace{1cm}
-\end{itemize}
+\begin{remark} (根子空间的定义，课本P139)
+	如果$A$的特征多项式$f(\lambda)$在$F[\lambda]$中可以分解为
+	\begin{equation}
+		f(\lambda) = (\lambda-\lambda_1)^{r_1}(\lambda-\lambda_2)^{r_2}\cdots(\lambda-\lambda_s)^{r_s},
+		\label{equ:f}
+	\end{equation}
+	则
+	$$V = \Ker (A-\lambda_1I)^{r_1} \oplus \Ker (A-\lambda_2I)^{r_2} \oplus \cdots \oplus \Ker (A-\lambda_sI)^{r_s}.$$
+	其中$\Ker (A-\lambda_jI)^{r_j}$称为$A$的根子空间.
+	证明$W_j = \Ker (A-\lambda_jI)^{r_j}, \dim W_j = r_j$.
+\end{remark}
+\vspace{5cm}
 
-\paragraph{$\lambda$-矩阵}
-\begin{itemize}
-    \item[(1)] 
-     $A(\lambda)$的每个次数大于零的不变因子在$F[x]$上做不可约分解，所有这些不可约多项式的方幂
-     (相同的按照出现的次数计算)称为$A(\lambda)$的初等因子.
-    \item[(2)] 由有理块组成的块对角矩阵的初等因子由它全部有理块的初等因子组成，
-    于是矩阵的有理标准型由它的初等因子唯一确定(除去有理块的排列次序).  
-    \item[(3)] 设域$E$包含域$F$, 域$F$上的两矩阵相似当且仅当把他们当成$E$上的矩阵相似. 
-\end{itemize}
+\begin{remark} 说明条件\eqref{equ:m}和\eqref{equ:f}互相等价. 或者进一步证明，$m(\lambda)$和$f(\lambda)$具有相同的不可约因式.
+\end{remark}
+\vspace{3cm}
+
+\begin{remark}
+	当条件\eqref{equ:m}不成立，考虑矩阵的有理标准形.
+\end{remark}
+\vspace{0.5cm}
+
+% \paragraph{关于有理标准形的推广}
+% 若最小多项式无法在$F[x]$上分解为一次因子的幂次乘积?
+% \paragraph{不变子空间直和分解}
+% $C_j = A|W_j$是$n_j$维线性空间$W_j$上的线性变换,其最小多项式为$p_j^{l_j}(\lambda)$,
+% 其中$p_j(\lambda)$是不可约多项式.
+% \begin{itemize}
+%     \item [(1)] 若存在$\alpha \in W_j$和正整数$t$,使得
+%     $\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$线性无关，
+%     且$C_j^t \alpha$可以由$\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$
+%     线性表出， 则称$\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$
+%     张成了由$\alpha$生成的$C_j$-循环子空间.
+
+%     $W_j$能分解为$\frac{1}{r} \dim \widehat{W}_j$个$C_j$-循环子空间的直和,
+%     其中$r=\deg p(\lambda)$, $\widehat{W}_j = \ker p(C_j)$.
+%     \vspace{1cm}
+%     \item [(2)] 证明$W_j$中存在一个基，使得$C_j$在此基下的矩阵为
+%     有理块组成的块对角矩阵, 每个有理块级数是$r$的倍数，且不超过$rl_j$,
+%     有理块的总数为$\frac{1}{r}\left(n_j - \rank\, p_j(C_j)\right)$.
+%     $rt$级有理块的个数$N(rt)$为，
+%     $$N(rt) = \frac{1}{r} \left(
+%         \rank\,p^{t-1}(C_j) + \rank\,p^{t+1}(C_j) 
+%         - 2\rank\,p^{t}(C_j).
+%     \right)$$
+%     \vspace{1cm}
+% \end{itemize}
+
+\subsection{$\lambda$-矩阵}
+$\lambda$-矩阵的等价，以及不变因子、行列式因子的定义，详见讲义01.
+
+\begin{theorem}
+	数域$F$上的两个矩阵$A$和$B$相似的充要条件是$\lambda I-A$和$\lambda I-B$等价.
+\end{theorem}
+\begin{proof}
+	证明略，详见《高等代数学习指导用书（下册）》P439-440.
+\end{proof}
+上述定理将数字矩阵相似的问题，转化为了$\lambda$-矩阵等价的问题.
+而我们知道，
+$\lambda$矩阵等价的充要条件是具有相同的不变因子/行列式因子.
+
+\begin{definition}
+	如果$\lambda I-A$的不变因子可以分解为
+	若干一次因式的幂次乘积，
+	我们把这些一次因式的幂次称为$\lambda I-A$或$A$的初等因子.
+\end{definition}
+
+\begin{remark}
+	说明$\lambda I-A$的不变因子可以分解为一次因式的幂次乘积和条件\eqref{equ:m}等价. 可以通过说明$\lambda I-A$的最后一个不变因子$d_n(\lambda) = m(\lambda)$. 也可以通过说明$\lambda I-A$的最后一个行列式因子$D_n(\lambda) = f(\lambda)$.
+\end{remark}
+\vspace{4cm}
+
+\begin{remark}
+	说明在条件\eqref{equ:m}下，$\lambda$矩阵等价的充要条件是具有相同的初等因子.
+\end{remark}
+\vspace{3cm}
 
 \paragraph{例题}
-$A$是域$F$上线性空间$V$上的线性变换, 且$A$的最小多项式在$F[\lambda]$中的不可约分解为
-$$m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-\lambda_s)^{l_s}$$
 \begin{itemize}
-\item[(1)] 令$V_i = \{\alpha \in V |\,\exists r > 0,
-(\lambda_i I - A)^r \alpha = 0\}, i = 1,2,\cdots,s.$
-说明$V_i$是A不变的，且$V = V_1 \oplus V_2 \oplus \cdots \oplus V_s$ 
-\begin{solution}
-说明$V_i = W_i$
-\end{solution}
-% \item[(2)] 若当$i \ne j$时，$\lambda_i \ne \lambda_j$,
-% 证明$A$的Jordan标准型恰好由$s$个Jordan块组成当且仅当$\dim V_{\lambda_j} = 1, j = 1,\cdots,s.$
-\item[(2)] 
-\begin{itemize}
-    \item[a.] 证明: A的Jordan标准型中主对角元为$\lambda_i$的Jordan块的个数为
-    $N_j = \dim V - \rank (A - \lambda_j I)$.
-    其中$J_t(\lambda_j)$的个数为$N_j(t) = \rank (A-\lambda_j I)^{t+1} +
-    \rank (A-\lambda_j I)^{t-1} - 2\rank (A-\lambda_j I)^t$.
+    \item [1.] 求
+    \begin{equation}
+    \nonumber
+    J_n(\lambda) = 
+    \begin{pmatrix}
+    \lambda&1&&&&\\
+    &\lambda&1&&&\\
+    &&\ddots&\ddots&&\\
+    &&&\lambda&1\\
+    &&&&\lambda\\
+    \end{pmatrix}_{n\times n}
+    \end{equation}
+    的所有初等因子,不变因子和行列式因子.
+    \vspace{3cm}
 
-    \begin{solution}
-        前面已说明$N_j = \dim \Ker (A|W_j - \lambda_j I)$以及
-        $N_j(t) = \rank (A|W_j-\lambda_j I)^{t+1} +
-        \rank (A|W_j-\lambda_j I)^{t-1} - 2\rank (A|W_j-\lambda_j I)^t$,
-        说明对于$i=1,2,\cdots, l_j+1$,
-        $$\Ker (A-\lambda_j I)^i = \Ker(A|W_j - \lambda_j I)^i$$即可.
-    \end{solution}
-
-    \item[b.] 证明:A可对角化，当且仅当$$ \rank (A - \lambda_iI)^2 = 
-    \rank (A - \lambda_iI),\ i=1,\cdots,s. $$ 
-    \begin{solution}
+    \item [2.]
     \begin{itemize}
-        \item [(a)]
-        $\rank(\lambda_iI - A) = \rank(\lambda_i I - A)^2 =\cdots =\rank(\lambda_i - A)^{l_i}$
-        即特征空间$V_{\lambda_i}$等同于$W_i$,故 
-        $V = V_{\lambda_1} \oplus \cdots \oplus V_{\lambda_s}.$
-        \item [(b)] 说明$N_j = N_j(1)$, 即$\dim V - \rank(A-\lambda_j I) = 
-        \rank(A-\lambda_j I)^0 + \rank(A-\lambda_j I)^2 - 2\rank(A-\lambda_j I)$即可.
+        \item [(1)] 设
+    \begin{equation}
+    \nonumber
+    A(\lambda) = \begin{pmatrix}
+        f_1(\lambda)g_1(\lambda)&0\\
+        0&f_2(\lambda)g_2(\lambda)\\
+    \end{pmatrix},\quad
+    B(\lambda) = \begin{pmatrix}
+        f_2(\lambda)g_1(\lambda)&0\\
+        0&f_1(\lambda)g_2(\lambda)\\
+    \end{pmatrix},
+    \end{equation}
+    如果多项式$f_1(\lambda),f_2(\lambda)$都与$g_1(\lambda),g_2(\lambda)$
+    互素，则$A(\lambda)$和$B(\lambda)$等价.
+    \vspace{3cm}
+    
+    \item [(2)] 对于对角$\lambda$-矩阵$D(\lambda)$, 假设对角元素可以分解为一次因式方幂的乘积，
+    证明所有这些一次因式的方幂就是$D(\lambda)$的全部初等因子.
+    \vspace{3cm}
+
+    \item [(3)]
+    求
+    \begin{equation}
+    \nonumber
+    J = 
+    \begin{pmatrix}
+    J_{n_1}(\lambda_1)&&&\\
+    &J_{n_2}(\lambda_2)&&\\
+    &&\ddots&\\
+    &&&J_{n_s}(\lambda_s)\\
+    \end{pmatrix}
+    \end{equation}
+    的所有初等因子.
+    \vspace{3cm}
+
+    \item [(4)]
+    求矩阵
+    \begin{equation}
+    \nonumber
+    A = 
+    \begin{pmatrix}
+    -1 & -2& 6\\
+    -1 &  0& 3\\
+    -1 & -1& 4\\
+    \end{pmatrix}
+    \end{equation}
+    在复数域上的Jordan标准型.
+    \vspace{3cm}
     \end{itemize}
-    \end{solution}
 \end{itemize}
 
-\item[(3)]如果$\forall i,\ \lambda_i = 1,$ 证明$A$和$A^k\,(k\ge 1)$相似
-\begin{solution}
-\end{solution}
-\vspace{3cm}
-
-\item[(4)] 如果$l_1 + l_2 +\cdots l_s = \dim V$, 说明A的Jordan标准型中各个Jordan块主对角元互不相同. 
-\vspace{3cm}
-\end{itemize}
-
-\paragraph{Jordan标准型的应用}
-\begin{itemize}
-    \item [1. ] 计算矩阵多项式
-    \item [2. ] 计算矩阵幂级数，特别是指数函数
-    $$e^{A} = \sum_{i=0}^{\infty} \frac{A^i}{i!}$$
-    及其在求解ODE中的应用.
+\section{Jordan标准形的应用}
+\subsection{计算矩阵指数函数}
+矩阵指数函数$$e^{A} = \sum_{i=0}^{\infty} \frac{A^i}{i!}$$
+在求解常微分方程组时具有广泛应用.
     \begin{itemize}
-    %     \item [(1)] 设$f(t) = \sum_{k=0}^{\infty} a_k t^k$, 收敛半径为$r$,
-    %     设矩阵$A$的Jordan标准型为
-    %     \begin{equation}
-    %     \nonumber
-    %     J =
-    %     \begin{pmatrix}
-    %         J_{n_1}(\lambda_1)&&&\\
-    %         &J_{n_2}(\lambda_2)&&\\
-    %         &&\ddots&\\
-    %         &&&J_{n_s}(\lambda_s)\\
-    %     \end{pmatrix}
-    %     \end{equation}
-    %     即$A = PJP^{-1}$, 若$\forall i$, $|\lambda_i| < r$,
-    %     即$\rho(A) < r$, 则矩阵幂级数$\sum_{k=0}^{\infty} a_k A^k$收敛，
-    %     $$f(A) = P
-    %     \begin{pmatrix}
-    %         f(J_{n_1}(\lambda_1))&&&\\
-    %         &f(J_{n_2}(\lambda_2))&&\\
-    %         &&\ddots&\\
-    %         &&&f(J_{n_s}(\lambda_s))\\
-    %     \end{pmatrix}
-    %     $$
-    %     其中$f(J_{n_i}(\lambda_i))$该如何表达？
-    %     \vspace{3cm}
-
         \item [(a)]齐次一阶线性常系数常微分方程组
         \begin{equation}
         \nonumber
@@ -176,7 +220,8 @@ $$m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-
         例如求解$x^{(3)} - 3x^{(2)}-6x^{(1)} + 8x = 0$的通解.
         \vspace{3cm}
     \end{itemize}
-    \item [2. ] 计算矩阵平方根
+
+\subsection{计算矩阵平方根}
     \begin{itemize}
         \item[(1)] 设$a$是域F中的非零元, 求$J_r(a)^2$的标准型.
         \begin{solution}
@@ -204,4 +249,3 @@ $$m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-
         Jordan块或是$J_1(0)$,或是$J_r(0), J_{r}(0)$成对出现，或是$J_r(0), J_{r+1}(0)$成对出现. 
         \vspace{3cm}
     \end{itemize}
-\end{itemize}
