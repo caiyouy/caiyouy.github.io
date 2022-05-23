@@ -102,7 +102,7 @@ $V$上的所有双线性函数, 关于函数的加法和数乘,构成域$F$上�
         %     证明$\sigma$是线性映射，且单射.
         % \end{solution}
 
-        \item [(c)] 证明V中存在一个基使得$f,g$在此基下的度量矩阵都是对角矩阵的充分必要条件是$G$可以对角化.
+        \item [(c)] 设域$F$的特征不为2， 且f,g对称，证明V中存在一个基使得$f,g$在此基下的度量矩阵都是对角矩阵的充分必要条件是$G$可以对角化.
         \vspace{3cm}
         
         % \begin{solution}
@@ -197,31 +197,31 @@ $$(A\alpha, A\beta) = (\alpha, \beta), \forall \alpha, \beta$$
     上的正交投影，令$A=I-2P$, 称$A$为关于$<\eta>^{\perp}$的镜面反射. 证明这是第二类正交变换. 
     \vspace{2cm}
 
-    \item[3.] 
-    \begin{itemize}
-        \item [(a)] 设A是2维欧氏空间V上的第二类正交变化, 证明A是关于某一条直线的镜面反射
-        \item [(b)] 设A是2维欧氏空间V上的第一类正交变换, 证明A能表示为两个镜面反射的乘积
-        \item [(c)] 证明$n$维欧氏空间V上的任一正交变换都可以表示成至多$n$个镜面反射的乘积
+    % \item[3.] 
+    % \begin{itemize}
+    %     \item [(a)] 设A是2维欧氏空间V上的第二类正交变化, 证明A是关于某一条直线的镜面反射
+    %     \item [(b)] 设A是2维欧氏空间V上的第一类正交变换, 证明A能表示为两个镜面反射的乘积
+    %     \item [(c)] 证明$n$维欧氏空间V上的任一正交变换都可以表示成至多$n$个镜面反射的乘积
         
-        \begin{solution}
-            (a,b)考虑正交基$\alpha_1, \alpha_2$和$A \alpha_1, A \alpha_2$,
-            先用镜面反射$B_1$将$\alpha_1$映射为$A\alpha_1$, 说明$A\alpha_2 = \pm B_1\alpha_2$.
+    %     \begin{solution}
+    %         (a,b)考虑正交基$\alpha_1, \alpha_2$和$A \alpha_1, A \alpha_2$,
+    %         先用镜面反射$B_1$将$\alpha_1$映射为$A\alpha_1$, 说明$A\alpha_2 = \pm B_1\alpha_2$.
             
-            (c) 同理考虑$\alpha_1, \alpha_2,\cdots, \alpha_n$和
-            $A\alpha_1, A\alpha_2,\cdots, A\alpha_n$. 假设$\alpha_1 \ne A\alpha_1$,
-            取$B_1 \alpha_1 = A\alpha_1$, 考虑$B_1 \alpha_2 \cdots, B_1\alpha_n$
-            和$A \alpha_2 \cdots, A\alpha_n$, 这两组都是$A \alpha_1$的正交补空间的基.
-            则$C: B_1\alpha_i \rightarrow A\alpha_i, i=2,\cdots, n$
-            是$n-1$维空间的正交变换, 根据归纳假设可以至多表示为$B_2,\cdots, B_n$个镜面反射的乘积.
-            将$B_2,\cdots, B_n$延拓为$V$上的镜面反射,即证.
-        \end{solution}
-    \end{itemize}
+    %         (c) 同理考虑$\alpha_1, \alpha_2,\cdots, \alpha_n$和
+    %         $A\alpha_1, A\alpha_2,\cdots, A\alpha_n$. 假设$\alpha_1 \ne A\alpha_1$,
+    %         取$B_1 \alpha_1 = A\alpha_1$, 考虑$B_1 \alpha_2 \cdots, B_1\alpha_n$
+    %         和$A \alpha_2 \cdots, A\alpha_n$, 这两组都是$A \alpha_1$的正交补空间的基.
+    %         则$C: B_1\alpha_i \rightarrow A\alpha_i, i=2,\cdots, n$
+    %         是$n-1$维空间的正交变换, 根据归纳假设可以至多表示为$B_2,\cdots, B_n$个镜面反射的乘积.
+    %         将$B_2,\cdots, B_n$延拓为$V$上的镜面反射,即证.
+    %     \end{solution}
+    % \end{itemize}
     
-    \item[4.] 设A是n维欧氏空间V上的一个线性变换，证明$A$是镜面反射当且仅当A在V的任意一个标准正交基
-    下的矩阵形如$I-2\alpha \alpha^T$， 其中$\alpha$是一单位向量.
+    \item[3.] 设A是n维欧氏空间V上的一个线性变换，证明$A$是镜面反射当且仅当A在V的任意一个标准正交基
+    下的矩阵形如$I-2\alpha \alpha^T$， 其中$\alpha$是$R^n$中的一单位向量.
     \vspace{3cm}
 
-    \item[5.] (正交变换的矩阵表示) A是实内积空间$V$上的正交变换.
+    \item[4.] (正交变换的矩阵表示) A是实内积空间$V$上的正交变换.
     \begin{itemize}
         \item [(a)] 假设A有特征值，证明特征值为1或-1.
         \vspace{2cm}
@@ -264,7 +264,7 @@ $$(A\alpha, A\beta) = (\alpha, \beta), \forall \alpha, \beta$$
             0&-1 
         \end{pmatrix}.
         \end{equation}
-        \vspace{4cm}
+        \vspace{1cm}
 
         % \begin{solution}
         %     A在标准正交基下的矩阵为正交矩阵, 
@@ -300,7 +300,7 @@ $$(A\alpha, A\beta) = (\alpha, \beta), \forall \alpha, \beta$$
         \right\}
         \end{equation}
         其中$\lambda_i = 1$或$-1$, $0 < \theta_i < \pi$.
-        \vspace{4cm}
+        \vspace{3cm}
         
         % \begin{solution}
         %     对维数进行数学归纳
