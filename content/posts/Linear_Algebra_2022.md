@@ -17,3 +17,5 @@ draft: false
 (2022.04.25) 讲解[期中试卷](../Linear_Algebra_II_2022/finished/midterm.pdf);
 
 (2022.05.09) [讲义06](../Linear_Algebra_II_2022/finished/06.pdf); [提示](../Linear_Algebra_II_2022/finished_answer/06.pdf)
+
+(2022.05.23) [讲义07](../Linear_Algebra_II_2022/finished/07.pdf); 

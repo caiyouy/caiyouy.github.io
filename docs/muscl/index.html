@@ -21,25 +21,28 @@
     
     
     <meta name="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m" />
-    <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
     <title>MUSCL格式的性质 - Yuan Caiyou&#39;s Pages</title>
     
     
-    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.c58e22f1aa6179cd5cb60b9e08421a2b9a9c9fe9352d095e051b51aae209e5c0.css">
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="MUSCL格式的性质" />
 <meta property="og:description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://caiyouy.github.io/muscl/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://caiyouy.github.io/muscl/" />
 <meta property="article:published_time" content="2020-12-08T15:55:59+08:00" />
 <meta property="article:modified_time" content="2020-12-08T15:55:59+08:00" />
-
 <meta itemprop="name" content="MUSCL格式的性质">
-<meta itemprop="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m"><meta itemprop="datePublished" content="2020-12-08T15:55:59+08:00" />
-<meta itemprop="dateModified" content="2020-12-08T15:55:59+08:00" />
+<meta itemprop="description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m">
+<meta itemprop="datePublished" content="2020-12-08T15:55:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-12-08T15:55:59&#43;08:00" />
 <meta itemprop="wordCount" content="1516">
+
+
+
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MUSCL格式的性质"/>
 <meta name="twitter:description" content="讨论广义MUSCL格式 $$U_{j}^{n&#43;1} = U_{j}^n - \lambda \left(\hat{f}(U_j^n &#43;\frac{h}{2}S_j^n, U_{j&#43;1}^n - \frac{h}{2}S_{j&#43;1}^n)-\hat{f}(U_{j-1}^n &#43;\frac{h}{2}S_{j-1}^n, U_{j}^n - \frac{h}{2}S_{j}^n \right)$$ 的局部截断误差和TVD性质, 其中$\lambda = \tau/h$, $$ S_j^n = \mathrm{minmod}\left(\frac{U_{j&#43;1}^n - U_{j}^n}{h}, \frac{U_{j}^n - U_{j-1}^n}{h}\right). $$ 这里，二元函数m"/>
@@ -249,8 +252,8 @@ $$
 \mathrm{minmod}(a, b) =
 \left\{
 \begin{aligned}
-&amp;a, \quad ab \gt 0, |a| \le |b|,\\
-&amp;b, \quad ab \gt 0, |a| \ge |b|,\\
+&amp;a, \quad ab \gt 0, |a| \le |b|,\\<br>
+&amp;b, \quad ab \gt 0, |a| \ge |b|,\\<br>
 &amp;0, \quad ab \le 0.
 \end{aligned}
 \right.$$</p>
@@ -271,9 +274,9 @@ $$
 \begin{aligned}
 T_j^n
 &amp;= \frac{u_j^{n+1} - u_{j}^n}{\tau} + a\frac{u_j^n - u_{j-1}^n}{h}
-+\frac{a}{2}(s_{j}^n - s_{j-1}^n) - (u_t + au_x)<em>j^n\\
++\frac{a}{2}(s_{j}^n - s_{j-1}^n) - (u_t + au_x)_j^n\\<br>
 &amp; =
-\frac{\tau}{2}u</em>{tt}(x_j, t^n) - \frac{h}{2}au_{xx}(x_j,t^n)+
+\frac{\tau}{2}u_{tt}(x_j, t^n) - \frac{h}{2}au_{xx}(x_j,t^n)+
 \frac{h^2}{6}au_{xxx}(x_j,t^n)+
 \frac{a}{2}(s_j^n - s_{j-1}^n)+
 O(\tau^2 + h^3).
@@ -321,10 +324,10 @@ T_j^n
 \frac{\tau}{2}u_{tt}(x_j, t^n)-
 \frac{1}{2}au_{xx}(x_0, t^n)(x_j - x_0) -
 \frac{h}{4}au_{xx}(x_j,t^n)+
-\frac{h^2}{12}au_{xxx}(x_j,t^n)\\
+\frac{h^2}{12}au_{xxx}(x_j,t^n)\\<br>
 &amp;\quad+
 O(\tau^2 + h^3)+
-O((x_j - x_0)^2)\\
+O((x_j - x_0)^2)\\<br>
 &amp; = O(\tau + h)
 \end{aligned}
 $$</p>
@@ -345,7 +348,7 @@ T_j^n
 &amp; =
 \frac{\tau}{2}u_{tt}(x_j, t^n)+
 \frac{h^2}{6}au_{xxx}(x_j,t^n)+
-O(\tau^2 + h^3)\\
+O(\tau^2 + h^3)\\<br>
 &amp; = O(\tau + h^2)
 \end{aligned}
 $$</p>
@@ -391,30 +394,30 @@ $$u_{xx}(x_j, t^n) = u_{xxx}(p_5,t^n)(x_j - q_5) = O(h).$$
 <table>
 <thead>
 <tr>
-<th style="text-align:center">截断误差</th>
-<th style="text-align:center">$s_j^n = \frac{u_{j+1}^n - u_{j}^n}{h}$</th>
-<th style="text-align:center">$s_j^n = \frac{u_{j}^n - u_{j-1}^n}{h}$</th>
-<th style="text-align:center">$s_j^n = 0$</th>
+<th align="center">截断误差</th>
+<th align="center">$s_j^n = \frac{u_{j+1}^n - u_{j}^n}{h}$</th>
+<th align="center">$s_j^n = \frac{u_{j}^n - u_{j-1}^n}{h}$</th>
+<th align="center">$s_j^n = 0$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$s_{j-1}^n = \frac{u_{j}^n - u_{j-1}^n}{h}$</td>
-<td style="text-align:center">$O(\tau + h^2)$</td>
-<td style="text-align:center">$O(\tau + h^2)$</td>
-<td style="text-align:center">$O(\tau + h)$</td>
+<td align="center">$s_{j-1}^n = \frac{u_{j}^n - u_{j-1}^n}{h}$</td>
+<td align="center">$O(\tau + h^2)$</td>
+<td align="center">$O(\tau + h^2)$</td>
+<td align="center">$O(\tau + h)$</td>
 </tr>
 <tr>
-<td style="text-align:center">$s_{j-1}^n = \frac{u_{j-1}^n - u_{j-2}^n}{h}$</td>
-<td style="text-align:center">$O(\tau + h^2)$</td>
-<td style="text-align:center">$O(\tau + h^2)$</td>
-<td style="text-align:center">$O(\tau + h)$</td>
+<td align="center">$s_{j-1}^n = \frac{u_{j-1}^n - u_{j-2}^n}{h}$</td>
+<td align="center">$O(\tau + h^2)$</td>
+<td align="center">$O(\tau + h^2)$</td>
+<td align="center">$O(\tau + h)$</td>
 </tr>
 <tr>
-<td style="text-align:center">$s_{j-1}^n = 0$</td>
-<td style="text-align:center">$O(\tau + h)$</td>
-<td style="text-align:center">$O(\tau + h)$</td>
-<td style="text-align:center">$O(\tau + h)$</td>
+<td align="center">$s_{j-1}^n = 0$</td>
+<td align="center">$O(\tau + h)$</td>
+<td align="center">$O(\tau + h)$</td>
+<td align="center">$O(\tau + h)$</td>
 </tr>
 </tbody>
 </table>
@@ -439,10 +442,10 @@ U_j^{n+1}
 \frac{U_j^n +\frac{h}{2}S_j^n
 -U_{j-1}^n -\frac{h}{2}S_{j-1}^n}
 {U_j^n - U_{j-1}^n}
-(U_j^n - U_{j-1}^n)\\
+(U_j^n - U_{j-1}^n)\\<br>
 &amp;=U_j^n -  a\lambda
 \left(1 + \frac{1}{2}\frac{hS_j^n - hS_{j-1}^n}{U_j^n - U_{j-1}^n}\right)
-(U_j^n - U_{j-1}^n)，\\
+(U_j^n - U_{j-1}^n)，\\<br>
 \end{aligned}
 $$
 而当$U_j^n = U_{j-1}^n$时, 根据定义$S_j^n = S_{j-1}^n = 0$, 有
@@ -460,7 +463,7 @@ C_{j-1/2} =
 \begin{aligned}
 &amp;a\lambda
 \left(1 + \frac{1}{2} \frac{hS_j^n - hS_{j-1}^n}{U_j^n - U_{j-1}^n}\right),
-&amp;\quad U_j^n \ne U_{j-1}^n,\\
+&amp;\quad U_j^n \ne U_{j-1}^n,\\<br>
 &amp; 0,
 &amp;\quad U_j^n = U_{j-1}^n.
 \end{aligned}
@@ -482,7 +485,6 @@ $$</p>
     <div class="article-footer">
     </div>
   </article>
-
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
@@ -519,15 +521,33 @@ $$</p>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-            showMathMenu: false, //disables context menu
-            tex2jax: {
-            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
-           }
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
     });
+
 </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -544,8 +564,8 @@ $$</p>
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://caiyouy.github.io/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
-<script src="https://caiyouy.github.io/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+<script src="https://caiyouy.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://caiyouy.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
 
 <script>
     (function (window) {
@@ -563,7 +583,7 @@ $$</p>
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({

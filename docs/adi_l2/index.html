@@ -21,25 +21,28 @@
     
     
     <meta name="description" content="课本中ADI格式(2.4.27)等价于如下单步格式 $$ \begin{aligned} &amp;amp; \left(1-\frac{1}{2}\mu_x\delta_x^2\right) \left(1-\frac{1}{2}\mu_y\delta_y^2\right) \left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m&#43;1} =\\ &amp;amp; \left(1&#43;\frac{1}{2}\mu_x\delta_x^2\right) \left(1&#43;\frac{1}{2}\mu_y\delta_y^2\right) \left(1&#43;\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m} -\frac{1}{4}\mu_x\mu_y\mu_z\delta_x^2\delta_y^2\delta_z^2U_{j,k,l}^{m} \end{aligned} $$ 使用Fourier方法，代入波形 $$U_{j,k,l}^{m} = \lambda_{s}^m \exp\left[i\pi \left(\frac{s_x j}{N_x} &#43; \frac{s_y k}{N_y} &#43; \frac{s_z l}{N_z} \right)\right], $$ 注" />
-    <meta name="generator" content="Hugo 0.97.3 with theme pure" />
+    <meta name="generator" content="Hugo 0.68.3 with theme pure" />
     <title>一个ADI格式的L2稳定性 - Yuan Caiyou&#39;s Pages</title>
     
     
-    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.c58e22f1aa6179cd5cb60b9e08421a2b9a9c9fe9352d095e051b51aae209e5c0.css">
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
     
     <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
     <meta property="og:title" content="一个ADI格式的L2稳定性" />
 <meta property="og:description" content="课本中ADI格式(2.4.27)等价于如下单步格式 $$ \begin{aligned} &amp; \left(1-\frac{1}{2}\mu_x\delta_x^2\right) \left(1-\frac{1}{2}\mu_y\delta_y^2\right) \left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m&#43;1} =\\ &amp; \left(1&#43;\frac{1}{2}\mu_x\delta_x^2\right) \left(1&#43;\frac{1}{2}\mu_y\delta_y^2\right) \left(1&#43;\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m} -\frac{1}{4}\mu_x\mu_y\mu_z\delta_x^2\delta_y^2\delta_z^2U_{j,k,l}^{m} \end{aligned} $$ 使用Fourier方法，代入波形 $$U_{j,k,l}^{m} = \lambda_{s}^m \exp\left[i\pi \left(\frac{s_x j}{N_x} &#43; \frac{s_y k}{N_y} &#43; \frac{s_z l}{N_z} \right)\right], $$ 注" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://caiyouy.github.io/adi_l2/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://caiyouy.github.io/adi_l2/" />
 <meta property="article:published_time" content="2020-11-18T15:55:59+08:00" />
 <meta property="article:modified_time" content="2020-11-18T15:55:59+08:00" />
-
 <meta itemprop="name" content="一个ADI格式的L2稳定性">
-<meta itemprop="description" content="课本中ADI格式(2.4.27)等价于如下单步格式 $$ \begin{aligned} &amp; \left(1-\frac{1}{2}\mu_x\delta_x^2\right) \left(1-\frac{1}{2}\mu_y\delta_y^2\right) \left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m&#43;1} =\\ &amp; \left(1&#43;\frac{1}{2}\mu_x\delta_x^2\right) \left(1&#43;\frac{1}{2}\mu_y\delta_y^2\right) \left(1&#43;\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m} -\frac{1}{4}\mu_x\mu_y\mu_z\delta_x^2\delta_y^2\delta_z^2U_{j,k,l}^{m} \end{aligned} $$ 使用Fourier方法，代入波形 $$U_{j,k,l}^{m} = \lambda_{s}^m \exp\left[i\pi \left(\frac{s_x j}{N_x} &#43; \frac{s_y k}{N_y} &#43; \frac{s_z l}{N_z} \right)\right], $$ 注"><meta itemprop="datePublished" content="2020-11-18T15:55:59+08:00" />
-<meta itemprop="dateModified" content="2020-11-18T15:55:59+08:00" />
+<meta itemprop="description" content="课本中ADI格式(2.4.27)等价于如下单步格式 $$ \begin{aligned} &amp; \left(1-\frac{1}{2}\mu_x\delta_x^2\right) \left(1-\frac{1}{2}\mu_y\delta_y^2\right) \left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m&#43;1} =\\ &amp; \left(1&#43;\frac{1}{2}\mu_x\delta_x^2\right) \left(1&#43;\frac{1}{2}\mu_y\delta_y^2\right) \left(1&#43;\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m} -\frac{1}{4}\mu_x\mu_y\mu_z\delta_x^2\delta_y^2\delta_z^2U_{j,k,l}^{m} \end{aligned} $$ 使用Fourier方法，代入波形 $$U_{j,k,l}^{m} = \lambda_{s}^m \exp\left[i\pi \left(\frac{s_x j}{N_x} &#43; \frac{s_y k}{N_y} &#43; \frac{s_z l}{N_z} \right)\right], $$ 注">
+<meta itemprop="datePublished" content="2020-11-18T15:55:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-11-18T15:55:59&#43;08:00" />
 <meta itemprop="wordCount" content="198">
+
+
+
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="一个ADI格式的L2稳定性"/>
 <meta name="twitter:description" content="课本中ADI格式(2.4.27)等价于如下单步格式 $$ \begin{aligned} &amp; \left(1-\frac{1}{2}\mu_x\delta_x^2\right) \left(1-\frac{1}{2}\mu_y\delta_y^2\right) \left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m&#43;1} =\\ &amp; \left(1&#43;\frac{1}{2}\mu_x\delta_x^2\right) \left(1&#43;\frac{1}{2}\mu_y\delta_y^2\right) \left(1&#43;\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m} -\frac{1}{4}\mu_x\mu_y\mu_z\delta_x^2\delta_y^2\delta_z^2U_{j,k,l}^{m} \end{aligned} $$ 使用Fourier方法，代入波形 $$U_{j,k,l}^{m} = \lambda_{s}^m \exp\left[i\pi \left(\frac{s_x j}{N_x} &#43; \frac{s_y k}{N_y} &#43; \frac{s_z l}{N_z} \right)\right], $$ 注"/>
@@ -243,7 +246,7 @@
 &amp;
 \left(1-\frac{1}{2}\mu_x\delta_x^2\right)
 \left(1-\frac{1}{2}\mu_y\delta_y^2\right)
-\left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m+1} =\\
+\left(1-\frac{1}{2}\mu_z\delta_z^2\right)U_{j,k,l}^{m+1} =\\<br>
 &amp;
 \left(1+\frac{1}{2}\mu_x\delta_x^2\right)
 \left(1+\frac{1}{2}\mu_y\delta_y^2\right)
@@ -264,7 +267,7 @@ $$
 &amp;= U_{j,k,l}^{m}\left(
 \exp\left(i\frac{\pi s_A}{N_A}\right) -2 +
 \exp\left(-i\frac{\pi s_A}{N_A}\right)
-\right)\\
+\right)\\<br>
 &amp;=U_{j,k,l}^m \left(-4\sin^2\left(\frac{\pi s_A}{2N_A}\right)\right),
 \qquad A = x,y,z.
 \end{aligned}
@@ -276,11 +279,11 @@ $$
 \left(1 + 2\mu_x \sin^2\left(\frac{\pi s_x}{2N_x}\right)\right)
 \left(1 + 2\mu_y \sin^2\left(\frac{\pi s_y}{2N_y}\right)\right)
 \left(1 + 2\mu_z \sin^2\left(\frac{\pi s_z}{2N_z}\right)\right)
-\lambda_s \\
+\lambda_s \\<br>
 =&amp;
 \left(1 - 2\mu_x \sin^2\left(\frac{\pi s_x}{2N_x}\right)\right)
 \left(1 - 2\mu_y \sin^2\left(\frac{\pi s_y}{2N_y}\right)\right)
-\left(1 - 2\mu_z \sin^2\left(\frac{\pi s_z}{2N_z}\right)\right)\\
+\left(1 - 2\mu_z \sin^2\left(\frac{\pi s_z}{2N_z}\right)\right)\\<br>
 &amp; +
 16\mu_x\mu_y\mu_z
 \sin^2\left(\frac{\pi s_x}{2N_x}\right)
@@ -300,7 +303,6 @@ $$</p>
     <div class="article-footer">
     </div>
   </article>
-
 </div><nav class="bar bar-footer clearfix" data-stick-bottom>
     <div class="bar-inner">
         <ul class="pager pull-left">
@@ -337,15 +339,33 @@ $$</p>
   </div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_SVG"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-            showMathMenu: false, //disables context menu
-            tex2jax: {
-            inlineMath: [ ['$','$'], ['\\(','\\)'] ]
-           }
+<script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
     });
+
 </script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
@@ -362,8 +382,8 @@ $$</p>
     })
     hljs.initHighlightingOnLoad();
 </script>
-<script src="https://caiyouy.github.io/js/application.min.c181e6b0c036798c7731cfb85b41b44c80689fd48fee546b73d449386ce6ccfb.js"></script>
-<script src="https://caiyouy.github.io/js/plugin.min.5c7ae0f9d1f515776ebc5e20dd06a3552ddc2a373d481d1c03bd7dfa574bec41.js"></script>
+<script src="https://caiyouy.github.io/js/application.min.bdeb64b910570b6c41badc6a05b7afb0c8ad9efd8525de3c7257d59e786326a3.js"></script>
+<script src="https://caiyouy.github.io/js/plugin.min.51ff8c7317566f82259170fa36e09c4493adc9b9378b427a01ad3f017ebac7dd.js"></script>
 
 <script>
     (function (window) {
@@ -381,7 +401,7 @@ $$</p>
         window.INSIGHT_CONFIG = INSIGHT_CONFIG;
     })(window);
 </script>
-<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.853c5d4062a8c262b2490c70df2f6d2b232483f85227b30b28013788b8c4da8ab59c1a735b9b31c9006f2962ef62213fea9d17cb9469c297f201772ce94e8fdf.js" defer></script>
+<script type="text/javascript" src="https://caiyouy.github.io/js/insight.min.a343cd9a5a7698336b28ef3a7c16a3a1b1d2d5fb17dc8ed04022bbe08cc5459073a15bdafa3a8a58cdd56080784bdd69fa70b1ae8597565c799c57ed00f0e120.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.min.js"></script>
 <script>
     tocbot.init({
