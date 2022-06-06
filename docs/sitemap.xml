@@ -10,6 +10,13 @@
   </url>
   
   <url>
+    <loc>https://caiyouy.github.io/</loc>
+    <lastmod>2022-02-27T15:55:59+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://caiyouy.github.io/linear_algebra_2022/</loc>
     <lastmod>2022-02-27T15:55:59+08:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -46,13 +53,6 @@
   
   <url>
     <loc>https://caiyouy.github.io/about/</loc>
-    <lastmod>2020-12-07T00:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://caiyouy.github.io/</loc>
     <lastmod>2020-12-07T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
