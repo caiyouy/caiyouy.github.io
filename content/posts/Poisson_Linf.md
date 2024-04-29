@@ -1,7 +1,7 @@
 ---
 title: "课本结论2.6证明"
 date: 2020-11-05T15:55:59+08:00
-draft: false
+draft: true
 categories: ["NMPDE2020",]
 ---
 

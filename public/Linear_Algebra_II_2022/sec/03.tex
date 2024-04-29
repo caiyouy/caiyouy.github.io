@@ -1,0 +1,317 @@
+\paragraph{8.1}
+\begin{itemize}
+    \item 域, 以及域$F$上的线性空间
+    \item 基和维数
+    \begin{itemize}
+		\item[a.] 所有非零线性空间均有基
+		\item[b.] 线性空间中的任意一组线性无关的向量可以扩充为基
+	\end{itemize}
+    \item 过渡矩阵
+\end{itemize}
+
+\paragraph{例题}
+\begin{itemize}
+  \item[1.]
+  \begin{itemize}
+    \item [(a)] 把域$F$看成是$F$上的线性空间，求它的一个基和维数；
+    \item [(b)] 把复数域$C$看成是实数域$R$上的线性空间，求它的一个基和维数；
+    \item [(c)] 把实数域$R$看成是有理数域$Q$上的线性空间，证明:对于任意大于1的正整数$n$，
+  $$1, \sqrt[n]{3}, \sqrt[n]{3^2}, \cdots, \sqrt[n]{3^{n-1}}$$
+  是线性无关的.\,(提示: 已知$g(x) = x^n-3$是Q上的不可约多项式)
+    \item [(d)] 证明: 实数域$R$作为有理数域$Q$上的线性空间是无穷维的.
+\end{itemize}
+\end{itemize}
+\vspace{2cm}
+
+\begin{itemize}
+  \item[2.] 设$V$是域$F$上的n维线性空间，域$F$包含域$E$,\,$F$可看作域$E$
+  上的$m$维线性空间
+  \begin{itemize}
+    \item [(a)] 求证：V可以成为域$E$上的线性空间
+    \item [(b)] 证明: 求V作为域E上线性空间的维数
+  \end{itemize}
+\end{itemize}
+\vspace{1.5cm}
+
+\begin{itemize}
+  \item[3.] (Complexification of real vector space)
+  设$V$是数域R上的$n$维线性空间，设$V_C = \{(u,v), u,v\in V\}$,
+  定义$V_C$上的加法
+  $$(u_1,v_1) +(u_2, v_2) = (u_1+u_2, v_1+v_2)$$
+  以及C上的数乘
+  $$(a+bi)(u,v)=(au-bv, av+bu)$$
+  \begin{itemize}
+    \item [(a)] 求证：$V_C$是一个复线性空间
+    \item [(b)] 计算$V_C$的维数
+  \end{itemize}
+\end{itemize}
+\vspace{1cm}
+
+\begin{itemize}
+  \item[4.] (对偶空间)设$V$是数域K上的$n$维线性空间，
+  考虑复数域$C$上的线性空间$C^V$(从$V$到$R$的函数全体)中具有下述性质的函数组成的子集$W$:
+  $$f(\alpha+\beta)=f(\alpha) + f(\beta),\quad \forall \alpha, \beta \in V,$$
+  $$f(k\alpha)=kf(\alpha),\quad \forall \alpha \in V, k \in K.$$
+  \begin{itemize}
+    \item [(a)] 求证：$W$是一个复线性空间
+    \item [(b)] 求$W$的一个基和维数；设$f\in W$, 求$f$在这个基下的坐标
+  \end{itemize}
+\end{itemize}
+\vspace{2cm}
+
+\begin{itemize}
+  \item[5.] (零化多项式和最小多项式)
+  设A是数域K上的一个非零n阶矩阵，说明$K[A]$是$K$上的一个线性空间.
+  $K[A]$至多多少维？\footnote{Hamilton-Cayley定理告诉我们，K[A]至多n维.}
+\end{itemize}
+\vspace{1cm}
+
+\begin{itemize}
+  \item[6.] 设递推方程
+  $$u_n = au_{n-1} +bu_{n-2}, \quad n \ge 2,$$
+  其中$a,b$都是非零复数. 若N上的一个复值数列$u_n$满足上述递推关系，则称为上述递推方程的解.
+  一元多项式$f(x)=x^2 - ax -b$称为上述递推方程的特征多项式.
+  求证
+  \begin{itemize}
+    \item [(a)] 上述递推方程的解集$W$是一个复线性空间
+    \item [(b)] 设$\alpha$是一个非零复数，则$\alpha^n \in W$ 当且仅当$f(\alpha)=0$
+    \item [(c)] 设$\alpha$是一个非零复数，则$n\alpha^n \in W$ 当且仅当$f(\alpha)=0, f'(\alpha)=0$.
+    \item [(d)] 若$f(x)$有两不同的根$\alpha_1, \alpha_2$, 则任意$u_n \in W$, 可以表示为
+    $$ u_n = C_1 \alpha_1^n +C_2 \alpha_2^n$$
+    其中$C_1, C_2$是常数;
+    \item [(e)] 若$f(x)$有二重根$\alpha$, 则任意$u_n \in W$, 可以表示为
+    $$ u_n = C_1 \alpha^n +C_2 n\alpha^n$$
+    其中$C_1, C_2$是常数;
+  \end{itemize}
+\end{itemize}
+\vspace{6cm}
+
+
+\paragraph{8.2}
+\begin{itemize}
+    \item 子空间
+    \item 子空间的维数定理
+    $$\dim V_1 + \dim V_2 = \dim (V_1 + V_2) + \dim (V_1 \cap V_2)$$
+    \item 直和
+\end{itemize}
+
+\paragraph{例题}
+% \begin{itemize}
+% \item[1.] 设$V_1, V_2, V_3$都是域F上的有限维线性空间$V$的子空间
+% \begin{itemize}
+%     \item[(a)] 求证:
+%     $$V_3 \cap V_1 + V_3 \cap V_2 \subset V_3 \cap (V_1 + V_2)$$ 
+%     \item[(b)] 如果$V_3 \subset V_1 + V_2$,
+% 试问$(V_3\cap V_1) + (V_3\cap V_2) = V_3$是否总成立？如果再加上条件$V_1 \subset V_3$呢？
+%     \item[(c)] 求证,
+%     \begin{equation}
+%     \nonumber
+%     \begin{aligned}
+%     \dim V_1 + \dim V_2 + \dim V_3 \ge
+%     &\dim(V_1 + V_2 + V_3)\\
+%     &+\dim(V_1 \cap V_2) +\dim(V_1 \cap V_3) +\dim(V_2 \cap V_3)\\
+%     &-\dim(V_1 \cap V_2 \cap V_3)
+%     \end{aligned}
+%     \end{equation}  
+%   \end{itemize}
+% \end{itemize}
+% \vspace{3cm}
+
+% \begin{itemize}
+%   \item[2.] 设$V_1, \cdots, V_s$都是域F上线性空间V的子空间,
+%   证明$V_1 + V_2 + \cdots + V_s$是直和
+%   \begin{itemize} 
+%     \item[(a)] 当且仅当,
+%     $$V_i \cap \left(\sum_{j\ne i} V_j \right) = 0, \quad i=1,2,\dots,s$$
+%     \item[(b)] 当且仅当，$V$中有一向量$\alpha$可以唯一表示为
+%     $$\alpha = \sum_{i=1}^s \alpha_i, \quad \alpha_i \in V_i$$
+%     \item[(c)] 当且仅当,
+%     $$\dim(V_1 + V_2 + \cdots + V_s) = \dim V_1 + \cdots \dim V_s$$ 
+%   \end{itemize}
+% \end{itemize}
+% \vspace{3cm}
+
+% \begin{itemize}
+%   \item[3.] 设A是数域K上的一个n阶矩阵，$\lambda_1, \lambda_2, \cdots, \lambda_s$
+%   是A的全部不同的特征值，用$V_{\lambda_i}$表示A的属于$\lambda_i$的特征子空间. 证明：
+%   A可以对角化的充分必要条件是
+%   $$K^n = V_{\lambda_1} \oplus V_{\lambda_2} \oplus \cdots \oplus V_{\lambda_s}$$
+% \end{itemize}
+% \vspace{1cm}
+
+\begin{itemize}
+  \item[1.] 设$V_1, V_2, \cdots, V_s$是域$F$上线性空间V的$s$个真子空间，证明：如果$char F \ne 0$,
+  $V_1\cup V_2\cup \cdots \cup V_s \ne V$.
+  \vspace{2cm}
+
+  \item[2.] 在数域K上的线性空间$K^{M_n(K)}$中，如果$f$满足，
+  对于任意的$A=(\alpha_1, \alpha_2,\cdots, \alpha_n)$，任意的n维列向量$\alpha$, 以及任意$k\in K$, $j\in \{1,2,\cdots, n\}$,
+  有 
+  $$f(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j} + \alpha, \alpha_{j+1}, \cdots, \alpha_n)
+  = f(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n) + 
+    f(\alpha_1, \cdots, \alpha_{j-1}, \alpha, \alpha_{j+1}, \cdots, \alpha_n)$$
+  $$f(\alpha_1, \cdots, \alpha_{j-1}, k\alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n)
+  = kf(\alpha_1, \cdots, \alpha_{j-1}, \alpha_{j}, \alpha_{j+1}, \cdots, \alpha_n)
+  $$
+  那么称$f$是$M_n(K)$上的列线性函数. 同理如果$g(A^T)$是列线性函数，则称$g(A)$是行线性函数。
+  记所有的列/行线性函数组成的集合分别记为$V_1$和$V_2$.
+  \begin{itemize} 
+    \item[(a)] 证明： $V_1, V_2$都是$K^{M_n(K)}$的子空间
+    \item[(b)] 分别求$V_1, V_2$的一个基和维数
+    \item[(c)] 分别求$V_1 \cap V_2,\,V_1 + V_2$的一个基和维数 
+  \end{itemize}
+\end{itemize}
+\vspace{6cm}
+
+\paragraph{8.3}
+\begin{itemize}
+    \item 线性空间的同构
+    \item 有限维线性空间同构的充要条件
+\end{itemize}
+
+\paragraph{例题}
+\begin{itemize}
+  \item[1.]令
+  \begin{equation}
+  \nonumber
+  H = \left\{
+    \begin{bmatrix}
+      z_1& z_2\\
+     -\bar{z}_2& \bar{z}_1\\
+    \end{bmatrix},
+    z_1, z_2 \in C
+      \right\}
+  \end{equation}
+  \begin{itemize}
+    \item[(a)] H对于矩阵的加法，以及实数和矩阵的乘法构成一个实线性空间
+    \item[(b)] 给出H的一个基和维数
+    \item[(c)] 证明: $H$与$R^4$同构，并写出$H$到$R^4$的一个同构映射  
+  \end{itemize}
+\end{itemize}
+\vspace{2cm}
+
+\begin{itemize}
+  \item[2.]设$A \in M_n(K)$, 令$AM_n(K) = \{AB, B\in M_n(K) \}$.
+  \begin{itemize}
+    \item[(a)] 证明$AM_n(K)$是数域$K$上线性空间$M_n(K)$的子空间
+    \item[(b)] 设A的列向量组$\alpha_1, \cdots, \alpha_n$的一个极大线性无关组为
+    $\alpha_{j_1}, \cdots, \alpha_{j_r}$,证明$AM_n(K)$和$M_{r\times n}(K)$同构，并
+    写出一个同构映射. 
+    \item[(c)] 证明: $\dim [AM_n(K)] = \rank(A)n$.
+  \end{itemize}
+\end{itemize}
+\vspace{4cm}
+
+\paragraph{8.4}
+\begin{itemize}
+    \item 商空间
+    \item $\dim{(V/W)} = \dim V - \dim W$
+\end{itemize}
+
+\paragraph{例题}
+\begin{itemize}
+    \item [1.] 设$U,W$都是域F上线性空间$V$的子空间, 证明$(U+W)/W \cong U/(U\cap W)$
+    \vspace{2cm}
+    % \item [2.] 设$V$是域F上的一个$n$维线性空间, ($n\ge 3$). $U$是$V$的一个2维子空间，用
+    % $\Omega_1$表示V中包含U的所有$n-1$维子空间组成的集合，用$\Omega_2$表示商空间$V/U$的所有
+    % $n-3$维子空间组成的集合，令
+    % \begin{equation}
+    %     \nonumber
+    %     \begin{aligned}
+    %     \sigma:\quad &\Omega_1 \longrightarrow \Omega_2\\
+    %                  & W \longrightarrow W/U.
+    %     \end{aligned}
+    % \end{equation}
+    % 证明: $\sigma$是双射.
+    % \vspace{3cm}
+\end{itemize}
+
+\paragraph{9.1-4}
+\begin{itemize}
+    \item 线性映射，线性变换，线性函数
+    \item 线性映射的核与像：
+    \begin{itemize}
+        \item[1.] $\dim{(\Ker A)} + \dim{(\Img A)} = \dim{V}$
+        \item[2.] 有限维线性变换， 单等价于满
+    \end{itemize}
+    \item 线性映射的矩阵表示:
+    \begin{itemize}
+        \item[1.] $Hom(V,V') \cong M_{s \times n}(F)$
+        \item[2.] 相似矩阵 $\Longleftrightarrow$ 线性变换在不同基下的表示 
+    \end{itemize}
+    \item 线性映射的行列式，秩，迹，特征值，特征向量等
+\end{itemize}
+
+\paragraph{例题}
+\begin{itemize}
+	\item [1.] 设$A \in Hom(V,V)$, 证明对于任意的$k$, 
+	$$\rank{A^k} - \rank{A^{k+1}} \ge \rank{A^{k+1}} - \rank{A^{k+2}}$$
+	\vspace{3cm}
+
+	\item [2.] 设$f$是$M_n(K)$上的线性函数，且对于任意的$A,B \in M_n(K),
+	f(AB)=f(BA)$, 求证$f=c \mathrm{tr}$, 其中$c$是某一常数，
+	$\mathrm{tr}$是迹算子.
+	\vspace{2cm}
+
+	\item [3.] (Frobenius秩不等式) 设$V,U,W,M$都是域F上的线性空间,
+    并且$V,U$都是有限维的,设$A \in Hom(V,U), B \in Hom(U,W), C \in Hom(W,M)$.
+    证明，$$\rank(CBA) \ge \rank(CB) + \rank(BA) - \rank(B).$$
+    \vspace{2cm}
+
+    \item [4.] (幂零矩阵的矩阵表示)设V是域$F$上的n维线性空间，A是V上的一个线性变换. 如果
+    $A^{n-1} \ne 0, A^n = 0$, 那么在V中存在一个基，使得A在此基下的矩阵为
+    \begin{equation}
+    \nonumber
+    \begin{bmatrix}
+        0& 1& 0& \cdots &0\\
+        0& 0& 1& \cdots &0\\
+        \vdots& \vdots& \vdots& \cdots & 1\\
+        0& 0& 0& \cdots &0\\
+    \end{bmatrix}
+    \end{equation}
+    \vspace{3cm}
+
+    \item [5.] 设$V$和$V'$分别是域$F$上n维，s维线性空间，A是$V$到$V'$
+    的一个线性映射，证明存在$V$的一个基和$V'$的一个基，使得A在这对基下的矩阵为,
+    \begin{equation}
+    \nonumber
+    \begin{bmatrix}
+        I_r& 0\\
+        0&   0\\
+    \end{bmatrix}
+    \end{equation}
+    其中$r = \rank(A)$.
+    \vspace{3cm}
+
+    \item [6.](两两正交的幂等变换的充要条件)
+    设$A_i \in M_n(K)$, $i=1,2,\cdots,s$,其中$K$是数域.
+    令$A=A_1 + A_2 +\cdots + A_s$.
+    \begin{itemize}
+        \item[(1) ] 证明: 如果
+              $$ \rank(A) = \rank(A_1) + \rank(A_2) \cdots + \rank(A_s),$$
+              那么
+              $$AM_n(K) = A_1M_n(K) \oplus A_2M_n(K) \oplus \cdots \oplus A_s M_n(K).$$
+        \item [(2) ] 证明: $A_1, A_2, \cdots, A_n$是两两正交的幂等矩阵,
+              当且仅当$A$是幂等矩阵，并且
+              $$ \rank(A) = \rank(A_1) + \rank(A_2) \cdots + \rank(A_s).$$
+    \end{itemize}
+    \vspace{5cm}
+
+    % \item [7. ] (对角化和数域相关) 设$f(x)=x^n +a_{n-1}x^{n-1} +\cdots +a_1 x +a_0$ 是有理数域Q上的一个不可约
+    % 多项式，$n>1$，$\omega$是$f(x)$的一个复根. 把$C$看成是$Q$上的线性空间，令
+    % \begin{equation}
+    %     \nonumber
+    %     \begin{aligned}
+    %     \mathbf{B}:\quad &Q[x] \longrightarrow C\\
+    %                      &g(x) \longrightarrow g(\omega).
+    %     \end{aligned}
+    % \end{equation}
+    % \begin{itemize}
+    %     \item[(1) ] $\mathbf{B}$是不是一线性映射？若是，给出$\Img \mathbf{B}$的一个基和维数;
+    %     \item[(2) ] 令$\mathbf{A}(z) = \omega z, \forall z \in \Img \mathbf{B}$, 
+    %                 $\mathbf{A}$是不是$\Img \mathbf{B}$上的线性变换？如果是，求$\mathbf{A}$在(1)中基下的矩阵A；
+    %     \item[(3) ] $\mathbf{A}$是否可以对角化?
+    %     \item[(4) ] 把矩阵$A$看成是复数域上的矩阵，该矩阵可以对角化么?
+    % \end{itemize}
+    % \vspace{5cm}
+\end{itemize}

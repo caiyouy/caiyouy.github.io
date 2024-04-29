@@ -1,152 +1,141 @@
-publishDir: docs  # hugo result directory
-baseURL: https://caiyouy.github.io/
-theme: pure
-title: Yuan Caiyou's Pages
-defaultContentLanguage: en  # en/zh/...
-footnoteReturnLinkContents: ↩
-hasCJKLanguage: true
-paginate: 7
-enableEmoji: true
-PygmentsCodeFences: false
-permalinks:
-    posts: /:filename/   #/:year/:month/:filename/
+baseURL: "https://caiyouy.github.io/"
+title: Caiyou Yuan's Pages
+paginate: 5
+theme: PaperMod
 
-taxonomies:
-    category : categories
-    tag : tags
-    series : series
-outputFormats:          # use for search. recommend not to modify 
-  SearchIndex:
-    mediaType: "application/json"
-    baseName: "searchindex"
-    isPlainText: true
-    notAlternative: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+mainSections: posts
 
-outputs:
-    home: ["HTML","RSS","SearchIndex"]  # recommend not to modify
-# sitemap
-sitemap:
-  changefreq: monthly
-  filename: sitemap.xml
-  priority: 0.5
-
-menu:
-  main:
-    - identifier: home
-      name: Home
-      title: Home
-      url: /
-      weight: 1
-
-    - identifier: archives
-      name: Archives
-      title: Archives
-      url: /posts/
-      weight: 2
-
-    - identifier: categories
-      name: Categories
-      title: Categories
-      url: /categories/
-      weight: 3
-
-    - identifier: about
-      name: About
-      title: About
-      url: /about/
-      weight: 5
-
+minify:
+  disableXML: true
+  # minifyOutput: true
 
 params:
-  since: 2020 
-  dateFormatToUse: "2006-01-02"
-  enablePostCopyright: false
-  # the directory under content folder that you want to render
-  mainSections: ["posts"]
-  # Enable/Disable menu icons
-  # Icon Reference: http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html
-  enableMathJax: true #Enable mathjax support, to use mathematical notations
-  highlightjs:
-    langs: ["python", "javascript"] # refer to http://staticfile.org/, search highlight.js, already have highlight.min.js
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Caiyou Yuan's Pages
+  description: "ExampleSite description"
+  keywords: [Blog, Portfolio, PaperMod]
+  author: Me
+  # author: ["Me", "You"] # multiple authors
+  images: ["<link or path of image for opengraph, twitter-cards>"]
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: true
 
-  menuIcons:
-    enable: true  # 是否启用导航菜单图标
-    home: icon-home-fill
-    archives: icon-archives-fill
-    categories: icon-folder
-    tags: icon-tags
-    repository: icon-project
-    books: icon-book-fill
-    links: icon-friendship
-    about: icon-cup-fill
+  ShowReadingTime: false
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: false
+  UseHugoToc: true
+  disableSpecial1stPost: true
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: false
+  tocopen: false
+  hideFooter: false
 
-  # profile
-  profile:
-    enabled: true # Whether to show profile bar
-    avatar: ./logo.jpeg
-    gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-    author: Yuan Caiyou
-    author_title:
-    author_description: Good Good Study, Day Day Up~
-    location: Beijing, China
-    follow: https://github.com/caiyouy
-    # Social Links
-    social:
-      links:
-        github: https://github.com/caiyouy
-        # weibo: http://weibo.com/{yourid}
-        # twitter: https://twitter.com/
-        # facebook: /
-        #rss: /index.xml
-      link_tooltip: true # enable the social link tooltip, options: true, false
-  # Site
-  site:
-    logo:
-      enabled: true 
-      width: 40
-      height: 40
-      url: favicon.ico
-    title: Hugo # 页面title
-    favicon: favicon.ico
-    board: <p>Welcome to my pages~</p> # 公告牌
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "<link / abs url>"
+    favicon16x16: "<link / abs url>"
+    favicon32x32: "<link / abs url>"
+    apple_touch_icon: "<link / abs url>"
+    safari_pinned_tab: "<link / abs url>"
 
-  # Share
-  # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
-  share:
-    enable: true # 是否启用分享
-    sites: weibo,qq,wechat #,facebook,twitter # PC端显示的分享图标
-    mobile_sites: weibo,qq #,qzone # 移动端显示的分享图标
+  label:
+    text: "Caiyou Yuan's Pages"
+    icon: yuan.jpg
+    iconHeight: 35
 
- # Donate
-  donate:
-    enable: false
-    # 微信打赏
-    wechatpay:
-      qrcode: donate/wechatpayimg.png
-      title: 微信支付
-    # 支付宝打赏
-    alipay:
-      qrcode: donate/alipayimg.png
-      title: 支付宝
+  # profile-mode
+  profileMode:
+    enabled: false # needs to be explicitly set
+    title: ExampleSite
+    subtitle: "This is subtitle"
+    imageUrl: "<img location>"
+    imageWidth: 120
+    imageHeight: 120
+    imageTitle: my image
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
 
-  # config
-  config:
-    skin: theme-black # theme color default is white. other type [theme-black,theme-blue,theme-green,theme-purple]
-    layout: main-center # main-left main-center main-right
-    excerpt_link: Read More
-    toc: false
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi \U0001F44B, I am Caiyou Yuan"
+    Content: Welcome to my blog
 
-  # Sidebar
-  sidebar: right
+  socialIcons:
+    # - name: x
+    #   url: "https://x.com/"
+    - name: github
+      url: "https://github.com/caiyouy"
+    - name: stackoverflow
+      url: "https://math.stackexchange.com/users/424461/caiyou"
+    - name: email
+      url: "mailto:yuancaiyou@hotmail.com"
 
-  # Search
-  search:
-    enable: true # enable search. thanks for https://raw.githubusercontent.com/ppoffice/hexo-theme-icarus/master/source/js/insight.js
+  analytics:
+    google:
+      SiteVerificationTag: "XYZabc"
+    bing:
+      SiteVerificationTag: "XYZabc"
+    yandex:
+      SiteVerificationTag: "XYZabc"
 
-  # Sidebar only the following widgets. you can remove any you don't like it.
-  widgets:
-    - board
-      #- category
-      #- tag
-    - recent_posts
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: true # hide on list pages and home
+    hiddenInSingle: true # hide on single page
 
+  editPost:
+    URL: "https://github.com/caiyouy.github.io/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 20
+    # - identifier: tags
+    #   name: tags
+    #   url: /tags/
+    #   weight: 20
+    # - identifier: example
+    #   name: example.org
+    #   url: https://example.org
+    #   weight: 30
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai

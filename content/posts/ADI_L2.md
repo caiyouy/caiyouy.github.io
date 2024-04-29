@@ -1,7 +1,7 @@
 ---
 title: "一个ADI格式的L2稳定性"
 date: 2020-11-18T15:55:59+08:00
-draft: false
+draft: true
 categories: ["NMPDE2020",]
 ---
 

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Caiyou Yuan&#39;s Pages</title>
+<meta name="keywords" content="">
+<meta name="description" content="计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值, 有如下的简单方法:
+随机选择初始向量 v
+不断地做矩阵向量乘法 v=Av
+可以证明, 在一定条件下, v 会逐渐收敛到 A 的绝对值最大的特征值所对应的特征向量. 所以, 请用C语言实现如下算法, 计算矩阵绝对值最大的特征值及其对应的特征向量.
+选择初始向量 v;
+做矩阵向量乘法 v=Av;
+将 v 归一化(目的是防止溢出), 即v除以v的二范数;
+做收敛性判断; 如果不收敛, 返回第2步, 否则输出v做为近似特征向量.
+附加说明:
+初始向量 v 不妨选为分量全为1的向量;
+向量 v 的二范数定义为, v的各分量的平方和, 再开根号.
+收敛的准则: 前后两次 v 的差向量的二范数小于1E-8;
+输入时, 首先输入一个整数 N 代表矩阵的规模, 然后输入 N*N 个双精度浮点数, 做为矩阵元素. 输出时为了统一, 请输出二范数为1, 且第一个分量非负的那个特征向量.
+一些简化: 输入矩阵为实对称矩阵, 且特征值互异.
+样例输入一:
+2 2 1 1 2 样例输出一:
+Eigenvalue: 3.0000 Eigenvector: 0.7071 0.">
+<meta name="author" content="Me">
+<link rel="canonical" href="http://localhost:1313/c_programming/test02/test/">
+<meta name="google-site-verification" content="XYZabc">
+<meta name="yandex-verification" content="XYZabc">
+<meta name="msvalidate.01" content="XYZabc">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="apple-touch-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="mask-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/c_programming/test02/test/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值, 有如下的简单方法:
+随机选择初始向量 v
+不断地做矩阵向量乘法 v=Av
+可以证明, 在一定条件下, v 会逐渐收敛到 A 的绝对值最大的特征值所对应的特征向量. 所以, 请用C语言实现如下算法, 计算矩阵绝对值最大的特征值及其对应的特征向量.
+选择初始向量 v;
+做矩阵向量乘法 v=Av;
+将 v 归一化(目的是防止溢出), 即v除以v的二范数;
+做收敛性判断; 如果不收敛, 返回第2步, 否则输出v做为近似特征向量.
+附加说明:
+初始向量 v 不妨选为分量全为1的向量;
+向量 v 的二范数定义为, v的各分量的平方和, 再开根号.
+收敛的准则: 前后两次 v 的差向量的二范数小于1E-8;
+输入时, 首先输入一个整数 N 代表矩阵的规模, 然后输入 N*N 个双精度浮点数, 做为矩阵元素. 输出时为了统一, 请输出二范数为1, 且第一个分量非负的那个特征向量.
+一些简化: 输入矩阵为实对称矩阵, 且特征值互异.
+样例输入一:
+2 2 1 1 2 样例输出一:
+Eigenvalue: 3.0000 Eigenvector: 0.7071 0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/c_programming/test02/test/" />
+<meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta property="article:section" content="c_programming" />
+
+<meta property="og:site_name" content="Caiyou Yuan&#39;s Pages" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值, 有如下的简单方法:
+随机选择初始向量 v
+不断地做矩阵向量乘法 v=Av
+可以证明, 在一定条件下, v 会逐渐收敛到 A 的绝对值最大的特征值所对应的特征向量. 所以, 请用C语言实现如下算法, 计算矩阵绝对值最大的特征值及其对应的特征向量.
+选择初始向量 v;
+做矩阵向量乘法 v=Av;
+将 v 归一化(目的是防止溢出), 即v除以v的二范数;
+做收敛性判断; 如果不收敛, 返回第2步, 否则输出v做为近似特征向量.
+附加说明:
+初始向量 v 不妨选为分量全为1的向量;
+向量 v 的二范数定义为, v的各分量的平方和, 再开根号.
+收敛的准则: 前后两次 v 的差向量的二范数小于1E-8;
+输入时, 首先输入一个整数 N 代表矩阵的规模, 然后输入 N*N 个双精度浮点数, 做为矩阵元素. 输出时为了统一, 请输出二范数为1, 且第一个分量非负的那个特征向量.
+一些简化: 输入矩阵为实对称矩阵, 且特征值互异.
+样例输入一:
+2 2 1 1 2 样例输出一:
+Eigenvalue: 3.0000 Eigenvector: 0.7071 0."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "C_Programmings",
+      "item": "http://localhost:1313/c_programming/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/c_programming/test02/test/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值, 有如下的简单方法:\n随机选择初始向量 v\n不断地做矩阵向量乘法 v=Av\n可以证明, 在一定条件下, v 会逐渐收敛到 A 的绝对值最大的特征值所对应的特征向量. 所以, 请用C语言实现如下算法, 计算矩阵绝对值最大的特征值及其对应的特征向量.\n选择初始向量 v;\n做矩阵向量乘法 v=Av;\n将 v 归一化(目的是防止溢出), 即v除以v的二范数;\n做收敛性判断; 如果不收敛, 返回第2步, 否则输出v做为近似特征向量.\n附加说明:\n初始向量 v 不妨选为分量全为1的向量;\n向量 v 的二范数定义为, v的各分量的平方和, 再开根号.\n收敛的准则: 前后两次 v 的差向量的二范数小于1E-8;\n输入时, 首先输入一个整数 N 代表矩阵的规模, 然后输入 N*N 个双精度浮点数, 做为矩阵元素. 输出时为了统一, 请输出二范数为1, 且第一个分量非负的那个特征向量.\n一些简化: 输入矩阵为实对称矩阵, 且特征值互异.\n样例输入一:\n2 2 1 1 2 样例输出一:\nEigenvalue: 3.0000 Eigenvector: 0.7071 0.",
+  "keywords": [
+    
+  ],
+  "articleBody": "计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值, 有如下的简单方法:\n随机选择初始向量 v\n不断地做矩阵向量乘法 v=Av\n可以证明, 在一定条件下, v 会逐渐收敛到 A 的绝对值最大的特征值所对应的特征向量. 所以, 请用C语言实现如下算法, 计算矩阵绝对值最大的特征值及其对应的特征向量.\n选择初始向量 v;\n做矩阵向量乘法 v=Av;\n将 v 归一化(目的是防止溢出), 即v除以v的二范数;\n做收敛性判断; 如果不收敛, 返回第2步, 否则输出v做为近似特征向量.\n附加说明:\n初始向量 v 不妨选为分量全为1的向量;\n向量 v 的二范数定义为, v的各分量的平方和, 再开根号.\n收敛的准则: 前后两次 v 的差向量的二范数小于1E-8;\n输入时, 首先输入一个整数 N 代表矩阵的规模, 然后输入 N*N 个双精度浮点数, 做为矩阵元素. 输出时为了统一, 请输出二范数为1, 且第一个分量非负的那个特征向量.\n一些简化: 输入矩阵为实对称矩阵, 且特征值互异.\n样例输入一:\n2 2 1 1 2 样例输出一:\nEigenvalue: 3.0000 Eigenvector: 0.7071 0.7071 样例输入二:\n3 2 1 1 1 2 1 1 1 2 样例输出二:\nEigenvalue: 4.0000 Eigenvector: 0.5774 0.5774 0.5774 参考代码\n#include #include double A[100][100]; // multiplication between matrix and vector void mv(double A[][100], double *x, double* res, int N) { for(int i=0;i\u003cN;i++) { res[i]=0; for(int j=0;j\u003cN;j++) { res[i]+=A[i][j]*x[j]; } } } double norm2(double *x, int N) { double res=0; for(int i=0;i\u003cN;i++) { res+=x[i]*x[i]; } return sqrt(res); } void pow_method(double A[][100], int N) { double tmp; double x_new[100],x_old[100],diff[100]; for(int i=0;i\u003cN;i++) x_new[i]=1; do{ // x_old=x_new; for(int i=0;i\u003cN;i++) { x_old[i]=x_new[i]; } mv(A,x_old,x_new,N); // Normalize x_new tmp=norm2(x_new,N); for(int i=0;i\u003cN;i++) { x_new[i]=x_new[i]/tmp; } // diff=x_new-x_old; for(int i=0;i\u003cN;i++) { diff[i]=x_new[i]-x_old[i]; } }while(norm2(diff,N)\u003e1e-8); //Output printf(\"Eigenvalue:\\n%.4f\\n\",tmp); printf(\"Eigenvector:\\n\"); double sign=1.0; if(x_new[0]\u003c0) sign=-1.0; for(int i=0;i\u003cN;i++) { printf(\"%.4f\\n\",sign*x_new[i]); } } int main() { int N; scanf(\"%d\",\u0026N); for(int i=0;i\u003cN;i++) { for(int j=0;j\u003cN;j++) { scanf(\"%lf\",\u0026A[i][j]); } } pow_method(A,N); return 0; } 最大的数 输入 N 个正整数( 1\u003c=N\u003c100 ), 输出这 N 个整数通过改变次序, 所能组成的最大整数. 例如, 输入 12 和 3 , 结果为 312 , 因为 123\u003c312 .\n样例输入一:\n3 87 86 8 样例输出一:\n88786 样例输入二:\n3 89 86 8 样例输出二:\n89886 思路提示: 可以通过对输入的整数进行降序排列来实现上述功能, 但是需要合理定义新的\"大小\"关系. 这种具有自反性和传递性的二元关系, 在数学上被称为拟序关系. 其他不同思路实现功能, 也可.\n样例代码\n#include // if a\u003eb in the new order relation, return 1 int newOrder(int a,int b) { int tmp_a=a, tmp_b=b; int len_a=0, len_b=0; // a,b length while(tmp_a\u003e0) { tmp_a=tmp_a/10; len_a++; } while(tmp_b\u003e0) { tmp_b=tmp_b/10; len_b++; } int ab=a, ba=b; for(int i=0;i\u003clen_a;i++) ba=ba*10; for(int i=0;i\u003clen_b;i++) ab=ab*10; ab=ab+b, ba=ba+a; if(ab\u003eba) return 1; else return 0; } void largestNumber(int *A, int N) { // Any sort algorithm for the new order // In descending order // Here is the select sort for(int i=0;i\u003cN;i++) { int max_index=i; for(int j=i+1;j\u003cN;j++) { if(newOrder(A[j],A[max_index])==1) { max_index=j; } } // A[max_index] is maximum in i,i+1,...N-1 // Exchange A[i] and A[max_index] int tmp=A[i]; A[i]=A[max_index]; A[max_index]=tmp; } } int main() { int N; int A[100]; scanf(\"%d\",\u0026N); for(int i=0;i\u003cN;i++) scanf(\"%d\",\u0026A[i]); largestNumber(A,N); for(int i=0;i\u003cN;i++) { printf(\"%d\",A[i]); } printf(\"\\n\"); return 0; } ",
+  "wordCount" : "381",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Me"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/c_programming/test02/test/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caiyou Yuan's Pages",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/%3Clink%20/%20abs%20url%3E"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
+                <img src="http://localhost:1313/yuan.jpg" alt="" aria-label="logo"
+                    height="35">Caiyou Yuan&#39;s Pages</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/c_programming/">C_Programmings</a></div>
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">Me&nbsp;|&nbsp;<a href="https://github.com/caiyouy.github.io/content/C_Programming/Test02/test.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="计算概论机考题目备选">计算概论机考题目备选<a hidden class="anchor" aria-hidden="true" href="#计算概论机考题目备选">#</a></h1>
+<h3 id="幂法求解矩阵绝对值最大的特征值">幂法求解矩阵绝对值最大的特征值<a hidden class="anchor" aria-hidden="true" href="#幂法求解矩阵绝对值最大的特征值">#</a></h3>
+<p>矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值,
+有如下的简单方法:</p>
+<ol>
+<li>
+<p>随机选择初始向量 <code>v</code></p>
+</li>
+<li>
+<p>不断地做矩阵向量乘法 <code>v=Av</code></p>
+</li>
+</ol>
+<p>可以证明, 在一定条件下, <code>v</code> 会逐渐收敛到 <code>A</code> 的绝对值最大的特征值所对应的特征向量. 所以, 请用C语言实现如下算法, 计算矩阵绝对值最大的特征值及其对应的特征向量.</p>
+<ol>
+<li>
+<p>选择初始向量 <code>v</code>;</p>
+</li>
+<li>
+<p>做矩阵向量乘法 <code>v=Av</code>;</p>
+</li>
+<li>
+<p>将 <code>v</code> 归一化(目的是防止溢出), 即<code>v</code>除以<code>v</code>的二范数;</p>
+</li>
+<li>
+<p>做收敛性判断; 如果不收敛, 返回第2步, 否则输出<code>v</code>做为近似特征向量.</p>
+</li>
+</ol>
+<p>附加说明:</p>
+<ol>
+<li>
+<p>初始向量 <code>v</code> 不妨选为分量全为1的向量;</p>
+</li>
+<li>
+<p>向量 <code>v</code> 的二范数定义为, <code>v</code>的各分量的平方和, 再开根号.</p>
+</li>
+<li>
+<p>收敛的准则: 前后两次 <code>v</code> 的差向量的二范数小于1E-8;</p>
+</li>
+<li>
+<p>输入时, 首先输入一个整数 <code>N</code> 代表矩阵的规模, 然后输入 <code>N*N</code> 个双精度浮点数, 做为矩阵元素. 输出时为了统一, 请输出二范数为1, 且第一个分量非负的那个特征向量.</p>
+</li>
+<li>
+<p>一些简化: 输入矩阵为实对称矩阵, 且特征值互异.</p>
+</li>
+</ol>
+<p>样例输入一:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span>
+</span></span></code></pre></div><p>样例输出一:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nl">Eigenvalue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="mf">3.0000</span>
+</span></span><span class="line"><span class="cl"><span class="nl">Eigenvector</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.7071</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.7071</span>
+</span></span></code></pre></div><p>样例输入二:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span> <span class="mi">1</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span>
+</span></span></code></pre></div><p>样例输出二:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="nl">Eigenvalue</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="mf">4.0000</span>
+</span></span><span class="line"><span class="cl"><span class="nl">Eigenvector</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.5774</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.5774</span>
+</span></span><span class="line"><span class="cl"><span class="mf">0.5774</span>
+</span></span></code></pre></div><p>参考代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;math.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">A</span><span class="p">[</span><span class="mi">100</span><span class="p">][</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// multiplication between matrix and vector
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">mv</span><span class="p">(</span><span class="kt">double</span> <span class="n">A</span><span class="p">[][</span><span class="mi">100</span><span class="p">],</span> <span class="kt">double</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">res</span><span class="p">,</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+=</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="nf">norm2</span><span class="p">(</span><span class="kt">double</span> <span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">double</span> <span class="n">res</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">res</span><span class="o">+=</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">pow_method</span><span class="p">(</span><span class="kt">double</span> <span class="n">A</span><span class="p">[][</span><span class="mi">100</span><span class="p">],</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">double</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">double</span> <span class="n">x_new</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">x_old</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span><span class="n">diff</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">do</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// x_old=x_new;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">x_old</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="nf">mv</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">x_old</span><span class="p">,</span><span class="n">x_new</span><span class="p">,</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// Normalize x_new
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="n">tmp</span><span class="o">=</span><span class="nf">norm2</span><span class="p">(</span><span class="n">x_new</span><span class="p">,</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">/</span><span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// diff=x_new-x_old;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">x_old</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="nf">norm2</span><span class="p">(</span><span class="n">diff</span><span class="p">,</span><span class="n">N</span><span class="p">)</span><span class="o">&gt;</span><span class="mf">1e-8</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//Output
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Eigenvalue:</span><span class="se">\n</span><span class="s">%.4f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">tmp</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Eigenvector:</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">double</span> <span class="n">sign</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">x_new</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;</span><span class="mi">0</span><span class="p">)</span> <span class="n">sign</span><span class="o">=-</span><span class="mf">1.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%.4f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="n">sign</span><span class="o">*</span><span class="n">x_new</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%lf&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">pow_method</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="最大的数">最大的数<a hidden class="anchor" aria-hidden="true" href="#最大的数">#</a></h3>
+<p>输入 <code>N</code> 个正整数( <code>1&lt;=N&lt;100</code> ), 输出这 <code>N</code> 个整数通过改变次序, 所能组成的最大整数.
+例如, 输入 <code>12</code> 和 <code>3</code> , 结果为 <code>312</code> , 因为 <code>123&lt;312</code> .</p>
+<p>样例输入一:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">87</span> <span class="mi">86</span> <span class="mi">8</span>
+</span></span></code></pre></div><p>样例输出一:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="mi">88786</span>
+</span></span></code></pre></div><p>样例输入二:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">89</span> <span class="mi">86</span> <span class="mi">8</span>
+</span></span></code></pre></div><p>样例输出二:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="mi">89886</span>
+</span></span></code></pre></div><p>思路提示: 可以通过对输入的整数进行降序排列来实现上述功能, 但是需要合理定义新的&quot;大小&quot;关系. 这种具有自反性和传递性的二元关系, 在数学上被称为拟序关系. 其他不同思路实现功能, 也可.</p>
+<p>样例代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// if a&gt;b in the new order relation, return 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">newOrder</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">tmp_a</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">tmp_b</span><span class="o">=</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">len_a</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">len_b</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// a,b length
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">while</span><span class="p">(</span><span class="n">tmp_a</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tmp_a</span><span class="o">=</span><span class="n">tmp_a</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">len_a</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span><span class="p">(</span><span class="n">tmp_b</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">tmp_b</span><span class="o">=</span><span class="n">tmp_b</span><span class="o">/</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">len_b</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">ab</span><span class="o">=</span><span class="n">a</span><span class="p">,</span> <span class="n">ba</span><span class="o">=</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len_a</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ba</span><span class="o">=</span><span class="n">ba</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">len_b</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">ab</span><span class="o">=</span><span class="n">ab</span><span class="o">*</span><span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ab</span><span class="o">=</span><span class="n">ab</span><span class="o">+</span><span class="n">b</span><span class="p">,</span> <span class="n">ba</span><span class="o">=</span><span class="n">ba</span><span class="o">+</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">ab</span><span class="o">&gt;</span><span class="n">ba</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">largestNumber</span><span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">A</span><span class="p">,</span> <span class="kt">int</span> <span class="n">N</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Any sort algorithm for the new order
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// In descending order
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="c1">// Here is the select sort
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kt">int</span> <span class="n">max_index</span><span class="o">=</span><span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span><span class="p">(</span><span class="nf">newOrder</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">A</span><span class="p">[</span><span class="n">max_index</span><span class="p">])</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">max_index</span><span class="o">=</span><span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// A[max_index] is maximum in i,i+1,...N-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">// Exchange A[i] and A[max_index]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="kt">int</span> <span class="n">tmp</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="p">[</span><span class="n">max_index</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="n">A</span><span class="p">[</span><span class="n">max_index</span><span class="p">]</span><span class="o">=</span><span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">N</span><span class="p">;</span> <span class="kt">int</span> <span class="n">A</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">largestNumber</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Caiyou Yuan&#39;s Pages</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

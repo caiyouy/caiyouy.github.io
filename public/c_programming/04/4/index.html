@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Caiyou Yuan&#39;s Pages</title>
+<meta name="keywords" content="">
+<meta name="description" content="计算概论（C语言）习题课讲义04 内容概要 判断语句
+循环语句
+循环算法举例
+判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，
+if(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。
+演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if&hellip;else 语句.
+注意点 5&gt;=3&gt;=1的理解
+将==打成=的手误
+循环语句 while循环
+do&hellip;while循环
+for循环
+while(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } 演示：三种循环方式实现 1&#43;2&#43;&hellip;&#43;100 循环算法举例 辗转相除法 又名欧几里得方法，是求两个整数数最大公约数的经典算法。">
+<meta name="author" content="Me">
+<link rel="canonical" href="http://localhost:1313/c_programming/04/4/">
+<meta name="google-site-verification" content="XYZabc">
+<meta name="yandex-verification" content="XYZabc">
+<meta name="msvalidate.01" content="XYZabc">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="apple-touch-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="mask-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/c_programming/04/4/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="计算概论（C语言）习题课讲义04 内容概要 判断语句
+循环语句
+循环算法举例
+判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，
+if(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。
+演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if&hellip;else 语句.
+注意点 5&gt;=3&gt;=1的理解
+将==打成=的手误
+循环语句 while循环
+do&hellip;while循环
+for循环
+while(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } 演示：三种循环方式实现 1&#43;2&#43;&hellip;&#43;100 循环算法举例 辗转相除法 又名欧几里得方法，是求两个整数数最大公约数的经典算法。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/c_programming/04/4/" />
+<meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta property="article:section" content="c_programming" />
+
+<meta property="og:site_name" content="Caiyou Yuan&#39;s Pages" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="计算概论（C语言）习题课讲义04 内容概要 判断语句
+循环语句
+循环算法举例
+判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，
+if(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。
+演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if&hellip;else 语句.
+注意点 5&gt;=3&gt;=1的理解
+将==打成=的手误
+循环语句 while循环
+do&hellip;while循环
+for循环
+while(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } 演示：三种循环方式实现 1&#43;2&#43;&hellip;&#43;100 循环算法举例 辗转相除法 又名欧几里得方法，是求两个整数数最大公约数的经典算法。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "C_Programmings",
+      "item": "http://localhost:1313/c_programming/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/c_programming/04/4/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "计算概论（C语言）习题课讲义04 内容概要 判断语句\n循环语句\n循环算法举例\n判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，\nif(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。\n演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if\u0026hellip;else 语句.\n注意点 5\u0026gt;=3\u0026gt;=1的理解\n将==打成=的手误\n循环语句 while循环\ndo\u0026hellip;while循环\nfor循环\nwhile(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } 演示：三种循环方式实现 1+2+\u0026hellip;+100 循环算法举例 辗转相除法 又名欧几里得方法，是求两个整数数最大公约数的经典算法。",
+  "keywords": [
+    
+  ],
+  "articleBody": "计算概论（C语言）习题课讲义04 内容概要 判断语句\n循环语句\n循环算法举例\n判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，\nif(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。\n演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if…else 语句.\n注意点 5\u003e=3\u003e=1的理解\n将==打成=的手误\n循环语句 while循环\ndo…while循环\nfor循环\nwhile(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } 演示：三种循环方式实现 1+2+…+100 循环算法举例 辗转相除法 又名欧几里得方法，是求两个整数数最大公约数的经典算法。\n原理：gcd(a,b)=gcd(b,a%b)\n举例，48和20的最大公约数\n48/20=2…8\n20/8=2…4\n8/4=2…0\n伪代码\nfunction gcd(a, b) while b ≠ 0 t := b; b := a mod b; a := t; return a; 名词解释:算法和伪代码\n算法：In mathematics and computer science, an algorithm is an unambiguous specification of how to solve a class of problems. From wikipedia.\n不得不提的一个人Muhammad ibn Musa al-Khwarizmi\nThe term algebra itself comes from the title of his book.\nHis name gave rise to the terms algorism and algorithm.\n伪代码（pseudocode）是一种非正式的，类似于英语结构的，用于描述模块结构图的语言.使用伪代码的目的是使被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java等）实现。\n思考：\n基于上面的结果，如何求两个整数的最小公倍数？ 基于上面的结果，如何求三个整数的最大公因数？ 二分法求根 链接：Wikipedia\nIn mathematics, the bisection method is a root-finding method that applies to any continuous functions for which one knows two values with opposite signs.\n伪代码：\nINPUT: Function f, endpoint values a, b, tolerance TOL, maximum iterations NMAX CONDITIONS: a \u003c b, either f(a) \u003c 0 and f(b) \u003e 0 or f(a) \u003e 0 and f(b) \u003c 0 OUTPUT: value which differs from a root of f(x) = 0 by less than TOL N ← 1 While N ≤ NMAX # limit iterations to prevent infinite loop c ← (a + b)/2 # new midpoint If f(c) = 0 or (b – a)/2 \u003c TOL then # solution found Output(c) Stop EndIf N ← N + 1 # increment step counter If sign(f(c)) = sign(f(a)) then a ← c else b ← c # new interval EndWhile Output(\"Method failed.\") # max number of steps exceeded Newton法求根 链接：Wikipedia\nIn numerical analysis, Newton’s method (also known as the Newton–Raphson method), named after Isaac Newton and Joseph Raphson, is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function.\n循环终止的条件？\n| f(x) | == 0?\n| f(x) | is small?\n| x-x_old | is small?\nNewton方法的鲜明特点是“局部二次收敛”；\n局部性质：\n举例： f(x) =x^3−2x^2 − 11x + 12 = (x − 4)(x − 1)(x + 3)，编程尝试Newton方法在如下初值下的收敛结果。\nx0=2\nx0=2.35287527\nx0=2.35284172\nx0=2.35283735\n二次收敛：\n举例：f(x)=x^2-19, 初值取为6，比较每次迭代结果和精确解；并和二分法对比。\n求解机器精度的数值 回顾：机器精度是浮点数近似表示时相对误差的上界。即，如果a，b两数如果满足 |a-b| 小于a倍的机器精度时，机器将无法区分a和b；所以，类似于二分法，我们可以通过下述程序，计算机器精度的近似值。\nfloat epsilon_f=1.0; float tmp_f=1.0+0.5*epsilon_f; while(tmp_f != 1.0) { epsilon_f=epsilon_f*0.5; tmp_f = 1.0+0.5*epsilon_f; } 上述计算结果和理论分析的pow(2,-23)次方接近。\n修改上面程序，计算双精度类型的机器精度 ",
+  "wordCount" : "409",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Me"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/c_programming/04/4/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caiyou Yuan's Pages",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/%3Clink%20/%20abs%20url%3E"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
+                <img src="http://localhost:1313/yuan.jpg" alt="" aria-label="logo"
+                    height="35">Caiyou Yuan&#39;s Pages</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/c_programming/">C_Programmings</a></div>
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">Me&nbsp;|&nbsp;<a href="https://github.com/caiyouy.github.io/content/C_Programming/04/4.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="计算概论c语言习题课讲义04">计算概论（C语言）习题课讲义04<a hidden class="anchor" aria-hidden="true" href="#计算概论c语言习题课讲义04">#</a></h1>
+<h2 id="内容概要">内容概要<a hidden class="anchor" aria-hidden="true" href="#内容概要">#</a></h2>
+<ul>
+<li>
+<p>判断语句</p>
+</li>
+<li>
+<p>循环语句</p>
+</li>
+<li>
+<p>循环算法举例</p>
+</li>
+</ul>
+<h3 id="判断语句">判断语句<a hidden class="anchor" aria-hidden="true" href="#判断语句">#</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">boolean_expression</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="cm">/* 如果布尔表达式为真将执行的语句 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="cm">/* 如果布尔表达式为假将执行的语句 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>或者嵌套时，</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">if</span><span class="p">(</span><span class="n">boolean_expression</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="cm">/* 当布尔表达式 1 为真时执行 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">boolean_expression</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="cm">/* 当布尔表达式 2 为真时执行 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">boolean_expression</span> <span class="mi">3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="cm">/* 当布尔表达式 3 为真时执行 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="cm">/* 当上面条件都不为真时执行 */</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。</p>
+<h4 id="演示零表示假非零表示真">演示：零表示假，非零表示真<a hidden class="anchor" aria-hidden="true" href="#演示零表示假非零表示真">#</a></h4>
+<p>条件运算符<code>?:</code>，可以用来替代 if&hellip;else 语句.</p>
+<p><img loading="lazy" src="./pic/1.jpg" alt="条件运算符的使用"  />
+</p>
+<h4 id="注意点">注意点<a hidden class="anchor" aria-hidden="true" href="#注意点">#</a></h4>
+<ul>
+<li>
+<p>5&gt;=3&gt;=1的理解</p>
+</li>
+<li>
+<p>将==打成=的手误</p>
+</li>
+</ul>
+<h3 id="循环语句">循环语句<a hidden class="anchor" aria-hidden="true" href="#循环语句">#</a></h3>
+<ol>
+<li>
+<p>while循环</p>
+</li>
+<li>
+<p>do&hellip;while循环</p>
+</li>
+<li>
+<p>for循环</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">condition</span><span class="p">);</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span> <span class="n">init</span><span class="p">;</span> <span class="n">condition</span><span class="p">;</span> <span class="n">increment</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">statement</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><img loading="lazy" src="./pic/2.jpg" alt="For循环的使用"  />
+</p>
+<h4 id="演示三种循环方式实现-12100">演示：三种循环方式实现 1+2+&hellip;+100<a hidden class="anchor" aria-hidden="true" href="#演示三种循环方式实现-12100">#</a></h4>
+<h3 id="循环算法举例">循环算法举例<a hidden class="anchor" aria-hidden="true" href="#循环算法举例">#</a></h3>
+<h4 id="辗转相除法">辗转相除法<a hidden class="anchor" aria-hidden="true" href="#辗转相除法">#</a></h4>
+<p>又名<a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">欧几里得方法</a>，是求两个整数数最大公约数的经典算法。</p>
+<p>原理：<code>gcd(a,b)=gcd(b,a%b)</code></p>
+<p>举例，48和20的最大公约数</p>
+<ol>
+<li>
+<p>48/20=2&hellip;8</p>
+</li>
+<li>
+<p>20/8=2&hellip;4</p>
+</li>
+<li>
+<p>8/4=2&hellip;0</p>
+</li>
+</ol>
+<p>伪代码</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">function</span> gcd<span class="o">(</span>a, b<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> b ≠ <span class="m">0</span>
+</span></span><span class="line"><span class="cl">       t :<span class="o">=</span> b<span class="p">;</span>
+</span></span><span class="line"><span class="cl">       b :<span class="o">=</span> a mod b<span class="p">;</span>
+</span></span><span class="line"><span class="cl">       a :<span class="o">=</span> t<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> a<span class="p">;</span>
+</span></span></code></pre></div><hr>
+<blockquote>
+<p>名词解释:算法和伪代码</p>
+</blockquote>
+<blockquote>
+<p>算法：In mathematics and computer science, an algorithm is an unambiguous specification of how to solve a class of problems. From <a href="https://en.wikipedia.org/wiki/Algorithm">wikipedia</a>.</p>
+</blockquote>
+<p>不得不提的一个人<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Muhammad ibn Musa al-Khwarizmi</a></p>
+<ul>
+<li>
+<p>The term algebra itself comes from the title of his book.</p>
+</li>
+<li>
+<p>His name gave rise to the terms algorism and algorithm.</p>
+</li>
+</ul>
+<blockquote>
+<p>伪代码（pseudocode）是一种非正式的，类似于英语结构的，用于描述模块结构图的语言.使用伪代码的目的是使被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java等）实现。</p>
+</blockquote>
+<p>思考：</p>
+<ol>
+<li>基于上面的结果，如何求两个整数的最小公倍数？</li>
+<li>基于上面的结果，如何求三个整数的最大公因数？</li>
+</ol>
+<h4 id="二分法求根">二分法求根<a hidden class="anchor" aria-hidden="true" href="#二分法求根">#</a></h4>
+<p>链接：<a href="https://en.wikipedia.org/wiki/Bisection_method">Wikipedia</a></p>
+<p>In mathematics, the bisection method is a root-finding method that applies to any continuous functions for which one knows two values with opposite signs.</p>
+<p>伪代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">INPUT: Function f,
+</span></span><span class="line"><span class="cl">       endpoint values a, b,
+</span></span><span class="line"><span class="cl">       tolerance TOL,
+</span></span><span class="line"><span class="cl">       maximum iterations NMAX
+</span></span><span class="line"><span class="cl">CONDITIONS: a &lt; b,
+</span></span><span class="line"><span class="cl">            either f<span class="o">(</span>a<span class="o">)</span> &lt; <span class="m">0</span> and f<span class="o">(</span>b<span class="o">)</span> &gt; <span class="m">0</span> or f<span class="o">(</span>a<span class="o">)</span> &gt; <span class="m">0</span> and f<span class="o">(</span>b<span class="o">)</span> &lt; <span class="m">0</span>
+</span></span><span class="line"><span class="cl">OUTPUT: value which differs from a root of f<span class="o">(</span>x<span class="o">)</span> <span class="o">=</span> <span class="m">0</span> by less than TOL
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">N ← <span class="m">1</span>
+</span></span><span class="line"><span class="cl">While N ≤ NMAX <span class="c1"># limit iterations to prevent infinite loop</span>
+</span></span><span class="line"><span class="cl">  c ← <span class="o">(</span>a + b<span class="o">)</span>/2 <span class="c1"># new midpoint</span>
+</span></span><span class="line"><span class="cl">  If f<span class="o">(</span>c<span class="o">)</span> <span class="o">=</span> <span class="m">0</span> or <span class="o">(</span>b – a<span class="o">)</span>/2 &lt; TOL <span class="k">then</span> <span class="c1"># solution found</span>
+</span></span><span class="line"><span class="cl">    Output<span class="o">(</span>c<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    Stop
+</span></span><span class="line"><span class="cl">  EndIf
+</span></span><span class="line"><span class="cl">  N ← N + <span class="m">1</span> <span class="c1"># increment step counter</span>
+</span></span><span class="line"><span class="cl">  If sign<span class="o">(</span>f<span class="o">(</span>c<span class="o">))</span> <span class="o">=</span> sign<span class="o">(</span>f<span class="o">(</span>a<span class="o">))</span> <span class="k">then</span> a ← c <span class="k">else</span> b ← c <span class="c1"># new interval</span>
+</span></span><span class="line"><span class="cl">EndWhile
+</span></span><span class="line"><span class="cl">Output<span class="o">(</span><span class="s2">&#34;Method failed.&#34;</span><span class="o">)</span> <span class="c1"># max number of steps exceeded</span>
+</span></span></code></pre></div><h4 id="newton法求根">Newton法求根<a hidden class="anchor" aria-hidden="true" href="#newton法求根">#</a></h4>
+<p>链接：<a href="https://en.wikipedia.org/wiki/Newton%27s_method">Wikipedia</a></p>
+<p>In numerical analysis, Newton&rsquo;s method (also known as the Newton–Raphson method), named after Isaac Newton and Joseph Raphson, is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function.</p>
+<p><img loading="lazy" src="./pic/3.jpg" alt="迭代格式"  />
+</p>
+<p>循环终止的条件？</p>
+<ul>
+<li>
+<p>| f(x) | == 0?</p>
+</li>
+<li>
+<p>| f(x) | is small?</p>
+</li>
+<li>
+<p>| x-x_old | is small?</p>
+</li>
+</ul>
+<p>Newton方法的鲜明特点是“<em>局部二次收敛</em>”；</p>
+<p>局部性质：</p>
+<p>举例： f(x) =x^3−2x^2 − 11x + 12 = (x − 4)(x − 1)(x + 3)，编程尝试Newton方法在如下初值下的收敛结果。</p>
+<ol>
+<li>
+<p>x0=2</p>
+</li>
+<li>
+<p>x0=2.35287527</p>
+</li>
+<li>
+<p>x0=2.35284172</p>
+</li>
+<li>
+<p>x0=2.35283735</p>
+</li>
+</ol>
+<p>二次收敛：</p>
+<p>举例：f(x)=x^2-19, 初值取为6，比较每次迭代结果和精确解；并和二分法对比。</p>
+<h4 id="求解机器精度的数值">求解机器精度的数值<a hidden class="anchor" aria-hidden="true" href="#求解机器精度的数值">#</a></h4>
+<p>回顾：机器精度是浮点数近似表示时相对误差的上界。即，如果a，b两数如果满足 |a-b| 小于a倍的机器精度时，机器将无法区分a和b；所以，类似于二分法，我们可以通过下述程序，计算机器精度的近似值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">epsilon_f</span><span class="o">=</span><span class="mf">1.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">float</span> <span class="n">tmp_f</span><span class="o">=</span><span class="mf">1.0</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">epsilon_f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span><span class="p">(</span><span class="n">tmp_f</span> <span class="o">!=</span> <span class="mf">1.0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">epsilon_f</span><span class="o">=</span><span class="n">epsilon_f</span><span class="o">*</span><span class="mf">0.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tmp_f</span> <span class="o">=</span> <span class="mf">1.0</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">epsilon_f</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>上述计算结果和理论分析的pow(2,-23)次方接近。</p>
+<ul>
+<li>修改上面程序，计算双精度类型的机器精度</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Caiyou Yuan&#39;s Pages</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

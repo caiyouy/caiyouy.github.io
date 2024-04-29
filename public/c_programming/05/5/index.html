@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Caiyou Yuan&#39;s Pages</title>
+<meta name="keywords" content="">
+<meta name="description" content="计算概论（C语言）习题课讲义05 内容概要 递归
+循环
+调试
+递归 The process in which a function calls itself directly or indirectly is called recursion.
+两个要素：
+１.　递归出口
+２.　递归公式
+int fact(int n) { if (n == 0) // 递归出口 return 1; else return n * fact(n - 1);　//递归公式 } 演示：调试演示递归程序执行次序 This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:
+A child couldn&#39;t sleep, so her mother told a story about a little frog, who couldn&#39;t sleep, so the frog&#39;s mother told a story about a little bear, who couldn&#39;t sleep, so bear&#39;s mother told a story about a little weasel .">
+<meta name="author" content="Me">
+<link rel="canonical" href="http://localhost:1313/c_programming/05/5/">
+<meta name="google-site-verification" content="XYZabc">
+<meta name="yandex-verification" content="XYZabc">
+<meta name="msvalidate.01" content="XYZabc">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="apple-touch-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="mask-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/c_programming/05/5/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+  
+
+<meta property="og:title" content="" />
+<meta property="og:description" content="计算概论（C语言）习题课讲义05 内容概要 递归
+循环
+调试
+递归 The process in which a function calls itself directly or indirectly is called recursion.
+两个要素：
+１.　递归出口
+２.　递归公式
+int fact(int n) { if (n == 0) // 递归出口 return 1; else return n * fact(n - 1);　//递归公式 } 演示：调试演示递归程序执行次序 This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:
+A child couldn&#39;t sleep, so her mother told a story about a little frog, who couldn&#39;t sleep, so the frog&#39;s mother told a story about a little bear, who couldn&#39;t sleep, so bear&#39;s mother told a story about a little weasel ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/c_programming/05/5/" />
+<meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta property="article:section" content="c_programming" />
+
+<meta property="og:site_name" content="Caiyou Yuan&#39;s Pages" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="计算概论（C语言）习题课讲义05 内容概要 递归
+循环
+调试
+递归 The process in which a function calls itself directly or indirectly is called recursion.
+两个要素：
+１.　递归出口
+２.　递归公式
+int fact(int n) { if (n == 0) // 递归出口 return 1; else return n * fact(n - 1);　//递归公式 } 演示：调试演示递归程序执行次序 This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:
+A child couldn&#39;t sleep, so her mother told a story about a little frog, who couldn&#39;t sleep, so the frog&#39;s mother told a story about a little bear, who couldn&#39;t sleep, so bear&#39;s mother told a story about a little weasel ."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "C_Programmings",
+      "item": "http://localhost:1313/c_programming/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "",
+      "item": "http://localhost:1313/c_programming/05/5/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "name": "",
+  "description": "计算概论（C语言）习题课讲义05 内容概要 递归\n循环\n调试\n递归 The process in which a function calls itself directly or indirectly is called recursion.\n两个要素：\n１.　递归出口\n２.　递归公式\nint fact(int n) { if (n == 0) // 递归出口 return 1; else return n * fact(n - 1);　//递归公式 } 演示：调试演示递归程序执行次序 This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:\nA child couldn\u0026#39;t sleep, so her mother told a story about a little frog, who couldn\u0026#39;t sleep, so the frog\u0026#39;s mother told a story about a little bear, who couldn\u0026#39;t sleep, so bear\u0026#39;s mother told a story about a little weasel .",
+  "keywords": [
+    
+  ],
+  "articleBody": "计算概论（C语言）习题课讲义05 内容概要 递归\n循环\n调试\n递归 The process in which a function calls itself directly or indirectly is called recursion.\n两个要素：\n１.　递归出口\n２.　递归公式\nint fact(int n) { if (n == 0) // 递归出口 return 1; else return n * fact(n - 1);　//递归公式 } 演示：调试演示递归程序执行次序 This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:\nA child couldn't sleep, so her mother told a story about a little frog, who couldn't sleep, so the frog's mother told a story about a little bear, who couldn't sleep, so bear's mother told a story about a little weasel ...who fell asleep. ...and the little bear fell asleep; ...and the little frog fell asleep; ...and the child fell asleep. 来自网络\n思考题：Explain the functionality of following functions int fun1(int x, int y) { if(x == 0) return y; else return fun1(x - 1, x + y); } void fun1(int n) { int i = 0; if (n \u003e 1) fun1(n-1); for (i = 0; i \u003c n; i++) printf(\" * \"); } #include int fun(int a, int b) { if (b == 0) return 1; if (b % 2 == 0) return fun(a*a, b/2); return fun(a*a, b/2)*a; } int main() { printf(\"%d\", fun(4, 3)); getchar(); return 0; } int fun(int i) { if ( i%2 ) return (i++); else return fun(fun( i - 1 )); } int main() { printf(\" %d \", fun(200)); getchar(); return 0; } 循环 Power of Two Given an integer, write a function to determine if it is a power of two.\nFrom LeetCode\n类似的，请完成 Power of Three\nClimbing Stairs You are climbing a stair case. It takes n steps to reach to the top.\nEach time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?\nFrom LeetCode\nNo Approach Time complexity Space complexity 1 Brute Force O(2^n) O(n) 2 Recursion with Memoization O(n) O(n) 3 Dynamic Programming O(n) O(n) 4 Fibonacci Number O(n) O(1) 5 Binets Method O(log n) O(1) 6 Fibonacci Formula O(log n) O(1) From LeetCode\nReverse Integer Given a 32-bit signed integer, reverse digits of an integer.\nExample 1: Input: 123 Output: 321 Example 2: Input: -123 Output: -321 Example 3: Input: 120 Output: 21 From LeetCode\n调试 printf大法，即使用printf函数输出中间结果，进行比较；\n使用调试器，即使用调试器设置断点，直接查看局部变量的数值、单步执行。\n测试代码一\n// 某位同学的上次作业 void solution(double a,double b,double c) { double delta; delta=(b*b)-4*a*c; if (delta\u003e0){ printf(\"root1=%lf\\n\",(-b+sqrt(delta))/2/a); printf(\"root2=%lf\",(-b-sqrt(delta))/2/a); } else { if(delta==0){ printf(\"root=%lf\",-b/2/a); } else { printf(\"root1=%lf+%lf*i\\n\",-b/2/a,sqrt(-delta)); printf(\"root2=%lf-%lf*i\",-b/2/a,sqrt(-delta)); } } } 测试代码二\n// 某位同学的上次作业 void root2(double a,double b,double c) { if (a!=0) { double tmp,q,d=b*b-4*a*c; if (d\u003e0) { tmp=sqrt(d); printf(\"Two real roots:%f,%f\\n\", (-b-tmp)/2/a,(-b+tmp)/2/a); } else if(d=0) { printf(\"One real root:%f\\n\",-b/2/a); } else { tmp=sqrt(0-(-d)); printf(\"No real root\\n\"); printf(\"Two roots:%f+(%f)i,%f+(%f)i\\n\",-b/2/a,tmp/2/a,-b/2/a,-tmp/2/a); } } else if(b!=0) { printf(\"One real root:%f\\n\",-c/b); } else { printf(\"No real root\\n\"); } } ",
+  "wordCount" : "471",
+  "inLanguage": "en",
+  "image": "http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": "Me"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http://localhost:1313/c_programming/05/5/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Caiyou Yuan's Pages",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "http://localhost:1313/%3Clink%20/%20abs%20url%3E"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
+                <img src="http://localhost:1313/yuan.jpg" alt="" aria-label="logo"
+                    height="35">Caiyou Yuan&#39;s Pages</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/posts/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/c_programming/">C_Programmings</a></div>
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">Me&nbsp;|&nbsp;<a href="https://github.com/caiyouy.github.io/content/C_Programming/05/5.md" rel="noopener noreferrer" target="_blank">Suggest Changes</a>
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="计算概论c语言习题课讲义05">计算概论（C语言）习题课讲义05<a hidden class="anchor" aria-hidden="true" href="#计算概论c语言习题课讲义05">#</a></h1>
+<h2 id="内容概要">内容概要<a hidden class="anchor" aria-hidden="true" href="#内容概要">#</a></h2>
+<ul>
+<li>
+<p>递归</p>
+</li>
+<li>
+<p>循环</p>
+</li>
+<li>
+<p>调试</p>
+</li>
+</ul>
+<h3 id="递归">递归<a hidden class="anchor" aria-hidden="true" href="#递归">#</a></h3>
+<p>The process in which a function calls itself directly or indirectly is called recursion.</p>
+<p>两个要素：</p>
+<p>１.　递归出口</p>
+<p>２.　递归公式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fact</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">// 递归出口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="k">else</span>
+</span></span><span class="line"><span class="cl">      <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="nf">fact</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>　<span class="c1">//递归公式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p><img loading="lazy" src="./pic/1.png" alt="递归演示结果"  />
+</p>
+<h4 id="演示调试演示递归程序执行次序">演示：调试演示递归程序执行次序<a hidden class="anchor" aria-hidden="true" href="#演示调试演示递归程序执行次序">#</a></h4>
+<p>This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">A child couldn<span class="s1">&#39;t sleep, so her mother told a story about a little frog,
+</span></span></span><span class="line"><span class="cl"><span class="s1">  who couldn&#39;</span>t sleep, so the frog<span class="s1">&#39;s mother told a story about a little bear,
+</span></span></span><span class="line"><span class="cl"><span class="s1">     who couldn&#39;</span>t sleep, so bear<span class="err">&#39;</span>s mother told a story about a little weasel
+</span></span><span class="line"><span class="cl">       ...who fell asleep.
+</span></span><span class="line"><span class="cl">     ...and the little bear fell asleep<span class="p">;</span>
+</span></span><span class="line"><span class="cl">  ...and the little frog fell asleep<span class="p">;</span>
+</span></span><span class="line"><span class="cl">...and the child fell asleep.
+</span></span></code></pre></div><p>来自<a href="https://stackoverflow.com/questions/126756/examples-of-recursive-functions">网络</a></p>
+<h4 id="思考题explain-the-functionality-of-following-functions">思考题：Explain the functionality of following functions<a hidden class="anchor" aria-hidden="true" href="#思考题explain-the-functionality-of-following-functions">#</a></h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fun1</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="n">y</span><span class="p">)</span>  
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nf">fun1</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>  <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">fun1</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">fun1</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">printf</span><span class="p">(</span><span class="s">&#34; * &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span><span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="kt">int</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">   <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">       <span class="k">return</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="nf">fun</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="nf">fun</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">fun</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span> <span class="n">i</span><span class="o">%</span><span class="mi">2</span> <span class="p">)</span> <span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="o">++</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="k">return</span> <span class="nf">fun</span><span class="p">(</span><span class="nf">fun</span><span class="p">(</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">printf</span><span class="p">(</span><span class="s">&#34; %d &#34;</span><span class="p">,</span> <span class="nf">fun</span><span class="p">(</span><span class="mi">200</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">  <span class="nf">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="循环">循环<a hidden class="anchor" aria-hidden="true" href="#循环">#</a></h3>
+<h4 id="power-of-two">Power of Two<a hidden class="anchor" aria-hidden="true" href="#power-of-two">#</a></h4>
+<p>Given an integer, write a function to determine if it is a power of two.</p>
+<p>From <a href="https://leetcode.com/problems/power-of-two/">LeetCode</a></p>
+<p>类似的，请完成 <a href="https://leetcode.com/problems/power-of-three/">Power of Three</a></p>
+<h4 id="climbing-stairs">Climbing Stairs<a hidden class="anchor" aria-hidden="true" href="#climbing-stairs">#</a></h4>
+<p>You are climbing a stair case. It takes n steps to reach to the top.</p>
+<p>Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?</p>
+<p>From <a href="https://leetcode.com/problems/climbing-stairs/">LeetCode</a></p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Approach</th>
+<th>Time complexity</th>
+<th>Space complexity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Brute Force</td>
+<td>O(2^n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Recursion with Memoization</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dynamic Programming</td>
+<td>O(n)</td>
+<td>O(n)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Fibonacci Number</td>
+<td>O(n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Binets Method</td>
+<td>O(log n)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fibonacci Formula</td>
+<td>O(log n)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>From <a href="https://leetcode.com/articles/climbing-stairs/">LeetCode</a></p>
+<h4 id="reverse-integer">Reverse Integer<a hidden class="anchor" aria-hidden="true" href="#reverse-integer">#</a></h4>
+<p>Given a 32-bit signed integer, reverse digits of an integer.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Example 1:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Input: <span class="m">123</span>
+</span></span><span class="line"><span class="cl">Output: <span class="m">321</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Example 2:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Input: -123
+</span></span><span class="line"><span class="cl">Output: -321
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Example 3:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Input: <span class="m">120</span>
+</span></span><span class="line"><span class="cl">Output: <span class="m">21</span>
+</span></span></code></pre></div><p>From <a href="https://leetcode.com/articles/reverse-integer/">LeetCode</a></p>
+<h3 id="调试">调试<a hidden class="anchor" aria-hidden="true" href="#调试">#</a></h3>
+<ol>
+<li>
+<p>printf大法，即使用printf函数输出中间结果，进行比较；</p>
+</li>
+<li>
+<p>使用调试器，即使用调试器设置断点，直接查看局部变量的数值、单步执行。</p>
+</li>
+</ol>
+<p>测试代码一</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 某位同学的上次作业
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">solution</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span><span class="kt">double</span> <span class="n">b</span><span class="p">,</span><span class="kt">double</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">delta</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">delta</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">delta</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;root1=%lf</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;root2=%lf&#34;</span><span class="p">,(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">(</span><span class="n">delta</span><span class="o">==</span><span class="mi">0</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;root=%lf&#34;</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;root1=%lf+%lf*i</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="nf">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">delta</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;root2=%lf-%lf*i&#34;</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="nf">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">delta</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>测试代码二</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="c1">// 某位同学的上次作业
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">void</span> <span class="nf">root2</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span><span class="kt">double</span> <span class="n">b</span><span class="p">,</span><span class="kt">double</span> <span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">a</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">double</span> <span class="n">tmp</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">d</span><span class="o">=</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">d</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tmp</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Two real roots:%f,%f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                   <span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="n">tmp</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">,(</span><span class="o">-</span><span class="n">b</span><span class="o">+</span><span class="n">tmp</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;One real root:%f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">tmp</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="n">d</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;No real root</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Two roots:%f+(%f)i,%f+(%f)i</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="n">tmp</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">b</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">,</span><span class="o">-</span><span class="n">tmp</span><span class="o">/</span><span class="mi">2</span><span class="o">/</span><span class="n">a</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>  <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">!=</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;One real root:%f</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span><span class="o">-</span><span class="n">c</span><span class="o">/</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;No real root</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">Caiyou Yuan&#39;s Pages</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+</body>
+
+</html>

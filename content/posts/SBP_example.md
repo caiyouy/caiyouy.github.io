@@ -1,7 +1,7 @@
 ---
 title: "离散分部求和举例"
 date: 2020-10-13T15:55:59+08:00
-draft: false
+draft: true
 categories: ["NMPDE2020",]
 ---
 
