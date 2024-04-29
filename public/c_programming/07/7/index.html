@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -14,19 +14,19 @@
 #include &lt;stdio.h&gt; void output(int min, int max) { int i,j,k; //简单粗暴,三重循环; for(i=min;i&lt;=max;i&#43;&#43;) { for(j=i;j&lt;=max;j&#43;&#43;) { for(k=j;k&lt;=max;k&#43;&#43;) { if(i*i&#43;j*j==k*k) { printf(&#34;%d %d %d\n&#34;,i,j,k); } } } } } int main() { int min,max; scanf(&#34;%d%d&#34;, &amp;min, &amp;max); output(min,max); return 0; } 代码点评二:
 #include &lt;stdio.h&gt; #include &lt;math.h&gt; int perfect(int s){ int n; for(n=1;n*n&lt;=s;n=n&#43;1) if(n*n==s) return 1; return 0; } int ssqrt(int s){ int n; for(n=1;n*n&lt;=s;n=n&#43;1) if(n*n==s) return n; return 0; } void haha(int m,int n){ int s; int a;int b; for(s=m;s&lt;n;s=s&#43;1) {for(a=m&#43;1;a&lt;=n;a=a&#43;1) if(perfect(a*a-s*s)&amp;(s*s&lt;a*a/2)) printf(&#34;%d %d %d\n&#34;,s,ssqrt(a*a-s*s),a); } } int main(){ int min,max; scanf(&#34;%d%d&#34;,&amp;min,&amp;max); haha(min,max); } Collatz函数 两个注意点:">
 <meta name="author" content="Me">
-<link rel="canonical" href="http://localhost:1313/c_programming/07/7/">
+<link rel="canonical" href="https://caiyouy.github.io/c_programming/07/7/">
 <meta name="google-site-verification" content="XYZabc">
 <meta name="yandex-verification" content="XYZabc">
 <meta name="msvalidate.01" content="XYZabc">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="apple-touch-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="mask-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="16x16" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="apple-touch-icon" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="mask-icon" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/c_programming/07/7/">
+<link rel="alternate" hreflang="en" href="https://caiyouy.github.io/c_programming/07/7/">
 <noscript>
     <style>
         #theme-toggle,
@@ -74,14 +74,14 @@
 #include &lt;stdio.h&gt; void output(int min, int max) { int i,j,k; //简单粗暴,三重循环; for(i=min;i&lt;=max;i&#43;&#43;) { for(j=i;j&lt;=max;j&#43;&#43;) { for(k=j;k&lt;=max;k&#43;&#43;) { if(i*i&#43;j*j==k*k) { printf(&#34;%d %d %d\n&#34;,i,j,k); } } } } } int main() { int min,max; scanf(&#34;%d%d&#34;, &amp;min, &amp;max); output(min,max); return 0; } 代码点评二:
 #include &lt;stdio.h&gt; #include &lt;math.h&gt; int perfect(int s){ int n; for(n=1;n*n&lt;=s;n=n&#43;1) if(n*n==s) return 1; return 0; } int ssqrt(int s){ int n; for(n=1;n*n&lt;=s;n=n&#43;1) if(n*n==s) return n; return 0; } void haha(int m,int n){ int s; int a;int b; for(s=m;s&lt;n;s=s&#43;1) {for(a=m&#43;1;a&lt;=n;a=a&#43;1) if(perfect(a*a-s*s)&amp;(s*s&lt;a*a/2)) printf(&#34;%d %d %d\n&#34;,s,ssqrt(a*a-s*s),a); } } int main(){ int min,max; scanf(&#34;%d%d&#34;,&amp;min,&amp;max); haha(min,max); } Collatz函数 两个注意点:" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/c_programming/07/7/" />
-<meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta property="og:url" content="https://caiyouy.github.io/c_programming/07/7/" />
+<meta property="og:image" content="https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
 <meta property="article:section" content="c_programming" />
 
 <meta property="og:site_name" content="Caiyou Yuan&#39;s Pages" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta name="twitter:image" content="https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="计算概论（C语言）习题课讲义07 内容概要 习题讲解
 数组初步
@@ -100,13 +100,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "C_Programmings",
-      "item": "http://localhost:1313/c_programming/"
+      "item": "https://caiyouy.github.io/c_programming/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "",
-      "item": "http://localhost:1313/c_programming/07/7/"
+      "item": "https://caiyouy.github.io/c_programming/07/7/"
     }
   ]
 }
@@ -124,7 +124,7 @@
   "articleBody": "计算概论（C语言）习题课讲义07 内容概要 习题讲解\n数组初步\n课堂练习\n习题讲解 输出一定范围勾股数 代码点评一:\n#include void output(int min, int max) { int i,j,k; //简单粗暴,三重循环; for(i=min;i\u003c=max;i++) { for(j=i;j\u003c=max;j++) { for(k=j;k\u003c=max;k++) { if(i*i+j*j==k*k) { printf(\"%d %d %d\\n\",i,j,k); } } } } } int main() { int min,max; scanf(\"%d%d\", \u0026min, \u0026max); output(min,max); return 0; } 代码点评二:\n#include #include int perfect(int s){ int n; for(n=1;n*n\u003c=s;n=n+1) if(n*n==s) return 1; return 0; } int ssqrt(int s){ int n; for(n=1;n*n\u003c=s;n=n+1) if(n*n==s) return n; return 0; } void haha(int m,int n){ int s; int a;int b; for(s=m;s\u003cn;s=s+1) {for(a=m+1;a\u003c=n;a=a+1) if(perfect(a*a-s*s)\u0026(s*s\u003ca*a/2)) printf(\"%d %d %d\\n\",s,ssqrt(a*a-s*s),a); } } int main(){ int min,max; scanf(\"%d%d\",\u0026min,\u0026max); haha(min,max); } Collatz函数 两个注意点:\n输入的处理\n溢出的判断\n代码点评一:\n#include #include int Collatz(int x) { int i=0; double tmp=(INT_MAX-1)/3.0; for(;i\u003c10000;i++) { printf(\"%d\\n\",x); if(x==1) { break; } if(x%2==1) { if(x\u003etmp) { printf(\"Error:overflow!\\n\"); return 1; } x=x*3+1; } else { x=x/2; } } printf(\"Recursive steps:%d\\n\\n\",i); return 0; } int main() { int x; //while loop while(scanf(\"%d\",\u0026x)==1) { Collatz(x); } return 0; } 代码点评二:\n#include #include #include void collaze(int n){ int a=0,b,c,d; if(n==1){ printf(\"1\\nRecursive steps:0\\n\\n\"); } else{ for(;;){ if(n\u003e=2\u0026\u0026n\u003c=2147000000){ printf(\"%d\\n\",n); if(n%2==0) n=n/2; else n=3*n+1; a=a+1; } else if(n==1){ printf(\"1\\nRecursive steps:%d\\n\\n\",a); break; } else{ printf(\"Error:overflow!\\n\\n\"); break; } } } } int main(){ int n; while(scanf(\"%d\",\u0026n)!=EOF){ collaze(n); } return 0; } 代码点评三:\n#include #include void Collatz(int n){ int steps=0; printf(\"%d\\n\",n); label: if(n==1) printf(\"Recursive steps:%d\\n\\n\", steps); else if((n\u003e715827882)\u0026\u0026(n%2)) printf(\"Error:overflow!\\n\\n\"); else if((n%2)\u0026\u0026(steps\u003c10000)) {++steps; n=3*n+1; printf(\"%d\\n\",n); goto label;} else if(steps\u003c10000) {++steps; n=n/2; printf(\"%d\\n\",n); goto label;} } int main(){ int a; while(scanf(\"%d\",\u0026a)==1){ Collatz(a) ; } } 代码点评四:\n#include int s=0,m=0; void Collatz(int n) { if (n==1) printf(\"1\\nRecursive steps:%d\\n\\n\",s); else if(s==10001) printf(\"1\\nRecursive steps:%d\\n\\n\",s-1); else if (n%2==0) { s++; printf(\"%d\\n\",n); Collatz(n/2); } else if (n%2==1) { s++; m=n*3+1; printf(\"%d\\n\",n); if (m\u003c0) printf(\"Error:overflow!\\n\\n\"); else Collatz(n*3+1); } } int main() { int n; while(scanf(\"%d\",\u0026n)==1) { Collatz(n); } return 0; } 圆周率 代码点评一:\n#include #include int main(){ int b; double x,y; for(int i=1;i\u003c=1000000;i++){ x=rand()/(double)RAND_MAX; y=rand()/(double)RAND_MAX; if(x*x+y*y\u003c1)b++; } printf(\"%.2f\\n\",4.0*b/1000000); return 0; } 代码点评二:\n#include #include double pi() { int Max=1000000; int N=0; for(int i=0;i\u003cMax;i++) { double x=(double)rand()/RAND_MAX; double y=(double)rand()/RAND_MAX; if(x*x+y*y\u003c=1) { N=N+1; } } double res=(double)N/Max; return res*4.0; } int main() { printf(\"%.2f\\n\",pi()); return 0; } 代码点评三:\n#include #include #include #include int main(){ int c; double a,b,d=0,e=0; time_t h; srand((int)time(\u0026h)); for(c=1;c\u003c=1000000;++c){ a=1.0*rand()/RAND_MAX; b=1.0*rand()/RAND_MAX; if(a*a+b*b\u003c1){ d=d+1.0; e=e+1.0; } else e=e+1.0; } printf(\"%.2f\",d*4/1000000.0); return 0; } 数组初步 C语言支持数组这种数据结构，它可以存储一个固定大小的相同类型元素的顺序集合。\n几个要点:\n固定大小; 区别于链表结构. 不可变长或缩短,使得数组在应用上不是十分灵活.\n相同类型; 区别于结构类型.\n顺序集合; 区别于链表结构.\n数组声明 type arrayName [ arraySize ]; 其中, arraySize必须是一个大于零的整数常量，type可以是任意有效的C数据类型。\n如下定义数组的方式, 可以么? C89 vs C99;\nint n; int a[n]; 初始化数组 //初始化 double balance[5] = {1000.0, 2.0, 3.4, 7.0, 50.0}; // 非初始化,错误 double balance[5]; balance[5]={1000.0, 2.0, 3.4, 7.0, 50.0}; 数组元素的使用 int a[10]; a[0] a[1] ... a[n-1] 下标范围为0到n-1,n为数组长度. 小心数组越界问题.\n课堂练习 (P143 15) 借用数组, 探索rand()%n方式产生的随机数,是均匀分布么?\n(P142 5) 借助数组, 使用字符A拼出一个大A.\n(P174 1) 写一个程序, 输出杨辉三角的前n行.\n约瑟夫问题/猴子选王: 一堆猴子都有编号，编号是1，2，3 … m，这群猴子（m个）按照1-m的顺序围坐一圈，从第1开始数，每数到第N个，该猴子就要离开此圈，这样依次下来，直到圈中只剩下最后一只猴子，则该猴子为大王。求m=18, n=6时的猴王编号.\n",
   "wordCount" : "455",
   "inLanguage": "en",
-  "image": "http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
+  "image": "https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -132,14 +132,14 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/c_programming/07/7/"
+    "@id": "https://caiyouy.github.io/c_programming/07/7/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Caiyou Yuan's Pages",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/%3Clink%20/%20abs%20url%3E"
+      "url": "https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E"
     }
   }
 }
@@ -157,15 +157,15 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
-                <img src="http://localhost:1313/yuan.jpg" alt="" aria-label="logo"
+            <a href="https://caiyouy.github.io/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
+                <img src="https://caiyouy.github.io/yuan.jpg" alt="" aria-label="logo"
                     height="35">Caiyou Yuan&#39;s Pages</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/posts/" title="Posts">
+                <a href="https://caiyouy.github.io/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
@@ -176,7 +176,7 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/c_programming/">C_Programmings</a></div>
+    <div class="breadcrumbs"><a href="https://caiyouy.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://caiyouy.github.io/c_programming/">C_Programmings</a></div>
     <h1 class="post-title entry-hint-parent">
       
     </h1>
@@ -543,7 +543,7 @@
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Caiyou Yuan&#39;s Pages</a></span> · 
+        <span>&copy; 2024 <a href="https://caiyouy.github.io/">Caiyou Yuan&#39;s Pages</a></span> · 
 
     <span>
         Powered by

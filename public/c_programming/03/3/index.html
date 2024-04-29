@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -21,19 +21,19 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
 变量的使用 一个变量是一个固定大小的“仓库”，用于存储一定类型的数据。变量的定义是“申请仓库”的过程，变量的赋值或取值，是“使用仓库”的过程。值得注意的是，C语言对局部变量，并不“主动打扫仓库”。
 演示: 变量的未初始化 名词解释：局部变量和全局变量">
 <meta name="author" content="Me">
-<link rel="canonical" href="http://localhost:1313/c_programming/03/3/">
+<link rel="canonical" href="https://caiyouy.github.io/c_programming/03/3/">
 <meta name="google-site-verification" content="XYZabc">
 <meta name="yandex-verification" content="XYZabc">
 <meta name="msvalidate.01" content="XYZabc">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="apple-touch-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
-<link rel="mask-icon" href="http://localhost:1313/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="16x16" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="apple-touch-icon" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
+<link rel="mask-icon" href="https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/c_programming/03/3/">
+<link rel="alternate" hreflang="en" href="https://caiyouy.github.io/c_programming/03/3/">
 <noscript>
     <style>
         #theme-toggle,
@@ -88,14 +88,14 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
 变量的使用 一个变量是一个固定大小的“仓库”，用于存储一定类型的数据。变量的定义是“申请仓库”的过程，变量的赋值或取值，是“使用仓库”的过程。值得注意的是，C语言对局部变量，并不“主动打扫仓库”。
 演示: 变量的未初始化 名词解释：局部变量和全局变量" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/c_programming/03/3/" />
-<meta property="og:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta property="og:url" content="https://caiyouy.github.io/c_programming/03/3/" />
+<meta property="og:image" content="https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
 <meta property="article:section" content="c_programming" />
 
 <meta property="og:site_name" content="Caiyou Yuan&#39;s Pages" />
 
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
+<meta name="twitter:image" content="https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E" />
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序
 变量的使用
@@ -121,13 +121,13 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
       "@type": "ListItem",
       "position":  1 ,
       "name": "C_Programmings",
-      "item": "http://localhost:1313/c_programming/"
+      "item": "https://caiyouy.github.io/c_programming/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "",
-      "item": "http://localhost:1313/c_programming/03/3/"
+      "item": "https://caiyouy.github.io/c_programming/03/3/"
     }
   ]
 }
@@ -145,7 +145,7 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
   "articleBody": "计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序\n变量的使用\n函数的使用\n从源代码到可执行程序 更为具体流程如下图所示，\n预处理(Preprocessing) 使用预处理器cpp (也可使用gcc -E)，将所有的#include头文件以及宏定义替换成其真正的内容。预处理之后得到的仍然是文本文件，但文件体积会大很多。\n编译(Compilation) 使用编译器gcc (或者gcc -S)，将经过预处理之后的文件转换成特定的汇编代码。\n汇编(Assemble) 使用汇编器as (也可以使用gcc -c)，将上一步的汇编代码转换成机器码(machine code)，这一步产生的文件叫做目标文件，是二进制格式。\n链接(Linking) 使用链接器ld，将多个目标文以及所需的库文件(.so等)链接成最终的可执行文件(executable file)。\n演示：从源代码到程序 名词解释：GCC\nthe GNU Compiler Collection Link\nThe GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,…). GCC was originally written as the compiler for the GNU operating system.\n变量的使用 一个变量是一个固定大小的“仓库”，用于存储一定类型的数据。变量的定义是“申请仓库”的过程，变量的赋值或取值，是“使用仓库”的过程。值得注意的是，C语言对局部变量，并不“主动打扫仓库”。\n演示: 变量的未初始化 名词解释：局部变量和全局变量\n不严格地说，函数内部的变量被称为局部变量(Local Variable)，它的作用域仅限于函数内部，离开该函数后就是无效的，再使用就会报错。而在所有函数外部定义的变量称为全局变量(Global Variable)，它的作用域默认是整个程序\n演示：局部变量和变量的区别 函数的使用 一个函数是一组共同完成某个任务的语句集合。\n函数的定义 return_type function_name( parameter list ) { body of the function } 函数的声明 演示：函数不声明的错误 return_type function_name( parameter list ); 例如，在使用printf等库函数前必须包含对应头文件的原因，其实就是头文件中包含了对应函数的函数声明。\n演示：stdio.h文件查看 函数的调用 当程序调用函数时，程序控制权会转移给被调用的函数。当函数的返回语句被执行时，或到达函数的结束括号时，会把程序控制权交还给主程序。\n演示：函数调用的流程控制 函数的参数传递 如果函数要使用参数，则必须声明接受参数值的变量。这些变量称为函数的形式参数。 形式参数就像函数内的其他局部变量，在进入函数时被创建，退出函数时被销毁。\n形参的传递方式 描述 值传递 该方法把参数的实际值复制给函数的形式参数。在这种情况下，修改函数内的形式参数不会影响实际参数。 指针传递 通过指针传递方式，形参为指向实参地址的指针，当对形参的指向操作时，就相当于对实参本身进行的操作。 默认情况下，C使用值传递来传递参数，这意味着函数内的代码不能改变用于调用函数的实际参数。\n演示：函数值传递验证 main函数 main函数地位特殊，它表示这个程序的执行起点和整个过程；关于main函数的定义，不同的书上可能有如下两个版本：\nint main() int main(int argc, char *argv[]) 第二种写法实际上指明了main函数均具有argc和argv这两个形式参数。\n演示：main函数形参的使用 参考链接\n",
   "wordCount" : "124",
   "inLanguage": "en",
-  "image": "http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
+  "image": "https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E","datePublished": "0001-01-01T00:00:00Z",
   "dateModified": "0001-01-01T00:00:00Z",
   "author":{
     "@type": "Person",
@@ -153,14 +153,14 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/c_programming/03/3/"
+    "@id": "https://caiyouy.github.io/c_programming/03/3/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Caiyou Yuan's Pages",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/%3Clink%20/%20abs%20url%3E"
+      "url": "https://caiyouy.github.io/%3Clink%20/%20abs%20url%3E"
     }
   }
 }
@@ -178,15 +178,15 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
-                <img src="http://localhost:1313/yuan.jpg" alt="" aria-label="logo"
+            <a href="https://caiyouy.github.io/" accesskey="h" title="Caiyou Yuan&#39;s Pages (Alt + H)">
+                <img src="https://caiyouy.github.io/yuan.jpg" alt="" aria-label="logo"
                     height="35">Caiyou Yuan&#39;s Pages</a>
             <div class="logo-switches">
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/posts/" title="Posts">
+                <a href="https://caiyouy.github.io/posts/" title="Posts">
                     <span>Posts</span>
                 </a>
             </li>
@@ -197,7 +197,7 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/c_programming/">C_Programmings</a></div>
+    <div class="breadcrumbs"><a href="https://caiyouy.github.io/">Home</a>&nbsp;»&nbsp;<a href="https://caiyouy.github.io/c_programming/">C_Programmings</a></div>
     <h1 class="post-title entry-hint-parent">
       
     </h1>
@@ -312,7 +312,7 @@ The GNU Compiler Collection includes front ends for C, C&#43;&#43;, Objective-C,
     </main>
     
 <footer class="footer">
-        <span>&copy; 2024 <a href="http://localhost:1313/">Caiyou Yuan&#39;s Pages</a></span> · 
+        <span>&copy; 2024 <a href="https://caiyouy.github.io/">Caiyou Yuan&#39;s Pages</a></span> · 
 
     <span>
         Powered by

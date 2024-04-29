@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>C_Programmings on Caiyou Yuan&#39;s Pages</title>
-    <link>http://localhost:1313/c_programming/</link>
+    <link>https://caiyouy.github.io/c_programming/</link>
     <description>Recent content in C_Programmings on Caiyou Yuan&#39;s Pages</description>
     <image>
       <title>Caiyou Yuan&#39;s Pages</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://caiyouy.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.125.3</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/c_programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://caiyouy.github.io/c_programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/01/1/</link>
+      <link>https://caiyouy.github.io/c_programming/01/1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/01/1/</guid>
+      <guid>https://caiyouy.github.io/c_programming/01/1/</guid>
       <description>计算概论(C语言)习题课讲义01 内容概要 作业系统OpenJudge 编程环境CodeBlocks 图灵停机问题 作业系统：OpenJudge 网址：http://openjudge.cn/
 准备工作 网上注册
 点击此处注册，用户名格式：学号+姓名
@@ -32,9 +32,9 @@ int main() { printf(&amp;#34;Hello C&amp;#34;) /*向屏幕输出结果*/ return 
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/02/2/</link>
+      <link>https://caiyouy.github.io/c_programming/02/2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/02/2/</guid>
+      <guid>https://caiyouy.github.io/c_programming/02/2/</guid>
       <description>计算概论(C语言)习题课讲义02 内容概要 数的存储
 字符的存储
 数的存储 两个事实：
@@ -61,9 +61,9 @@ Wikipedia上机器精度Machine Epsilon是这样描述的：“Machine epsilon g
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/03/3/</link>
+      <link>https://caiyouy.github.io/c_programming/03/3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/03/3/</guid>
+      <guid>https://caiyouy.github.io/c_programming/03/3/</guid>
       <description>计算概论（C语言）习题课讲义03 内容概要 从源代码到可执行程序
 变量的使用
 函数的使用
@@ -80,9 +80,9 @@ The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/04/4/</link>
+      <link>https://caiyouy.github.io/c_programming/04/4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/04/4/</guid>
+      <guid>https://caiyouy.github.io/c_programming/04/4/</guid>
       <description>计算概论（C语言）习题课讲义04 内容概要 判断语句
 循环语句
 循环算法举例
@@ -98,9 +98,9 @@ while(condition) { statement(s); } do { statement(s); }while(condition); for ( i
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/05/5/</link>
+      <link>https://caiyouy.github.io/c_programming/05/5/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/05/5/</guid>
+      <guid>https://caiyouy.github.io/c_programming/05/5/</guid>
       <description>计算概论（C语言）习题课讲义05 内容概要 递归
 循环
 调试
@@ -113,9 +113,9 @@ A child couldn&amp;#39;t sleep, so her mother told a story about a little frog, 
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/06/6/</link>
+      <link>https://caiyouy.github.io/c_programming/06/6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/06/6/</guid>
+      <guid>https://caiyouy.github.io/c_programming/06/6/</guid>
       <description>计算概论（C语言）习题课讲义06 内容概要 习题讲解
 前五章梳理
 课堂练习
@@ -126,9 +126,9 @@ int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/07/7/</link>
+      <link>https://caiyouy.github.io/c_programming/07/7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/07/7/</guid>
+      <guid>https://caiyouy.github.io/c_programming/07/7/</guid>
       <description>计算概论（C语言）习题课讲义07 内容概要 习题讲解
 数组初步
 课堂练习
@@ -138,9 +138,9 @@ int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/08/8/</link>
+      <link>https://caiyouy.github.io/c_programming/08/8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/08/8/</guid>
+      <guid>https://caiyouy.github.io/c_programming/08/8/</guid>
       <description>计算概论（C语言）习题课讲义08 内容概要 习题讲解
 数组进阶
 课堂练习: 排序初步
@@ -154,9 +154,9 @@ int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/09/9/</link>
+      <link>https://caiyouy.github.io/c_programming/09/9/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/09/9/</guid>
+      <guid>https://caiyouy.github.io/c_programming/09/9/</guid>
       <description>计算概论（C语言）习题课讲义09 内容概要 习题讲解
 字符串
 课堂练习: 排序初步
@@ -165,9 +165,9 @@ int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/10/10/</link>
+      <link>https://caiyouy.github.io/c_programming/10/10/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/10/10/</guid>
+      <guid>https://caiyouy.github.io/c_programming/10/10/</guid>
       <description>计算概论（C语言）习题课讲义10 内容概要 习题讲解
 指针
 课堂练习
@@ -176,9 +176,9 @@ int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/11/11/</link>
+      <link>https://caiyouy.github.io/c_programming/11/11/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/11/11/</guid>
+      <guid>https://caiyouy.github.io/c_programming/11/11/</guid>
       <description>计算概论（C语言）习题课讲义11 内容概要 机考题目讲解
 文件操作
 习题讲解
@@ -186,16 +186,16 @@ int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断�
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/readme/</link>
+      <link>https://caiyouy.github.io/c_programming/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/readme/</guid>
+      <guid>https://caiyouy.github.io/c_programming/readme/</guid>
       <description>计算概论（C语言）讲义及参考程序</description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/test01/test/</link>
+      <link>https://caiyouy.github.io/c_programming/test01/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/test01/test/</guid>
+      <guid>https://caiyouy.github.io/c_programming/test01/test/</guid>
       <description>计算概论期中题目备选 简答题 计算题 printf(&amp;#34;%d&amp;#34;,(int)(7.2/5)+3/2+010+0x1); 答案: 11　(考察类型转化，八进制以及十六进制)；
 int x=0; (x++)?(x=2):(x==3); printf(&amp;#34;%d&amp;#34;,x); 答案: 1　(考察++号前置后置的区别，条件运算符以及逻辑判断不改变变量数值);
 char c=&amp;#39;a&amp;#39;; printf(&amp;#34;%c&amp;#34;,c+2); 答案: c (考察字符编码的连续性，以及c语言中字符类型可以当成整数运算)
@@ -205,9 +205,9 @@ int flag=1; int t=0; switch(flag) { default: t++; case -1: t++; break; case 0: t
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/c_programming/test02/test/</link>
+      <link>https://caiyouy.github.io/c_programming/test02/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/c_programming/test02/test/</guid>
+      <guid>https://caiyouy.github.io/c_programming/test02/test/</guid>
       <description>计算概论机考题目备选 幂法求解矩阵绝对值最大的特征值 矩阵的特征值在理论和实践中均有重要作用, 所以如何矩阵的特征值, 是大家所关心的一个问题. 对于求解矩阵绝对值最大的特征值, 有如下的简单方法:
 随机选择初始向量 v
 不断地做矩阵向量乘法 v=Av
