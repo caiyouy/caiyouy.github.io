@@ -44,13 +44,13 @@ params:
   hideFooter: false
 
   assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    disableHLJS: true # to disable highlight.js
+    disableFingerprinting: true
+    favicon: "yuan.jpg"
+    favicon16x16: "yuan.jpg"
+    favicon32x32: "yuan.jpg"
+    apple_touch_icon: "yuan.jpg"
+    safari_pinned_tab: "yuan.jpg"
 
   label:
     text: "Caiyou Yuan's Pages"
