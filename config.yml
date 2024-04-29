@@ -1,3 +1,4 @@
+publishDir: docs  # hugo result directory
 baseURL: "https://caiyouy.github.io/"
 title: Caiyou Yuan's Pages
 paginate: 5
