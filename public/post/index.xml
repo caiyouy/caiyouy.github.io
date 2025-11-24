@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Caiyou Yuan&#39;s Pages</title>
-    <link>http://localhost:1313/post/</link>
+    <link>https://caiyouy.github.io/post/</link>
     <description>Recent content in Posts on Caiyou Yuan&#39;s Pages</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 24 Nov 2025 22:02:52 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://caiyouy.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linear Algebra A 2022</title>
-      <link>http://localhost:1313/post/linear_algebra_2022/</link>
+      <link>https://caiyouy.github.io/post/linear_algebra_2022/</link>
       <pubDate>Sun, 27 Feb 2022 15:55:59 +0800</pubDate>
-      <guid>http://localhost:1313/post/linear_algebra_2022/</guid>
+      <guid>https://caiyouy.github.io/post/linear_algebra_2022/</guid>
       <description>Linear Algebra A in 2022</description>
     </item>
     <item>
       <title>Linear Algebra A 2021</title>
-      <link>http://localhost:1313/post/linear_algebra_2021/</link>
+      <link>https://caiyouy.github.io/post/linear_algebra_2021/</link>
       <pubDate>Fri, 12 Mar 2021 15:55:59 +0800</pubDate>
-      <guid>http://localhost:1313/post/linear_algebra_2021/</guid>
+      <guid>https://caiyouy.github.io/post/linear_algebra_2021/</guid>
       <description>Linear Algebra A in 2021</description>
     </item>
     <item>
       <title>一个ADI格式的L2稳定性</title>
-      <link>http://localhost:1313/post/adi_l2/</link>
+      <link>https://caiyouy.github.io/post/adi_l2/</link>
       <pubDate>Wed, 18 Nov 2020 15:55:59 +0800</pubDate>
-      <guid>http://localhost:1313/post/adi_l2/</guid>
+      <guid>https://caiyouy.github.io/post/adi_l2/</guid>
       <description>The L2 stability of a ADI scheme</description>
     </item>
     <item>
       <title>Introduction to Computing (C Language) 2019</title>
-      <link>http://localhost:1313/post/c_programming_2019/</link>
+      <link>https://caiyouy.github.io/post/c_programming_2019/</link>
       <pubDate>Mon, 01 Jul 2019 15:55:59 +0800</pubDate>
-      <guid>http://localhost:1313/post/c_programming_2019/</guid>
+      <guid>https://caiyouy.github.io/post/c_programming_2019/</guid>
       <description>Introduction to Computing (C Language) in 2019</description>
     </item>
   </channel>
