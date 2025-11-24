@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='https://caiyouy.github.io/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='https://caiyouy.github.io/css/frameworks.min.css' />
+    <link rel="stylesheet" href='https://caiyouy.github.io/css/github.min.css' />
+    <link rel="stylesheet" href='https://caiyouy.github.io/css/github-style.css' />
+    <link rel="stylesheet" href='https://caiyouy.github.io/css/light.css' />
+    <link rel="stylesheet" href='https://caiyouy.github.io/css/dark.css' />
+    <link rel="stylesheet" href='https://caiyouy.github.io/css/syntax.css' />
+    <title> - Caiyou Yuan&#39;s Pages</title>
+    
+    <link rel="icon" type="image/x-icon" href='/yuan_cartoon.jpg'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    <link rel="stylesheet" href="https://caiyouy.github.io/css/custom.css">
+    <script type="text/javascript" src="https://caiyouy.github.io/js/custom.js"></script>
+
+    
+    <meta name="description"
+  content="计算概论(C语言)习题课讲义01 内容概要 作业系统OpenJudge 编程环境CodeBlocks 图灵停机问题 作业系统：OpenJudge 网址：http://openjudge.cn/
+准备工作 网上注册
+点击此处注册，用户名格式：学号&#43;姓名
+加入小组
+注册完成后，在小组栏目中查找数院计概（C语言），并加入
+使用演示 提交作业方式：对源代码全选，复制和粘帖。即Ctrl&#43;A, Ctrl&#43;C, Ctrl&#43;V
+举例“Hello C”程序
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello C&#34;); /*向屏幕输出结果*/ return 0; } 系统判定流程 还有一些其他错误，例如Time Limit Exceeded/Memory Limit Exceeded等。
+一些典型错误 错误一：
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello C&#34;) /*向屏幕输出结果*/ return 0; } 错误二：
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello，C&#34;); /*向屏幕输出结果*/ return 0; } 错误三：
+int main() { printf(&#34;Hello C&#34;) /*向屏幕输出结果*/ return 0; } 编程建议 OpenJudge的帮助文档给出了下述建议：
+Guideline 1 Do exactly what the problems demand.
+A mistake made by some newcomers is to print some friendly-looking prompt messages such as “Please input an integer” which the problems do not ask for. Another example of violating this guideline is to leave debug information in the output. Our judge system is automated. There is no human involvement in judging the solutions. Neither the administrators nor the developers will read any output by the solutions in normal circumstances. Hence, unrequested prompt messages are virtually useless. Worse still, undesired output may mess with the judging process, which in all probability will lead to rejection of the solution, even though it is logically correct.
+" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="https://caiyouy.github.io/c_programming/01/1/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content=" - Caiyou Yuan&#39;s Pages" />
+<meta name="twitter:description"
+  content="计算概论(C语言)习题课讲义01 内容概要 作业系统OpenJudge 编程环境CodeBlocks 图灵停机问题 作业系统：OpenJudge 网址：http://openjudge.cn/
+准备工作 网上注册
+点击此处注册，用户名格式：学号&#43;姓名
+加入小组
+注册完成后，在小组栏目中查找数院计概（C语言），并加入
+使用演示 提交作业方式：对源代码全选，复制和粘帖。即Ctrl&#43;A, Ctrl&#43;C, Ctrl&#43;V
+举例“Hello C”程序
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello C&#34;); /*向屏幕输出结果*/ return 0; } 系统判定流程 还有一些其他错误，例如Time Limit Exceeded/Memory Limit Exceeded等。
+一些典型错误 错误一：
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello C&#34;) /*向屏幕输出结果*/ return 0; } 错误二：
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello，C&#34;); /*向屏幕输出结果*/ return 0; } 错误三：
+int main() { printf(&#34;Hello C&#34;) /*向屏幕输出结果*/ return 0; } 编程建议 OpenJudge的帮助文档给出了下述建议：
+Guideline 1 Do exactly what the problems demand.
+A mistake made by some newcomers is to print some friendly-looking prompt messages such as “Please input an integer” which the problems do not ask for. Another example of violating this guideline is to leave debug information in the output. Our judge system is automated. There is no human involvement in judging the solutions. Neither the administrators nor the developers will read any output by the solutions in normal circumstances. Hence, unrequested prompt messages are virtually useless. Worse still, undesired output may mess with the judging process, which in all probability will lead to rejection of the solution, even though it is logically correct.
+" />
+<meta name="twitter:site" content="https://caiyouy.github.io/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="https://caiyouy.github.io/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content=" - Caiyou Yuan&#39;s Pages">
+<meta property="og:description"
+  content="计算概论(C语言)习题课讲义01 内容概要 作业系统OpenJudge 编程环境CodeBlocks 图灵停机问题 作业系统：OpenJudge 网址：http://openjudge.cn/
+准备工作 网上注册
+点击此处注册，用户名格式：学号&#43;姓名
+加入小组
+注册完成后，在小组栏目中查找数院计概（C语言），并加入
+使用演示 提交作业方式：对源代码全选，复制和粘帖。即Ctrl&#43;A, Ctrl&#43;C, Ctrl&#43;V
+举例“Hello C”程序
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello C&#34;); /*向屏幕输出结果*/ return 0; } 系统判定流程 还有一些其他错误，例如Time Limit Exceeded/Memory Limit Exceeded等。
+一些典型错误 错误一：
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello C&#34;) /*向屏幕输出结果*/ return 0; } 错误二：
+#include &lt;stdio.h&gt; int main() { printf(&#34;Hello，C&#34;); /*向屏幕输出结果*/ return 0; } 错误三：
+int main() { printf(&#34;Hello C&#34;) /*向屏幕输出结果*/ return 0; } 编程建议 OpenJudge的帮助文档给出了下述建议：
+Guideline 1 Do exactly what the problems demand.
+A mistake made by some newcomers is to print some friendly-looking prompt messages such as “Please input an integer” which the problems do not ask for. Another example of violating this guideline is to leave debug information in the output. Our judge system is automated. There is no human involvement in judging the solutions. Neither the administrators nor the developers will read any output by the solutions in normal circumstances. Hence, unrequested prompt messages are virtually useless. Worse still, undesired output may mess with the judging process, which in all probability will lead to rejection of the solution, even though it is logically correct.
+" />
+<meta property="og:url" content="https://caiyouy.github.io/c_programming/01/1/" />
+<meta property="og:site_name" content="" />
+<meta property="og:image"
+  content="https://caiyouy.github.io/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="https://caiyouy.github.io/">
+        <img class="octicon" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:https://caiyouy.github.io/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="https://caiyouy.github.io/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="https://caiyouy.github.io/">
+                  <img class=" avatar-user"
+                    src="/yuan.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="https://caiyouy.github.io/">Caiyou Yuan</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="https://caiyouy.github.io/c_programming/01/1/"></a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Mon, 01 Jan 0001 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Mon, 01 Jan 0001 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Mon, 24 Nov 2025 16:53:32 &#43;0800"
+                    class="no-wrap">
+                    Mon, 24 Nov 2025 16:53:32 &#43;0800</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      1823 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="计算概论c语言习题课讲义01">计算概论(C语言)习题课讲义01</h1>
+<h2 id="内容概要">内容概要</h2>
+<ol>
+<li>作业系统OpenJudge</li>
+<li>编程环境CodeBlocks</li>
+<li>图灵停机问题</li>
+</ol>
+<hr>
+<h2 id="作业系统openjudge">作业系统：OpenJudge</h2>
+<p>网址：<a href="http://openjudge.cn/">http://openjudge.cn/</a></p>
+<h3 id="准备工作">准备工作</h3>
+<ul>
+<li>
+<p>网上注册</p>
+<p><a href="http://openjudge.cn/register/">点击此处注册</a>，用户名格式：学号+姓名</p>
+</li>
+<li>
+<p>加入小组</p>
+<p>注册完成后，在小组栏目中查找<strong>数院计概（C语言）</strong>，并加入</p>
+</li>
+</ul>
+<h3 id="使用演示">使用演示</h3>
+<p>提交作业方式：对源代码全选，复制和粘帖。即<code>Ctrl+A</code>, <code>Ctrl+C</code>, <code>Ctrl+V</code></p>
+<p>举例“Hello C”程序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello C&#34;</span>); <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="系统判定流程">系统判定流程</h3>
+<p><img src="./pic/pic01.png" alt="系统判定流程图"></p>
+<p>还有一些其他错误，例如Time Limit Exceeded/Memory Limit Exceeded等。</p>
+<h4 id="一些典型错误">一些典型错误</h4>
+<p>错误一：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello C&#34;</span>) <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>错误二：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello，C&#34;</span>); <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>错误三：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello C&#34;</span>) <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="编程建议">编程建议</h3>
+<p>OpenJudge的<a href="http://openjudge.cn/help.html">帮助文档</a>给出了下述建议：</p>
+<p><strong>Guideline 1 Do exactly what the problems demand.</strong></p>
+<p>A mistake made by some newcomers is to print some friendly-looking prompt messages such as “Please input an integer” which the problems do not ask for. Another example of violating this guideline is to leave debug information in the output. Our judge system is automated. There is no human involvement in judging the solutions. Neither the administrators nor the developers will read any output by the solutions in normal circumstances. Hence, unrequested prompt messages are virtually useless. Worse still, undesired output may mess with the judging process, which in all probability will lead to rejection of the solution, even though it is logically correct.</p>
+<p><strong>Guideline 2 Access only the standard input, the standard output and the memory.</strong></p>
+<p>Your solution must always read the input data from the standard input and write the output data to the standard output. The only location that your solution can utilize for storage is the memory. Access to other resources such as disks and the file system is denied by the judge system. Any such attempt results in undefined behavior.</p>
+<blockquote>
+<p>名词解释</p>
+<p>标准输入：一般代指键盘；</p>
+<p>标准输出：一般代指屏幕；</p>
+</blockquote>
+<p><strong>Guideline 3 Write standard-conforming code.</strong></p>
+<p>We promote the use of standard-conforming code.</p>
+<hr>
+<h2 id="编程环境codeblocks">编程环境：CodeBlocks</h2>
+<h3 id="简介">简介</h3>
+<p><strong>The open source, cross platform, free C, C++ and Fortran IDE.</strong></p>
+<blockquote>
+<p>名词解释</p>
+<p>open source: 源代码公开</p>
+<p>cross platform: Windows/Linux/Mac OS均可使用</p>
+<p>IDE: 集成开发环境</p>
+</blockquote>
+<h3 id="安装">安装</h3>
+<p>Windows，<a href="http://sourceforge.net/projects/codeblocks/files/Binaries/17.12/Windows/codeblocks-17.12mingw-setup.exe">点击此处下载</a></p>
+<p>MacOS，    <a href="http://sourceforge.net/projects/codeblocks/files/Binaries/13.12/MacOS/CodeBlocks-13.12-mac.zip">点击此处下载</a> （版本有些久远）</p>
+<h3 id="使用">使用</h3>
+<ol>
+<li>
+<p>单个文件</p>
+<p>File-&gt;New-&gt;File&hellip;-&gt;C/C++ source-&gt;&hellip;</p>
+<p>优点：简单明了</p>
+<p>缺点：源文件、目标文件、可执行文件等缺乏组织结构，比较混乱; CodeBlocks中无法使用调试功能</p>
+</li>
+<li>
+<p>建立项目</p>
+<p>File-&gt;New-&gt;Project-&gt;Console application-&gt;C-&gt;&hellip;</p>
+<p>推荐该种方式</p>
+</li>
+</ol>
+<blockquote>
+<p>名词解释</p>
+<p>Console application: 控制台程序，字符化用户界面下的应用程序。</p>
+<p>历史沿革，CUI/CLI vs GUI</p>
+<p>CUI:字符化用户界面；例如，Windows中的cmd；古老，但十分高效的计算机操作方式。</p>
+<p>GUI:图形化用户界面；例如，窗口，菜单等；降低了计算机的学习成本，客观上促进了计算机的普及。</p>
+</blockquote>
+<h3 id="功能">功能</h3>
+<p>语法高亮，自动缩进，语法提示等等</p>
+<h3 id="对比记事本写c语言">对比：记事本写C语言</h3>
+<p>以两整数的加法程序为例。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">void</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 定义变量
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> a, b, c;
+</span></span><span style="display:flex;"><span>    a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    b<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>    c<span style="color:#f92672">=</span>a<span style="color:#f92672">+</span>b;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,c); <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>流程：</p>
+<ol>
+<li>编辑器编辑源文件</li>
+<li>命令行编译链接（可能需配置PATH环境变量）</li>
+<li>运行可执行程序</li>
+</ol>
+<hr>
+<h2 id="图灵停机问题">图灵停机问题</h2>
+<p>问题：<em>是否存在一个程序，它能够计算任何程序在给定输入下是否会结束（停机）？</em></p>
+<p>答案：<em>不存在。</em></p>
+<p>证明：</p>
+<p>假如存在这样的程序H，对于任意的给定程序P，以及输入I，都可以判断P在输入I下是否停机。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">H</span>(P, I); <span style="color:#75715e">// H程序有两种结果，1代表死循环，0表示停机;
+</span></span></span></code></pre></div><p>程序本身也是一种数据，因此它也可以作为输入。故，H也应该可以判定当将P作为P的输入时，P是否会停机。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">H</span>(P, P); <span style="color:#75715e">// H程序有两种返回值，1代表死循环，0表示停机;
+</span></span></span></code></pre></div><p>然后，我们再定义另外一个程序U。它对于输入P：如果H(P，P)等于1，U程序停机；否则，死循环（不停机）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">U</span>(P)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">H</span>(P,P) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>) <span style="color:#75715e">// 如果H死循环
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// 此时U会停机
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#75715e">// 否则
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(<span style="color:#ae81ff">1</span>){} <span style="color:#75715e">// U会死循环
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>那么，矛盾来了：U(U)停机么？</p>
+<blockquote>
+<p>证明来自网络<a href="https://blog.csdn.net/u014073556/article/details/86382019">https://blog.csdn.net/u014073556/article/details/86382019</a></p>
+</blockquote>
+<h2 id="其他类似问题">其他类似问题</h2>
+<h3 id="理发师悖论">理发师悖论</h3>
+<p>理发师说：“我只给村子里不自己刮胡子的人刮胡子”。</p>
+<h3 id="罗素悖论">罗素悖论</h3>
+<p>定义集合R，</p>
+<p><img src="./pic/pic02.png" alt="pic02"></p>
+<p>那么，</p>
+<p><img src="./pic/pic03.png" alt="pic03"></p>
+<h3 id="哥德尔不完备定理">哥德尔不完备定理</h3>
+<blockquote>
+<p>我们简要理解“哥德尔不完备定理”说的是：一个足够复杂的公理体系（至少蕴含了皮亚诺算术公理），如果它是一致的（相容的，无矛盾的），那么它就是不完备的。这里的完备，指的是“对于任何可在这个公理体系内描述的命题，都可以在这个公理体系内得到判定，要么是正确的，要么是错误的”。</p>
+<p>“哥德尔不完备定理”揭示了公理体系内在而深刻的性质和固有局限性，告诉我们不要奢望仅仅通过若干组公理出发，机械地利用基本逻辑规则进行推导，就能够对全部的命题进行判定。从这个意义上讲，无论是数学还是其它科学，都需要不断的完善、扩充自身的公理体系（或者基本规律），只有这样才能不断认知更加深刻复杂的客观世界。或者说，哥德尔真正严格证明了这句格言——“科学研究是永无止境的”。</p>
+<p>来自网络<a href="http://blog.sciencenet.cn/blog-409681-1067019.html">http://blog.sciencenet.cn/blog-409681-1067019.html</a></p>
+</blockquote>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='https://caiyouy.github.io/js/toc.js'></script>
+<link rel="stylesheet" href='https://caiyouy.github.io/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://caiyouy.github.io/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="https://caiyouy.github.io/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

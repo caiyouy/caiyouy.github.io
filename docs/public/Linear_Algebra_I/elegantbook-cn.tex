@@ -1,0 +1,65 @@
+\documentclass[cn,10pt,
+               result=answer,
+               math=cm,
+            %    chinesefont=founder,
+               citestyle=gb7714-2015,bibstyle=gb7714-2015]{elegantbook}
+
+\title{线性代数A 习题课讲义集}
+\author{Caiyou Yuan}
+% \institute{Elegant\LaTeX{} Program}
+\date{October 5, 2021}
+% \version{0.1}
+% \bioinfo{自定义}{信息}
+% \extrainfo{各人自扫门前雪，休管他人瓦上霜。—— 陈元靓}
+\setcounter{tocdepth}{3}
+
+% \logo{logo-blue.png}
+\cover{The_four_subspaces.jpg}
+
+% 本文档命令
+\usepackage{array}
+\newcommand{\ccr}[1]{\makecell{{\color{#1}\rule{1cm}{1cm}}}}
+\definecolor{customcolor}{RGB}{32,178,170}
+\colorlet{coverlinecolor}{customcolor}
+
+\newcommand{\rank}[1]{\mathrm{rank}(#1)}
+
+\begin{document}
+
+\maketitle
+\frontmatter
+
+\chapter*{特别声明}
+\markboth{Introduction}{前言}
+这里主要整理了作者在担任北京大学线性代数A这门课程的助教期间，
+在习题课上讲解的一些题目，
+主要参考了,
+\begin{enumerate}
+  \item 高等代数（第三版）丘维声，高等教育出版社
+  \item 高等代数学习指导书（第二版）丘维生，清华大学出版社
+\end{enumerate}
+以及一些其他书籍。
+
+作者能力有限，难免有考虑不周和疏漏之处，欢迎批评指正。
+
+\begin{flushright}
+Caiyou Yuan\\
+October 5, 2021
+\end{flushright}
+
+\tableofcontents
+
+\mainmatter
+\input{sec/01.tex}
+\input{sec/02.tex}
+\input{sec/03.tex}
+\input{sec/04.tex}
+\input{sec/05.tex}
+
+
+\nocite{*} 
+\printbibliography
+
+\appendix
+
+\end{document}
