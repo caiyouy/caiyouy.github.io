@@ -1,0 +1,158 @@
+\documentclass{article}
+% \documentclass{book} // final aim
+
+%%%% Chinese
+% fontset = none 可以为后续自定义字体
+\usepackage[UTF8, scheme=plain]{ctex}
+% % 设置英文字体
+% \setmainfont[BoldFont={Ubuntu Bold}, ItalicFont={Ubuntu Italic}]{Ubuntu}
+% \setmainfont{Microsoft YaHei}
+% \setsansfont{Comic Sans MS}
+% \setmonofont{Courier New}
+% % 设置中文字体
+% etCJKmainfont[Mapping = fullwidth-stop]{SimSun} %选项将。映射为.
+% \setCJKmainfont{SimSun}
+% \setCJKmonofont{Source Code Pro}
+% \setCJKsansfont{YouYuan}
+
+%%% 习题课讲义排版
+\usepackage{xparse}
+\newtoks\patchtoks    % helper token register
+\def\longpatch#1%     % worker macro
+  {\let\myoldmac#1%
+   \long\def#1##1{\patchtoks={##1}\myoldmac{\the\patchtoks}}}
+\longpatch{\phantom}
+\NewDocumentEnvironment{solution}{ +b}{%
+  \ifsolution
+      \textbf{解答}\quad #1
+  \else
+      \phantom{\parbox{\textwidth}{#1}}
+  \fi
+  }{\par}
+\newif\ifsolution
+% \solutiontrue %添加此句将输出答案，否则输出答案所需的空白
+
+%%%%% MATH
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{physics}
+\newtheorem{theorem}{Theorem} % 定义定理环境等
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem*{remark}{Remark}
+\numberwithin{equation}{section} % 公式分节标号
+
+%%%%% Paper size
+\usepackage{geometry}
+\geometry{a4paper,left=2cm,right=2cm,bottom=2.5cm,top=2.5cm}
+
+%%%%% Text
+\usepackage{bm}
+\usepackage{ulem} % underlining
+\usepackage{enumitem} % customizing lists
+\usepackage{titling} % 标题调整
+\pretitle{           % 标题左对齐
+  \begin{flushleft}
+}
+\posttitle{
+  \end{flushleft}
+}
+\preauthor{
+  \begin{flushleft}
+}
+\postauthor{
+  \end{flushleft}
+}
+\predate{
+  \begin{flushleft}
+}
+\postdate{
+  \end{flushleft}
+  \noindent\vrule height 1.0pt width \textwidth
+  \vskip .75em plus .25em minus .25em% increase the vertical spacing a bit, make this particular glue stretchier
+}
+\usepackage{color}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.3}
+
+%%%%% Ref
+\usepackage[
+  giveninits=true,       % 作者姓名首单词缩写, 并大写
+  date = year,           % 日期只是年份
+  % bibstyle = mystyle,  % 参考文献样式(文章最后的文献条目)
+]{biblatex}
+\renewbibmacro{in:}{} % 去掉文章前面的in
+\DeclareFieldFormat[article,incollection,unpublished]{title}{#1} % No quotes for article titles
+\DeclareFieldFormat[thesis]{title}{\mkbibemph{#1}} % Theses like book titles
+\DeclareFieldFormat{journaltitle}{#1\isdot}
+\DeclareFieldFormat{pages}{#1} % 去掉页码前面的pp
+% 使用shortjournal代替journaltitle
+\DeclareSourcemap{
+  \maps[datatype=bibtex]{
+    \map[overwrite]{ % Notice the overwrite: replace one field with another
+      \step[fieldsource=shortjournal,fieldtarget=journaltitle]
+    }
+  }
+}
+\renewcommand*{\bibpagespunct}{\addspace} % This tells biblatex to only put a space right before the pages, no other punctuation.
+\renewcommand*{\newunitpunct}{\addcomma\space}
+\addbibresource{report.bib}
+\usepackage[colorlinks,
+            linkcolor=red,
+            anchorcolor=red,
+            citecolor=blue
+            ]{hyperref}
+
+%%%% Graphic
+\usepackage{graphics} %color
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing,calligraphy} % tikz 花括号
+
+%%%%% Table
+\usepackage{tabularx} %table column fix width
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
+\usepackage{booktabs} % three lines table
+\usepackage{multirow} % multi row; multi column self-contained
+
+%%%%% Figure
+\usepackage{graphicx}  % minipage
+\usepackage{subfig}    % subfig
+
+%%%%% Code and other
+% \usepackage[numbered,framed]{matlab-prettifier} %matlab
+% \lstset{
+%   style              = Matlab-editor,
+%   basicstyle         = \mlttfamily,
+%   escapechar         = ",
+%   mlshowsectionrules = true,
+% }
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\algsetup{
+  indent=3em,
+  linenosize=\small,
+  linenodelimiter=.
+}
+
+%%%%%%% New command
+%\newcommand{\char}[0]{\mathrm{char}\,}
+\newcommand{\Ker}[0]{\mathrm{Ker}\,}
+\newcommand{\Img}[0]{\mathrm{Im}\,}
+
+\title{{\huge \bfseries
+% 主理想整环上的有限生成模
+% Modules over Principal Ideal Domains
+实对称矩阵半正定的充分必要条件
+       }}
+\author{Caiyou Yuan}
+\date{\today}
+
+\begin{document}
+\maketitle
+% include, new page
+% \input{sec/module.tex}
+\input{sec/semi_PSD.tex}
+
+\end{document}

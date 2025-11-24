@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title> - Caiyou Yuan&#39;s Pages</title>
+    
+    <link rel="icon" type="image/x-icon" href='/yuan_cartoon.jpg'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+    <script type="text/javascript" src="http://localhost:1313/js/custom.js"></script>
+
+    
+    <meta name="description"
+  content="计算概论（C语言）习题课讲义04 内容概要 判断语句
+循环语句
+循环算法举例
+判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，
+if(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。
+演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if&hellip;else 语句.
+注意点 5&gt;=3&gt;=1的理解
+将==打成=的手误
+循环语句 while循环
+do&hellip;while循环
+for循环
+while(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } " />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/c_programming/04/4/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content=" - Caiyou Yuan&#39;s Pages" />
+<meta name="twitter:description"
+  content="计算概论（C语言）习题课讲义04 内容概要 判断语句
+循环语句
+循环算法举例
+判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，
+if(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。
+演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if&hellip;else 语句.
+注意点 5&gt;=3&gt;=1的理解
+将==打成=的手误
+循环语句 while循环
+do&hellip;while循环
+for循环
+while(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } " />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content=" - Caiyou Yuan&#39;s Pages">
+<meta property="og:description"
+  content="计算概论（C语言）习题课讲义04 内容概要 判断语句
+循环语句
+循环算法举例
+判断语句 if(boolean_expression) { /* 如果布尔表达式为真将执行的语句 */ } else { /* 如果布尔表达式为假将执行的语句 */ } 或者嵌套时，
+if(boolean_expression 1) { /* 当布尔表达式 1 为真时执行 */ } else if( boolean_expression 2) { /* 当布尔表达式 2 为真时执行 */ } else if( boolean_expression 3) { /* 当布尔表达式 3 为真时执行 */ } else { /* 当上面条件都不为真时执行 */ } 关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。
+演示：零表示假，非零表示真 条件运算符?:，可以用来替代 if&hellip;else 语句.
+注意点 5&gt;=3&gt;=1的理解
+将==打成=的手误
+循环语句 while循环
+do&hellip;while循环
+for循环
+while(condition) { statement(s); } do { statement(s); }while(condition); for ( init; condition; increment ) { statement(s); } " />
+<meta property="og:url" content="http://localhost:1313/c_programming/04/4/" />
+<meta property="og:site_name" content="" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:1313/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/yuan.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Caiyou Yuan</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/c_programming/04/4/"></a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Mon, 01 Jan 0001 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Mon, 01 Jan 0001 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Mon, 24 Nov 2025 16:53:32 &#43;0800"
+                    class="no-wrap">
+                    Mon, 24 Nov 2025 16:53:32 &#43;0800</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      1218 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="计算概论c语言习题课讲义04">计算概论（C语言）习题课讲义04</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>判断语句</p>
+</li>
+<li>
+<p>循环语句</p>
+</li>
+<li>
+<p>循环算法举例</p>
+</li>
+</ul>
+<h3 id="判断语句">判断语句</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(boolean_expression)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 如果布尔表达式为真将执行的语句 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 如果布尔表达式为假将执行的语句 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>或者嵌套时，</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(boolean_expression <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当布尔表达式 1 为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( boolean_expression <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当布尔表达式 2 为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( boolean_expression <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当布尔表达式 3 为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当上面条件都不为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。</p>
+<h4 id="演示零表示假非零表示真">演示：零表示假，非零表示真</h4>
+<p>条件运算符<code>?:</code>，可以用来替代 if&hellip;else 语句.</p>
+<p><img src="./pic/1.jpg" alt="条件运算符的使用"></p>
+<h4 id="注意点">注意点</h4>
+<ul>
+<li>
+<p>5&gt;=3&gt;=1的理解</p>
+</li>
+<li>
+<p>将==打成=的手误</p>
+</li>
+</ul>
+<h3 id="循环语句">循环语句</h3>
+<ol>
+<li>
+<p>while循环</p>
+</li>
+<li>
+<p>do&hellip;while循环</p>
+</li>
+<li>
+<p>for循环</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(condition)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">statement</span>(s);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">statement</span>(s);
+</span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">while</span>(condition);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ( init; condition; increment )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">statement</span>(s);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="./pic/2.jpg" alt="For循环的使用"></p>
+<h4 id="演示三种循环方式实现-12100">演示：三种循环方式实现 1+2+&hellip;+100</h4>
+<h3 id="循环算法举例">循环算法举例</h3>
+<h4 id="辗转相除法">辗转相除法</h4>
+<p>又名<a href="https://en.wikipedia.org/wiki/Euclidean_algorithm">欧几里得方法</a>，是求两个整数数最大公约数的经典算法。</p>
+<p>原理：<code>gcd(a,b)=gcd(b,a%b)</code></p>
+<p>举例，48和20的最大公约数</p>
+<ol>
+<li>
+<p>48/20=2&hellip;8</p>
+</li>
+<li>
+<p>20/8=2&hellip;4</p>
+</li>
+<li>
+<p>8/4=2&hellip;0</p>
+</li>
+</ol>
+<p>伪代码</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> gcd<span style="color:#f92672">(</span>a, b<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> b ≠ <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>       t :<span style="color:#f92672">=</span> b;
+</span></span><span style="display:flex;"><span>       b :<span style="color:#f92672">=</span> a mod b;
+</span></span><span style="display:flex;"><span>       a :<span style="color:#f92672">=</span> t;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> a;
+</span></span></code></pre></div><hr>
+<blockquote>
+<p>名词解释:算法和伪代码</p>
+</blockquote>
+<blockquote>
+<p>算法：In mathematics and computer science, an algorithm is an unambiguous specification of how to solve a class of problems. From <a href="https://en.wikipedia.org/wiki/Algorithm">wikipedia</a>.</p>
+</blockquote>
+<p>不得不提的一个人<a href="https://en.wikipedia.org/wiki/Muhammad_ibn_Musa_al-Khwarizmi">Muhammad ibn Musa al-Khwarizmi</a></p>
+<ul>
+<li>
+<p>The term algebra itself comes from the title of his book.</p>
+</li>
+<li>
+<p>His name gave rise to the terms algorism and algorithm.</p>
+</li>
+</ul>
+<blockquote>
+<p>伪代码（pseudocode）是一种非正式的，类似于英语结构的，用于描述模块结构图的语言.使用伪代码的目的是使被描述的算法可以容易地以任何一种编程语言（Pascal，C，Java等）实现。</p>
+</blockquote>
+<p>思考：</p>
+<ol>
+<li>基于上面的结果，如何求两个整数的最小公倍数？</li>
+<li>基于上面的结果，如何求三个整数的最大公因数？</li>
+</ol>
+<h4 id="二分法求根">二分法求根</h4>
+<p>链接：<a href="https://en.wikipedia.org/wiki/Bisection_method">Wikipedia</a></p>
+<p>In mathematics, the bisection method is a root-finding method that applies to any continuous functions for which one knows two values with opposite signs.</p>
+<p>伪代码：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>INPUT: Function f,
+</span></span><span style="display:flex;"><span>       endpoint values a, b,
+</span></span><span style="display:flex;"><span>       tolerance TOL,
+</span></span><span style="display:flex;"><span>       maximum iterations NMAX
+</span></span><span style="display:flex;"><span>CONDITIONS: a &lt; b,
+</span></span><span style="display:flex;"><span>            either f<span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> &lt; <span style="color:#ae81ff">0</span> and f<span style="color:#f92672">(</span>b<span style="color:#f92672">)</span> &gt; <span style="color:#ae81ff">0</span> or f<span style="color:#f92672">(</span>a<span style="color:#f92672">)</span> &gt; <span style="color:#ae81ff">0</span> and f<span style="color:#f92672">(</span>b<span style="color:#f92672">)</span> &lt; <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>OUTPUT: value which differs from a root of f<span style="color:#f92672">(</span>x<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> by less than TOL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>N ← <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>While N ≤ NMAX <span style="color:#75715e"># limit iterations to prevent infinite loop</span>
+</span></span><span style="display:flex;"><span>  c ← <span style="color:#f92672">(</span>a + b<span style="color:#f92672">)</span>/2 <span style="color:#75715e"># new midpoint</span>
+</span></span><span style="display:flex;"><span>  If f<span style="color:#f92672">(</span>c<span style="color:#f92672">)</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> or <span style="color:#f92672">(</span>b – a<span style="color:#f92672">)</span>/2 &lt; TOL <span style="color:#66d9ef">then</span> <span style="color:#75715e"># solution found</span>
+</span></span><span style="display:flex;"><span>    Output<span style="color:#f92672">(</span>c<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    Stop
+</span></span><span style="display:flex;"><span>  EndIf
+</span></span><span style="display:flex;"><span>  N ← N + <span style="color:#ae81ff">1</span> <span style="color:#75715e"># increment step counter</span>
+</span></span><span style="display:flex;"><span>  If sign<span style="color:#f92672">(</span>f<span style="color:#f92672">(</span>c<span style="color:#f92672">))</span> <span style="color:#f92672">=</span> sign<span style="color:#f92672">(</span>f<span style="color:#f92672">(</span>a<span style="color:#f92672">))</span> <span style="color:#66d9ef">then</span> a ← c <span style="color:#66d9ef">else</span> b ← c <span style="color:#75715e"># new interval</span>
+</span></span><span style="display:flex;"><span>EndWhile
+</span></span><span style="display:flex;"><span>Output<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Method failed.&#34;</span><span style="color:#f92672">)</span> <span style="color:#75715e"># max number of steps exceeded</span>
+</span></span></code></pre></div><h4 id="newton法求根">Newton法求根</h4>
+<p>链接：<a href="https://en.wikipedia.org/wiki/Newton%27s_method">Wikipedia</a></p>
+<p>In numerical analysis, Newton&rsquo;s method (also known as the Newton–Raphson method), named after Isaac Newton and Joseph Raphson, is a method for finding successively better approximations to the roots (or zeroes) of a real-valued function.</p>
+<p><img src="./pic/3.jpg" alt="迭代格式"></p>
+<p>循环终止的条件？</p>
+<ul>
+<li>
+<p>| f(x) | == 0?</p>
+</li>
+<li>
+<p>| f(x) | is small?</p>
+</li>
+<li>
+<p>| x-x_old | is small?</p>
+</li>
+</ul>
+<p>Newton方法的鲜明特点是“<em>局部二次收敛</em>”；</p>
+<p>局部性质：</p>
+<p>举例： f(x) =x^3−2x^2 − 11x + 12 = (x − 4)(x − 1)(x + 3)，编程尝试Newton方法在如下初值下的收敛结果。</p>
+<ol>
+<li>
+<p>x0=2</p>
+</li>
+<li>
+<p>x0=2.35287527</p>
+</li>
+<li>
+<p>x0=2.35284172</p>
+</li>
+<li>
+<p>x0=2.35283735</p>
+</li>
+</ol>
+<p>二次收敛：</p>
+<p>举例：f(x)=x^2-19, 初值取为6，比较每次迭代结果和精确解；并和二分法对比。</p>
+<h4 id="求解机器精度的数值">求解机器精度的数值</h4>
+<p>回顾：机器精度是浮点数近似表示时相对误差的上界。即，如果a，b两数如果满足 |a-b| 小于a倍的机器精度时，机器将无法区分a和b；所以，类似于二分法，我们可以通过下述程序，计算机器精度的近似值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">float</span> epsilon_f<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> tmp_f<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0.5</span><span style="color:#f92672">*</span>epsilon_f;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(tmp_f <span style="color:#f92672">!=</span> <span style="color:#ae81ff">1.0</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    epsilon_f<span style="color:#f92672">=</span>epsilon_f<span style="color:#f92672">*</span><span style="color:#ae81ff">0.5</span>;
+</span></span><span style="display:flex;"><span>    tmp_f <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.0</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0.5</span><span style="color:#f92672">*</span>epsilon_f;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>上述计算结果和理论分析的pow(2,-23)次方接近。</p>
+<ul>
+<li>修改上面程序，计算双精度类型的机器精度</li>
+</ul>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title> - Caiyou Yuan&#39;s Pages</title>
+    
+    <link rel="icon" type="image/x-icon" href='/yuan_cartoon.jpg'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+    <script type="text/javascript" src="http://localhost:1313/js/custom.js"></script>
+
+    
+    <meta name="description"
+  content="计算概论（C语言）习题课讲义06 内容概要 习题讲解
+前五章梳理
+课堂练习
+习题讲解 哥德巴赫猜想的验证 算法框架：
+int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断输入n是否可以分解为两个素数之和 同学代码点评一:
+#include&lt;stdio.h&gt; #include&lt;math.h&gt; #include&lt;time.h&gt; int isprime(int n){ for(int m=2;m*m&lt;=n;&#43;&#43;m){ if (n%m==0) return 0;} return 1; } int main(){ for(;;){ int a=0,t,n;double time1=0; printf(&#34;请输入需要分解的偶数，输入奇数结束程序：&#34;) ; scanf(&#34;%d&#34;,&amp;n); time1=clock(); if(n%2==0&amp;&amp;n&gt;4){ for(t=3;t&lt;=n/2;t&#43;=2){ if (isprime(t)&amp;&amp;isprime(n-t)){ printf(&#34;%d=%d&#43;%d\n&#34;,n,t,n-t); a=a&#43;1; } } printf(&#34;共有%d组,用时%f秒\n\n&#34;,a,(clock()-time1)/CLOCKS_PER_SEC); } else{ printf(&#34;程序结束&#34;); return 0; } } } 同学代码点评二:
+#include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; #include&lt;math.h&gt; int prime(int n){ int m; for(m=2;m&lt;=n;&#43;&#43;m){ if(n%m==0){ break; } } if(m==n) return 1; else return 0; } int main(){ int m,n,t; scanf(&#34;%d&#34;,&amp;n); for(m=6;m&lt;=n;m=m&#43;2){ for(t=3;t&lt;=m-3;t=t&#43;2){ if (prime(t)==1 &amp;&amp; prime(m-t)==1){ printf(&#34;%d=%d&#43;%d\n&#34;,m,t,m-t); break; } } if(t==m-3 &amp;&amp; m&gt;=8){ printf(&#34;推翻了哥德巴赫猜想！！！！！！\n&#34;); break; }} if(m==n&#43;2) printf(&#34;哥德巴赫猜想在小于等于%d成立\n&#34;,n); return 0; } C语言代码规范 虽然Ｃ语言的标准中并没有对代码的缩进和换行有硬性的要求，但一般大家都会有一些通俗的约定．这里推荐使用如下的代码缩进风格：
+" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/c_programming/06/6/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content=" - Caiyou Yuan&#39;s Pages" />
+<meta name="twitter:description"
+  content="计算概论（C语言）习题课讲义06 内容概要 习题讲解
+前五章梳理
+课堂练习
+习题讲解 哥德巴赫猜想的验证 算法框架：
+int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断输入n是否可以分解为两个素数之和 同学代码点评一:
+#include&lt;stdio.h&gt; #include&lt;math.h&gt; #include&lt;time.h&gt; int isprime(int n){ for(int m=2;m*m&lt;=n;&#43;&#43;m){ if (n%m==0) return 0;} return 1; } int main(){ for(;;){ int a=0,t,n;double time1=0; printf(&#34;请输入需要分解的偶数，输入奇数结束程序：&#34;) ; scanf(&#34;%d&#34;,&amp;n); time1=clock(); if(n%2==0&amp;&amp;n&gt;4){ for(t=3;t&lt;=n/2;t&#43;=2){ if (isprime(t)&amp;&amp;isprime(n-t)){ printf(&#34;%d=%d&#43;%d\n&#34;,n,t,n-t); a=a&#43;1; } } printf(&#34;共有%d组,用时%f秒\n\n&#34;,a,(clock()-time1)/CLOCKS_PER_SEC); } else{ printf(&#34;程序结束&#34;); return 0; } } } 同学代码点评二:
+#include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; #include&lt;math.h&gt; int prime(int n){ int m; for(m=2;m&lt;=n;&#43;&#43;m){ if(n%m==0){ break; } } if(m==n) return 1; else return 0; } int main(){ int m,n,t; scanf(&#34;%d&#34;,&amp;n); for(m=6;m&lt;=n;m=m&#43;2){ for(t=3;t&lt;=m-3;t=t&#43;2){ if (prime(t)==1 &amp;&amp; prime(m-t)==1){ printf(&#34;%d=%d&#43;%d\n&#34;,m,t,m-t); break; } } if(t==m-3 &amp;&amp; m&gt;=8){ printf(&#34;推翻了哥德巴赫猜想！！！！！！\n&#34;); break; }} if(m==n&#43;2) printf(&#34;哥德巴赫猜想在小于等于%d成立\n&#34;,n); return 0; } C语言代码规范 虽然Ｃ语言的标准中并没有对代码的缩进和换行有硬性的要求，但一般大家都会有一些通俗的约定．这里推荐使用如下的代码缩进风格：
+" />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content=" - Caiyou Yuan&#39;s Pages">
+<meta property="og:description"
+  content="计算概论（C语言）习题课讲义06 内容概要 习题讲解
+前五章梳理
+课堂练习
+习题讲解 哥德巴赫猜想的验证 算法框架：
+int prime(int n); //判断输入n是否为素数 int goldbach(int n); //判断输入n是否可以分解为两个素数之和 同学代码点评一:
+#include&lt;stdio.h&gt; #include&lt;math.h&gt; #include&lt;time.h&gt; int isprime(int n){ for(int m=2;m*m&lt;=n;&#43;&#43;m){ if (n%m==0) return 0;} return 1; } int main(){ for(;;){ int a=0,t,n;double time1=0; printf(&#34;请输入需要分解的偶数，输入奇数结束程序：&#34;) ; scanf(&#34;%d&#34;,&amp;n); time1=clock(); if(n%2==0&amp;&amp;n&gt;4){ for(t=3;t&lt;=n/2;t&#43;=2){ if (isprime(t)&amp;&amp;isprime(n-t)){ printf(&#34;%d=%d&#43;%d\n&#34;,n,t,n-t); a=a&#43;1; } } printf(&#34;共有%d组,用时%f秒\n\n&#34;,a,(clock()-time1)/CLOCKS_PER_SEC); } else{ printf(&#34;程序结束&#34;); return 0; } } } 同学代码点评二:
+#include&lt;stdio.h&gt; #include&lt;stdlib.h&gt; #include&lt;math.h&gt; int prime(int n){ int m; for(m=2;m&lt;=n;&#43;&#43;m){ if(n%m==0){ break; } } if(m==n) return 1; else return 0; } int main(){ int m,n,t; scanf(&#34;%d&#34;,&amp;n); for(m=6;m&lt;=n;m=m&#43;2){ for(t=3;t&lt;=m-3;t=t&#43;2){ if (prime(t)==1 &amp;&amp; prime(m-t)==1){ printf(&#34;%d=%d&#43;%d\n&#34;,m,t,m-t); break; } } if(t==m-3 &amp;&amp; m&gt;=8){ printf(&#34;推翻了哥德巴赫猜想！！！！！！\n&#34;); break; }} if(m==n&#43;2) printf(&#34;哥德巴赫猜想在小于等于%d成立\n&#34;,n); return 0; } C语言代码规范 虽然Ｃ语言的标准中并没有对代码的缩进和换行有硬性的要求，但一般大家都会有一些通俗的约定．这里推荐使用如下的代码缩进风格：
+" />
+<meta property="og:url" content="http://localhost:1313/c_programming/06/6/" />
+<meta property="og:site_name" content="" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:1313/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/yuan.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Caiyou Yuan</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/c_programming/06/6/"></a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Mon, 01 Jan 0001 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Mon, 01 Jan 0001 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Mon, 24 Nov 2025 16:53:32 &#43;0800"
+                    class="no-wrap">
+                    Mon, 24 Nov 2025 16:53:32 &#43;0800</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      2052 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><h1 id="计算概论c语言习题课讲义06">计算概论（C语言）习题课讲义06</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>习题讲解</p>
+</li>
+<li>
+<p>前五章梳理</p>
+</li>
+<li>
+<p>课堂练习</p>
+</li>
+</ul>
+<h3 id="习题讲解">习题讲解</h3>
+<h4 id="哥德巴赫猜想的验证">哥德巴赫猜想的验证</h4>
+<p>算法框架：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">prime</span>(<span style="color:#66d9ef">int</span> n); <span style="color:#75715e">//判断输入n是否为素数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">goldbach</span>(<span style="color:#66d9ef">int</span> n); <span style="color:#75715e">//判断输入n是否可以分解为两个素数之和
+</span></span></span></code></pre></div><p>同学代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;time.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isprime</span>(<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> m<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;m<span style="color:#f92672">*</span>m<span style="color:#f92672">&lt;=</span>n;<span style="color:#f92672">++</span>m){
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> (n<span style="color:#f92672">%</span>m<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(;;){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,t,n;<span style="color:#66d9ef">double</span> time1<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;请输入需要分解的偶数，输入奇数结束程序：&#34;</span>) ;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span>          time1<span style="color:#f92672">=</span><span style="color:#a6e22e">clock</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>n<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">4</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(t<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;t<span style="color:#f92672">&lt;=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;t<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>){ 
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isprime</span>(t)<span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">isprime</span>(n<span style="color:#f92672">-</span>t)){
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d=%d+%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,n,t,n<span style="color:#f92672">-</span>t);
+</span></span><span style="display:flex;"><span>                    a<span style="color:#f92672">=</span>a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>             }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;共有%d组,用时%f秒</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>,a,(<span style="color:#a6e22e">clock</span>()<span style="color:#f92672">-</span>time1)<span style="color:#f92672">/</span>CLOCKS_PER_SEC);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;程序结束&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同学代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">prime</span>(<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">int</span> m;
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span>(m<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;m<span style="color:#f92672">&lt;=</span>n;<span style="color:#f92672">++</span>m){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>m<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(m<span style="color:#f92672">==</span>n)
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">int</span> m,n,t;
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span>(m<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>;m<span style="color:#f92672">&lt;=</span>n;m<span style="color:#f92672">=</span>m<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span>(t<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;t<span style="color:#f92672">&lt;=</span>m<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;t<span style="color:#f92672">=</span>t<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">prime</span>(t)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">prime</span>(m<span style="color:#f92672">-</span>t)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d=%d+%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,m,t,m<span style="color:#f92672">-</span>t);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(t<span style="color:#f92672">==</span>m<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> m<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">8</span>){
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;推翻了哥德巴赫猜想！！！！！！</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }}
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(m<span style="color:#f92672">==</span>n<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;哥德巴赫猜想在小于等于%d成立</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="c语言代码规范">C语言代码规范</h5>
+<p>虽然Ｃ语言的标准中并没有对代码的缩进和换行有硬性的要求，但一般大家都会有一些通俗的约定．这里推荐使用如下的代码缩进风格：</p>
+<ol>
+<li>
+<p>条件语句和循环语句使用“{” 和 “}”，并且“{” 和 “}”各自独占一行；</p>
+</li>
+<li>
+<p>条件语句和循环语句中的执行语句缩进一级．缩进使用４空格．</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">//这里示范该种缩进风格
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span> ()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* for 循环执行 */</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>; a <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">20</span>; a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> )
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;a 的值： %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, a);
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同学代码点评三:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isprime</span>(n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&lt;</span> n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>           <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fact</span>(n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>,m<span style="color:#f92672">=</span>n;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&lt;</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        m<span style="color:#f92672">=</span>m<span style="color:#f92672">-</span>i;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isprime</span>(i)<span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">isprime</span>(m)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">judge</span>(n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> p<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(p<span style="color:#f92672">&lt;=</span>n)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">=</span>p<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#a6e22e">fact</span>(p));
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">judge</span>(<span style="color:#ae81ff">100</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="输出所有素因子">输出所有素因子</h4>
+<p>代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isprime</span>(n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&lt;</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prt_pfactors</span>(<span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&lt;</span>n)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">isprime</span>(i)<span style="color:#f92672">!=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>            {<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,i);}
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        n<span style="color:#f92672">=-</span>n;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(i<span style="color:#f92672">&lt;</span>n)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">isprime</span>(i)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,i);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prt_pfactors</span>(n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prt_pfactors</span>(<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> m;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span>(n<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>    	<span style="color:#66d9ef">for</span>(m<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;m<span style="color:#f92672">&lt;=</span>n;<span style="color:#f92672">++</span>m){
+</span></span><span style="display:flex;"><span>    		<span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>m<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span>    			<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,m);
+</span></span><span style="display:flex;"><span>    			<span style="color:#a6e22e">prt_pfactors</span>(n<span style="color:#f92672">/</span>m);
+</span></span><span style="display:flex;"><span>    			<span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;-1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">prt_pfactors</span>(<span style="color:#f92672">-</span>n);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prt_pfactors</span>(n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评三:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">prt_pfactors</span>(<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>){<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;-1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>            n<span style="color:#f92672">=-</span>n;}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(n<span style="color:#f92672">!=</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>((n<span style="color:#f92672">%</span>i<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)){
+</span></span><span style="display:flex;"><span>        	<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,i);
+</span></span><span style="display:flex;"><span>        	n<span style="color:#f92672">=</span>n<span style="color:#f92672">/</span>i;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span> () {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">prt_pfactors</span>(n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="使用级数求解pi近似值">使用级数求解pi近似值</h4>
+<p>代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> sum<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> exact<span style="color:#f92672">=</span><span style="color:#ae81ff">3.14159265</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">double</span> pi<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(exact<span style="color:#f92672">-</span>pi<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1e-5</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>                sum<span style="color:#f92672">+=</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span>i<span style="color:#f92672">/</span>i;
+</span></span><span style="display:flex;"><span>                i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>                pi<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrt</span>(<span style="color:#ae81ff">6.0</span><span style="color:#f92672">*</span>sum);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.6f %.6f %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,sum,pi,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        pi<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        sum<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(exact<span style="color:#f92672">-</span>pi<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1e-6</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>                sum<span style="color:#f92672">+=</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span>i<span style="color:#f92672">/</span>i;
+</span></span><span style="display:flex;"><span>                i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>                pi<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrt</span>(<span style="color:#ae81ff">6.0</span><span style="color:#f92672">*</span>sum);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.7f %.7f %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,sum,pi,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        pi<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        sum<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(exact<span style="color:#f92672">-</span>pi<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1e-7</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>                sum<span style="color:#f92672">+=</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span>i<span style="color:#f92672">/</span>i;
+</span></span><span style="display:flex;"><span>                i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>                pi<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrt</span>(<span style="color:#ae81ff">6.0</span><span style="color:#f92672">*</span>sum);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.20f %.20f %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,sum,pi,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">double</span> pi_l<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">double</span> sum_l<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span><span style="color:#ae81ff">1.0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(exact<span style="color:#f92672">-</span>pi_l<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1e-7</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>                sum_l<span style="color:#f92672">+=</span><span style="color:#ae81ff">1.0</span><span style="color:#f92672">/</span>i<span style="color:#f92672">/</span>i;
+</span></span><span style="display:flex;"><span>                i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>                pi_l<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6.0</span><span style="color:#f92672">*</span>sum_l);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.20Lf %.20Lf %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,sum_l,pi_l,i<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">double</span> sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, pi <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.14159265</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">while</span> (pi <span style="color:#f92672">-</span> <span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> sum) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.00001</span>)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.</span> <span style="color:#f92672">/</span> (n <span style="color:#f92672">*</span> n);
+</span></span><span style="display:flex;"><span>      n<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.6lf %.6lf %lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum, <span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> sum), n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">while</span> (pi <span style="color:#f92672">-</span> <span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> sum) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.000001</span>)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.</span> <span style="color:#f92672">/</span> (n <span style="color:#f92672">*</span> n);
+</span></span><span style="display:flex;"><span>      n<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.7lf %.7lf %lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum, <span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> sum), n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">while</span> (pi <span style="color:#f92672">-</span> <span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> sum) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0.0000001</span>)
+</span></span><span style="display:flex;"><span>   {
+</span></span><span style="display:flex;"><span>      sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> <span style="color:#ae81ff">1.</span> <span style="color:#f92672">/</span> (n <span style="color:#f92672">*</span> n);
+</span></span><span style="display:flex;"><span>      n<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.8lf %.8lf %lld</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, sum, <span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6</span> <span style="color:#f92672">*</span> sum), n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评三:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">double</span> pi<span style="color:#f92672">=</span><span style="color:#ae81ff">3.14159265</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">pi_app</span>(<span style="color:#66d9ef">double</span> error1,<span style="color:#66d9ef">double</span> error2,<span style="color:#66d9ef">double</span> error3){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">double</span> sum<span style="color:#f92672">=</span><span style="color:#ae81ff">0.</span>,p<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> e<span style="color:#f92672">=</span><span style="color:#ae81ff">1.</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(e<span style="color:#f92672">&gt;=</span>error1){
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        sum<span style="color:#f92672">=</span>sum<span style="color:#f92672">+</span><span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(i<span style="color:#f92672">*</span>i);
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>sum);
+</span></span><span style="display:flex;"><span>        e<span style="color:#f92672">=</span><span style="color:#a6e22e">fabs</span>(p<span style="color:#f92672">-</span>pi);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.7Lf %.7Lf %d&#34;</span>,sum,p,i);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(e<span style="color:#f92672">&gt;=</span>error2){
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        sum<span style="color:#f92672">=</span>sum<span style="color:#f92672">+</span><span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(i<span style="color:#f92672">*</span>i);
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>sum);
+</span></span><span style="display:flex;"><span>        e<span style="color:#f92672">=</span><span style="color:#a6e22e">fabs</span>(p<span style="color:#f92672">-</span>pi);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.7Lf %.7Lf %d&#34;</span>,sum,p,i);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(e<span style="color:#f92672">&gt;=</span>error3){
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        sum<span style="color:#f92672">=</span>sum<span style="color:#f92672">+</span><span style="color:#ae81ff">1.</span><span style="color:#f92672">/</span>(i<span style="color:#f92672">*</span>i);
+</span></span><span style="display:flex;"><span>        p<span style="color:#f92672">=</span><span style="color:#a6e22e">sqrtl</span>(<span style="color:#ae81ff">6.</span><span style="color:#f92672">*</span>sum);
+</span></span><span style="display:flex;"><span>        e<span style="color:#f92672">=</span><span style="color:#a6e22e">fabs</span>(p<span style="color:#f92672">-</span>pi);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%.7Lf %.7Lf %d&#34;</span>,sum,p,i);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">pi_app</span>(<span style="color:#ae81ff">0.00001</span>,<span style="color:#ae81ff">0.000001</span>,<span style="color:#ae81ff">0.0000001</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="完全数的判断">完全数的判断</h4>
+<p>代码点评一:</p>
+<pre tabindex="0"><code>#include&lt;stdio.h&gt;
+
+int perfect_or_not(int n)
+{
+  int sum=0;
+  int m;
+  for(m=1;m&lt;=n;++m)
+  {
+    if(n%m==0)
+    {
+      sum = sum + m;
+    }
+    else{}
+  }
+  if((sum-2*n)&gt;0) return 1;
+  else if((sum-2*n)==0) return 0;
+  else return -1;
+}
+
+void perfect(int n)
+{
+  int m;
+  printf(&#34;1\n&#34;);
+  for(m=1;m&lt;=n;++m)
+  {
+    if (perfect_or_not(m)==0) printf(&#34;%d\n&#34;,m);
+    else {}
+  }
+}
+
+
+void class(int a,int b)
+{
+  int m=0,n=0,p=0,t;
+  for(t=a;t&lt;=b;++t)
+  {
+    if(perfect_or_not(t)==-1){m=m+1;}
+    else if(perfect_or_not(t)==0){n=n+1;}
+    else{p=p+1;}
+  }
+  printf(&#34;from %d to %d: %d %d %d\n&#34;,a,b,m,n,p);
+}
+
+int main()
+{
+  int n;
+  perfect(1000);
+  for(n=1001;n&lt;10000;n=n+1000)
+  {class(n,n+999);}
+  for(n=10001;n&lt;100000;n=n+10000)
+  {class(n,n+9999);}
+  return 0;
+}
+</code></pre><p>代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isperfect</span>(<span style="color:#66d9ef">long</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>, sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">while</span> (i <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">sqrt</span>(n))
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (n<span style="color:#f92672">%</span>i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">!=</span> <span style="color:#a6e22e">sqrt</span>(n))
+</span></span><span style="display:flex;"><span>			sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> n <span style="color:#f92672">/</span> i;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (n<span style="color:#f92672">%</span>i <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span> i <span style="color:#f92672">==</span> <span style="color:#a6e22e">sqrt</span>(n))
+</span></span><span style="display:flex;"><span>			sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> i;
+</span></span><span style="display:flex;"><span>		i<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> sum <span style="color:#f92672">==</span> n <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> (sum <span style="color:#f92672">&lt;</span> n <span style="color:#f92672">?</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">long</span> n, m, a<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, b<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>, c<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (n <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">1000</span>; n<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isperfect</span>(n) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>; n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">9000</span>; n <span style="color:#f92672">=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1000</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (m <span style="color:#f92672">=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; m <span style="color:#f92672">&lt;=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1000</span>; m<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isperfect</span>(m) <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>				a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isperfect</span>(m) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>				b <span style="color:#f92672">=</span> b <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>				c <span style="color:#f92672">=</span> c <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;from %d to %d: %d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1000</span>, a, b, c);
+</span></span><span style="display:flex;"><span>		a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, c <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (n <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>; n <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">90000</span>; n <span style="color:#f92672">=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span>)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> (m <span style="color:#f92672">=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>; m <span style="color:#f92672">&lt;=</span> n <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span>; m<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isperfect</span>(m) <span style="color:#f92672">==</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>				a <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isperfect</span>(m) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>				b <span style="color:#f92672">=</span> b <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>				c <span style="color:#f92672">=</span> c <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;from %d to %d: %d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, n <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, n <span style="color:#f92672">+</span> <span style="color:#ae81ff">10000</span>, a, b, c);
+</span></span><span style="display:flex;"><span>		a <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, b <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, c <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="前五章梳理">前五章梳理</h3>
+<h4 id="第一章">第一章</h4>
+<ol>
+<li>
+<p>从C语言源文件到可执行文件的加工流程?</p>
+</li>
+<li>
+<p>名词解释: IDE, 编译器, gcc</p>
+</li>
+</ol>
+<h4 id="第二章">第二章</h4>
+<ol>
+<li>
+<p>合法的标识符?</p>
+</li>
+<li>
+<p>为什么要在使用<code>printf</code>函数时,使用stdio.h文件?</p>
+</li>
+<li>
+<p>解释类型转化描述符<code>%d</code>,<code>%x</code>,<code>%f</code>,<code>%e</code>,<code>%.8f</code></p>
+</li>
+<li>
+<p>计算如下表达式子的结果<code>(int)(3.6/2)+5/2+01+0x1</code></p>
+</li>
+</ol>
+<h4 id="第三章和第四章">第三章和第四章</h4>
+<ol>
+<li>
+<p>运行语句<code>x=1?x==2:x=3</code>,x值为?</p>
+</li>
+<li>
+<p><code>break</code>和<code>continue</code>语句作用是？</p>
+</li>
+<li>
+<p>Fibonacci数列的递归计算?循环计算?</p>
+</li>
+<li>
+<p>求最大公约数的递归方式?循环方式?</p>
+</li>
+<li>
+<p>使用递归的思想分析Hanoi塔问题的复杂度.</p>
+</li>
+</ol>
+<h4 id="第五章">第五章</h4>
+<ol>
+<li>
+<p>字符'０&rsquo;和int 0的区别</p>
+</li>
+<li>
+<p><code>if(c &gt;= 'a' &amp;&amp; c &lt;= 'z')</code>的作用是？</p>
+</li>
+<li>
+<p><code>switch</code>语句中的<code>case</code>语句为什么一般以break结尾？</p>
+</li>
+<li>
+<p>全局变量和局部变量的区别？</p>
+</li>
+<li>
+<p>解释宏定义<code>#define pi 3.14159</code>; 如果源程序中定义函数pie,会怎样？</p>
+</li>
+</ol>
+<h4 id="随机数的生成">随机数的生成</h4>
+<p>计算机实际上无法生成真正的随机数，只能生成伪随机数．</p>
+<p>使用<code>int rand(void)</code>函数产生随机整数，需要包含<code>stdlib.h</code>的头文件．</p>
+<p>使用<code>void srand(unsigned seed)</code>设定随机数种子．</p>
+<h5 id="演示随机数种子的作用">演示：随机数种子的作用</h5>
+<h3 id="课堂练习">课堂练习</h3>
+<ul>
+<li>
+<p>(P103 20)　写一个程序，它输出所读入的一系列整数的平均值，假定输入的第一个整数表示数据的个数．</p>
+</li>
+<li>
+<p>(P103 21)　假设程序由输入得到的一系列正实数是一条折线在x=0,1,2&hellip;时的对应值，输入负数时结束输入.求该折线和ｘ轴之间区域的面积．</p>
+</li>
+<li>
+<p>(P142   2)　使用字符分类函数写一个函数，统计输入中的十进制和十六进制整数字符．输入以EOF结束.如果不用字符分类函数呢？</p>
+</li>
+<li>
+<p>(P142   5) 　使用字符输出画一个实心的圆；空心的呢？</p>
+</li>
+</ul>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>

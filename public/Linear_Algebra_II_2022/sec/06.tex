@@ -1,0 +1,251 @@
+\section{Jordan标准形}
+推导线性变换的Jordan标准形，可以通过空间分解的方法，也可以通过$\lambda$-矩阵的方法。
+
+\subsection{根子空间直和分解}
+\begin{theorem}
+	设$A$是域$F$上$n$维线性空间$V$上的线性变换，如果$A$的最小多项式$m(\lambda)$
+	在$F[\lambda]$中分解为一次因式的乘积：
+	\begin{equation}
+		m(\lambda) = (\lambda-\lambda_1)^{l_1}(\lambda-\lambda_2)^{l_2}\cdots(\lambda-\lambda_s)^{l_s},
+		\label{equ:m}
+	\end{equation}
+	则$V$中存在一个基，$A$在此基下的矩阵为Jordan形. 
+	% 其主对角元为$A$的全部特征值,
+	% 主对角元为$\lambda_j$的Jordan块的总数
+	% $$N_j = n - \rank(A-\lambda_j I),$$
+	% 且其中每个Jordan块的级数不超过$l_j$, $t$级Jordan块$J_t(\lambda_j)$的个数
+	% $$N_j(t) = \rank(A-\lambda_j I)^{t+1} + \rank(A-\lambda_j I)^{t-1} - 2\rank(A-\lambda_j I)^{t}.$$
+\end{theorem}
+\begin{proof}
+	由空间分解$V = W_1 \oplus W_2 \oplus \cdots \oplus W_s$，
+	其中$W_j = \Ker (A-\lambda I)^{l_j}$, 考虑$B_j = (A-\lambda_j I)|_{W_j}$
+	是$W_j$上的幂零变换, 根据幂零变换的性质，以及$A|_{W_j} = B_j + \lambda_j I|_{W_j}$,
+	可得Jordan标准形. 详细证明见课本.
+\end{proof}
+
+\begin{remark}
+	$B_j$的幂零指数为？最小多项式为？
+\end{remark}
+\vspace{1.5cm}
+
+\begin{remark} (根子空间的定义，课本P139)
+	如果$A$的特征多项式$f(\lambda)$在$F[\lambda]$中可以分解为
+	\begin{equation}
+		f(\lambda) = (\lambda-\lambda_1)^{r_1}(\lambda-\lambda_2)^{r_2}\cdots(\lambda-\lambda_s)^{r_s},
+		\label{equ:f}
+	\end{equation}
+	则
+	$$V = \Ker (A-\lambda_1I)^{r_1} \oplus \Ker (A-\lambda_2I)^{r_2} \oplus \cdots \oplus \Ker (A-\lambda_sI)^{r_s}.$$
+	其中$\Ker (A-\lambda_jI)^{r_j}$称为$A$的根子空间.
+	证明$W_j = \Ker (A-\lambda_jI)^{r_j}, \dim W_j = r_j$.
+\end{remark}
+\vspace{5cm}
+
+\begin{remark} 说明条件\eqref{equ:m}和\eqref{equ:f}互相等价. 或者进一步证明，$m(\lambda)$和$f(\lambda)$具有相同的不可约因式.
+\end{remark}
+\vspace{3cm}
+
+\begin{remark}
+	当条件\eqref{equ:m}不成立，考虑矩阵的有理标准形.
+\end{remark}
+\vspace{0.5cm}
+
+% \paragraph{关于有理标准形的推广}
+% 若最小多项式无法在$F[x]$上分解为一次因子的幂次乘积?
+% \paragraph{不变子空间直和分解}
+% $C_j = A|W_j$是$n_j$维线性空间$W_j$上的线性变换,其最小多项式为$p_j^{l_j}(\lambda)$,
+% 其中$p_j(\lambda)$是不可约多项式.
+% \begin{itemize}
+%     \item [(1)] 若存在$\alpha \in W_j$和正整数$t$,使得
+%     $\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$线性无关，
+%     且$C_j^t \alpha$可以由$\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$
+%     线性表出， 则称$\alpha, C_j\alpha, \cdots, C_j^{t-1} \alpha$
+%     张成了由$\alpha$生成的$C_j$-循环子空间.
+
+%     $W_j$能分解为$\frac{1}{r} \dim \widehat{W}_j$个$C_j$-循环子空间的直和,
+%     其中$r=\deg p(\lambda)$, $\widehat{W}_j = \ker p(C_j)$.
+%     \vspace{1cm}
+%     \item [(2)] 证明$W_j$中存在一个基，使得$C_j$在此基下的矩阵为
+%     有理块组成的块对角矩阵, 每个有理块级数是$r$的倍数，且不超过$rl_j$,
+%     有理块的总数为$\frac{1}{r}\left(n_j - \rank\, p_j(C_j)\right)$.
+%     $rt$级有理块的个数$N(rt)$为，
+%     $$N(rt) = \frac{1}{r} \left(
+%         \rank\,p^{t-1}(C_j) + \rank\,p^{t+1}(C_j) 
+%         - 2\rank\,p^{t}(C_j).
+%     \right)$$
+%     \vspace{1cm}
+% \end{itemize}
+
+\subsection{$\lambda$-矩阵}
+$\lambda$-矩阵的等价，以及不变因子、行列式因子的定义，详见讲义01.
+
+\begin{theorem}
+	数域$F$上的两个矩阵$A$和$B$相似的充要条件是$\lambda I-A$和$\lambda I-B$等价.
+\end{theorem}
+\begin{proof}
+	证明略，详见《高等代数学习指导用书（下册）》P439-440.
+\end{proof}
+上述定理将数字矩阵相似的问题，转化为了$\lambda$-矩阵等价的问题.
+而我们知道，
+$\lambda$矩阵等价的充要条件是具有相同的不变因子/行列式因子.
+
+\begin{definition}
+	如果$\lambda I-A$的不变因子可以分解为
+	若干一次因式的幂次乘积，
+	我们把这些一次因式的幂次称为$\lambda I-A$或$A$的初等因子.
+\end{definition}
+
+\begin{remark}
+	说明$\lambda I-A$的不变因子可以分解为一次因式的幂次乘积和条件\eqref{equ:m}等价. 可以通过说明$\lambda I-A$的最后一个不变因子$d_n(\lambda) = m(\lambda)$. 也可以通过说明$\lambda I-A$的最后一个行列式因子$D_n(\lambda) = f(\lambda)$.
+\end{remark}
+\vspace{4cm}
+
+\begin{remark}
+	说明在条件\eqref{equ:m}下，$\lambda$矩阵等价的充要条件是具有相同的初等因子.
+\end{remark}
+\vspace{3cm}
+
+\paragraph{例题}
+\begin{itemize}
+    \item [1.] 求
+    \begin{equation}
+    \nonumber
+    J_n(\lambda) = 
+    \begin{pmatrix}
+    \lambda&1&&&&\\
+    &\lambda&1&&&\\
+    &&\ddots&\ddots&&\\
+    &&&\lambda&1\\
+    &&&&\lambda\\
+    \end{pmatrix}_{n\times n}
+    \end{equation}
+    的所有初等因子,不变因子和行列式因子.
+    \vspace{3cm}
+
+    \item [2.]
+    \begin{itemize}
+        \item [(1)] 设
+    \begin{equation}
+    \nonumber
+    A(\lambda) = \begin{pmatrix}
+        f_1(\lambda)g_1(\lambda)&0\\
+        0&f_2(\lambda)g_2(\lambda)\\
+    \end{pmatrix},\quad
+    B(\lambda) = \begin{pmatrix}
+        f_2(\lambda)g_1(\lambda)&0\\
+        0&f_1(\lambda)g_2(\lambda)\\
+    \end{pmatrix},
+    \end{equation}
+    如果多项式$f_1(\lambda),f_2(\lambda)$都与$g_1(\lambda),g_2(\lambda)$
+    互素，则$A(\lambda)$和$B(\lambda)$等价.
+    \vspace{3cm}
+    
+    \item [(2)] 对于对角$\lambda$-矩阵$D(\lambda)$, 假设对角元素可以分解为一次因式方幂的乘积，
+    证明所有这些一次因式的方幂就是$D(\lambda)$的全部初等因子.
+    \vspace{3cm}
+
+    \item [(3)]
+    求
+    \begin{equation}
+    \nonumber
+    J = 
+    \begin{pmatrix}
+    J_{n_1}(\lambda_1)&&&\\
+    &J_{n_2}(\lambda_2)&&\\
+    &&\ddots&\\
+    &&&J_{n_s}(\lambda_s)\\
+    \end{pmatrix}
+    \end{equation}
+    的所有初等因子.
+    \vspace{3cm}
+
+    \item [(4)]
+    求矩阵
+    \begin{equation}
+    \nonumber
+    A = 
+    \begin{pmatrix}
+    -1 & -2& 6\\
+    -1 &  0& 3\\
+    -1 & -1& 4\\
+    \end{pmatrix}
+    \end{equation}
+    在复数域上的Jordan标准型.
+    \vspace{3cm}
+    \end{itemize}
+\end{itemize}
+
+\section{Jordan标准形的应用}
+\subsection{计算矩阵指数函数}
+矩阵指数函数$$e^{A} = \sum_{i=0}^{\infty} \frac{A^i}{i!}$$
+在求解常微分方程组时具有广泛应用.
+    \begin{itemize}
+        \item [(a)]齐次一阶线性常系数常微分方程组
+        \begin{equation}
+        \nonumber
+        \left\{
+        \begin{aligned}
+        &\frac{\mathrm{d} x}{\mathrm{d} t} = Ax,\\
+        &x(0) = x_0.
+        \end{aligned}
+        \right.
+        \end{equation}
+        的唯一解为$x(t)=e^{At}x_0$. 例如求解
+        \begin{equation}
+            \nonumber
+            \frac{\mathrm{d} x}{\mathrm{d} t} = 
+            \begin{pmatrix}
+                2& 1& 4\\
+                0& 2& 0\\
+                0& 3& 1\\
+            \end{pmatrix}
+            x
+        \end{equation}
+        的通解.
+        \vspace{3cm}
+        \item [(b)]齐次高阶线性常系数常微分方程
+        \begin{equation}
+        \nonumber
+        \left\{
+        \begin{aligned}
+        &x^{(n)} + a_{n-1} x^{(n-1)} + \cdots + a_1 x^{(1)} + a_0 x = 0\\
+        &x(0) = x_0\\
+        &x^{(1)}(0) = x_0^{(1)}\\
+        &\vdots\\
+        &x^{(n-1)}(0) = x_0^{(n-1)}\\
+        \end{aligned}
+        \right.
+        \end{equation}
+        其中$x^{(i)}(t) = \frac{\mathrm{d}^i x}{\mathrm{d} t^i}(t).$ 可以转化为方程组情形.
+        例如求解$x^{(3)} - 3x^{(2)}-6x^{(1)} + 8x = 0$的通解.
+        \vspace{3cm}
+    \end{itemize}
+
+\subsection{计算矩阵平方根}
+    \begin{itemize}
+        \item[(1)] 设$a$是域F中的非零元, 求$J_r(a)^2$的标准型.
+        \begin{solution}
+            由于
+            $J_r(a)^2 = (aI + J_r(0))^2
+                      = a^2 I + 2aJ_r(0) + J_r(0)^2$,
+            $\rank J_r(a)^2 = r-1$, 所以$\rank J_r(a)^2 \sim J_r(a^2)$.
+        \end{solution}
+        \vspace{3cm}
+        \item[(2)] 任意的可逆复矩阵都有平方根.
+        \vspace{3cm}
+        \item[(3)]
+        \begin{equation}
+        \nonumber
+            A = 
+            \begin{pmatrix}
+               -2& 1& 0\\
+               -4& 2& 0\\
+               -2& 1& 1\\
+            \end{pmatrix}
+        \end{equation} 
+        是否有平方根，若有给出一个.
+        \vspace{3cm}
+        \item[(4)] 证明：不可逆的复矩阵有平方根，当且仅当其标准型中主对角元为0的
+        Jordan块或是$J_1(0)$,或是$J_r(0), J_{r}(0)$成对出现，或是$J_r(0), J_{r+1}(0)$成对出现. 
+        \vspace{3cm}
+    \end{itemize}

@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>C_Programmings - Caiyou Yuan&#39;s Pages</title>
+    
+    <link rel="icon" type="image/x-icon" href='/yuan_cartoon.jpg'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+    <script type="text/javascript" src="http://localhost:1313/js/custom.js"></script>
+
+    
+    <meta name="description"
+  content="" />
+<meta name="keywords"
+  content='' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/c_programming/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="C_Programmings - Caiyou Yuan&#39;s Pages" />
+<meta name="twitter:description"
+  content="" />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="C_Programmings - Caiyou Yuan&#39;s Pages">
+<meta property="og:description"
+  content="" />
+<meta property="og:url" content="http://localhost:1313/c_programming/" />
+<meta property="og:site_name" content="C_Programmings" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+
+
+
+<link href="/c_programming/index.xml" rel="alternate" type="application/rss+xml" title="Caiyou Yuan&#39;s Pages" />
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+  <header class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on">
+    <div class="Header-item mobile-none" style="margin-top: -4px; margin-bottom: -4px;">
+      <a class="Header-link" href="http://localhost:1313/">
+        <img class="octicon" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item d-md-none">
+      <button class="Header-link btn-link js-details-target" type="button"
+        onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'">
+        <svg height="24" class="octicon octicon-three-bars" viewBox="0 0 16 16" version="1.1" width="24">
+          <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z">
+          </path>
+        </svg>
+      </button>
+    </div>
+    <div style="display: none;" id="header-search"
+      class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex">
+      <div
+        class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to">
+        <div class="position-relative">
+          
+          <form target="_blank" action="https://www.google.com/search" accept-charset="UTF-8" method="get"
+            autocomplete="off">
+            <label
+              class="Header-search-label form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+              <input type="text"
+                class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable"
+                name="q" value="" placeholder="Search" autocomplete="off">
+              <input type="hidden" name="q" value="site:http://localhost:1313/">
+            </label>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="Header-item Header-item--full flex-justify-center d-md-none position-relative">
+      <a class="Header-link " href="http://localhost:1313/">
+        <img class="octicon octicon-mark-github v-align-middle" height="32" width="32" src="/yuan_cartoon.jpg">
+      </a>
+    </div>
+    <div class="Header-item" style="margin-right: 0;">
+      <a href="javascript:void(0)" class="Header-link no-select" onclick="switchTheme()">
+        <svg style="fill: var(--color-profile-color-modes-toggle-moon);" class="no-select" viewBox="0 0 16 16"
+          version="1.1" width="16" height="16">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+          </path>
+        </svg>
+      </a>
+    </div>
+  </header>
+</div>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  
+
+
+<div class="mt-4 position-sticky top-0 d-none d-md-block bg-white width-full border-bottom color-border-secondary"
+  style="z-index:3;">
+  <div class="container-xl px-3 px-md-4 px-lg-5">
+    <div class="gutter-condensed gutter-lg flex-column flex-md-row d-flex">
+      <div class="flex-shrink-0 col-12 col-md-3 mb-4 mb-md-0">
+      </div>
+      <div class="flex-shrink-0 col-12 col-md-9 mb-4 mb-md-0">
+        <div class="UnderlineNav width-full box-shadow-none hx_UnderlineNav-with-profile-color-modes-banner">
+          <nav class="UnderlineNav-body">
+            <a class="UnderlineNav-item " href="http://localhost:1313/">
+              <svg class="octicon octicon-book UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16"
+                version="1.1" width="16">
+                <path fill-rule="evenodd"
+                  d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z">
+                </path>
+              </svg>
+              Overview
+            </a>
+            <a class="UnderlineNav-item  selected " href="http://localhost:1313/post">
+              <svg class="octicon octicon-repo UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16"
+                version="1.1" width="16">
+                <path fill-rule="evenodd"
+                  d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z">
+                </path>
+              </svg>
+              Posts
+              <span class="Counter">4</span>
+            </a>
+          </nav>
+          <div class="profile-color-modes js-promo-color-modes-banner-profile isInitialToggle">
+            <svg width="106" height="60" viewBox="0 0 106 60" fill="none" stroke-width="3" stroke-linecap="round"
+              stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+              <g class="profile-color-modes-illu-group profile-color-modes-illu-red">
+                <path d="M37.5 58.5V57.5C37.5 49.768 43.768 43.5 51.5 43.5V43.5C59.232 43.5 65.5 49.768 65.5 57.5V58.5">
+                </path>
+              </g>
+              <g class="profile-color-modes-illu-group profile-color-modes-illu-orange">
+                <path
+                  d="M104.07 58.5C103.401 55.092 97.7635 54.3869 95.5375 57.489C97.4039 54.6411 99.7685 48.8845 94.6889 46.6592C89.4817 44.378 86.1428 50.1604 85.3786 54.1158C85.9519 50.4768 83.7226 43.294 78.219 44.6737C72.7154 46.0534 72.7793 51.3754 74.4992 55.489C74.169 54.7601 72.4917 53.3567 70.5 52.8196">
+                </path>
+              </g>
+              <g class="profile-color-modes-illu-group profile-color-modes-illu-purple">
+                <path
+                  d="M5.51109 58.5V52.5C5.51109 41.4543 14.4654 32.5 25.5111 32.5C31.4845 32.5 36.8464 35.1188 40.5111 39.2709C40.7212 39.5089 40.9258 39.7521 41.1245 40">
+                </path>
+                <path d="M27.511 49.5C29.6777 49.5 28.911 49.5 32.511 49.5"></path>
+                <path d="M27.511 56.5C29.6776 56.5 26.911 56.5 30.511 56.5"></path>
+              </g>
+              <g class="profile-color-modes-illu-group profile-color-modes-illu-green">
+                <circle cx="5.5" cy="12.5" r="4"></circle>
+                <circle cx="18.5" cy="5.5" r="4"></circle>
+                <path d="M18.5 9.5L18.5 27.5"></path>
+                <path d="M18.5 23.5C6 23.5 5.5 23.6064 5.5 16.5"></path>
+              </g>
+              <g class="profile-color-modes-illu-group profile-color-modes-illu-blue">
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M40.6983 31.5C40.5387 29.6246 40.6456 28.0199 41.1762 27.2317C42.9939 24.5312 49.7417 26.6027 52.5428 30.2409C54.2551 29.8552 56.0796 29.6619 57.9731 29.6619C59.8169 29.6619 61.5953 29.8452 63.2682 30.211C66.0833 26.5913 72.799 24.5386 74.6117 27.2317C75.6839 28.8246 75.0259 33.7525 73.9345 37.5094C74.2013 37.9848 74.4422 38.4817 74.6555 39">
+                  </path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39">
+                  </path>
+                  <path d="M49.4996 33V35.6757"></path>
+                  <path d="M67.3375 33V35.6757"></path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39">
+                  </path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39">
+                  </path>
+                  <path d="M49.4996 33V35.6757"></path>
+                  <path d="M67.3375 33V35.6757"></path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39">
+                  </path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M41.508 31.5C41.6336 31.2259 41.7672 30.9582 41.9085 30.6968C40.7845 26.9182 40.086 21.8512 41.1762 20.2317C42.9939 17.5312 49.7417 19.6027 52.5428 23.2409C54.2551 22.8552 56.0796 22.6619 57.9731 22.6619C59.8169 22.6619 61.5953 22.8452 63.2682 23.211C66.0833 19.5913 72.799 17.5386 74.6117 20.2317C75.6839 21.8246 75.0259 26.7525 73.9345 30.5094C75.1352 32.6488 75.811 35.2229 75.811 38.2283C75.811 38.49 75.8058 38.7472 75.7957 39">
+                  </path>
+                  <path d="M49.4996 33V35.6757"></path>
+                  <path d="M67.3375 33V35.6757"></path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M73.4999 40.2236C74.9709 38.2049 75.8108 35.5791 75.8108 32.2283C75.8108 29.2229 75.1351 26.6488 73.9344 24.5094C75.0258 20.7525 75.6838 15.8246 74.6116 14.2317C72.7989 11.5386 66.0832 13.5913 63.2681 17.211C61.5952 16.8452 59.8167 16.6619 57.973 16.6619C56.0795 16.6619 54.2549 16.8552 52.5427 17.2409C49.7416 13.6027 42.9938 11.5312 41.176 14.2317C40.0859 15.8512 40.7843 20.9182 41.9084 24.6968C41.003 26.3716 40.4146 28.3065 40.2129 30.5">
+                  </path>
+                  <path d="M82.9458 30.5471L76.8413 31.657"></path>
+                  <path d="M76.2867 34.4319L81.8362 37.7616"></path>
+                  <path d="M49.4995 27.8242V30.4999"></path>
+                  <path d="M67.3374 27.8242V30.4998"></path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M45.3697 34.2658C41.8877 32.1376 39.7113 28.6222 39.7113 23.2283C39.7113 20.3101 40.3483 17.7986 41.4845 15.6968C40.3605 11.9182 39.662 6.85125 40.7522 5.23168C42.5699 2.53117 49.3177 4.6027 52.1188 8.24095C53.831 7.85521 55.6556 7.66186 57.5491 7.66186C59.3929 7.66186 61.1713 7.84519 62.8442 8.21095C65.6593 4.59134 72.375 2.5386 74.1877 5.23168C75.2599 6.82461 74.6019 11.7525 73.5105 15.5094C74.7112 17.6488 75.3869 20.2229 75.3869 23.2283C75.3869 28.6222 73.2105 32.1376 69.7285 34.2658C70.8603 35.5363 72.6057 38.3556 73.3076 40">
+                  </path>
+                  <path d="M49.0747 19.8242V22.4999"></path>
+                  <path
+                    d="M54.0991 28C54.6651 29.0893 55.7863 30.0812 57.9929 30.0812C59.0642 30.0812 59.8797 29.8461 60.5 29.4788">
+                  </path>
+                  <path d="M66.9126 19.8242V22.4999"></path>
+                  <path d="M33.2533 20.0237L39.0723 22.1767"></path>
+                  <path d="M39.1369 25.0058L33.0935 27.3212"></path>
+                  <path d="M81.8442 19.022L76.0252 21.1751"></path>
+                  <path d="M75.961 24.0041L82.0045 26.3196"></path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M73.4999 40.2236C74.9709 38.2049 75.8108 35.5791 75.8108 32.2283C75.8108 29.2229 75.1351 26.6488 73.9344 24.5094C75.0258 20.7525 75.6838 15.8246 74.6116 14.2317C72.7989 11.5386 66.0832 13.5913 63.2681 17.211C61.5952 16.8452 59.8167 16.6619 57.973 16.6619C56.0795 16.6619 54.2549 16.8552 52.5427 17.2409C49.7416 13.6027 42.9938 11.5312 41.176 14.2317C40.0859 15.8512 40.7843 20.9182 41.9084 24.6968C41.003 26.3716 40.4146 28.3065 40.2129 30.5">
+                  </path>
+                  <path d="M82.9458 30.5471L76.8413 31.657"></path>
+                  <path d="M76.2867 34.4319L81.8362 37.7616"></path>
+                  <path d="M49.4995 27.8242V30.4999"></path>
+                  <path d="M67.3374 27.8242V30.4998"></path>
+                </g>
+                <g class="profile-color-modes-illu-frame">
+                  <path
+                    d="M40.6983 31.5C40.5387 29.6246 40.6456 28.0199 41.1762 27.2317C42.9939 24.5312 49.7417 26.6027 52.5428 30.2409C54.2551 29.8552 56.0796 29.6619 57.9731 29.6619C59.8169 29.6619 61.5953 29.8452 63.2682 30.211C66.0833 26.5913 72.799 24.5386 74.6117 27.2317C75.6839 28.8246 75.0259 33.7525 73.9345 37.5094C74.2013 37.9848 74.4422 38.4817 74.6555 39">
+                  </path>
+                </g>
+              </g>
+            </svg>
+            <span class="profile-color-modes-toggle js-promo-color-modes-toggle no-select" tabindex="0"
+              onclick="switchTheme()">
+              <div class="profile-color-modes-toggle-track no-select"></div>
+              <div class="profile-color-modes-toggle-thumb js-promo-color-modes-thumb">
+                <svg style="fill: var(--color-profile-color-modes-toggle-moon); margin: 7px 0 0 7px;" width="14"
+                  height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z">
+                  </path>
+                </svg>
+              </div>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-xl px-3 px-md-4 px-lg-5">
+  <div class="gutter-condensed gutter-lg flex-column flex-md-row d-flex">
+    <div class="flex-shrink-0 col-12 col-md-3 mb-4 mb-md-0">
+      <div class="h-card mt-md-n5" style="margin-top:24px">
+        <div class="user-profile-sticky-bar js-user-profile-sticky-bar d-none d-md-block" id="headerStuck">
+          <div class="user-profile-mini-vcard d-table">
+            <span class="user-profile-mini-avatar d-table-cell v-align-middle lh-condensed-ultra pr-2">
+              
+              <img class="rounded-1 avatar-user" height="32" width="32" src="/yuan.png">
+              
+            </span>
+            <span class="d-table-cell v-align-middle lh-condensed">
+              <strong>Caiyou Yuan</strong>
+            </span>
+          </div>
+        </div>
+        <div class="clearfix d-flex d-md-block flex-items-center mb-4 mb-md-0">
+          <div class="position-relative d-inline-block col-2 col-md-12 mr-3 mr-md-0 flex-shrink-0" style="z-index:4;">
+            
+            <a href="/yuan.png">
+              <img style="height:auto;" alt="Avatar" width="260" height="260" id="headerImg"
+                class="avatar avatar-user width-full border bg-white" src="/yuan.png">
+            </a>
+            
+            
+            <div class="user-status-container position-relative hide-sm hide-md">
+              <div class="f5 user-status-circle-badge-container">
+                <div class="user-status-circle-badge d-inline-block lh-condensed-ultra p-2">
+                  <div class="d-flex flex-items-center flex-items-stretch">
+                    <div class="f6 lh-condensed user-status-header d-inline-flex user-status-emoji-only-header circle">
+                      <div class="user-status-emoji-container flex-shrink-0 mr-2 d-flex flex-items-center flex-justify-center ">
+                        <div><g-emoji class="g-emoji">😊</g-emoji></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+          <div
+            class="vcard-names-container float-left col-10 col-md-12 pt-1 pt-md-3 pb-1 pb-md-3 js-sticky js-user-profile-sticky-fields"
+            data-original-top="0px" style="position: sticky;">
+            <h1 class="vcard-names pl-2 pl-md-0">
+              <span class="p-name vcard-fullname d-block overflow-hidden">Caiyou Yuan</span>
+              
+              <span class="p-nickname vcard-username d-block">caiyouy</span>
+              
+            </h1>
+          </div>
+        </div>
+
+        <div class="p-note user-profile-bio mb-3 js-user-profile-bio f4">
+          <div>Postdoc at SUSTech</div>
+        </div>
+
+        <div class="d-flex flex-column">
+          <div class="js-profile-editable-area d-flex flex-column d-md-block">
+            <ul class="vcard-details">
+              
+              <li class="vcard-detail pt-1 css-truncate css-truncate-target hide-sm hide-md">
+                <svg class="octicon octicon-location" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                  <path fill-rule="evenodd"
+                    d="M11.536 3.464a5 5 0 010 7.072L8 14.07l-3.536-3.535a5 5 0 117.072-7.072v.001zm1.06 8.132a6.5 6.5 0 10-9.192 0l3.535 3.536a1.5 1.5 0 002.122 0l3.535-3.536zM8 9a2 2 0 100-4 2 2 0 000 4z">
+                  </path>
+                </svg>
+                <span class="p-label">China</span>
+              </li>
+              
+
+              
+              <li class="vcard-detail pt-1 css-truncate css-truncate-target ">
+                <svg class="octicon octicon-mail" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                  <path fill-rule="evenodd"
+                    d="M1.75 2A1.75 1.75 0 000 3.75v.736a.75.75 0 000 .027v7.737C0 13.216.784 14 1.75 14h12.5A1.75 1.75 0 0016 12.25v-8.5A1.75 1.75 0 0014.25 2H1.75zM14.5 4.07v-.32a.25.25 0 00-.25-.25H1.75a.25.25 0 00-.25.25v.32L8 7.88l6.5-3.81zm-13 1.74v6.441c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V5.809L8.38 9.397a.75.75 0 01-.76 0L1.5 5.809z">
+                  </path>
+                </svg>
+                <a class="u-email link-gray-dark " href="mailto:yuancaiyou@hotmail.com">yuancaiyou@hotmail.com</a>
+              </li>
+              
+
+              <li class="vcard-detail pt-1 css-truncate css-truncate-target ">
+                <svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                  <path fill-rule="evenodd"
+                    d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z">
+                  </path>
+                </svg>
+                
+                <a rel="nofollow me" class="link-gray-dark" href="https://caiyouy.github.io/">https://caiyouy.github.io/</a>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-top color-border-secondary pt-3 mt-3 clearfix hide-sm hide-md">
+          <h2 class="mb-2 h4">Organizations</h2>
+          <div style="display:flex;justify-content:flex-start;flex-wrap:wrap;margin-bottom:3px;">
+          
+          <a style="margin: 0 10px 10px 0;" href="https://github.com/caiyouy">
+            <svg id="github-icon" viewBox="0 0 16 16" version="1.1" width="32" height="32" fill="#24292e">
+              <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+              </path>
+            </svg>
+          </a>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-shrink-0 col-12 col-md-9 mb-4 mb-md-0">
+      
+
+<div class="UnderlineNav user-profile-nav d-block d-md-none position-sticky top-0 pl-3 ml-n3 mr-n3 pr-3 bg-white"
+  style="z-index:3;">
+  <nav class="UnderlineNav-body">
+    <a class="UnderlineNav-item " href="http://localhost:1313/">
+      <svg class="octicon octicon-book UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16" version="1.1"
+        width="16">
+        <path fill-rule="evenodd"
+          d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z">
+        </path>
+      </svg>
+      Overview
+    </a>
+    <a class='UnderlineNav-item   selected '
+      href="http://localhost:1313/post">
+      <svg class="octicon octicon-repo UnderlineNav-octicon hide-sm" height="16" viewBox="0 0 16 16" version="1.1"
+        width="16">
+        <path fill-rule="evenodd"
+          d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z">
+        </path>
+      </svg>
+      Posts
+      <span class="Counter ">4</span>
+    </a>
+  </nav>
+</div>
+
+      
+      
+<div>
+  <div class="position-relative">
+    <div>
+      
+        
+      
+      <ul>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/01/1/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义01">计算概论(C语言)习题课讲义01</h1>
+<h2 id="内容概要">内容概要</h2>
+<ol>
+<li>作业系统OpenJudge</li>
+<li>编程环境CodeBlocks</li>
+<li>图灵停机问题</li>
+</ol>
+<hr>
+<h2 id="作业系统openjudge">作业系统：OpenJudge</h2>
+<p>网址：<a href="http://openjudge.cn/">http://openjudge.cn/</a></p>
+<h3 id="准备工作">准备工作</h3>
+<ul>
+<li>
+<p>网上注册</p>
+<p><a href="http://openjudge.cn/register/">点击此处注册</a>，用户名格式：学号+姓名</p>
+</li>
+<li>
+<p>加入小组</p>
+<p>注册完成后，在小组栏目中查找<strong>数院计概（C语言）</strong>，并加入</p>
+</li>
+</ul>
+<h3 id="使用演示">使用演示</h3>
+<p>提交作业方式：对源代码全选，复制和粘帖。即<code>Ctrl+A</code>, <code>Ctrl+C</code>, <code>Ctrl+V</code></p>
+<p>举例“Hello C”程序</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello C&#34;</span>); <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="系统判定流程">系统判定流程</h3>
+<p><img src="./pic/pic01.png" alt="系统判定流程图"></p>
+<p>还有一些其他错误，例如Time Limit Exceeded/Memory Limit Exceeded等。</p>
+<h4 id="一些典型错误">一些典型错误</h4>
+<p>错误一：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello C&#34;</span>) <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>错误二：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello，C&#34;</span>); <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>错误三：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Hello C&#34;</span>) <span style="color:#75715e">/*向屏幕输出结果*/</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="编程建议">编程建议</h3>
+<p>OpenJudge的<a href="http://openjudge.cn/help.html">帮助文档</a>给出了下述建议：</p>
+<p><strong>Guideline 1 Do exactly what the problems demand.</strong></p>
+<p>A mistake made by some newcomers is to print some friendly-looking prompt messages such as “Please input an integer” which the problems do not ask for. Another example of violating this guideline is to leave debug information in the output. Our judge system is automated. There is no human involvement in judging the solutions. Neither the administrators nor the developers will read any output by the solutions in normal circumstances. Hence, unrequested prompt messages are virtually useless. Worse still, undesired output may mess with the judging process, which in all probability will lead to rejection of the solution, even though it is logically correct.</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/02/2/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义02">计算概论(C语言)习题课讲义02</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>数的存储</p>
+</li>
+<li>
+<p>字符的存储</p>
+</li>
+</ul>
+<h3 id="数的存储">数的存储</h3>
+<p>两个事实：</p>
+<ol>
+<li>
+<p>计算机以二进制存储所有的数据，无论是文件、图片，还是视频及程序。</p>
+</li>
+<li>
+<p>计算机的存储空间是有限的；所以，计算机只能表示有限的数。</p>
+</li>
+</ol>
+<h4 id="整数的存储">整数的存储</h4>
+<blockquote>
+<p>不同电脑间的变量长度，有所差异。具体可以使用 <code>sizeof</code> 运算符测试。</p>
+</blockquote>
+<ul>
+<li>
+<p><code>short int</code> 类型的整数用四个字节的二进制表示</p>
+</li>
+<li>
+<p><code>int</code> 类型的整数用八个字节的二进制表示</p>
+</li>
+<li>
+<p><code>long int</code> 类型的整数用十六字节的二进制表示</p>
+</li>
+<li>
+<p>上述三种类型，未用 <code>unsigned</code> 关键词修饰，均表示带符号的整数。即类型的最高一位为符号位，用0表示正数，1表示负数。</p>
+</li>
+</ul>
+<p>所以，根据上述信息，请思考：</p>
+<ul>
+<li>
+<p><code>short int</code> 类型能够表示的最大整数为？ 再加一的话，结果如何？</p>
+</li>
+<li>
+<p><code>short int</code> 类型能够表示的最小整数为？ 再减一的话，结果如何？</p>
+</li>
+<li>
+<p>上述问题中的类型换成 <code>unsigned short int</code> 或者 <code>int</code> 呢？</p>
+</li>
+</ul>
+<h4 id="演示整数的上下溢出">演示：整数的上下溢出</h4>
+<h4 id="小数的存储">小数的存储</h4>
+<blockquote>
+<p>为什么小数，又被叫做浮点数呢？</p>
+<p>这是由于计算机内部在存储小数时，使用的是如下的二进制的科学计数法： <code>Number=A*2^B</code>。其中，A被称为尾数，指数B称为阶码。小数点的位置是“浮动”的，浮点数的名称由此而来。</p>
+</blockquote>
+<ul>
+<li>
+<p><code>float</code> 类型为单精度浮点数，长32位，尾数长度23,指数长度8，首位为符号位，指数偏移量127；</p>
+</li>
+<li>
+<p><code>double</code> 类型为双精度浮点数，长64位，尾数长度52,指数长度11，首位为符号位，指数偏移量1023；</p>
+</li>
+<li>
+<p>约定小数点左边隐含有一位，通常这位数是1，所以上述单精度尾数的实际长度为24(默认省略小数点左边的1则为23)，双精度尾数长度实际为53（默认省略小数点左边的1则问52）；</p>
+</li>
+</ul>
+<blockquote>
+<p>机器精度</p>
+<p>Wikipedia上机器精度Machine Epsilon是这样描述的：“Machine epsilon gives an upper bound on the relative error due to rounding in floating point arithmetic”。因为浮点数是离散的，所以实数的表示存在着误差。例如圆周率这样的无限不循环小数不可能精确地由某一个浮点数表示。</p>
+<p>我们需要一些具体的量去刻画这种误差，以估计结果的准确性。机器精度便是其中之一：它是所有相对误差的上限。相对误差是绝对误差与精确值的比值的绝对值。例如一个精确的实数x，所有单精度浮点数中与x距离最近的数为y，绝对误差为|y-x|，相对误差即|y−x|/|x|，而所有相对误差的上限便是单精度浮点数的机器精度。</p>
+<p>对单精度而言，是2的-23次方，约为1.1921e-07；对双精度而言，是2的-52次方，约为2.2204e-16。</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/03/3/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义03">计算概论（C语言）习题课讲义03</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>从源代码到可执行程序</p>
+</li>
+<li>
+<p>变量的使用</p>
+</li>
+<li>
+<p>函数的使用</p>
+</li>
+</ul>
+<h3 id="从源代码到可执行程序">从源代码到可执行程序</h3>
+<p>更为具体流程如下图所示，</p>
+<p><img src="./pic/01.png" alt="编译流程"></p>
+<ol>
+<li>
+<p>预处理(Preprocessing)
+使用预处理器<code>cpp</code> (也可使用<code>gcc -E</code>)，将所有的<code>#include</code>头文件以及宏定义替换成其真正的内容。预处理之后得到的仍然是文本文件，但文件体积会大很多。</p>
+</li>
+<li>
+<p>编译(Compilation)
+使用编译器<code>gcc</code> (或者<code>gcc -S</code>)，将经过预处理之后的文件转换成特定的汇编代码。</p>
+</li>
+<li>
+<p>汇编(Assemble)
+使用汇编器<code>as</code> (也可以使用<code>gcc -c</code>)，将上一步的汇编代码转换成机器码(machine code)，这一步产生的文件叫做目标文件，是二进制格式。</p>
+</li>
+<li>
+<p>链接(Linking)
+使用链接器<code>ld</code>，将多个目标文以及所需的库文件(.so等)链接成最终的可执行文件(executable file)。</p>
+</li>
+</ol>
+<h4 id="演示从源代码到程序">演示：从源代码到程序</h4>
+<blockquote>
+<p>名词解释：GCC</p>
+<p>the GNU Compiler Collection <a href="https://gcc.gnu.org/">Link</a></p>
+<p>The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, Go, and D, as well as libraries for these languages (libstdc++,&hellip;). GCC was originally written as the compiler for the GNU operating system.</p>
+</blockquote>
+<h3 id="变量的使用">变量的使用</h3>
+<p>一个变量是一个固定大小的“仓库”，用于存储一定类型的数据。变量的定义是“申请仓库”的过程，变量的赋值或取值，是“使用仓库”的过程。值得注意的是，C语言对局部变量，并不“主动打扫仓库”。</p>
+<h4 id="演示-变量的未初始化">演示: 变量的未初始化</h4>
+<blockquote>
+<p>名词解释：局部变量和全局变量</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/04/4/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义04">计算概论（C语言）习题课讲义04</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>判断语句</p>
+</li>
+<li>
+<p>循环语句</p>
+</li>
+<li>
+<p>循环算法举例</p>
+</li>
+</ul>
+<h3 id="判断语句">判断语句</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(boolean_expression)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 如果布尔表达式为真将执行的语句 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 如果布尔表达式为假将执行的语句 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>或者嵌套时，</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span>(boolean_expression <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当布尔表达式 1 为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( boolean_expression <span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当布尔表达式 2 为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>( boolean_expression <span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当布尔表达式 3 为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#75715e">/* 当上面条件都不为真时执行 */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>关系表达式只有两种可能的结果，成立为真，反之为假。由于C语言没有专门表示逻辑值的类型，所以任何基本类型的值都可以当做逻辑值使用。零表示假，非零表示真。</p>
+<h4 id="演示零表示假非零表示真">演示：零表示假，非零表示真</h4>
+<p>条件运算符<code>?:</code>，可以用来替代 if&hellip;else 语句.</p>
+<p><img src="./pic/1.jpg" alt="条件运算符的使用"></p>
+<h4 id="注意点">注意点</h4>
+<ul>
+<li>
+<p>5&gt;=3&gt;=1的理解</p>
+</li>
+<li>
+<p>将==打成=的手误</p>
+</li>
+</ul>
+<h3 id="循环语句">循环语句</h3>
+<ol>
+<li>
+<p>while循环</p>
+</li>
+<li>
+<p>do&hellip;while循环</p>
+</li>
+<li>
+<p>for循环</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">while</span>(condition)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">statement</span>(s);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">statement</span>(s);
+</span></span><span style="display:flex;"><span>}<span style="color:#66d9ef">while</span>(condition);
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ( init; condition; increment )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">statement</span>(s);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="./pic/2.jpg" alt="For循环的使用"></p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/05/5/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义05">计算概论（C语言）习题课讲义05</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>递归</p>
+</li>
+<li>
+<p>循环</p>
+</li>
+<li>
+<p>调试</p>
+</li>
+</ul>
+<h3 id="递归">递归</h3>
+<p>The process in which a function calls itself directly or indirectly is called recursion.</p>
+<p>两个要素：</p>
+<p>１.　递归出口</p>
+<p>２.　递归公式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">fact</span>(<span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">if</span> (n <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) <span style="color:#75715e">// 递归出口
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> n <span style="color:#f92672">*</span> <span style="color:#a6e22e">fact</span>(n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);　<span style="color:#75715e">//递归公式
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p><img src="./pic/1.png" alt="递归演示结果"></p>
+<h4 id="演示调试演示递归程序执行次序">演示：调试演示递归程序执行次序</h4>
+<p>This illustration is in English, rather than an actual programming language, but is useful for explaining the process in a non-technical way:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>A child couldn<span style="color:#e6db74">&#39;t sleep, so her mother told a story about a little frog,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  who couldn&#39;</span>t sleep, so the frog<span style="color:#e6db74">&#39;s mother told a story about a little bear,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">     who couldn&#39;</span>t sleep, so bear<span style="color:#960050;background-color:#1e0010">&#39;</span>s mother told a story about a little weasel
+</span></span><span style="display:flex;"><span>       ...who fell asleep.
+</span></span><span style="display:flex;"><span>     ...and the little bear fell asleep;
+</span></span><span style="display:flex;"><span>  ...and the little frog fell asleep;
+</span></span><span style="display:flex;"><span>...and the child fell asleep.
+</span></span></code></pre></div><p>来自<a href="https://stackoverflow.com/questions/126756/examples-of-recursive-functions">网络</a></p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/06/6/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义06">计算概论（C语言）习题课讲义06</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>习题讲解</p>
+</li>
+<li>
+<p>前五章梳理</p>
+</li>
+<li>
+<p>课堂练习</p>
+</li>
+</ul>
+<h3 id="习题讲解">习题讲解</h3>
+<h4 id="哥德巴赫猜想的验证">哥德巴赫猜想的验证</h4>
+<p>算法框架：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">prime</span>(<span style="color:#66d9ef">int</span> n); <span style="color:#75715e">//判断输入n是否为素数
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">goldbach</span>(<span style="color:#66d9ef">int</span> n); <span style="color:#75715e">//判断输入n是否可以分解为两个素数之和
+</span></span></span></code></pre></div><p>同学代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;time.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">isprime</span>(<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> m<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;m<span style="color:#f92672">*</span>m<span style="color:#f92672">&lt;=</span>n;<span style="color:#f92672">++</span>m){
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">if</span> (n<span style="color:#f92672">%</span>m<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;}
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(;;){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> a<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,t,n;<span style="color:#66d9ef">double</span> time1<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;请输入需要分解的偶数，输入奇数结束程序：&#34;</span>) ;
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span>          time1<span style="color:#f92672">=</span><span style="color:#a6e22e">clock</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span><span style="color:#f92672">&amp;&amp;</span>n<span style="color:#f92672">&gt;</span><span style="color:#ae81ff">4</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(t<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;t<span style="color:#f92672">&lt;=</span>n<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>;t<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>){ 
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">isprime</span>(t)<span style="color:#f92672">&amp;&amp;</span><span style="color:#a6e22e">isprime</span>(n<span style="color:#f92672">-</span>t)){
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d=%d+%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,n,t,n<span style="color:#f92672">-</span>t);
+</span></span><span style="display:flex;"><span>                    a<span style="color:#f92672">=</span>a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>             }
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;共有%d组,用时%f秒</span><span style="color:#ae81ff">\n\n</span><span style="color:#e6db74">&#34;</span>,a,(<span style="color:#a6e22e">clock</span>()<span style="color:#f92672">-</span>time1)<span style="color:#f92672">/</span>CLOCKS_PER_SEC);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;程序结束&#34;</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>同学代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span><span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">prime</span>(<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">int</span> m;
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span>(m<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>;m<span style="color:#f92672">&lt;=</span>n;<span style="color:#f92672">++</span>m){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">%</span>m<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(m<span style="color:#f92672">==</span>n)
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">int</span> m,n,t;
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span>(m<span style="color:#f92672">=</span><span style="color:#ae81ff">6</span>;m<span style="color:#f92672">&lt;=</span>n;m<span style="color:#f92672">=</span>m<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">for</span>(t<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>;t<span style="color:#f92672">&lt;=</span>m<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>;t<span style="color:#f92672">=</span>t<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">prime</span>(t)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">prime</span>(m<span style="color:#f92672">-</span>t)<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d=%d+%d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,m,t,m<span style="color:#f92672">-</span>t);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> }
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(t<span style="color:#f92672">==</span>m<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">&amp;&amp;</span> m<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">8</span>){
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;推翻了哥德巴赫猜想！！！！！！</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span> }}
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">if</span>(m<span style="color:#f92672">==</span>n<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span> <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;哥德巴赫猜想在小于等于%d成立</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="c语言代码规范">C语言代码规范</h5>
+<p>虽然Ｃ语言的标准中并没有对代码的缩进和换行有硬性的要求，但一般大家都会有一些通俗的约定．这里推荐使用如下的代码缩进风格：</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/07/7/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义07">计算概论（C语言）习题课讲义07</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>习题讲解</p>
+</li>
+<li>
+<p>数组初步</p>
+</li>
+<li>
+<p>课堂练习</p>
+</li>
+</ul>
+<h3 id="习题讲解">习题讲解</h3>
+<h4 id="输出一定范围勾股数">输出一定范围勾股数</h4>
+<p>代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">output</span>(<span style="color:#66d9ef">int</span> min, <span style="color:#66d9ef">int</span> max)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> i,j,k;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//简单粗暴,三重循环;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>min;i<span style="color:#f92672">&lt;=</span>max;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">for</span>(j<span style="color:#f92672">=</span>i;j<span style="color:#f92672">&lt;=</span>max;j<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">for</span>(k<span style="color:#f92672">=</span>j;k<span style="color:#f92672">&lt;=</span>max;k<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">*</span>i<span style="color:#f92672">+</span>j<span style="color:#f92672">*</span>j<span style="color:#f92672">==</span>k<span style="color:#f92672">*</span>k)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,i,j,k);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> min,max;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d%d&#34;</span>, <span style="color:#f92672">&amp;</span>min, <span style="color:#f92672">&amp;</span>max);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">output</span>(min,max);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;math.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">perfect</span>(<span style="color:#66d9ef">int</span> s){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(n<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;n<span style="color:#f92672">*</span>n<span style="color:#f92672">&lt;=</span>s;n<span style="color:#f92672">=</span>n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">*</span>n<span style="color:#f92672">==</span>s) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">ssqrt</span>(<span style="color:#66d9ef">int</span> s){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> n;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(n<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>;n<span style="color:#f92672">*</span>n<span style="color:#f92672">&lt;=</span>s;n<span style="color:#f92672">=</span>n<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(n<span style="color:#f92672">*</span>n<span style="color:#f92672">==</span>s) <span style="color:#66d9ef">return</span> n;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">haha</span>(<span style="color:#66d9ef">int</span> m,<span style="color:#66d9ef">int</span> n){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> s; <span style="color:#66d9ef">int</span> a;<span style="color:#66d9ef">int</span> b;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(s<span style="color:#f92672">=</span>m;s<span style="color:#f92672">&lt;</span>n;s<span style="color:#f92672">=</span>s<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>   {<span style="color:#66d9ef">for</span>(a<span style="color:#f92672">=</span>m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;a<span style="color:#f92672">&lt;=</span>n;a<span style="color:#f92672">=</span>a<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">perfect</span>(a<span style="color:#f92672">*</span>a<span style="color:#f92672">-</span>s<span style="color:#f92672">*</span>s)<span style="color:#f92672">&amp;</span>(s<span style="color:#f92672">*</span>s<span style="color:#f92672">&lt;</span>a<span style="color:#f92672">*</span>a<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>))
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d %d %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,s,<span style="color:#a6e22e">ssqrt</span>(a<span style="color:#f92672">*</span>a<span style="color:#f92672">-</span>s<span style="color:#f92672">*</span>s),a);
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> min,max;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d%d&#34;</span>,<span style="color:#f92672">&amp;</span>min,<span style="color:#f92672">&amp;</span>max);
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">haha</span>(min,max);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="collatz函数">Collatz函数</h4>
+<p>两个注意点:</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/08/8/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义08">计算概论（C语言）习题课讲义08</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>习题讲解</p>
+</li>
+<li>
+<p>数组进阶</p>
+</li>
+<li>
+<p>课堂练习: 排序初步</p>
+</li>
+</ul>
+<h3 id="习题讲解">习题讲解</h3>
+<h4 id="输出所有字符数不超过10的行">输出所有字符数不超过10的行</h4>
+<p>代码点评一:</p>
+<ol>
+<li>
+<p>读入一行 =&gt;如何判断读入一行?</p>
+</li>
+<li>
+<p>进行判断</p>
+</li>
+<li>
+<p>少十输出 =&gt;输出时, 结果如何存储?</p>
+</li>
+<li>
+<p>否则跳过</p>
+</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> Line[<span style="color:#ae81ff">1000</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> c;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> count<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>((c<span style="color:#f92672">=</span><span style="color:#a6e22e">getchar</span>())<span style="color:#f92672">!=</span>EOF)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Line[count<span style="color:#f92672">++</span>]<span style="color:#f92672">=</span>c;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;\n&#39;</span>)  <span style="color:#75715e">//读入一行
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">//进行判断
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            <span style="color:#66d9ef">if</span>(count<span style="color:#f92672">&lt;=</span><span style="color:#ae81ff">10</span>) <span style="color:#75715e">//输出
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>count;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#a6e22e">putchar</span>(Line[i]);
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> <span style="color:#75715e">//跳过
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>            {
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            count<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评二:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;                   // string.h?</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(){
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>,c,k;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> line[<span style="color:#ae81ff">10</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">while</span>((c<span style="color:#f92672">=</span><span style="color:#a6e22e">getchar</span>())<span style="color:#f92672">!=</span>EOF)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">getchar</span>()<span style="color:#f92672">!=</span><span style="color:#e6db74">&#39;\n&#39;</span>) ;     <span style="color:#75715e">// what for?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">continue</span>;                    <span style="color:#75715e">// continue?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span>(c<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;\n&#39;</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">for</span>(k<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;k<span style="color:#f92672">&lt;</span>i;<span style="color:#f92672">++</span>k)
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">putchar</span>(line[k]);
+</span></span><span style="display:flex;"><span>       <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>       i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>       <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>           line[i]<span style="color:#f92672">=</span>c;
+</span></span><span style="display:flex;"><span>           <span style="color:#f92672">++</span>i;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="牛顿迭代及二分法">牛顿迭代及二分法</h4>
+<p>代码点评一:</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/09/9/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义09">计算概论（C语言）习题课讲义09</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>习题讲解</p>
+</li>
+<li>
+<p>字符串</p>
+</li>
+<li>
+<p>课堂练习: 排序初步</p>
+</li>
+</ul>
+<h3 id="习题讲解">习题讲解</h3>
+<h4 id="字符串转浮点数">字符串转浮点数</h4>
+<p>代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">double</span> <span style="color:#a6e22e">t</span>(<span style="color:#66d9ef">char</span> a[],<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">double</span> x<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> m<span style="color:#f92672">=</span>n;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (a[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;\0&#39;</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0.</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;<span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(a[i]<span style="color:#f92672">==</span><span style="color:#e6db74">&#39;.&#39;</span>) m<span style="color:#f92672">=</span>i; <span style="color:#75715e">//记录小数点位置
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>m;<span style="color:#f92672">++</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        x<span style="color:#f92672">=</span>x<span style="color:#f92672">*</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>a[i]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,j<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;i<span style="color:#f92672">&lt;</span>n;<span style="color:#f92672">++</span>i) <span style="color:#75715e">//处理小数点
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    {
+</span></span><span style="display:flex;"><span>        x<span style="color:#f92672">=</span>x<span style="color:#f92672">+</span>(a[i]<span style="color:#f92672">-</span><span style="color:#e6db74">&#39;0&#39;</span>)<span style="color:#f92672">/</span>(<span style="color:#66d9ef">double</span>)j;
+</span></span><span style="display:flex;"><span>        j<span style="color:#f92672">*=</span><span style="color:#ae81ff">10</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> x;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>(<span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span> argv[])
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> a[<span style="color:#ae81ff">5</span>]<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;.&#39;</span>,<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;2&#39;</span>,<span style="color:#e6db74">&#39;3&#39;</span>,<span style="color:#e6db74">&#39;\0&#39;</span>}; <span style="color:#75715e">//可以使用字符串,对字符数组初始化
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> b[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;2&#39;</span>,<span style="color:#e6db74">&#39;3&#39;</span>,<span style="color:#e6db74">&#39;\0&#39;</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> c[<span style="color:#ae81ff">8</span>]<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;2&#39;</span>,<span style="color:#e6db74">&#39;3&#39;</span>,<span style="color:#e6db74">&#39;.&#39;</span>,<span style="color:#e6db74">&#39;1&#39;</span>,<span style="color:#e6db74">&#39;2&#39;</span>,<span style="color:#e6db74">&#39;3&#39;</span>,<span style="color:#e6db74">&#39;\0&#39;</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> d[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;\0&#39;</span>};
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The real number of 1st input string is: %f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#a6e22e">t</span>(d,<span style="color:#ae81ff">1</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The real number of 2st input string is: %f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#a6e22e">t</span>(a,<span style="color:#ae81ff">4</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The real number of 3st input string is: %f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#a6e22e">t</span>(b,<span style="color:#ae81ff">3</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;The real number of 4st input string is: %f</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>,<span style="color:#a6e22e">t</span>(c,<span style="color:#ae81ff">7</span>));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评二:</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+        <li class="col-12 d-flex width-full py-4 border-bottom color-border-secondary public source">
+          <div class="col-12 d-inline-block">
+            <div class="d-inline-block mb-1">
+              <h3 class="wb-break-all">
+                <a href="http://localhost:1313/c_programming/10/10/"></a>
+              </h3>
+            </div>
+
+            <div>
+              <div class="col-12 d-inline-block text-gray mb-2 pr-4">
+                <h1 id="计算概论c语言习题课讲义10">计算概论（C语言）习题课讲义10</h1>
+<h2 id="内容概要">内容概要</h2>
+<ul>
+<li>
+<p>习题讲解</p>
+</li>
+<li>
+<p>指针</p>
+</li>
+<li>
+<p>课堂练习</p>
+</li>
+</ul>
+<h3 id="习题讲解">习题讲解</h3>
+<h4 id="字典序输出所有排列">字典序输出所有排列</h4>
+<p>代码点评一:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define Nmax 100
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print</span>(<span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,A[i]);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">swap</span>(<span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> m, <span style="color:#66d9ef">int</span> n) <span style="color:#75715e">//交换两元素
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> tmp<span style="color:#f92672">=</span>A[m];
+</span></span><span style="display:flex;"><span>    A[m]<span style="color:#f92672">=</span>A[n];
+</span></span><span style="display:flex;"><span>    A[n]<span style="color:#f92672">=</span>tmp;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">next</span>(<span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> n)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> k,i;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(k<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>;A[k]<span style="color:#f92672">&gt;</span>A[k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">&amp;&amp;</span>k<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>;k<span style="color:#f92672">--</span>); <span style="color:#75715e">// Find first(right to left) A[k]&lt;A[k+1]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span>(k<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>) <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// This means A[j]&gt;A[j+1] for all j
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>                      <span style="color:#75715e">// Maximum in lexicographical order;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span>(i<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;A[k]<span style="color:#f92672">&gt;</span>A[i];i<span style="color:#f92672">--</span>); <span style="color:#75715e">// Find minimal A[i]&gt;A[k]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">swap</span>(A,k,i); <span style="color:#75715e">// Exchange A[i] and A[k]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">//Sort A[k+1]--A[n-1]; Any sort is OK; But Notice it&#39;s in reverse order
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    k<span style="color:#f92672">=</span>k<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>,i<span style="color:#f92672">=</span>n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span>(k<span style="color:#f92672">&lt;</span>i)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">swap</span>(A,k,i);
+</span></span><span style="display:flex;"><span>        k<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>        i<span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> A[Nmax], n;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>,<span style="color:#f92672">&amp;</span>n);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>;i<span style="color:#f92672">&lt;</span>n;i<span style="color:#f92672">++</span>)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        A[i]<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">do</span>{
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">print</span>(A,n);
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">while</span>(<span style="color:#a6e22e">next</span>(A,n));
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>代码点评二:</p>
+              </div>
+            </div>
+
+            <div class="f6 text-gray mt-2">
+              
+
+              Created
+              <relative-time datetime=" Mon, 01 Jan 0001 00:00:00 &#43;0000" class="no-wrap"
+                title=" Mon, 01 Jan 0001 00:00:00 &#43;0000">
+                Mon, 01 Jan 0001 00:00:00 &#43;0000
+              </relative-time>
+            </div>
+          </div>
+        </li>
+        
+      </ul>
+      <div class="paginate-container">
+        <div class="BtnGroup">
+          
+          <button class="btn btn-outline BtnGroup-item" disabled="disabled">Previous</button>
+          
+          
+          <a rel="nofollow" class="btn btn-outline BtnGroup-item" href="/c_programming/page/2/">Next</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+</div>
+<script>
+window.onscroll = function (e) {
+  const headerImg = document.querySelector('#headerImg');
+  const headerStuck = document.querySelector('#headerStuck');
+  if (headerImg.getBoundingClientRect().bottom <= 0) {
+    headerStuck.classList.add('is-stuck');
+    if (window.innerWidth >= 1280) {
+      headerStuck.setAttribute('style', 'top: 12px;')
+    } else {
+      headerStuck.setAttribute('style', 'top: 0;')
+    }
+  } else {
+    headerStuck.classList.remove('is-stuck');
+  }
+};
+
+var style = localStorage.getItem('data-color-mode')
+githubIconElement = document.getElementById('github-icon')
+twitterIconElement = document.getElementById('twitter-icon')
+if (style == 'light') {
+  if (githubIconElement) githubIconElement.setAttribute('fill', '#24292e')
+  if (twitterIconElement) twitterIconElement.setAttribute('fill', 'black')
+}
+else {
+  if (githubIconElement) {
+    githubIconElement.removeAttribute('fill')
+    githubIconElement.setAttribute('class', 'octicon')
+    githubIconElement.setAttribute('color', '#f0f6fc')
+  }
+  if (twitterIconElement)  twitterIconElement.setAttribute('fill', 'white') 
+}
+</script>
+
+  
+
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+
+
+</html>
